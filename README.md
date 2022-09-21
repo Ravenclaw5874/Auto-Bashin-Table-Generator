@@ -1,4 +1,4 @@
-# Auto-Bashin-Table-Generator
+# 우마무스메 한국 서버 자동 마신표 제작기
 한국 우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 
 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)가 필요합니다.
