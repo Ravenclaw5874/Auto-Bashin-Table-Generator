@@ -147,13 +147,13 @@ function convertToSec(minSec) {
 function calcBashin(BASETIME, times) {
     //단일 숫자
     if (typeof(times) === 'number') {
-        return ((BASETIME - times)*10).toFixed(2);
+        return ((BASETIME - times)*10).toFixed(2)*1;
     }
     //숫자 배열
     else {
         let result = [];
         for (let i=0;i<times.length;i++) {
-            result.push(((BASETIME - times[i])*10).toFixed(2));
+            result.push( ((BASETIME - times[i])*10).toFixed(2)*1 );
         }
         return result;
     }
@@ -342,9 +342,11 @@ var main = function() {
                                              ...speed_Inherit_Elements,
                                              ...accel_Inherit_Elements,
                                              ...multi_Inherit_Elements])//일반, 계승기
+        //console.log(allSkills);
         allSkills.forEach((skillName)=>{
             let skillData = skillDB.find(v=>v['스킬명'] === skillName);
-            (skillData['즉발'] === '즉발'? onceCount+=1: multipleCount+=1);
+            if (typeof(skillData) === 'undefined') {multipleCount+=1;}
+            else (skillData['즉발'] === '즉발'? onceCount+=1: multipleCount+=1);
         });
         //console.log(`즉발 ${onceCount}개 랜덤 ${multipleCount}개 ${userSimulateCount}회 시뮬`);
 
@@ -384,10 +386,17 @@ var main = function() {
                 result_Aptitude.push(row);
             }
         }
+
+        //제일 마지막 적성의 마신이 음수면 S이상으로 돌려서 A까지 간것이므로 모든 요소에 그만큼 더하기.
+        let lastBashin = result_Aptitude[result_Aptitude.length-1]['마신'];
+        if (lastBashin < 0) {
+            result_Aptitude.forEach((row)=>{row['마신'] += (-lastBashin)});
+        }
+
         //원상복구
         userSelected_DistanceAptitude.click();
         userSelected_SurfaceAptitude.click();
-        //console.table(result_Aptitude);
+        console.table(result_Aptitude);
 
 
         //녹딱 마신 계산
