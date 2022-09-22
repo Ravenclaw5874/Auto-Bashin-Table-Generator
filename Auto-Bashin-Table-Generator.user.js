@@ -241,7 +241,7 @@ var main = function() {
         let courseLocation_Parent     = dropDownNodes[dropDownNodes.length-4].querySelector("div > div > ul"); //코스 장소
         let courseTypeDistance_Parent = dropDownNodes[dropDownNodes.length-3].querySelector("div > div > ul"); //코스 종류 및 거리
         let courseCondition_Parent    = dropDownNodes[dropDownNodes.length-2].querySelector("div > div > ul"); //코스 상태
-        let UniqueSkill_Parent        = dropDownNodes[dropDownNodes.length-1].querySelector("div > div > ul"); //고유 스킬
+        let uniqueSkill_Parent        = dropDownNodes[dropDownNodes.length-1].querySelector("div > div > ul"); //고유 스킬
 
         let userSelected_Strategy           = strategy_Parent.querySelector("ul > li.selected");
         let userSelected_DistanceAptitude   = distanceAptitude_Parent.querySelector("ul > li.selected");
@@ -288,9 +288,9 @@ var main = function() {
             heal_2Star_SkillNames.push('introduction：My body');
         }
 
-        let Unique_Skill_Elements = UniqueSkill_Parent.childNodes;
-        Unique_Skill_Elements = Array.prototype.slice.call(Unique_Skill_Elements);
-        Unique_Skill_Elements.shift();
+        let unique_Skill_Elements = uniqueSkill_Parent.childNodes;
+        unique_Skill_Elements = Array.prototype.slice.call(unique_Skill_Elements);
+        unique_Skill_Elements.shift();
 
         let needToDelete_SkillNames = ['없음／발동 안 함',
                                        ...heal_3Star_SkillNames,
@@ -301,15 +301,15 @@ var main = function() {
                                                ...makeSkillNamesArray(multi_Inherit_Elements)]
 
         //전체 속/가/복 고유기 요소들.
-        let notHeal_Unique_Skill_Elements = Unique_Skill_Elements.filter(x => !needToDelete_SkillNames.includes(getProperSkillName(x)));
+        let notHeal_unique_Skill_Elements = unique_Skill_Elements.filter(x => !needToDelete_SkillNames.includes(getProperSkillName(x)));
         //2성 속/가/복 고유기 요소들
-        let notHeal_2Star_Unique_Skill_Elements = notHeal_Unique_Skill_Elements.filter(x => !notHeal_3Star_Unique_SkillNames.includes(getProperSkillName(x)));
+        let notHeal_2Star_unique_Skill_Elements = notHeal_unique_Skill_Elements.filter(x => !notHeal_3Star_Unique_SkillNames.includes(getProperSkillName(x)));
         //3성 속/가/복 고유기 요소들.
-        let notHeal_3Star_Unique_Skill_Elements = notHeal_Unique_Skill_Elements.filter(x => notHeal_3Star_Unique_SkillNames.includes(getProperSkillName(x)));
+        let notHeal_3Star_unique_Skill_Elements = notHeal_unique_Skill_Elements.filter(x => notHeal_3Star_Unique_SkillNames.includes(getProperSkillName(x)));
 
 
 
-        await UniqueSkill_Parent.childNodes[1].click();//고유 스킬 초기화
+        await uniqueSkill_Parent.childNodes[1].click();//고유 스킬 초기화
         //await clickElements("#app > div.main-frame > form > div:nth-child(28) > div:nth-child(3) > div > button");
         await document.querySelector("#app > div.main-frame > form > div:nth-child(28) > div:nth-child(3) > div > button").click();//활성화를 위한 한번 시뮬
 
@@ -335,7 +335,7 @@ var main = function() {
         onceCount += 4; //녹딱
         onceCount += 9; //기준타임 1번 + 클구리,수르젠 고유/계승 검증용 2번씩 8번
 
-        let allSkills = makeSkillNamesArray([...notHeal_Unique_Skill_Elements,//고유기
+        let allSkills = makeSkillNamesArray([...notHeal_unique_Skill_Elements,//고유기
                                              ...speed_Rare_Elements,
                                              ...speed_Normal_Elements,
                                              ...accel_Rare_Elements,
@@ -515,8 +515,8 @@ var main = function() {
 
         //2성은 계승기가 없으므로 SkillDB에서 검색
 
-        for (let i=0; i<notHeal_2Star_Unique_Skill_Elements.length; i++) {
-            let element = notHeal_2Star_Unique_Skill_Elements[i];
+        for (let i=0; i<notHeal_2Star_unique_Skill_Elements.length; i++) {
+            let element = notHeal_2Star_unique_Skill_Elements[i];
             let skillName = getProperSkillName(element);
             let skillData = skillDB.find(v=>v['스킬명'] === skillName);
             let category = (typeof(skillData) === 'undefined'? '': skillData['분류']);
@@ -525,8 +525,8 @@ var main = function() {
         }
 
         //3성은 계승기가 있으므로 앞서한 계승기에서 검색
-        for (let i=0; i<notHeal_3Star_Unique_Skill_Elements.length; i++) {
-            let element = notHeal_3Star_Unique_Skill_Elements[i];
+        for (let i=0; i<notHeal_3Star_unique_Skill_Elements.length; i++) {
+            let element = notHeal_3Star_unique_Skill_Elements[i];
             let skillName = getProperSkillName(element);
             //클구리, 수르젠 스킵.
             if (skipList.includes(skillName)) {
@@ -540,10 +540,10 @@ var main = function() {
         //console.log(skipped_Skill_Elements);
 
         //다 끝났으니 고유기 없음 클릭
-        await Unique_Skill_Elements[0].click();
+        await unique_Skill_Elements[0].click();
 
-        /*for (let i=0; i<notHeal_Unique_Skill_Elements.length; i++) {
-            let element = notHeal_Unique_Skill_Elements[i];
+        /*for (let i=0; i<notHeal_unique_Skill_Elements.length; i++) {
+            let element = notHeal_unique_Skill_Elements[i];
             let skillName = getProperSkillName(element);
             let skillData = skillDB.find(v=>v['스킬명'] === skillName);
             let category = (typeof(skillData) === 'undefined'? '': skillData['분류']);
@@ -614,7 +614,7 @@ var main = function() {
 
                             await clickElements(mid_HealSkill_Elements); //중반 회복기 3개 OFF
                         }
-                        await Unique_Skill_Elements[0].click(); //고유기 OFF
+                        await unique_Skill_Elements[0].click(); //고유기 OFF
                         break;
 
                     case '뭉클하게♪ Chu':
@@ -649,7 +649,7 @@ var main = function() {
 
                             await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 OFF
                         }
-                        await Unique_Skill_Elements[0].click(); //고유기 OFF
+                        await unique_Skill_Elements[0].click(); //고유기 OFF
                         break;
                 }
             }
