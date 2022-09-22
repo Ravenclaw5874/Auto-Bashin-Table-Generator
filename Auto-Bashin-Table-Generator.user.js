@@ -5,6 +5,8 @@
 // @description  한국 우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
+// @downloadURL  https://github.com/Ravenclaw5874/Auto-Bashin-Table-Generator/releases/latest/download/Auto-Bashin-Table-Generator.user.js
+// @updateURL    https://github.com/Ravenclaw5874/Auto-Bashin-Table-Generator/releases/latest/download/Auto-Bashin-Table-Generator.meta.js
 // @icon         https://img1.daumcdn.net/thumb/C151x151/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fcafeattach%2F1ZK1D%2F80ed3bb76fa6ce0a4a0c7a9cc33d55430f797e35
 // @grant        none
 // @require      http://code.jquery.com/jquery-3.6.1.min.js
