@@ -396,7 +396,7 @@ var main = function() {
         //원상복구
         userSelected_DistanceAptitude.click();
         userSelected_SurfaceAptitude.click();
-        console.table(result_Aptitude);
+        //console.table(result_Aptitude);
 
 
         //녹딱 마신 계산
