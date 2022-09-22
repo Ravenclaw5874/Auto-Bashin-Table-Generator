@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 한섭 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  한국 우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -197,6 +197,9 @@ var main = function() {
     'use strict';
     // Your code here...
     (async () => {
+        userSimulateCount=0; //유저가 설정한 시뮬 횟수
+        totalSimulateCount=0; //계산된 총 시뮬 횟수
+        currentSimulateCount=0; //현재 누적 시뮬 횟수
 
         //스킬 DB 불러오기
         let skillDB_csv = await $.get("https://raw.githubusercontent.com/Ravenclaw5874/Auto-Bashin-Table-Generator/main/%EC%8A%A4%ED%82%ACDB.csv");
