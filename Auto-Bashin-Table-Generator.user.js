@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 한섭 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  한국 우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
