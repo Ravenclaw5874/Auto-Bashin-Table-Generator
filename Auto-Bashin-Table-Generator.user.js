@@ -1,16 +1,27 @@
 // ==UserScript==
 // @name         우마무스메 한섭 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @description  한국 우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
+// @match        http://race.wf-calc.net/
 // @icon         https://img1.daumcdn.net/thumb/C151x151/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fcafeattach%2F1ZK1D%2F80ed3bb76fa6ce0a4a0c7a9cc33d55430f797e35
 // @grant        none
 // @require      http://code.jquery.com/jquery-3.6.1.min.js
 // @require      https://raw.githubusercontent.com/evanplaice/jquery-csv/main/src/jquery.csv.js
 // @license      MIT License
 // ==/UserScript==
+
+/*----업데이트 로그------
+1.3 클구리, 수르젠, 꼬올 일본서버 시뮬 지원. 스킬 DB는 아직.
+
+1.2 전체 진행도 초기화 안되던 문제 수정
+
+1.1 적성 음수 보정, 그외 각종 버그 수종
+
+1.0 완성
+*/
 
 if ( ! /#\/champions-meeting.*/.test(location.hash) ) return;
 
@@ -467,7 +478,8 @@ var main = function() {
         //스킵한 스킬 요소 저장용.
         let skipped_Skill_Elements = [];
         //클구리, 수르젠, 꼬올은 나중에 따로 계산
-        let skipList = ['성야의 미라클 런!', '뭉클하게♪ Chu', '꼬리의 폭포오르기', '꼬리 올리기']
+        let skipList = ['성야의 미라클 런!', '뭉클하게♪ Chu', '꼬리의 폭포오르기', '꼬리 올리기',
+                       '聖夜のミラクルラン！', 'グッときて♪Chu', '尻尾の滝登り', '尻尾上がり']
 
         //배열용.
         async function makeCompleteSkillDatas(skillElements, rarity, category) {
@@ -561,6 +573,7 @@ var main = function() {
         //skipped_Skill_Elements 에 순서는 모르지만 6개 요소 다 들어가있음.
         //el-checkbox-button - 계승기, el-select-dropdown__item - 고유기
         //['성야의 미라클 런!', '뭉클하게♪ Chu', '꼬리의 폭포오르기', '꼬리 올리기']
+        //'聖夜のミラクルラン！', 'グッときて♪Chu', '尻尾の滝登り', '尻尾上がり'
 
         //중반 회복기 페이스 킵, 마군 속 냉정, 아오하루 점화*체력
         let heal_Normal_Parent = getElementByXpath("/html/body/div[1]/div[1]/form/div[21]/div[2]/div[2]/div/div[2]/div");
@@ -581,6 +594,7 @@ var main = function() {
             if (skipped_Skill_Elements[i].className.includes('el-select-dropdown__item')) {
                 switch(getProperSkillName(skipped_Skill_Elements[i])) {
                     case '성야의 미라클 런!':
+                    case '聖夜のミラクルラン！':
                         await clickElements(mid_HealSkill_Elements); //중반 회복기 3개 ON
                         await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
                         await skipped_Skill_Elements[i].click(); //고유기 ON
@@ -618,6 +632,7 @@ var main = function() {
                         break;
 
                     case '뭉클하게♪ Chu':
+                    case 'グッときて♪Chu':
                         await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 ON
                         await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
                         await skipped_Skill_Elements[i].click(); //고유기 ON
@@ -658,6 +673,7 @@ var main = function() {
             else {
                 switch(getProperSkillName(skipped_Skill_Elements[i])) {
                     case '성야의 미라클 런!':
+                    case '聖夜のミラクルラン！':
                         await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
 
                         await clickElements(mid_HealSkill_Elements); //중반 회복기 3개 ON
@@ -695,6 +711,7 @@ var main = function() {
                         }
                         break;
                     case '뭉클하게♪ Chu':
+                    case 'グッときて♪Chu':
                         await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 ON
                         await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
                         await skipped_Skill_Elements[i].click(); //계승기 ON
@@ -732,11 +749,13 @@ var main = function() {
                         //얘네 둘은 위 방식으로 스리세븐이 유효인지 아닌지 알 수 없으므로 그냥 중반 회복기 3개로 계산.
                         //어차피 위에 두개랑은 다르게 회복기만 조건이 아니라 '중반기'가 조건이므로 스리세븐으로 트리거하기 어려움.
                     case '꼬리의 폭포오르기':
+                    case '尻尾の滝登り':
                         await clickElements(mid_HealSkill_Elements); //중반 회복기 3개 ON
                         result_Special.push(await makeCompleteSkillData(skipped_Skill_Elements[i], '레어/상위', '속도', '꼬리의 폭포오르기'));
                         await clickElements(mid_HealSkill_Elements); //중반 회복기 3개 OFF
                         break;
                     case '꼬리 올리기':
+                    case '尻尾上がり':
                         await clickElements(mid_HealSkill_Elements); //중반 회복기 3개 ON
                         result_Special.push(await makeCompleteSkillData(skipped_Skill_Elements[i], '일반/하위', '속도', '꼬리 올리기'));
                         await clickElements(mid_HealSkill_Elements); //중반 회복기 3개 OFF
