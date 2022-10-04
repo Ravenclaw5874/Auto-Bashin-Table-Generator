@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 한섭 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.4
+// @version      1.4.1
 // @description  한국 우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.4.1 location.hash 처리 변경
 1.4 함수 밖 return 해결.
 
 1.3 클구리, 수르젠, 꼬올 일본서버 시뮬 지원. 스킬 DB는 아직.
@@ -480,7 +481,7 @@ var main = function() {
         let skipped_Skill_Elements = [];
         //클구리, 수르젠, 꼬올은 나중에 따로 계산
         let skipList = ['성야의 미라클 런!', '뭉클하게♪ Chu', '꼬리의 폭포오르기', '꼬리 올리기',
-                       '聖夜のミラクルラン！', 'グッときて♪Chu', '尻尾の滝登り', '尻尾上がり']
+                        '聖夜のミラクルラン！', 'グッときて♪Chu', '尻尾の滝登り', '尻尾上がり']
 
         //배열용.
         async function makeCompleteSkillDatas(skillElements, rarity, category) {
@@ -817,10 +818,11 @@ button2.onclick = () => {
 
 
 function checkURL() {
-    if ( ! /#\/champions-meeting.*/.test(location.hash) ) return;
-
+    //if ( ! /#\/champions-meeting.*/.test(location.hash) ) return;
+    if (location.hash != '#/champions-meeting') return;
     document.querySelector("#app > div.main-frame > form").appendChild(button);
     //document.querySelector("#app > div.main-frame > form").appendChild(button2);
+
 }
 
 checkURL();
