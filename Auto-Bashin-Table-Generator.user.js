@@ -819,7 +819,7 @@ button2.onclick = () => {
 
 function checkURL() {
     //if ( ! /#\/champions-meeting.*/.test(location.hash) ) return;
-    if (location.hash != '#/champions-meeting') return;
+    if (location.hash !== '#/champions-meeting') return;
     document.querySelector("#app > div.main-frame > form").appendChild(button);
     //document.querySelector("#app > div.main-frame > form").appendChild(button2);
 
