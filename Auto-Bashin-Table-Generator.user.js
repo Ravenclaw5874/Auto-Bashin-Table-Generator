@@ -481,7 +481,7 @@ var main = function() {
         let skipped_Skill_Elements = [];
         //클구리, 수르젠, 꼬올은 나중에 따로 계산
         let skipList = ['성야의 미라클 런!', '뭉클하게♪ Chu', '꼬리의 폭포오르기', '꼬리 올리기',
-                        '聖夜のミラクルラン！', 'グッときて♪Chu', '尻尾の滝登り', '尻尾上がり']
+                        '聖夜のミラクルラン！', 'グッときて♪Chu', '尻尾の滝登り', '尻尾上がり'];
 
         //배열용.
         async function makeCompleteSkillDatas(skillElements, rarity, category) {
