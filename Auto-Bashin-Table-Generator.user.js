@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 한섭 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.3
+// @version      1.4
 // @description  한국 우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,8 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.4 함수 밖 return 해결.
+
 1.3 클구리, 수르젠, 꼬올 일본서버 시뮬 지원. 스킬 DB는 아직.
 
 1.2 전체 진행도 초기화 안되던 문제 수정
@@ -23,7 +25,6 @@
 1.0 완성
 */
 
-if ( ! /#\/champions-meeting.*/.test(location.hash) ) return;
 
 //Xpath로 요소 찾기
 function getElementByXpath(path) {
@@ -796,11 +797,8 @@ var main = function() {
 
 
 async function test() {
-
     createProgressBar();
 }
-
-
 
 
 let button = document.createElement("button");
@@ -809,7 +807,6 @@ button.innerText = "마신표 제작 시작"
 button.onclick = () => {
     main();
 }
-document.querySelector("#app > div.main-frame > form").appendChild(button);
 
 let button2 = document.createElement("button");
 button2.setAttribute("class", "el-button el-button--default");
@@ -817,4 +814,14 @@ button2.innerText = "테스트"
 button2.onclick = () => {
     test();
 }
-//document.querySelector("#app > div.main-frame > form").appendChild(button2);
+
+
+function checkURL() {
+    if ( ! /#\/champions-meeting.*/.test(location.hash) ) return;
+
+    document.querySelector("#app > div.main-frame > form").appendChild(button);
+    //document.querySelector("#app > div.main-frame > form").appendChild(button2);
+}
+
+checkURL();
+
