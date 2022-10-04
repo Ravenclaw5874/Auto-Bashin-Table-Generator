@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 한섭 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.4.1
+// @version      1.4.2
 // @description  한국 우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.4.2 ; 빠진곳 전부 추가
 1.4.1 location.hash 처리 변경
 1.4 함수 밖 return 해결.
 
@@ -307,11 +308,11 @@ var main = function() {
 
         let needToDelete_SkillNames = ['없음／발동 안 함',
                                        ...heal_3Star_SkillNames,
-                                       ...heal_2Star_SkillNames]
+                                       ...heal_2Star_SkillNames];
         //3성 속/가/복 고유기 이름들
         let notHeal_3Star_Unique_SkillNames = [...makeSkillNamesArray(speed_Inherit_Elements),
                                                ...makeSkillNamesArray(accel_Inherit_Elements),
-                                               ...makeSkillNamesArray(multi_Inherit_Elements)]
+                                               ...makeSkillNamesArray(multi_Inherit_Elements)];
 
         //전체 속/가/복 고유기 요소들.
         let notHeal_unique_Skill_Elements = unique_Skill_Elements.filter(x => !needToDelete_SkillNames.includes(getProperSkillName(x)));
@@ -357,7 +358,7 @@ var main = function() {
                                              ...multi_Normal_Elements,
                                              ...speed_Inherit_Elements,
                                              ...accel_Inherit_Elements,
-                                             ...multi_Inherit_Elements])//일반, 계승기
+                                             ...multi_Inherit_Elements]);//일반, 계승기
         //console.log(allSkills);
         allSkills.forEach((skillName)=>{
             let skillData = skillDB.find(v=>v['스킬명'] === skillName);
@@ -406,7 +407,7 @@ var main = function() {
         //제일 마지막 적성의 마신이 음수면 S이상으로 돌려서 A까지 간것이므로 모든 요소에 그만큼 더하기.
         let lastBashin = result_Aptitude[result_Aptitude.length-1]['마신'];
         if (lastBashin < 0) {
-            result_Aptitude.forEach((row)=>{row['마신'] += (-lastBashin)});
+            result_Aptitude.forEach((row)=>{row['마신'] += (-lastBashin);});
         }
 
         //원상복구
@@ -443,7 +444,7 @@ var main = function() {
             let bashins = calcBashin(BASETIME, await simulate(once));
             await skillElement.click();
 
-            return bashins
+            return bashins;
         }
 
         //스킬 버튼 요소를 넣으면 마신차를 포함한 완전한 스킬 데이터를 반환.
@@ -507,7 +508,7 @@ var main = function() {
             ...await makeCompleteSkillDatas(speed_Inherit_Elements, '계승',      '속도'),
             ...await makeCompleteSkillDatas(accel_Inherit_Elements, '계승',      '가속'),
             ...await makeCompleteSkillDatas(multi_Inherit_Elements, '계승',      '복합')
-        ]
+        ];
 
         result_Normal = [
             ...await makeCompleteSkillDatas(speed_Rare_Elements,    '레어/상위', '속도'),
@@ -517,7 +518,7 @@ var main = function() {
             ...await makeCompleteSkillDatas(multi_Rare_Elements,    '레어/상위', '복합'),
             ...await makeCompleteSkillDatas(multi_Normal_Elements,  '일반/하위', '복합'),
             ...result_Inherit
-        ]
+        ];
         //console.table(result_Normal);
 
 
@@ -581,7 +582,7 @@ var main = function() {
         let heal_Normal_Parent = getElementByXpath("/html/body/div[1]/div[1]/form/div[21]/div[2]/div[2]/div/div[2]/div");
         let mid_HealSkill_Elements = [heal_Normal_Parent.querySelector("input[value='20']"),
                                       heal_Normal_Parent.querySelector("input[value='21']"),
-                                      heal_Normal_Parent.querySelector("input[value='23']")]
+                                      heal_Normal_Parent.querySelector("input[value='23']")];
         //스리세븐
         let three_Seven_Element = heal_Normal_Parent.querySelector("input[value='3']");
 
@@ -651,7 +652,7 @@ var main = function() {
                         //스리 세븐 유효. 접속인지는 알 수 없음.
                         if (non_ThreeSeven_time > threeSeven_time) {
                             let skillData = await makeCompleteSkillData(skipped_Skill_Elements[i], '고유', '속도', '뭉클하게♪ Chu', true);
-                            skillData['특이사항'] = '스리 세븐으로 시뮬.'
+                            skillData['특이사항'] = '스리 세븐으로 시뮬.';
                             result_Special.push(skillData);
 
                             await three_Seven_Element.click(); //스리 세븐 OFF
@@ -661,7 +662,7 @@ var main = function() {
                             await three_Seven_Element.click(); //스리 세븐 OFF
                             await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 ON
                             let skillData = await makeCompleteSkillData(skipped_Skill_Elements[i], '고유', '속도', '뭉클하게♪ Chu');
-                            skillData['특이사항'] = `중반 회복기로 시뮬. 최속 발동시 ${calcBashin(BASETIME, non_ThreeSeven_time)[0]}.`
+                            skillData['특이사항'] = `중반 회복기로 시뮬. 최속 발동시 ${calcBashin(BASETIME, non_ThreeSeven_time)[0]}.`;
                             result_Special.push(skillData);
 
                             await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 OFF
@@ -731,7 +732,7 @@ var main = function() {
                         //스리 세븐 유효. 접속인지는 알 수 없음.
                         if (non_ThreeSeven_time > threeSeven_time) {
                             let skillData = await makeCompleteSkillData(skipped_Skill_Elements[i], '계승', '속도', '뭉클하게♪ Chu', true);
-                            skillData['특이사항'] = '스리 세븐으로 시뮬.'
+                            skillData['특이사항'] = '스리 세븐으로 시뮬.';
                             result_Special.push(skillData);
 
                             await three_Seven_Element.click(); //스리 세븐 OFF
@@ -775,7 +776,7 @@ var main = function() {
                             ...result_Passive,
                             ...result_Unique,
                             ...result_Normal,
-                            ...result_Special]
+                            ...result_Special];
 
         //console.table(result_Final);
         //console.log(currentSimulateCount);
@@ -789,12 +790,12 @@ var main = function() {
             link.click();
             document.body.removeChild(link);
         };
-        let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText}`
+        let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText}`;
         downloadUnicodeCSV(filename, result_Final);
 
 
     })();
-}
+};
 
 
 async function test() {
@@ -804,17 +805,17 @@ async function test() {
 
 let button = document.createElement("button");
 button.setAttribute("class", "el-button el-button--success");
-button.innerText = "마신표 제작 시작"
+button.innerText = "마신표 제작 시작";
 button.onclick = () => {
     main();
-}
+};
 
 let button2 = document.createElement("button");
 button2.setAttribute("class", "el-button el-button--default");
-button2.innerText = "테스트"
+button2.innerText = "테스트";
 button2.onclick = () => {
     test();
-}
+};
 
 
 function checkURL() {
