@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         우마무스메 한섭 자동 마신표 제작기
+// @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.4.2
-// @description  한국 우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
+// @version      1.4.3
+// @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
 // @match        http://race.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.4.3 버튼 간격 조정
 1.4.2 ; 빠진곳 전부 추가
 1.4.1 location.hash 처리 변경
 1.4 함수 밖 return 해결.
@@ -802,7 +803,6 @@ async function test() {
     createProgressBar();
 }
 
-
 let button = document.createElement("button");
 button.setAttribute("class", "el-button el-button--success");
 button.innerText = "마신표 제작 시작";
@@ -817,11 +817,14 @@ button2.onclick = () => {
     test();
 };
 
+let div = document.createElement("div");
+div.setAttribute("class", "el-form-item");
+div.appendChild(button);
 
 function checkURL() {
     //if ( ! /#\/champions-meeting.*/.test(location.hash) ) return;
     if (location.hash !== '#/champions-meeting') return;
-    document.querySelector("#app > div.main-frame > form").appendChild(button);
+    document.querySelector("#app > div.main-frame > form").appendChild(div);
     //document.querySelector("#app > div.main-frame > form").appendChild(button2);
 
 }
