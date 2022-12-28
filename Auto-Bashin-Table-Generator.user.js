@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.4.3
+// @version      1.4.4
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.4.4 파일명에 스탯, 적성, 컨디션 정보 추가
 1.4.3 버튼 간격 조정
 1.4.2 ; 빠진곳 전부 추가
 1.4.1 location.hash 처리 변경
@@ -266,6 +267,11 @@ var main = function() {
         let userSelected_CourseLocation     = courseLocation_Parent.querySelector("ul > li.selected");
         let userSelected_CourseTypeDistance = courseTypeDistance_Parent.querySelector("ul > li.selected");
         let userSelected_CourseCondition    = courseCondition_Parent.querySelector("ul > li.selected");
+        let userSelected_Stats              = [document.querySelector("#app > div.main-frame > form > div:nth-child(8) > div > div > input").value,
+                                               document.querySelector("#app > div.main-frame > form > div:nth-child(9) > div > div > input").value,
+                                               document.querySelector("#app > div.main-frame > form > div:nth-child(10) > div > div > input").value,
+                                               document.querySelector("#app > div.main-frame > form > div:nth-child(11) > div > div > input").value,
+                                               document.querySelector("#app > div.main-frame > form > div:nth-child(12) > div > div > input").value]
 
         //console.log("작전: " + userSelected_Strategy.innerText);
         //console.log("적성: " + userSelected_DistanceAptitude.innerText + " " + userSelected_SurfaceAptitude.innerText + " " + userSelected_StrategyAptitude.innerText);
@@ -791,7 +797,7 @@ var main = function() {
             link.click();
             document.body.removeChild(link);
         };
-        let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText}`;
+        let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText} (${userSelected_Stats.join(',')} 거리${userSelected_DistanceAptitude.innerText} 경기장${userSelected_SurfaceAptitude.innerText} 각질${userSelected_StrategyAptitude.innerText} 컨디션 ${userSelected_Mood.innerText})`;
         downloadUnicodeCSV(filename, result_Final);
 
 
