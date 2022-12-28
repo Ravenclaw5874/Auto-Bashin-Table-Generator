@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.4.4
+// @version      1.4.5
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.4.5 적성 마신 소수점 오류 수정
 1.4.4 파일명에 스탯, 적성, 컨디션 정보 추가
 1.4.3 버튼 간격 조정
 1.4.2 ; 빠진곳 전부 추가
@@ -414,7 +415,10 @@ var main = function() {
         //제일 마지막 적성의 마신이 음수면 S이상으로 돌려서 A까지 간것이므로 모든 요소에 그만큼 더하기.
         let lastBashin = result_Aptitude[result_Aptitude.length-1]['마신'];
         if (lastBashin < 0) {
-            result_Aptitude.forEach((row)=>{row['마신'] += (-lastBashin);});
+            result_Aptitude.forEach((row)=>{
+                row['마신'] += (-lastBashin);
+                row['마신'] = row['마신'].toFixed(2)*1;
+            });
         }
 
         //원상복구
