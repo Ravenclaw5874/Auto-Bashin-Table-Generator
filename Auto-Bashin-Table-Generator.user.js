@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.4.5
+// @version      1.4.6
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.4.6 다운로드 파일 tsv 형식으로 변경
 1.4.5 적성 마신 소수점 오류 수정
 1.4.4 파일명에 스탯, 적성, 컨디션 정보 추가
 1.4.3 버튼 간격 조정
@@ -791,7 +792,9 @@ var main = function() {
 
         //console.table(result_Final);
         //console.log(currentSimulateCount);
+        let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText} (${userSelected_Stats.join(',')} 거리${userSelected_DistanceAptitude.innerText} 경기장${userSelected_SurfaceAptitude.innerText} 각질${userSelected_StrategyAptitude.innerText} 컨디션 ${userSelected_Mood.innerText})`;
 
+        /*
         function downloadUnicodeCSV(filename, datasource) {
             let link = document.createElement('a');
             link.setAttribute('href', 'data:text/csv;charset=utf-8,%EF%BB%BF' + encodeURIComponent($.csv.fromObjects(datasource)));
@@ -800,11 +803,31 @@ var main = function() {
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
-        };
-        let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText} (${userSelected_Stats.join(',')} 거리${userSelected_DistanceAptitude.innerText} 경기장${userSelected_SurfaceAptitude.innerText} 각질${userSelected_StrategyAptitude.innerText} 컨디션 ${userSelected_Mood.innerText})`;
-        downloadUnicodeCSV(filename, result_Final);
+        };*/
+        /*
+        function downloadUnicodeTSV(filename, datasource) {
+            let link = document.createElement('a');
+            link.setAttribute('href', 'data:text/tsv;charset=utf-8,%EF%BB%BF' + encodeURIComponent($.tsv.fromObjects(datasource)));
+            link.setAttribute('download', filename);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };*/
+        //downloadUnicodeTSV(filename, result_Final);
 
-
+        function downloadDictionaryArrayAsTSV(dictionaryArray, filename) {
+            const keys = Object.keys(dictionaryArray[0]);
+            const rows = [keys, ...dictionaryArray.map(obj => keys.map(key => obj[key]))];
+            const tsv = rows.map(row => row.join('\t')).join('\n');
+            const blob = new Blob([tsv], { type: 'text/tab-separated-values' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = url;
+            link.click();
+        }
+        downloadDictionaryArrayAsTSV(result_Final,`${filename}.tsv`);
     })();
 };
 
