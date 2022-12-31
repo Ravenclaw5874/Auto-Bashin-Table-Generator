@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.5
+// @version      1.5.1
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.5.1 파일명에 활성화한 스킬도 추가
 1.5 스킬 활성화 기능 추가. 유저가 돌린 조건을 첫째줄에 추가.
 
 1.4.6 다운로드 파일 tsv 형식으로 변경
@@ -821,8 +822,8 @@ var main = function() {
         //console.log(currentSimulateCount);
         let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText}`;
         //let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText} (${userSelected_Stats.join(',')} 거리${userSelected_DistanceAptitude.innerText} 경기장${userSelected_SurfaceAptitude.innerText} 각질${userSelected_StrategyAptitude.innerText} 컨디션 ${userSelected_Mood.innerText})`;
-        //if (isUniqueSkillSelected) { filename += ` (고유 ${getProperSkillName(userSelectedUniqueSkill)})` }
-        //if (userSelectedNormalSkillList.length > 0) { filename += ` (계승 ${userSelectedNormalSkillList.join(',')})` }
+        if (isUniqueSkillSelected) { filename += ` (고유 ${getProperSkillName(userSelectedUniqueSkill)})` }
+        if (userSelectedNormalSkillList.length > 0) { filename += ` (계승 ${userSelectedNormalSkillList.join(',')})` }
 
         let firstLine = `${userSelected_CourseLocation.innerText}\t${userSelected_CourseTypeDistance.innerText}\t${userSelected_CourseCondition.innerText}\t${userSelected_Strategy.innerText}\t${userSelected_Stats.join('/')}\t${userSelected_DistanceAptitude.innerText}\t${userSelected_SurfaceAptitude.innerText}\t${userSelected_StrategyAptitude.innerText}\t${userSelected_Mood.innerText}\t${userSelected_UniqueSkillLevel}`;
         firstLine += isUniqueSkillSelected? `\t${getProperSkillName(userSelectedUniqueSkill)}`: '\t';
