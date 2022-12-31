@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.4.6
+// @version      1.5
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,8 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.5 스킬 활성화 기능 추가. 유저가 돌린 조건을 첫째줄에 추가.
+
 1.4.6 다운로드 파일 tsv 형식으로 변경
 1.4.5 적성 마신 소수점 오류 수정
 1.4.4 파일명에 스탯, 적성, 컨디션 정보 추가
@@ -205,6 +207,13 @@ function updateProgressBar(percent) {
     entire_progressbar.querySelector("div.el-progress__text").innerText = `${percent}%`;
 }
 
+//스킬 노드 배열 넣으면 이름 배열 반환
+function makeSkillNamesArray(skillElements) {
+    let result = [];
+    skillElements.forEach((node) => {result.push(getProperSkillName(node) );});
+    return result;
+}
+
 
 let userSimulateCount=0; //유저가 설정한 시뮬 횟수
 let totalSimulateCount=0; //계산된 총 시뮬 횟수
@@ -273,7 +282,13 @@ var main = function() {
                                                document.querySelector("#app > div.main-frame > form > div:nth-child(9) > div > div > input").value,
                                                document.querySelector("#app > div.main-frame > form > div:nth-child(10) > div > div > input").value,
                                                document.querySelector("#app > div.main-frame > form > div:nth-child(11) > div > div > input").value,
-                                               document.querySelector("#app > div.main-frame > form > div:nth-child(12) > div > div > input").value]
+                                               document.querySelector("#app > div.main-frame > form > div:nth-child(12) > div > div > input").value];
+        let userSelected_UniqueSkillLevel   = document.querySelector("#app > div.main-frame > form > div:nth-child(24) > div > div > div > input").ariaValueNow;
+        let userSelectedSkillList = []; //유저가 선택한 전체 고유기 일반기 저장용
+        let userSelectedNormalSkillList = []; //유저가 선택한 일반기만 저장용
+        Array.from($("#app > div.main-frame > form > div.el-collapse").find("label.el-checkbox-button.is-checked")).forEach((e)=>{userSelectedNormalSkillList.push(getProperSkillName(e));});
+        userSelectedSkillList.push(...userSelectedNormalSkillList) //내용물 '복사'
+
 
         //console.log("작전: " + userSelected_Strategy.innerText);
         //console.log("적성: " + userSelected_DistanceAptitude.innerText + " " + userSelected_SurfaceAptitude.innerText + " " + userSelected_StrategyAptitude.innerText);
@@ -295,14 +310,18 @@ var main = function() {
         let multi_Normal_Elements  = getElementByXpath("/html/body/div[1]/div[1]/form/div[21]/div[5]/div[2]/div/div[2]/div").childNodes;
         let multi_Inherit_Elements = getElementByXpath("/html/body/div[1]/div[1]/form/div[21]/div[5]/div[2]/div/div[3]/div").childNodes;
 
-        //고유기들
+        //유저가 고유기를 선택했는가?
+        let userSelectedUniqueSkill = uniqueSkill_Parent.querySelector("ul > li.el-select-dropdown__item.selected");
+        let isUniqueSkillSelected = false;
+        if (userSelectedUniqueSkill !== null && userSelectedUniqueSkill !== uniqueSkill_Parent.childNodes[1]) {
+            isUniqueSkillSelected = true;
+            userSelectedSkillList.push(getProperSkillName(userSelectedUniqueSkill));
+        }
+
+        //3성 회복 고유기들
         let heal_3Star_Elements = getElementByXpath("/html/body/div[1]/div[1]/form/div[21]/div[2]/div[2]/div/div[3]/div").childNodes;
 
-        function makeSkillNamesArray(skillElements) {
-            let result = [];
-            skillElements.forEach((node) => {result.push(getProperSkillName(node) );});
-            return result;
-        }
+
         let heal_3Star_SkillNames = makeSkillNamesArray(heal_3Star_Elements);
         let heal_2Star_SkillNames = ['클리어 하트', '두근두근 준비 땅!'];
 
@@ -312,8 +331,8 @@ var main = function() {
         }
 
         let unique_Skill_Elements = uniqueSkill_Parent.childNodes;
-        unique_Skill_Elements = Array.prototype.slice.call(unique_Skill_Elements);
-        unique_Skill_Elements.shift();
+        unique_Skill_Elements = Array.prototype.slice.call(unique_Skill_Elements); //배열로 변환
+        unique_Skill_Elements.shift(); //첫번재 요소('없음/ 발동 안함' 이 아닌 null같은 뭔가) 제거
 
         let needToDelete_SkillNames = ['없음／발동 안 함',
                                        ...heal_3Star_SkillNames,
@@ -332,8 +351,7 @@ var main = function() {
 
 
 
-        await uniqueSkill_Parent.childNodes[1].click();//고유 스킬 초기화
-        //await clickElements("#app > div.main-frame > form > div:nth-child(28) > div:nth-child(3) > div > button");
+        //await uniqueSkill_Parent.childNodes[1].click();//고유 스킬 초기화
         await document.querySelector("#app > div.main-frame > form > div:nth-child(28) > div:nth-child(3) > div > button").click();//활성화를 위한 한번 시뮬
 
         //전체 진행도 바 생성
@@ -343,7 +361,7 @@ var main = function() {
         //기준 타임 계산
         let basetimes = await simulate(true);
         let BASETIME = basetimes[0];
-        //console.log('기준 타임: ' + BASETIME);
+        console.log('기준 타임: ' + BASETIME);
 
 
 
@@ -356,18 +374,22 @@ var main = function() {
         let multipleCount = 0;
         onceCount += (index_dist===1? 2: index_dist) * (index_surf===1? 2: index_surf); //적성
         onceCount += 4; //녹딱
-        onceCount += 9; //기준타임 1번 + 클구리,수르젠 고유/계승 검증용 2번씩 8번
+        onceCount += (isUniqueSkillSelected? 4:8); //클구리,수르젠 고유/계승 검증용 2번씩 4 or 8번
 
-        let allSkills = makeSkillNamesArray([...notHeal_unique_Skill_Elements,//고유기
-                                             ...speed_Rare_Elements,
-                                             ...speed_Normal_Elements,
-                                             ...accel_Rare_Elements,
-                                             ...accel_Normal_Elements,
-                                             ...multi_Rare_Elements,
-                                             ...multi_Normal_Elements,
-                                             ...speed_Inherit_Elements,
-                                             ...accel_Inherit_Elements,
-                                             ...multi_Inherit_Elements]);//일반, 계승기
+        let allSkill_Elements = [...speed_Rare_Elements,//일반, 계승기
+                                 ...speed_Normal_Elements,
+                                 ...accel_Rare_Elements,
+                                 ...accel_Normal_Elements,
+                                 ...multi_Rare_Elements,
+                                 ...multi_Normal_Elements,
+                                 ...speed_Inherit_Elements,
+                                 ...accel_Inherit_Elements,
+                                 ...multi_Inherit_Elements]
+        if (!isUniqueSkillSelected) {
+            allSkill_Elements.push(...notHeal_unique_Skill_Elements); //유저가 고유기를 선택하지 않았으면 회복기 제외 고유기 추가
+        }
+
+        let allSkills = makeSkillNamesArray(allSkill_Elements);
         //console.log(allSkills);
         allSkills.forEach((skillName)=>{
             let skillData = skillDB.find(v=>v['스킬명'] === skillName);
@@ -376,7 +398,7 @@ var main = function() {
         });
         //console.log(`즉발 ${onceCount}개 랜덤 ${multipleCount}개 ${userSimulateCount}회 시뮬`);
 
-        totalSimulateCount = onceCount + multipleCount * (userSimulateCount + 5);
+        totalSimulateCount = onceCount + multipleCount * (userSimulateCount + 5); //랜덤 스킬은 스킬 구간별 5회 추가됨.
         //console.log(totalSimulateCount);
 
 
@@ -495,16 +517,24 @@ var main = function() {
         //클구리, 수르젠, 꼬올은 나중에 따로 계산
         let skipList = ['성야의 미라클 런!', '뭉클하게♪ Chu', '꼬리의 폭포오르기', '꼬리 올리기',
                         '聖夜のミラクルラン！', 'グッときて♪Chu', '尻尾の滝登り', '尻尾上がり'];
+        //사용자가 활성화한 스킬은 스킵
+        //userSelectedSkillList
 
         //배열용.
         async function makeCompleteSkillDatas(skillElements, rarity, category) {
             let result = [];
             for (let i=0; i<skillElements.length; i++) {
 
-                if (skipList.includes(getProperSkillName(skillElements[i]))) {
+                //계산하지 않을 스킬 스킵
+                if(userSelectedSkillList.includes(getProperSkillName(skillElements[i]))) {
+                    continue;
+                }
+                //나중에 계산할 스킬 스킵
+                else if (skipList.includes(getProperSkillName(skillElements[i]))) {
                     skipped_Skill_Elements.push(skillElements[i]);
                     continue;
                 }
+                //그 외에는 계산
                 else {
                     result.push(await makeCompleteSkillData(skillElements[i], rarity, category, getProperSkillName(skillElements[i])));
                 }
@@ -540,34 +570,38 @@ var main = function() {
         //고유기 마신 계산
         let result_Unique = [];
 
-        //2성은 계승기가 없으므로 SkillDB에서 검색
+        //고유기를 선택하지 않았을때만 계산
+        if (!isUniqueSkillSelected) {
+            //2성은 계승기가 없으므로 SkillDB에서 검색
+            for (let i=0; i<notHeal_2Star_unique_Skill_Elements.length; i++) {
+                let element = notHeal_2Star_unique_Skill_Elements[i];
+                let skillName = getProperSkillName(element);
+                let skillData = skillDB.find(v=>v['스킬명'] === skillName);
+                let category = (typeof(skillData) === 'undefined'? '': skillData['분류']);
 
-        for (let i=0; i<notHeal_2Star_unique_Skill_Elements.length; i++) {
-            let element = notHeal_2Star_unique_Skill_Elements[i];
-            let skillName = getProperSkillName(element);
-            let skillData = skillDB.find(v=>v['스킬명'] === skillName);
-            let category = (typeof(skillData) === 'undefined'? '': skillData['분류']);
+                result_Unique.push(await makeCompleteSkillData(element, '고유', category, skillName));
+            }
 
-            result_Unique.push(await makeCompleteSkillData(element, '고유', category, skillName));
+            //3성은 계승기가 있으므로 앞서한 계승기에서 검색
+            for (let i=0; i<notHeal_3Star_unique_Skill_Elements.length; i++) {
+                let element = notHeal_3Star_unique_Skill_Elements[i];
+                let skillName = getProperSkillName(element);
+                //클구리, 수르젠 스킵.
+                if (skipList.includes(skillName)) {
+                    skipped_Skill_Elements.push(element);
+                    continue;}
+                //유저가 활성화한 계승기가 있으면 그 고유기 스킵
+                if (userSelectedSkillList.includes(skillName)) {continue;}
+                let skillData = result_Inherit.find(v=>v['스킬명'] === skillName);
+                let category = (typeof(skillData) === 'undefined'? '': skillData['분류']);
+
+                result_Unique.push(await makeCompleteSkillData(element, '고유', category, skillName));
+            }
+            //console.log(skipped_Skill_Elements);
+
+            //다 끝났으니 고유기 없음 클릭
+            await unique_Skill_Elements[0].click();
         }
-
-        //3성은 계승기가 있으므로 앞서한 계승기에서 검색
-        for (let i=0; i<notHeal_3Star_unique_Skill_Elements.length; i++) {
-            let element = notHeal_3Star_unique_Skill_Elements[i];
-            let skillName = getProperSkillName(element);
-            //클구리, 수르젠 스킵.
-            if (skipList.includes(skillName)) {
-                skipped_Skill_Elements.push(element);
-                continue;}
-            let skillData = result_Inherit.find(v=>v['스킬명'] === skillName);
-            let category = (typeof(skillData) === 'undefined'? '': skillData['분류']);
-
-            result_Unique.push(await makeCompleteSkillData(element, '고유', category, skillName));
-        }
-        //console.log(skipped_Skill_Elements);
-
-        //다 끝났으니 고유기 없음 클릭
-        await unique_Skill_Elements[0].click();
 
         /*for (let i=0; i<notHeal_unique_Skill_Elements.length; i++) {
             let element = notHeal_unique_Skill_Elements[i];
@@ -783,16 +817,23 @@ var main = function() {
         //전체 진행도 바 제거
         removeProgressBar(entire_progressbar);
 
+        //console.table(result_Final);
+        //console.log(currentSimulateCount);
+        let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText}`;
+        //let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText} (${userSelected_Stats.join(',')} 거리${userSelected_DistanceAptitude.innerText} 경기장${userSelected_SurfaceAptitude.innerText} 각질${userSelected_StrategyAptitude.innerText} 컨디션 ${userSelected_Mood.innerText})`;
+        //if (isUniqueSkillSelected) { filename += ` (고유 ${getProperSkillName(userSelectedUniqueSkill)})` }
+        //if (userSelectedNormalSkillList.length > 0) { filename += ` (계승 ${userSelectedNormalSkillList.join(',')})` }
+
+        let firstLine = `${userSelected_CourseLocation.innerText}\t${userSelected_CourseTypeDistance.innerText}\t${userSelected_CourseCondition.innerText}\t${userSelected_Strategy.innerText}\t${userSelected_Stats.join('/')}\t${userSelected_DistanceAptitude.innerText}\t${userSelected_SurfaceAptitude.innerText}\t${userSelected_StrategyAptitude.innerText}\t${userSelected_Mood.innerText}\t${userSelected_UniqueSkillLevel}`;
+        firstLine += isUniqueSkillSelected? `\t${getProperSkillName(userSelectedUniqueSkill)}`: '\t';
+        firstLine += userSelectedNormalSkillList.length > 0? `\t${userSelectedNormalSkillList.join(',')}`: '\t';
+        firstLine += '\n\n';
 
         let result_Final = [...result_Aptitude,
                             ...result_Passive,
                             ...result_Unique,
                             ...result_Normal,
                             ...result_Special];
-
-        //console.table(result_Final);
-        //console.log(currentSimulateCount);
-        let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText} (${userSelected_Stats.join(',')} 거리${userSelected_DistanceAptitude.innerText} 경기장${userSelected_SurfaceAptitude.innerText} 각질${userSelected_StrategyAptitude.innerText} 컨디션 ${userSelected_Mood.innerText})`;
 
         /*
         function downloadUnicodeCSV(filename, datasource) {
@@ -816,10 +857,10 @@ var main = function() {
         };*/
         //downloadUnicodeTSV(filename, result_Final);
 
-        function downloadDictionaryArrayAsTSV(dictionaryArray, filename) {
+        function downloadDictionaryArrayAsTSV(dictionaryArray, filename, firstLine) {
             const keys = Object.keys(dictionaryArray[0]);
             const rows = [keys, ...dictionaryArray.map(obj => keys.map(key => obj[key]))];
-            const tsv = rows.map(row => row.join('\t')).join('\n');
+            const tsv = firstLine + rows.map(row => row.join('\t')).join('\n');
             const blob = new Blob([tsv], { type: 'text/tab-separated-values' });
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
@@ -827,7 +868,7 @@ var main = function() {
             link.href = url;
             link.click();
         }
-        downloadDictionaryArrayAsTSV(result_Final,`${filename}.tsv`);
+        downloadDictionaryArrayAsTSV(result_Final,`${filename}.tsv`, firstLine);
     })();
 };
 
