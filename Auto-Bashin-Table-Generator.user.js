@@ -831,7 +831,7 @@ var main = function() {
         let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText}`;
         //let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText} (${userSelected_Stats.join(',')} 거리${userSelected_DistanceAptitude.innerText} 경기장${userSelected_SurfaceAptitude.innerText} 각질${userSelected_StrategyAptitude.innerText} 컨디션 ${userSelected_Mood.innerText})`;
         if (isUniqueSkillSelected) { filename += ` (고유 ${getProperSkillName(userSelectedUniqueSkill)})` }
-        if (userSelectedNormalSkillList.length > 0) { filename += ` (계승 ${userSelectedNormalSkillList.join(',')})` }
+        if (userSelectedNormalSkillList.length > 0) { filename += ` (일반 ${userSelectedNormalSkillList.join(',')})` }
 
         let firstLine = `${userSelected_CourseLocation.innerText}\t${userSelected_CourseTypeDistance.innerText}\t${userSelected_CourseCondition.innerText}\t${userSelected_Strategy.innerText}\t${userSelected_Stats.join('/')}\t${userSelected_DistanceAptitude.innerText}\t${userSelected_SurfaceAptitude.innerText}\t${userSelected_StrategyAptitude.innerText}\t${userSelected_Mood.innerText}\t${userSelected_UniqueSkillLevel}`;
         firstLine += isUniqueSkillSelected? `\t${getProperSkillName(userSelectedUniqueSkill)}`: '\t';
