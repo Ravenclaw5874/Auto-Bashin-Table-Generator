@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.5.1
+// @version      1.5.2
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,8 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.5.2 패시브 기준 스킬을 계절 우마무스메 -> 단독으로 변경.
+      전체 진행도에서 유저가 선택한 스킬을 제외하고 계산하도록 변경.
 1.5.1 파일명에 활성화한 스킬도 추가
 1.5 스킬 활성화 기능 추가. 유저가 돌린 조건을 첫째줄에 추가.
 
@@ -390,7 +392,13 @@ var main = function() {
             allSkill_Elements.push(...notHeal_unique_Skill_Elements); //유저가 고유기를 선택하지 않았으면 회복기 제외 고유기 추가
         }
 
+        //차집합
+        function difference(arr1, arr2) {
+            return arr1.filter(x => !arr2.includes(x));
+        }
+
         let allSkills = makeSkillNamesArray(allSkill_Elements);
+        allSkills = difference(allSkills, userSelectedSkillList); //전체 스킬에서 유저가 선택한 스킬 빼기
         //console.log(allSkills);
         allSkills.forEach((skillName)=>{
             let skillData = skillDB.find(v=>v['스킬명'] === skillName);
@@ -454,9 +462,9 @@ var main = function() {
         //녹딱 마신 계산
         let result_Passive = [];
 
-        let speed_rare = getElementByXpath('/html/body/div[1]/div[1]/form/div[21]/div[1]/div[2]/div/div[1]/div/label[2]/span');
+        let speed_rare = getElementByXpath('/html/body/div[1]/div[1]/form/div[21]/div[1]/div[2]/div/div[1]/div/label[3]/span');
         let power_rare = getElementByXpath('/html/body/div[1]/div[1]/form/div[21]/div[1]/div[2]/div/div[1]/div/label[9]/span');
-        let speed_normal = getElementByXpath('/html/body/div[1]/div[1]/form/div[21]/div[1]/div[2]/div/div[2]/div/label[2]/span');
+        let speed_normal = getElementByXpath('/html/body/div[1]/div[1]/form/div[21]/div[1]/div[2]/div/div[2]/div/label[3]/span');
         let power_normal = getElementByXpath('/html/body/div[1]/div[1]/form/div[21]/div[1]/div[2]/div/div[2]/div/label[11]/span');
 
 
