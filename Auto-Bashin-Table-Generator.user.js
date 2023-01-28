@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.5.2
+// @version      1.5.3
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.5.3 filename 사소한 변경.
 1.5.2 패시브 기준 스킬을 계절 우마무스메 -> 단독으로 변경.
       전체 진행도에서 유저가 선택한 스킬을 제외하고 계산하도록 변경.
 1.5.1 파일명에 활성화한 스킬도 추가
@@ -873,11 +874,11 @@ var main = function() {
             const blob = new Blob([tsv], { type: 'text/tab-separated-values' });
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');
-            link.download = filename;
+            link.download = `${filename}.tsv`;
             link.href = url;
             link.click();
         }
-        downloadDictionaryArrayAsTSV(result_Final,`${filename}.tsv`, firstLine);
+        downloadDictionaryArrayAsTSV(result_Final, filename, firstLine);
     })();
 };
 
