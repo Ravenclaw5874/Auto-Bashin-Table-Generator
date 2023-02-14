@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.6
+// @version      1.6.1
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.6.1 console.log 정리 및 테스트 버튼 제거
 1.6 클구리 : 777과 U=ma2를 모두 결과에 포함.
     수르젠 : 코너회복으로 시뮬. 777과 U=ma2는 특이사항.
 
@@ -956,7 +957,7 @@ var main = function() {
         removeProgressBar(entire_progressbar);
 
         //console.table(result_Final);
-        console.table(skillDB);
+        //console.table(skillDB);
         console.log(`실제 횟수 : ${currentSimulateCount}, once : ${currentOnceCount}, multiple : ${currentMultipleCount}`);
         let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText}`;
         //let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText} (${userSelected_Stats.join(',')} 거리${userSelected_DistanceAptitude.innerText} 경기장${userSelected_SurfaceAptitude.innerText} 각질${userSelected_StrategyAptitude.innerText} 컨디션 ${userSelected_Mood.innerText})`;
@@ -1052,7 +1053,7 @@ function checkURL() {
     //if ( ! /#\/champions-meeting.*/.test(location.hash) ) return;
     if (location.hash !== '#/champions-meeting') return;
     document.querySelector("#app > div.main-frame > form").appendChild(div);
-    document.querySelector("#app > div.main-frame > form").appendChild(button2);
+    //document.querySelector("#app > div.main-frame > form").appendChild(button2);
 
 }
 
