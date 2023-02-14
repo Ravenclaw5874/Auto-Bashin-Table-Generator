@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.6.1
+// @version      1.6.2
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.6.2 추입 하굣길 클구리 추가.
 1.6.1 console.log 정리 및 테스트 버튼 제거
 1.6 클구리 : 777과 U=ma2를 모두 결과에 포함.
     수르젠 : 코너회복으로 시뮬. 777과 U=ma2는 특이사항.
@@ -385,10 +386,11 @@ var main = function() {
         //전체 시뮬 횟수 계산
         let onceCount = 0;
         let multipleCount = 0;
-        onceCount += 1; //기준 타임 계산. simulate 함수를 사용하므로 이미 했지만 포함해야함.
+        onceCount += 1; //기준 타임 계산. simulate 함수에서 실제 카운트를 계산하므로, 이미 기준타임을 계산했지만 포함해야 정확한 %가 나옴.
         onceCount += (index_dist===1? 2: index_dist) * (index_surf===1? 2: index_surf); //적성
         onceCount += 4; //녹딱
         onceCount += (isUniqueSkillSelected? 4:8); //클구리,수르젠 고유/계승 2번씩 4 or 8번
+        if (userSelected_Strategy.innerText === '추입') {onceCount += (isUniqueSkillSelected? 1:2);} //추입이면 하굣길 클구리 추가
 
         let allSkill_Elements = [...speed_Rare_Elements,//일반, 계승기
                                  ...speed_Normal_Elements,
@@ -721,16 +723,26 @@ var main = function() {
                         let skillData_777 = JSON.parse(JSON.stringify( await makeCompleteSkillData(skipped_Skill_Elements[i], '고유', '복합', '성야의 미라클 런!', true) ));
                         skillData_777['스킬명'] = '성야의 미라클 런!(777)';
                         result_Special.push(skillData_777);
-                        //현재 상태 : 고유기, 중반 회복기 0,1, 스리 세븐 ON
-
                         await three_Seven_Element.click(); //스리 세븐 OFF
+                        //현재 상태 : 고유기, 중반 회복기 0,1 ON
+
                         await Uma2_Element.click(); //U=ma2 ON
                         let skillData_Uma2 = JSON.parse(JSON.stringify( await makeCompleteSkillData(skipped_Skill_Elements[i], '고유', '복합', '성야의 미라클 런!', true) ));
                         skillData_Uma2['스킬명'] = '성야의 미라클 런!(U=ma2)';
                         result_Special.push(skillData_Uma2);
-                        //현재 상태 : 고유기, 중반 회복기 0,1, U=ma2 ON
-
                         await Uma2_Element.click(); //U=ma2 OFF
+                        //현재 상태 : 고유기, 중반 회복기 0,1 ON
+
+                        //추입 하굣길
+                        if (userSelected_Strategy.innerText === '추입') {
+                            let wayHome_Element = heal_Normal_Parent.querySelector("input[value='5']");
+                            await wayHome_Element.click(); //하굣길 ON
+                            let skillData_wayHome = JSON.parse(JSON.stringify( await makeCompleteSkillData(skipped_Skill_Elements[i], '고유', '복합', '성야의 미라클 런!', true) ));
+                            skillData_wayHome['스킬명'] = '성야의 미라클 런!(하굣길)';
+                            result_Special.push(skillData_wayHome);
+                            await wayHome_Element.click(); //하굣길 OFF
+                        }
+
                         await mid_HealSkill_Elements[0].click(); //중반 회복기 0,1 OFF
                         await mid_HealSkill_Elements[1].click();
                         await unique_Skill_Elements[0].click(); //고유기 OFF
@@ -855,16 +867,28 @@ var main = function() {
                         let skillData_777 = JSON.parse(JSON.stringify( await makeCompleteSkillData(skipped_Skill_Elements[i], '계승', '복합', '성야의 미라클 런!', true) )); //스킬DB의 "값 복사".
                         skillData_777['스킬명'] = '성야의 미라클 런!(777)';
                         result_Special.push(skillData_777);
-                        //현재 상태 : 계승기, 중반 회복기 0,1, 스리 세븐 ON
-
                         await three_Seven_Element.click(); //스리 세븐 OFF
+                        //현재 상태 : 중반 회복기 0,1 ON
+
+
                         await Uma2_Element.click(); //U=ma2 ON
                         let skillData_Uma2 = JSON.parse(JSON.stringify( await makeCompleteSkillData(skipped_Skill_Elements[i], '계승', '복합', '성야의 미라클 런!', true) )); //스킬DB의 "값 복사".
                         skillData_Uma2['스킬명'] = '성야의 미라클 런!(U=ma2)';
                         result_Special.push(skillData_Uma2);
-                        //현재 상태 : 계승기, 중반 회복기 0,1, U=ma2 ON
-
                         await Uma2_Element.click(); //U=ma2 OFF
+                        //현재 상태 : 중반 회복기 0,1 ON
+
+
+                        //추입 하굣길
+                        if (userSelected_Strategy.innerText === '추입') {
+                            let wayHome_Element = heal_Normal_Parent.querySelector("input[value='5']");
+                            await wayHome_Element.click(); //하굣길 ON
+                            let skillData_wayHome = JSON.parse(JSON.stringify( await makeCompleteSkillData(skipped_Skill_Elements[i], '계승', '복합', '성야의 미라클 런!', true) ));
+                            skillData_wayHome['스킬명'] = '성야의 미라클 런!(하굣길)';
+                            result_Special.push(skillData_wayHome);
+                            await wayHome_Element.click(); //하굣길 OFF
+                        }
+
                         await mid_HealSkill_Elements[0].click(); //중반 회복기 0,1 OFF
                         await mid_HealSkill_Elements[1].click();
 
@@ -1017,8 +1041,8 @@ async function test() {
     let skillDB_csv = await $.get("https://raw.githubusercontent.com/Ravenclaw5874/Auto-Bashin-Table-Generator/main/%EC%8A%A4%ED%82%ACDB.csv");
     let skillDB = $.csv.toObjects(skillDB_csv);
     async function print(skillName, rarity) {
-    let skillData = skillDB.find(v=>v['스킬명'] === skillName && v['희귀'] === rarity);
-    return skillData;
+        let skillData = skillDB.find(v=>v['스킬명'] === skillName && v['희귀'] === rarity);
+        return skillData;
     }
     let test1 = {};
     let test2 = {};
