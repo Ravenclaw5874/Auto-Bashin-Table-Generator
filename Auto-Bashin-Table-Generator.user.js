@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.5.3
+// @version      1.6
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,9 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.6 클구리 : 777과 U=ma2를 모두 결과에 포함.
+    수르젠 : 코너회복으로 시뮬. 777과 U=ma2는 특이사항.
+
 1.5.3 filename 사소한 변경.
 1.5.2 패시브 기준 스킬을 계절 우마무스메 -> 단독으로 변경.
       전체 진행도에서 유저가 선택한 스킬을 제외하고 계산하도록 변경.
@@ -117,7 +120,8 @@ function simulate(once/*, isMulti = false*/) {
                 //전체 진행도 갱신
                 //if (userSimulateCount<=100) { currentSimulateCount+=1; }
                 //else { once? currentSimulateCount+=1: currentSimulateCount+= (userSimulateCount)/100; }
-                once? currentSimulateCount+=1: currentSimulateCount+=userSimulateCount;
+                once? currentOnceCount+=1: currentMultipleCount+=userSimulateCount;
+                currentSimulateCount = currentOnceCount + currentMultipleCount;
                 updateProgressBar( parseInt(currentSimulateCount/totalSimulateCount*100) );
 
                 //결과값 반환
@@ -222,6 +226,8 @@ function makeSkillNamesArray(skillElements) {
 let userSimulateCount=0; //유저가 설정한 시뮬 횟수
 let totalSimulateCount=0; //계산된 총 시뮬 횟수
 let currentSimulateCount=0; //현재 누적 시뮬 횟수
+let currentOnceCount=0;
+let currentMultipleCount=0;
 let entire_progressbar; //전체 진행 바 요소
 
 var main = function() {
@@ -231,10 +237,12 @@ var main = function() {
         userSimulateCount=0; //유저가 설정한 시뮬 횟수
         totalSimulateCount=0; //계산된 총 시뮬 횟수
         currentSimulateCount=0; //현재 누적 시뮬 횟수
+        currentOnceCount=0;
+        currentMultipleCount=0;
 
         //스킬 DB 불러오기
         let skillDB_csv = await $.get("https://raw.githubusercontent.com/Ravenclaw5874/Auto-Bashin-Table-Generator/main/%EC%8A%A4%ED%82%ACDB.csv");
-        let skillDB = $.csv.toObjects(skillDB_csv);
+        const skillDB = $.csv.toObjects(skillDB_csv);
         //console.table(skillDB);
 
         //시뮬 횟수 얼만지 가져오기
@@ -376,9 +384,10 @@ var main = function() {
         //전체 시뮬 횟수 계산
         let onceCount = 0;
         let multipleCount = 0;
+        onceCount += 1; //기준 타임 계산. simulate 함수를 사용하므로 이미 했지만 포함해야함.
         onceCount += (index_dist===1? 2: index_dist) * (index_surf===1? 2: index_surf); //적성
         onceCount += 4; //녹딱
-        onceCount += (isUniqueSkillSelected? 4:8); //클구리,수르젠 고유/계승 검증용 2번씩 4 or 8번
+        onceCount += (isUniqueSkillSelected? 4:8); //클구리,수르젠 고유/계승 2번씩 4 or 8번
 
         let allSkill_Elements = [...speed_Rare_Elements,//일반, 계승기
                                  ...speed_Normal_Elements,
@@ -398,18 +407,24 @@ var main = function() {
             return arr1.filter(x => !arr2.includes(x));
         }
 
+        let skipList_forCount = ['성야의 미라클 런!', '뭉클하게♪ Chu',
+                                 '聖夜のミラクルラン！', 'グッときて♪Chu'];
+
         let allSkills = makeSkillNamesArray(allSkill_Elements);
         allSkills = difference(allSkills, userSelectedSkillList); //전체 스킬에서 유저가 선택한 스킬 빼기
         //console.log(allSkills);
         allSkills.forEach((skillName)=>{
             let skillData = skillDB.find(v=>v['스킬명'] === skillName);
             if (typeof(skillData) === 'undefined') {multipleCount+=1;}
+            else if (skipList_forCount.includes(skillName)) {return;}
             else (skillData['즉발'] === '즉발'? onceCount+=1: multipleCount+=1);
         });
+        multipleCount += (isUniqueSkillSelected? 1:2); //수르젠 고유/계승
         //console.log(`즉발 ${onceCount}개 랜덤 ${multipleCount}개 ${userSimulateCount}회 시뮬`);
 
         totalSimulateCount = onceCount + multipleCount * (userSimulateCount + 5); //랜덤 스킬은 스킬 구간별 5회 추가됨.
-        //console.log(totalSimulateCount);
+        console.log(`예상 횟수 : ${totalSimulateCount}, once : ${onceCount + multipleCount * 5}, multiple : ${multipleCount*userSimulateCount}`);
+
 
 
         //적성 마신 계산
@@ -497,6 +512,7 @@ var main = function() {
 
             //스킬DB에 없는 스킬이면 데이터 새로 만듦
             if (typeof(skillData) === 'undefined') {
+                console.log(`DB에 없는 스킬 : ${getProperSkillName(skillElement)}`)
                 skillData = {};
                 skillData['스킬명'] = getProperSkillName(skillElement);
             }
@@ -507,7 +523,7 @@ var main = function() {
 
 
             //스킬 데이터에 즉발이라 되어있으면 한번, 랜덤 혹은 불명이면 n번
-            // 777 수르젠일 경우는 즉발이므로 한번.
+            // 777, U=ma2 등의 경우는 즉발이므로 한번.
             let once = (is777 || skillData['즉발'] === '즉발'? true: false);
 
 
@@ -576,7 +592,6 @@ var main = function() {
 
 
 
-
         //고유기 마신 계산
         let result_Unique = [];
 
@@ -632,7 +647,7 @@ var main = function() {
         //skipped_Skill_Elements 에 순서는 모르지만 6개 요소 다 들어가있음.
         //el-checkbox-button - 계승기, el-select-dropdown__item - 고유기
         //['성야의 미라클 런!', '뭉클하게♪ Chu', '꼬리의 폭포오르기', '꼬리 올리기']
-        //'聖夜のミラクルラン！', 'グッときて♪Chu', '尻尾の滝登り', '尻尾上がり'
+        //['聖夜のミラクルラン！', 'グッときて♪Chu', '尻尾の滝登り', '尻尾上がり']
 
         //중반 회복기 페이스 킵, 마군 속 냉정, 아오하루 점화*체력
         let heal_Normal_Parent = getElementByXpath("/html/body/div[1]/div[1]/form/div[21]/div[2]/div[2]/div/div[2]/div");
@@ -642,18 +657,24 @@ var main = function() {
         //스리세븐
         let three_Seven_Element = heal_Normal_Parent.querySelector("input[value='3']");
 
+        //U=ma2, 코너회복
+        let Uma2_Element = getElementByXpath("/html/body/div[1]/div[1]/form/div[21]/div[2]/div[2]/div/div[3]/div/label[1]/span");
+        let corner_heel_Element = getElementByXpath("/html/body/div[1]/div[1]/form/div[21]/div[2]/div[2]/div/div[2]/div/label[1]/span");
+
         //스킬 발동 구간 드롭다운 메뉴를 클릭해서 최하위로 보낸뒤 주소 가져옴.
         await document.querySelector("#app > div.main-frame > form > div:nth-child(28) > div:nth-child(5) > div > div").click();
         let randomPosition_Parent = document.querySelector("body > div.el-select-dropdown.el-popper:last-child > div > div > ul");
 
-        let threeSeven_time, non_ThreeSeven_time = 0;
+        //let threeSeven_time, non_ThreeSeven_time = 0;
 
         for(let i=0; i<skipped_Skill_Elements.length; i++) {
             //고유기
             if (skipped_Skill_Elements[i].className.includes('el-select-dropdown__item')) {
                 switch(getProperSkillName(skipped_Skill_Elements[i])) {
                     case '성야의 미라클 런!':
-                    case '聖夜のミラクルラン！':
+                    case '聖夜のミラクルラン！':{
+                        //스리 세븐 유효 무효인지 비교해서 하나만 추가
+                        /*
                         await clickElements(mid_HealSkill_Elements); //중반 회복기 3개 ON
                         await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
                         await skipped_Skill_Elements[i].click(); //고유기 ON
@@ -688,10 +709,40 @@ var main = function() {
                             await clickElements(mid_HealSkill_Elements); //중반 회복기 3개 OFF
                         }
                         await unique_Skill_Elements[0].click(); //고유기 OFF
+                        */
+
+                        //스리세븐, U=ma2 둘다 계산해서 둘다 추가
+                        await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
+
+                        await mid_HealSkill_Elements[0].click(); //중반 회복기 0,1 ON
+                        await mid_HealSkill_Elements[1].click();
+                        await three_Seven_Element.click(); //스리 세븐 ON
+                        let skillData_777 = JSON.parse(JSON.stringify( await makeCompleteSkillData(skipped_Skill_Elements[i], '고유', '복합', '성야의 미라클 런!', true) ));
+                        skillData_777['스킬명'] = '성야의 미라클 런!(777)';
+                        result_Special.push(skillData_777);
+                        //현재 상태 : 고유기, 중반 회복기 0,1, 스리 세븐 ON
+
+                        await three_Seven_Element.click(); //스리 세븐 OFF
+                        await Uma2_Element.click(); //U=ma2 ON
+                        let skillData_Uma2 = JSON.parse(JSON.stringify( await makeCompleteSkillData(skipped_Skill_Elements[i], '고유', '복합', '성야의 미라클 런!', true) ));
+                        skillData_Uma2['스킬명'] = '성야의 미라클 런!(U=ma2)';
+                        result_Special.push(skillData_Uma2);
+                        //현재 상태 : 고유기, 중반 회복기 0,1, U=ma2 ON
+
+                        await Uma2_Element.click(); //U=ma2 OFF
+                        await mid_HealSkill_Elements[0].click(); //중반 회복기 0,1 OFF
+                        await mid_HealSkill_Elements[1].click();
+                        await unique_Skill_Elements[0].click(); //고유기 OFF
+
+                        await randomPosition_Parent.childNodes[1].click(); //랜덤 복구
+
                         break;
+                    }
 
                     case '뭉클하게♪ Chu':
-                    case 'グッときて♪Chu':
+                    case 'グッときて♪Chu': {
+                        //스리 세븐 유효 무효인지 비교해서 하나만 추가
+                        /*
                         await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 ON
                         await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
                         await skipped_Skill_Elements[i].click(); //고유기 ON
@@ -724,7 +775,29 @@ var main = function() {
                             await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 OFF
                         }
                         await unique_Skill_Elements[0].click(); //고유기 OFF
+                        */
+
+                        //코너회복, 스리세븐, U=ma2 계산
+                        let threeSeven_time, Uma2_time = 0;
+                        await skipped_Skill_Elements[i].click(); //고유기 ON
+                        await three_Seven_Element.click(); //스리 세븐 ON
+                        threeSeven_time = await simulate(true);
+
+                        await three_Seven_Element.click(); //스리 세븐 OFF
+                        await Uma2_Element.click(); //U=ma2 ON
+                        Uma2_time = await simulate(true);
+
+                        await Uma2_Element.click(); //U=ma2 OFF
+                        await corner_heel_Element.click(); //코너회복 ON
+                        let skillData = await makeCompleteSkillData(skipped_Skill_Elements[i], '고유', '속도', '뭉클하게♪ Chu');
+                        skillData['특이사항'] = `코너 회복으로 시뮬. 스리세븐 ${calcBashin(BASETIME, threeSeven_time)[0]}, U=ma2 ${calcBashin(BASETIME, Uma2_time)[0]}.`;
+                        result_Special.push(skillData);
+
+                        await corner_heel_Element.click(); //코너회복 OFF
+                        await unique_Skill_Elements[0].click(); //고유기 OFF
+
                         break;
+                    }
                 }
             }
             //계승, 일반기
@@ -732,7 +805,9 @@ var main = function() {
             else {
                 switch(getProperSkillName(skipped_Skill_Elements[i])) {
                     case '성야의 미라클 런!':
-                    case '聖夜のミラクルラン！':
+                    case '聖夜のミラクルラン！': {
+                        //스리 세븐 유효 무효인지 비교해서 하나만 추가
+                        /*
                         await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
 
                         await clickElements(mid_HealSkill_Elements); //중반 회복기 3개 ON
@@ -768,9 +843,40 @@ var main = function() {
 
                             await clickElements(mid_HealSkill_Elements); //중반 회복기 3개 OFF
                         }
+                        */
+
+                        //스리세븐, U=ma2 둘다 계산해서 둘다 추가
+                        await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
+
+                        await mid_HealSkill_Elements[0].click(); //중반 회복기 0,1 ON
+                        await mid_HealSkill_Elements[1].click();
+                        await three_Seven_Element.click(); //스리 세븐 ON
+                        let skillData_777 = JSON.parse(JSON.stringify( await makeCompleteSkillData(skipped_Skill_Elements[i], '계승', '복합', '성야의 미라클 런!', true) )); //스킬DB의 "값 복사".
+                        skillData_777['스킬명'] = '성야의 미라클 런!(777)';
+                        result_Special.push(skillData_777);
+                        //현재 상태 : 계승기, 중반 회복기 0,1, 스리 세븐 ON
+
+                        await three_Seven_Element.click(); //스리 세븐 OFF
+                        await Uma2_Element.click(); //U=ma2 ON
+                        let skillData_Uma2 = JSON.parse(JSON.stringify( await makeCompleteSkillData(skipped_Skill_Elements[i], '계승', '복합', '성야의 미라클 런!', true) )); //스킬DB의 "값 복사".
+                        skillData_Uma2['스킬명'] = '성야의 미라클 런!(U=ma2)';
+                        result_Special.push(skillData_Uma2);
+                        //현재 상태 : 계승기, 중반 회복기 0,1, U=ma2 ON
+
+                        await Uma2_Element.click(); //U=ma2 OFF
+                        await mid_HealSkill_Elements[0].click(); //중반 회복기 0,1 OFF
+                        await mid_HealSkill_Elements[1].click();
+
+                        await randomPosition_Parent.childNodes[1].click(); //랜덤 복구
+
                         break;
+                    }
+
+
                     case '뭉클하게♪ Chu':
-                    case 'グッときて♪Chu':
+                    case 'グッときて♪Chu': {
+                        //스리 세븐 유효 무효인지 비교해서 하나만 추가
+                        /*
                         await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 ON
                         await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
                         await skipped_Skill_Elements[i].click(); //계승기 ON
@@ -803,7 +909,29 @@ var main = function() {
 
                             await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 OFF
                         }
+                        */
+
+                        //코너회복, 스리세븐, U=ma2 계산
+                        let threeSeven_time, Uma2_time = 0;
+                        await skipped_Skill_Elements[i].click(); //계승기 ON
+                        await three_Seven_Element.click(); //스리 세븐 ON
+                        threeSeven_time = await simulate(true);
+
+                        await three_Seven_Element.click(); //스리 세븐 OFF
+                        await Uma2_Element.click(); //U=ma2 ON
+                        Uma2_time = await simulate(true);
+
+                        await Uma2_Element.click(); //U=ma2 OFF
+                        await corner_heel_Element.click(); //코너회복 ON
+                        await skipped_Skill_Elements[i].click(); //계승기 OFF
+                        let skillData = await makeCompleteSkillData(skipped_Skill_Elements[i], '계승', '속도', '뭉클하게♪ Chu');
+                        skillData['특이사항'] = `코너 회복으로 시뮬. 스리세븐 ${calcBashin(BASETIME, threeSeven_time)[0]}, U=ma2 ${calcBashin(BASETIME, Uma2_time)[0]}.`;
+                        result_Special.push(skillData);
+
+                        await corner_heel_Element.click(); //코너회복 OFF
+
                         break;
+                    }
 
                         //얘네 둘은 위 방식으로 스리세븐이 유효인지 아닌지 알 수 없으므로 그냥 중반 회복기 3개로 계산.
                         //어차피 위에 두개랑은 다르게 회복기만 조건이 아니라 '중반기'가 조건이므로 스리세븐으로 트리거하기 어려움.
@@ -828,7 +956,8 @@ var main = function() {
         removeProgressBar(entire_progressbar);
 
         //console.table(result_Final);
-        //console.log(currentSimulateCount);
+        console.table(skillDB);
+        console.log(`실제 횟수 : ${currentSimulateCount}, once : ${currentOnceCount}, multiple : ${currentMultipleCount}`);
         let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText}`;
         //let filename = `${userSelected_Strategy.innerText} - ${userSelected_CourseLocation.innerText} ${userSelected_CourseTypeDistance.innerText} ${userSelected_CourseCondition.innerText} (${userSelected_Stats.join(',')} 거리${userSelected_DistanceAptitude.innerText} 경기장${userSelected_SurfaceAptitude.innerText} 각질${userSelected_StrategyAptitude.innerText} 컨디션 ${userSelected_Mood.innerText})`;
         if (isUniqueSkillSelected) { filename += ` (고유 ${getProperSkillName(userSelectedUniqueSkill)})` }
@@ -884,7 +1013,21 @@ var main = function() {
 
 
 async function test() {
-    createProgressBar();
+    let skillDB_csv = await $.get("https://raw.githubusercontent.com/Ravenclaw5874/Auto-Bashin-Table-Generator/main/%EC%8A%A4%ED%82%ACDB.csv");
+    let skillDB = $.csv.toObjects(skillDB_csv);
+    async function print(skillName, rarity) {
+    let skillData = skillDB.find(v=>v['스킬명'] === skillName && v['희귀'] === rarity);
+    return skillData;
+    }
+    let test1 = {};
+    let test2 = {};
+    test1 = await print('성야의 미라클 런!','계승');
+    console.log(test1);
+    test1['스킬명'] = '성야의 미라클 런!(1)';
+    console.table(skillDB);
+    test2 = await print('성야의 미라클 런!','계승');
+    console.log(test2);
+    test2['스킬명'] = '성야의 미라클 런!(2)';
 }
 
 let button = document.createElement("button");
@@ -909,7 +1052,7 @@ function checkURL() {
     //if ( ! /#\/champions-meeting.*/.test(location.hash) ) return;
     if (location.hash !== '#/champions-meeting') return;
     document.querySelector("#app > div.main-frame > form").appendChild(div);
-    //document.querySelector("#app > div.main-frame > form").appendChild(button2);
+    document.querySelector("#app > div.main-frame > form").appendChild(button2);
 
 }
 
