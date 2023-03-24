@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.6.2
+// @version      1.6.3
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.6.3 클구리 두근두근 추가.
 1.6.2 추입 하굣길 클구리 추가.
 1.6.1 console.log 정리 및 테스트 버튼 제거
 1.6 클구리 : 777과 U=ma2를 모두 결과에 포함.
@@ -660,8 +661,9 @@ var main = function() {
         //스리세븐
         let three_Seven_Element = heal_Normal_Parent.querySelector("input[value='3']");
 
-        //U=ma2, 코너회복
+        //U=ma2, 두근두근, 코너회복
         let Uma2_Element = getElementByXpath("/html/body/div[1]/div[1]/form/div[21]/div[2]/div[2]/div/div[3]/div/label[1]/span");
+        let Wakuwaku_Element = getElementByXpath("/html/body/div[1]/div[1]/form/div[21]/div[2]/div[2]/div/div[3]/div/label[3]/span");
         let corner_heel_Element = getElementByXpath("/html/body/div[1]/div[1]/form/div[21]/div[2]/div[2]/div/div[2]/div/label[1]/span");
 
         //스킬 발동 구간 드롭다운 메뉴를 클릭해서 최하위로 보낸뒤 주소 가져옴.
@@ -715,7 +717,7 @@ var main = function() {
                         */
 
                         //스리세븐, U=ma2 둘다 계산해서 둘다 추가
-                        await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
+                        await randomPosition_Parent.childNodes[2].click(); //중반 회복기가 최속으로 터지도록, 스킬 발동 구간 가장 빠르게
 
                         await mid_HealSkill_Elements[0].click(); //중반 회복기 0,1 ON
                         await mid_HealSkill_Elements[1].click();
@@ -733,6 +735,13 @@ var main = function() {
                         await Uma2_Element.click(); //U=ma2 OFF
                         //현재 상태 : 고유기, 중반 회복기 0,1 ON
 
+                        await Wakuwaku_Element.click(); //두근두근 ON
+                        let skillData_Wakuwaku = JSON.parse(JSON.stringify( await makeCompleteSkillData(skipped_Skill_Elements[i], '고유', '복합', '성야의 미라클 런!', true) ));
+                        skillData_Wakuwaku['스킬명'] = '성야의 미라클 런!(두근두근)';
+                        result_Special.push(skillData_Wakuwaku);
+                        await Wakuwaku_Element.click(); //두근두근 OFF
+                        //현재 상태 : 고유기, 중반 회복기 0,1 ON
+
                         //추입 하굣길
                         if (userSelected_Strategy.innerText === '추입') {
                             let wayHome_Element = heal_Normal_Parent.querySelector("input[value='5']");
@@ -747,7 +756,7 @@ var main = function() {
                         await mid_HealSkill_Elements[1].click();
                         await unique_Skill_Elements[0].click(); //고유기 OFF
 
-                        await randomPosition_Parent.childNodes[1].click(); //랜덤 복구
+                        await randomPosition_Parent.childNodes[1].click(); //스킬 발동 구간 랜덤으로 복구
 
                         break;
                     }
@@ -859,7 +868,7 @@ var main = function() {
                         */
 
                         //스리세븐, U=ma2 둘다 계산해서 둘다 추가
-                        await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
+                        await randomPosition_Parent.childNodes[2].click(); //중반 회복기가 최속으로 터지도록, 스킬 발동 구간 가장 빠르게
 
                         await mid_HealSkill_Elements[0].click(); //중반 회복기 0,1 ON
                         await mid_HealSkill_Elements[1].click();
@@ -878,6 +887,13 @@ var main = function() {
                         await Uma2_Element.click(); //U=ma2 OFF
                         //현재 상태 : 중반 회복기 0,1 ON
 
+                        await Wakuwaku_Element.click(); //두근두근 ON
+                        let skillData_Wakuwaku = JSON.parse(JSON.stringify( await makeCompleteSkillData(skipped_Skill_Elements[i], '계승', '복합', '성야의 미라클 런!', true) )); //스킬DB의 "값 복사".
+                        skillData_Wakuwaku['스킬명'] = '성야의 미라클 런!(두근두근)';
+                        result_Special.push(skillData_Wakuwaku);
+                        await Wakuwaku_Element.click(); //두근두근 OFF
+                        //현재 상태 : 고유기, 중반 회복기 0,1 ON
+
 
                         //추입 하굣길
                         if (userSelected_Strategy.innerText === '추입') {
@@ -892,7 +908,7 @@ var main = function() {
                         await mid_HealSkill_Elements[0].click(); //중반 회복기 0,1 OFF
                         await mid_HealSkill_Elements[1].click();
 
-                        await randomPosition_Parent.childNodes[1].click(); //랜덤 복구
+                        await randomPosition_Parent.childNodes[1].click(); //스킬 발동 구간 랜덤으로 복구
 
                         break;
                     }
