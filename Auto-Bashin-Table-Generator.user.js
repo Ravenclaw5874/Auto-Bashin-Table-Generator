@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      1.6.3
+// @version      1.6.4
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+1.6.4 클구리 말괄량이 추가. 타임을 비교해서 하나만 추가하던 예전 방식 주석 제거.
 1.6.3 클구리 두근두근 추가.
 1.6.2 추입 하굣길 클구리 추가.
 1.6.1 console.log 정리 및 테스트 버튼 제거
@@ -678,44 +679,6 @@ var main = function() {
                 switch(getProperSkillName(skipped_Skill_Elements[i])) {
                     case '성야의 미라클 런!':
                     case '聖夜のミラクルラン！':{
-                        //스리 세븐 유효 무효인지 비교해서 하나만 추가
-                        /*
-                        await clickElements(mid_HealSkill_Elements); //중반 회복기 3개 ON
-                        await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
-                        await skipped_Skill_Elements[i].click(); //고유기 ON
-                        non_ThreeSeven_time = await simulate(true);
-                        //현재 고유기, 중반 회복기 0,1,2 ON
-
-                        await mid_HealSkill_Elements[2].click(); //중반 회복기 2 OFF
-                        await three_Seven_Element.click(); //스리 세븐 ON
-                        threeSeven_time = await simulate(true);
-                        //현재 고유기, 중반 회복기 0,1, 스리 세븐 ON
-
-                        await randomPosition_Parent.childNodes[1].click(); //랜덤
-
-                        //스리 세븐 유효. 접속인지는 알 수 없음.
-                        if (non_ThreeSeven_time > threeSeven_time) {
-                            let skillData = await makeCompleteSkillData(skipped_Skill_Elements[i], '고유', '복합', '성야의 미라클 런!');
-                            skillData['특이사항'] = `중반 회복기 2개, 스리 세븐으로 시뮬. 스리 세븐 트리거시 ${calcBashin(BASETIME, threeSeven_time)[0]}.`;
-                            result_Special.push(skillData);
-
-                            await three_Seven_Element.click(); //스리 세븐 OFF
-                            await mid_HealSkill_Elements[0].click();
-                            await mid_HealSkill_Elements[1].click(); //중반 회복기 0,1 OFF
-                        }
-                        //스리 세븐 무효.
-                        else {
-                            await three_Seven_Element.click(); //스리 세븐 OFF
-                            await mid_HealSkill_Elements[2].click(); //중반 회복기 2 ON
-                            let skillData = await makeCompleteSkillData(skipped_Skill_Elements[i], '고유', '복합', '성야의 미라클 런!');
-                            skillData['특이사항'] = '중반 회복기 3개로 시뮬. 스리 세븐 무효.';
-                            result_Special.push(skillData);
-
-                            await clickElements(mid_HealSkill_Elements); //중반 회복기 3개 OFF
-                        }
-                        await unique_Skill_Elements[0].click(); //고유기 OFF
-                        */
-
                         //스리세븐, U=ma2 둘다 계산해서 둘다 추가
                         await randomPosition_Parent.childNodes[2].click(); //중반 회복기가 최속으로 터지도록, 스킬 발동 구간 가장 빠르게
 
@@ -752,6 +715,16 @@ var main = function() {
                             await wayHome_Element.click(); //하굣길 OFF
                         }
 
+                        //도주 기세에 맡기기(말괄량이)
+                        if (userSelected_Strategy.innerText === '도주') {
+                            let jyajyaUma_Element = heal_Normal_Parent.querySelector("input[value='6']");
+                            await jyajyaUma_Element.click(); //기세 ON
+                            let skillData_jyajyaUma = JSON.parse(JSON.stringify( await makeCompleteSkillData(skipped_Skill_Elements[i], '고유', '복합', '성야의 미라클 런!', true) ));
+                            skillData_jyajyaUma['스킬명'] = '성야의 미라클 런!(말괄량이)';
+                            result_Special.push(skillData_jyajyaUma);
+                            await jyajyaUma_Element.click(); //기세 OFF
+                        }
+
                         await mid_HealSkill_Elements[0].click(); //중반 회복기 0,1 OFF
                         await mid_HealSkill_Elements[1].click();
                         await unique_Skill_Elements[0].click(); //고유기 OFF
@@ -763,42 +736,6 @@ var main = function() {
 
                     case '뭉클하게♪ Chu':
                     case 'グッときて♪Chu': {
-                        //스리 세븐 유효 무효인지 비교해서 하나만 추가
-                        /*
-                        await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 ON
-                        await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
-                        await skipped_Skill_Elements[i].click(); //고유기 ON
-                        non_ThreeSeven_time = await simulate(true);
-                        //현재 고유기, 중반 회복기 0 ON
-
-                        await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 OFF
-                        await three_Seven_Element.click(); //스리 세븐 ON
-                        threeSeven_time = await simulate(true);
-                        //현재 고유기, 스리 세븐 ON
-
-                        await randomPosition_Parent.childNodes[1].click(); //랜덤
-
-                        //스리 세븐 유효. 접속인지는 알 수 없음.
-                        if (non_ThreeSeven_time > threeSeven_time) {
-                            let skillData = await makeCompleteSkillData(skipped_Skill_Elements[i], '고유', '속도', '뭉클하게♪ Chu', true);
-                            skillData['특이사항'] = '스리 세븐으로 시뮬.';
-                            result_Special.push(skillData);
-
-                            await three_Seven_Element.click(); //스리 세븐 OFF
-                        }
-                        //스리 세븐 무효.
-                        else {
-                            await three_Seven_Element.click(); //스리 세븐 OFF
-                            await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 ON
-                            let skillData = await makeCompleteSkillData(skipped_Skill_Elements[i], '고유', '속도', '뭉클하게♪ Chu');
-                            skillData['특이사항'] = `중반 회복기로 시뮬. 최속 발동시 ${calcBashin(BASETIME, non_ThreeSeven_time)[0]}.`;
-                            result_Special.push(skillData);
-
-                            await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 OFF
-                        }
-                        await unique_Skill_Elements[0].click(); //고유기 OFF
-                        */
-
                         //코너회복, 스리세븐, U=ma2 계산
                         let threeSeven_time, Uma2_time = 0;
                         await skipped_Skill_Elements[i].click(); //고유기 ON
@@ -828,45 +765,6 @@ var main = function() {
                 switch(getProperSkillName(skipped_Skill_Elements[i])) {
                     case '성야의 미라클 런!':
                     case '聖夜のミラクルラン！': {
-                        //스리 세븐 유효 무효인지 비교해서 하나만 추가
-                        /*
-                        await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
-
-                        await clickElements(mid_HealSkill_Elements); //중반 회복기 3개 ON
-                        await skipped_Skill_Elements[i].click(); //계승기 ON
-                        non_ThreeSeven_time = await simulate(true);
-                        //현재 계승기, 중반 회복기 0,1,2 ON
-
-                        await mid_HealSkill_Elements[2].click(); //중반 회복기 2 OFF
-                        await three_Seven_Element.click(); //스리 세븐 ON
-                        threeSeven_time = await simulate(true);
-                        //현재 계승기, 중반 회복기 0,1, 스리 세븐 ON
-
-                        await randomPosition_Parent.childNodes[1].click(); //랜덤
-                        await skipped_Skill_Elements[i].click(); //계승기 OFF
-
-                        //스리 세븐 유효. 접속인지는 알 수 없음.
-                        if (non_ThreeSeven_time > threeSeven_time) {
-                            let skillData = await makeCompleteSkillData(skipped_Skill_Elements[i], '계승', '복합', '성야의 미라클 런!');
-                            skillData['특이사항'] = `중반 회복기 2개, 스리 세븐으로 시뮬. 스리 세븐 트리거시 ${calcBashin(BASETIME, threeSeven_time)[0]}.`;
-                            result_Special.push(skillData);
-
-                            await three_Seven_Element.click(); //스리 세븐 OFF
-                            await mid_HealSkill_Elements[0].click();
-                            await mid_HealSkill_Elements[1].click(); //중반 회복기 0,1 OFF
-                        }
-                        //스리 세븐 무효.
-                        else {
-                            await three_Seven_Element.click(); //스리 세븐 OFF
-                            await mid_HealSkill_Elements[2].click(); //중반 회복기 2 ON
-                            let skillData = await makeCompleteSkillData(skipped_Skill_Elements[i], '계승', '복합', '성야의 미라클 런!');
-                            skillData['특이사항'] = '중반 회복기 3개로 시뮬. 스리 세븐 무효.';
-                            result_Special.push(skillData);
-
-                            await clickElements(mid_HealSkill_Elements); //중반 회복기 3개 OFF
-                        }
-                        */
-
                         //스리세븐, U=ma2 둘다 계산해서 둘다 추가
                         await randomPosition_Parent.childNodes[2].click(); //중반 회복기가 최속으로 터지도록, 스킬 발동 구간 가장 빠르게
 
@@ -905,6 +803,16 @@ var main = function() {
                             await wayHome_Element.click(); //하굣길 OFF
                         }
 
+                        //도주 기세에 맡기기(말괄량이)
+                        if (userSelected_Strategy.innerText === '도주') {
+                            let jyajyaUma_Element = heal_Normal_Parent.querySelector("input[value='6']");
+                            await jyajyaUma_Element.click(); //기세 ON
+                            let skillData_jyajyaUma = JSON.parse(JSON.stringify( await makeCompleteSkillData(skipped_Skill_Elements[i], '계승', '복합', '성야의 미라클 런!', true) ));
+                            skillData_jyajyaUma['스킬명'] = '성야의 미라클 런!(말괄량이)';
+                            result_Special.push(skillData_jyajyaUma);
+                            await jyajyaUma_Element.click(); //기세 OFF
+                        }
+
                         await mid_HealSkill_Elements[0].click(); //중반 회복기 0,1 OFF
                         await mid_HealSkill_Elements[1].click();
 
@@ -913,45 +821,8 @@ var main = function() {
                         break;
                     }
 
-
                     case '뭉클하게♪ Chu':
                     case 'グッときて♪Chu': {
-                        //스리 세븐 유효 무효인지 비교해서 하나만 추가
-                        /*
-                        await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 ON
-                        await randomPosition_Parent.childNodes[2].click(); //가장 빠르게
-                        await skipped_Skill_Elements[i].click(); //계승기 ON
-                        non_ThreeSeven_time = await simulate(true);
-                        //현재 계승기, 중반 회복기 0 ON
-
-                        await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 OFF
-                        await three_Seven_Element.click(); //스리 세븐 ON
-                        threeSeven_time = await simulate(true);
-                        //현재 계승기, 스리 세븐 ON
-
-                        await randomPosition_Parent.childNodes[1].click(); //랜덤
-                        await skipped_Skill_Elements[i].click(); //계승기 OFF
-
-                        //스리 세븐 유효. 접속인지는 알 수 없음.
-                        if (non_ThreeSeven_time > threeSeven_time) {
-                            let skillData = await makeCompleteSkillData(skipped_Skill_Elements[i], '계승', '속도', '뭉클하게♪ Chu', true);
-                            skillData['특이사항'] = '스리 세븐으로 시뮬.';
-                            result_Special.push(skillData);
-
-                            await three_Seven_Element.click(); //스리 세븐 OFF
-                        }
-                        //스리 세븐 무효.
-                        else {
-                            await three_Seven_Element.click(); //스리 세븐 OFF
-                            await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 ON
-                            let skillData = await makeCompleteSkillData(skipped_Skill_Elements[i], '계승', '속도', '뭉클하게♪ Chu');
-                            skillData['특이사항'] = `중반 회복기로 시뮬. 최속 발동시 ${calcBashin(BASETIME, non_ThreeSeven_time)[0]}.`;
-                            result_Special.push(skillData);
-
-                            await mid_HealSkill_Elements[0].click(); //중반 회복기 1개 OFF
-                        }
-                        */
-
                         //코너회복, 스리세븐, U=ma2 계산
                         let threeSeven_time, Uma2_time = 0;
                         await skipped_Skill_Elements[i].click(); //계승기 ON
