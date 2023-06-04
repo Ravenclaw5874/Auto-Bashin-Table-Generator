@@ -1,0 +1,196 @@
+/**
+ * @OnlyCurrentDoc
+ */
+
+function 마신표제작함수() {
+  var backdataSheets = getSheetsByName_(' 백 데이터');
+  for (var i=backdataSheets.length-1; i>=0; i--) {
+    var ss = SpreadsheetApp.getActive();
+    var basicSheet = ss.getSheetByName('양식');
+    var newSheetName = backdataSheets[i].getName().replace(' 백 데이터','');
+    try {
+      SpreadsheetApp.getActiveSpreadsheet().insertSheet(newSheetName, 0,{template: basicSheet});
+    }
+    catch (e) {
+      Browser.msgBox(e.message.replace('다른 이름을 입력해 주세요.','건너뜁니다.'));
+      continue;
+    }
+    try {
+      각질마신표제작_(backdataSheets[i].getName(),newSheetName);
+    }
+    catch (e) {
+      Browser.msgBox(`${e.message}. ${backdataSheets[i].getName()} 시트가 비어있습니다. 건너뜁니다.`);
+      var newSheet = ss.getSheetByName(newSheetName);
+      ss.deleteSheet(newSheet);
+    }
+  }
+}
+
+//이름에 name을 포함하는 시트들 반환.
+function getSheetsByName_(name) {
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  
+  var sheets = spreadsheet.getSheets();
+  
+  var filteredSheets = sheets.filter(function(sheet) {
+    return sheet.getName().includes(name);
+  });
+  
+  return filteredSheets;
+}
+
+function 각질마신표제작_(sourceSheetName, targetSheetName) {
+  var sourceSheet = SpreadsheetApp.getActive().getSheetByName(sourceSheetName);
+  var targetSheet = SpreadsheetApp.getActive().getSheetByName(targetSheetName);
+  var sourceRange = sourceSheet.getDataRange().getValues();
+  var targetMap = [{category:'속도', rarity1:'레어/상위', rarity2:'일반/하위',   targetCell:'B33'},
+                   {category:'속도', rarity1:'계승',     rarity2:'placeholder',targetCell:'B31'},
+                   {category:'속도', rarity1:'고유',     rarity2:'placeholder',targetCell:'B29'},
+                   {category:'복합', rarity1:'레어/상위', rarity2:'일반/하위',   targetCell:'B25'},
+                   {category:'복합', rarity1:'계승',     rarity2:'placeholder',targetCell:'B23'},
+                   {category:'복합', rarity1:'고유',     rarity2:'placeholder',targetCell:'B21'},
+                   {category:'가속', rarity1:'레어/상위', rarity2:'일반/하위',   targetCell:'B17'},
+                   {category:'가속', rarity1:'계승',     rarity2:'placeholder',targetCell:'B15'},
+                   {category:'가속', rarity1:'고유',     rarity2:'placeholder',targetCell:'B13'},
+                   {category:'녹딱', rarity1:'레어/상위', rarity2:'일반/하위',   targetCell:'B9'},
+                   {category:'적성', rarity1:'적성',     rarity2:'placeholder',targetCell:'B5'}];
+  
+  {//경기장, 스탯 정보 채우기
+    var simulateOptionsArr =  sourceSheet.getRange('A1:L1').getValues()[0];
+    var parts = simulateOptionsArr[1].split(' ');
+    var meter = parseInt(parts[1].match(/\d+/)[0]);
+    var distanceCategory = getDistanceCategory_(meter);
+    var simulateOptions = {장소:simulateOptionsArr[0],
+                          마장:parts[0],
+                          거리:meter,
+                          거리분류:distanceCategory,
+                          상태:simulateOptionsArr[2],
+                          각질:simulateOptionsArr[3],
+                          스탯:simulateOptionsArr[4],
+                          거리적성:simulateOptionsArr[5],
+                          마장적성:simulateOptionsArr[6],
+                          각질적성:simulateOptionsArr[7],
+                          컨디션:simulateOptionsArr[8],
+                          고유기레벨:simulateOptionsArr[9],
+                          고유기:simulateOptionsArr[10],
+                          일반기:simulateOptionsArr[11]};
+
+    var a1 = targetSheet.getRange('A1');
+    var a2 = targetSheet.getRange('A2');
+    var a38 = targetSheet.getRange('A38');
+    var a39 = targetSheet.getRange('A39');
+
+    a1.setValue( a1.getValue().replace('AA',simulateOptions.장소)
+                              .replace('BB',simulateOptions.마장)
+                              .replace('####',simulateOptions.거리)
+                              .replace('CC',simulateOptions.거리분류)
+                              .replace('DD',simulateOptions.상태)
+              );
+    a2.setValue( a2.getValue().replace('EE',simulateOptions.각질)
+                + (simulateOptions.고유기?` (고유 : ${simulateOptions.고유기})`:'')
+                + (simulateOptions.일반기?` (일반 : ${simulateOptions.일반기})`:'')
+                );
+    {//앞 두글자 빨간색
+      var rich = SpreadsheetApp.newRichTextValue();
+      var red = SpreadsheetApp.newTextStyle().setForegroundColor('red').build();
+      rich.setText(a2.getValue());
+      rich.setTextStyle(0,2,red);
+      a2.setRichTextValue(rich.build());
+    }
+
+    a38.setValue( a38.getValue().replace('##/##/##/##/##',simulateOptions.스탯)
+                                .replace('FF', `${simulateOptions.거리분류}${simulateOptions.거리적성}`)
+                                .replace('GG', `${simulateOptions.마장}${simulateOptions.마장적성}`)
+                                .replace('HH', `${simulateOptions.각질}${simulateOptions.각질적성}`)
+                                .replace('II', simulateOptions.컨디션)
+                );
+    a39.setValue( a39.getValue().replace('#',simulateOptions.고유기레벨));
+  }
+
+  //데이터 채우기
+  for (var i=0; i<targetMap.length; i++) {
+    var rowsToCopy = filter_(sourceRange, targetMap[i].category, targetMap[i].rarity1, targetMap[i].rarity2)
+    insertToTargetCell_(targetSheet,targetMap[i].targetCell,rowsToCopy);
+  }
+}
+
+//거리 넣으면 단마중장 분류해줌.
+function getDistanceCategory_(meter) {
+  if (meter < 1600) {return '단거리';}
+  else if (meter < 2000) {return '마일';}
+  else if (meter <= 2400) {return '중거리';}
+  else {return '장거리';}
+}
+
+//targetSheet의 targetCell에다 rowsToCopy를 끼워넣는 함수.
+function insertToTargetCell_(targetSheet,targetCell,rowsToCopy) {
+  var cell = targetSheet.getRange(targetCell);
+  var row = cell.getRow();
+  var col = cell.getColumn();
+
+  
+  if (rowsToCopy.length > 0) {
+    targetSheet.insertRowsAfter(row, rowsToCopy.length-1);
+    var destinationRange = targetSheet.getRange(row, col, rowsToCopy.length, rowsToCopy[0].length);
+    destinationRange.setValues(rowsToCopy);
+  }
+  else {
+    targetSheet.deleteRows(row,2);
+  }
+}
+
+//sourceRange에서 category와 rarity가 일치하는 row들을 정렬해서 반환하는 함수.
+function filter_(sourceRange, category, rarity1, rarity2 = 'placeholder') {
+  var rowsToCopy = [];
+  var skip2Star = SpreadsheetApp.getActive().getSheetByName('양식').getRange("I1").getValue();
+
+  for (var i = 0; i < sourceRange.length; i++) {
+    if (sourceRange[i][0] == rarity1 || sourceRange[i][0] == rarity2) {
+      if (sourceRange[i][1] == category) {
+        if (skip2Star && sourceRange[i][4].includes("2성")) {continue;}
+        sourceRange[i].splice(0,2); //첫 두 Column 제거
+        rowsToCopy.push(sourceRange[i]);
+      }
+    }
+  }
+  rowsToCopy = sortArray_(rowsToCopy);
+  return rowsToCopy;
+}
+
+//평균마신, 최대마신, 최소마신, 이름(오름차순)으로 정렬.
+function sortArray_(array) {
+  array.sort(function(row1, row2) {
+    // Compare column A in descending order
+    if (row1[0] < row2[0]) {
+      return 1;
+    } else if (row1[0] > row2[0]) {
+      return -1;
+    }
+    
+    // If column A is the same, compare column D in descending order
+    if (row1[3] < row2[3]) {
+      return 1;
+    } else if (row1[3] > row2[3]) {
+      return -1;
+    }
+    
+    // If column A and D are the same, compare column E in descending order
+    if (row1[4] < row2[4]) {
+      return 1;
+    } else if (row1[4] > row2[4]) {
+      return -1;
+    }
+    
+    // If column A, D, and E are the same, compare column B in ascending order
+    if (row1[1] < row2[1]) {
+      return -1;
+    } else if (row1[1] > row2[1]) {
+      return 1;
+    }
+    
+    // If all columns are the same, return 0
+    return 0;
+  });
+  return array;
+}
+
