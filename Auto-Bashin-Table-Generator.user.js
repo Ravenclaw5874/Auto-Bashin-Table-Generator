@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      2.0
+// @version      2.0.1
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -13,6 +13,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+2.0.1 유저가 선택한 스킬의 하위 스킬도 스킵
 2.0 1주년 대응
 
 1.6.4 클구리 말괄량이 추가. 타임을 비교해서 하나만 추가하던 예전 방식 주석 제거.
@@ -535,20 +536,31 @@ var main = async function (current, all) {
         let skillName = getProperSkillName(e)
         let skillData = skillDB.find(v => v['스킬명(한섭 시뮬)'] === skillName);
         let upperSkillNameArray = skillDB.filter(v => v['그룹'] === skillData['그룹'] && v['단계'] > skillData['단계']).map(v => v['스킬명(한섭 시뮬)']);
+        let lowerSkillNameArray = skillDB.filter(v => v['그룹'] === skillData['그룹'] && v['단계'] < skillData['단계']).map(v => v['스킬명(한섭 시뮬)']);
 
         normalRareMap.push({
-            '하위 스킬 이름': skillName,
-            '하위 스킬 요소': e,
-            '상위 스킬 이름 배열': upperSkillNameArray
+            '스킬 이름': skillName,
+            '스킬 요소': e,
+            '상위 스킬 이름 배열': upperSkillNameArray,
+            '하위 스킬 이름 배열': lowerSkillNameArray
         });
     });
 
     //스킬이 유저가 선택한 스킬의 상위 스킬인지 확인하고 맞다면 하위 스킬의 요소를 반환
     function checkUpperSkillandReturnLowerSkillElement(upperSkillName) {
-        normalRareMap.forEach(d => { d['상위 스킬 이름 배열'].includes(upperSkillName) })
+        //normalRareMap.forEach(d => { d['상위 스킬 이름 배열'].includes(upperSkillName) })
         for (let i = 0; i < normalRareMap.length; i++) {
             if (normalRareMap[i]['상위 스킬 이름 배열'].includes(upperSkillName)) {
-                return normalRareMap[i]['하위 스킬 요소'];
+                return normalRareMap[i]['스킬 요소'];
+            }
+        }
+        return false;
+    }
+
+    function isLowerSkillOfUserSelected(lowerSkillName) {
+        for (let i = 0; i < normalRareMap.length; i++) {
+            if (normalRareMap[i]['하위 스킬 이름 배열'].includes(lowerSkillName)) {
+                return true;
             }
         }
         return false;
@@ -941,6 +953,11 @@ var main = async function (current, all) {
 
             //계산하지 않을 스킬 스킵
             if (userSelected['전체 스킬'].includes(skillName)) {
+                continue;
+            }
+
+            //유저가 선택한 스킬의 하위 스킬이면 스킵
+            if (isLowerSkillOfUserSelected(skillName)) {
                 continue;
             }
             //나중에 계산할 스킬 스킵
