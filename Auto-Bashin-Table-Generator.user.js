@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      2.0.1
+// @version      2.0.2
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -13,6 +13,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+2.0.2 회복기를 활성화한 상태로 시뮬을 돌렸을 때, 특수기 시뮬 중 회복기가 원상복구 되도록 수정.
 2.0.1 유저가 선택한 스킬의 하위 스킬도 스킵
 2.0 1주년 대응
 
@@ -66,13 +67,13 @@ function getIndex(element) {
 //셀렉터들이나 요소들 한꺼번에 클릭
 async function clickElements(selectors) {
     switch (typeof (selectors[0])) {
-        //셀렉터 텍스트 배열일 경우
+            //셀렉터 텍스트 배열일 경우
         case 'string':
             selectors.forEach((selector) => {
                 document.querySelector(selector).click();
             });
             break;
-        //노드 리스트일 경우
+            //노드 리스트일 경우
         case 'object':
             for (let i = 0; i < selectors.length; i++) {
                 await selectors[i].click();
@@ -158,8 +159,8 @@ function simulate(once/*, isMulti = false*/) {
         observer.observe(target, option);
 
         (once ?
-            await document.querySelector("#app > div.main-frame > form > div:nth-child(28) > div:nth-child(3) > div > button").click() ://한번 시뮬
-            await document.querySelector("#app > div.main-frame > form > div:nth-child(28) > div:nth-child(1) > div > button").click());//n번 시뮬
+         await document.querySelector("#app > div.main-frame > form > div:nth-child(28) > div:nth-child(3) > div > button").click() ://한번 시뮬
+         await document.querySelector("#app > div.main-frame > form > div:nth-child(28) > div:nth-child(1) > div > button").click());//n번 시뮬
 
         document.querySelector("body > div.v-modal").remove();
     });
@@ -303,7 +304,7 @@ function checkSkillStatus(skillElement) {
             //계승, 일반기
             return skillElement.classList.contains('is-checked');
 
-        //어느것도 아님
+            //어느것도 아님
         case undefined:
             return;
     }
@@ -315,8 +316,8 @@ async function toggleSkill(skillElement, newStatus) {
     //결과적으로 li(고유기) 혹은 label(계승, 일반기) Element가 할당되어야 한다.
     if (skillElement.nodeName === 'SPAN') { skillElement = skillElement.parentElement; }
 
-    // undefined거나 or 바꾸고자 하는 상태와 현재 상태가 같으면 아무것도 하지 않는다
-    if (checkSkillStatus(skillElement) === undefined || checkSkillStatus(skillElement) === newStatus) return;
+    // undefined거나 or 바꾸고자 하는 상태와 현재 상태가 같으면 아무것도 하지 않고, 변경이 실패했음(false)을 반환.
+    if (checkSkillStatus(skillElement) === undefined || checkSkillStatus(skillElement) === newStatus) return false;
 
     // 고유기를 비활성화하는 경우
     else if (isUniqueSkill(skillElement) && newStatus === false) {
@@ -326,20 +327,25 @@ async function toggleSkill(skillElement, newStatus) {
 
     // 그 외의 경우, 현재 상태와 바꾸고자 하는 상태가 다르면 클릭
     else await skillElement.click();
+    return true; //변경 성공
 }
+
 
 //여러 스킬을 활성화/비활성화
 async function toggleSkills(skillElements, newStatus) {
-    //하나만 들어오면 본체를 그냥 토글
-    if (skillElements.length === undefined) {
-        await toggleSkill(skillElements, newStatus);
+    const isToggled = [];
+
+    //배열 아니면 배열화
+    if (!Array.isArray(skillElements)) {
+        skillElements = [skillElements];
     }
-    //배열로 들어오면 전부 토글
-    else {
-        for (let i = 0; i < skillElements.length; i++) {
-            await toggleSkill(skillElements[i], newStatus);
-        }
+
+    for (let i = 0; i < skillElements.length; i++) {
+        const status = Array.isArray(newStatus) ? newStatus[i % newStatus.length] : newStatus;
+        isToggled.push(await toggleSkill(skillElements[i], status));
     }
+
+    return isToggled;
 }
 
 
@@ -445,10 +451,10 @@ var main = async function (current, all) {
         '코스 종류 및 거리': dropDownParent['코스 종류 및 거리'].querySelector("ul > li.selected").innerText,
         '코스 상태': dropDownParent['코스 상태'].querySelector("ul > li.selected").innerText,
         '스탯': [document.querySelector("#app > div.main-frame > form > div:nth-child(8) > div > div > input").value,
-        document.querySelector("#app > div.main-frame > form > div:nth-child(9) > div > div > input").value,
-        document.querySelector("#app > div.main-frame > form > div:nth-child(10) > div > div > input").value,
-        document.querySelector("#app > div.main-frame > form > div:nth-child(11) > div > div > input").value,
-        document.querySelector("#app > div.main-frame > form > div:nth-child(12) > div > div > input").value],
+               document.querySelector("#app > div.main-frame > form > div:nth-child(9) > div > div > input").value,
+               document.querySelector("#app > div.main-frame > form > div:nth-child(10) > div > div > input").value,
+               document.querySelector("#app > div.main-frame > form > div:nth-child(11) > div > div > input").value,
+               document.querySelector("#app > div.main-frame > form > div:nth-child(12) > div > div > input").value],
         '고유기 레벨': document.querySelector("#app > div.main-frame > form > div:nth-child(24) > div > div > div > input").ariaValueNow,
         '전체 스킬': [], //유저가 선택한 전체 고유기 계승기 일반기 '이름' 저장용
         '고유기': '',
@@ -606,10 +612,10 @@ var main = async function (current, all) {
 
     //제거할 스킬명들
     let needToDelete_SkillNames = ['없음／발동 안 함',
-        '없음／발동하지 않음',
-        'なし／発動しない',
-        ...uniqueSkills['회복']['3성']['이름 배열'],
-        ...uniqueSkills['회복']['2성']['이름 배열']];
+                                   '없음／발동하지 않음',
+                                   'なし／発動しない',
+                                   ...uniqueSkills['회복']['3성']['이름 배열'],
+                                   ...uniqueSkills['회복']['2성']['이름 배열']];
 
     //전체 속/가/복 고유기 '요소'들.
     let notHeal_unique_Skill_Elements = unique_Skill_Elements.filter(x => !needToDelete_SkillNames.includes(getProperSkillName(x)));
@@ -1117,14 +1123,15 @@ var main = async function (current, all) {
 
     //특수 애들 처리용.
     async function getSpecialSkillData(triggerSkillElements, skillElement, addText = '', is777 = false, rarity = '') {
-        await toggleSkills(triggerSkillElements, true);
+        const turnedOnArray = await toggleSkills(triggerSkillElements, true);
+        const originalStatusArray = turnedOnArray.map(bool => !bool)
 
         if (rarity === '') rarity = isUniqueSkill(skillElement) ? '고유' : '계승';
         let skillName = getProperSkillName(skillElement)
         if (addText !== '') { skillName += `(${addText})`; } //추가 텍스트 있으면 추가해서 검색
         let skillData = await makeCompleteSkillData(skillElement, rarity, undefined, skillName, is777);
 
-        await toggleSkills(triggerSkillElements, false);
+        await toggleSkills(triggerSkillElements, originalStatusArray);
         return skillData;
     }
 
@@ -1138,11 +1145,11 @@ var main = async function (current, all) {
         if (isUniqueSkillSelected && isUniqueSkill(skipped_Skill_Elements[i])) continue;
 
         switch (getProperSkillName(skipped_Skill_Elements[i])) {
-            //크리스마스 이브의 미라클 런! : 중반 회복기 2 + 777 / U=ma2 / 두근구든 / 하굣길(추입) / 말괄량이(도주)
+                //크리스마스 이브의 미라클 런! : 중반 회복기 2 + 777 / U=ma2 / 두근구든 / 하굣길(추입) / 말괄량이(도주)
             case '크리스마스 이브의 미라클 런!': {
                 await randomPosition_Parent.childNodes[2].click(); //중반 회복기가 최속으로 터지도록, 스킬 발동 구간 가장 빠르게
-                await toggleSkill(triggerElements['중반힐1'], true);
-                await toggleSkill(triggerElements['중반힐2'], true);
+                const turnedOn1 = await toggleSkill(triggerElements['중반힐1'], true);
+                const turnedOn2 = await toggleSkill(triggerElements['중반힐2'], true);
 
                 result_Final['특수'].push(await getSpecialSkillData(triggerElements['777'], skipped_Skill_Elements[i], '777', true));
                 result_Final['특수'].push(await getSpecialSkillData(triggerElements['uma2'], skipped_Skill_Elements[i], 'U=ma2', true));
@@ -1150,8 +1157,8 @@ var main = async function (current, all) {
                 if (userSelected['각질'] === '추입') { result_Final['특수'].push(await getSpecialSkillData(triggerElements['하굣길'], skipped_Skill_Elements[i], '하굣길', true)); }
                 if (userSelected['각질'] === '도주') { result_Final['특수'].push(await getSpecialSkillData(triggerElements['기세로'], skipped_Skill_Elements[i], '말괄량이', true)); }
 
-                await toggleSkill(triggerElements['중반힐1'], false);
-                await toggleSkill(triggerElements['중반힐2'], false);
+                if (turnedOn1) await toggleSkill(triggerElements['중반힐1'], false);
+                if (turnedOn2) await toggleSkill(triggerElements['중반힐2'], false);
 
                 await randomPosition_Parent.childNodes[1].click(); //스킬 발동 구간 랜덤으로 복구
                 break;
@@ -1162,13 +1169,13 @@ var main = async function (current, all) {
 
                 await toggleSkill(skipped_Skill_Elements[i], true); //고유기or계승기 ON
 
-                await toggleSkill(triggerElements['777'], true); //스리 세븐 ON
+                const turnedOn1 = await toggleSkill(triggerElements['777'], true); //스리 세븐 ON
                 threeSeven_bashin = calcBashin(BASETIME, await simulate(true))['평균']
-                await toggleSkill(triggerElements['777'], false); //스리 세븐 OFF
+                if (turnedOn1) await toggleSkill(triggerElements['777'], false); //스리 세븐 OFF
 
-                await toggleSkill(triggerElements['uma2'], true); //U=ma2 ON
+                const turnedOn2 = await toggleSkill(triggerElements['uma2'], true); //U=ma2 ON
                 Uma2_bashin = calcBashin(BASETIME, await simulate(true))['평균']
-                await toggleSkill(triggerElements['uma2'], false); //U=ma2 OFF
+                if (turnedOn2) await toggleSkill(triggerElements['uma2'], false); //U=ma2 OFF
 
                 await toggleSkill(skipped_Skill_Elements[i], false); //고유기or계승기 ON
 
@@ -1272,10 +1279,10 @@ var main = async function (current, all) {
     firstLine += '\n\n';
 
     let result = [...result_Final['적성'],
-    ...result_Final['녹딱'],
-    ...result_Final['고유기'],
-    ...result_Final['일반기'],
-    ...result_Final['특수']];
+                  ...result_Final['녹딱'],
+                  ...result_Final['고유기'],
+                  ...result_Final['일반기'],
+                  ...result_Final['특수']];
     //logger(result);
 
 
