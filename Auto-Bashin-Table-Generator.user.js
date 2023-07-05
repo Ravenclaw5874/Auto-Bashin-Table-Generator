@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      2.0.2
+// @version      2.0.3
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -13,6 +13,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+2.0.3 가끔 멈추는 버그 수정
 2.0.2 회복기를 활성화한 상태로 시뮬을 돌렸을 때, 특수기 시뮬 중 회복기가 원상복구 되도록 수정.
 2.0.1 유저가 선택한 스킬의 하위 스킬도 스킵
 2.0 1주년 대응
@@ -88,8 +89,8 @@ function simulate(once/*, isMulti = false*/) {
         //n회 시행시 각 시행의 결과를 모두 저장할 배열
         let eachTimes = [];
 
-        //감시할 테이블(인게임 표기)
-        let target = document.querySelector("#app > div.main-frame > div:nth-child(5) > table:nth-child(2)");
+        //테이블만 감시하면 999회 -> 1000회에서 테이블이 변하지 않았을 경우 멈춰버려서 전체를 감시. 2개를 따로 감시하면 한 변화에 두번 실행됨.
+        let target = document.querySelector("#app > div.main-frame");// > div:nth-child(5) > table:nth-child(2)");
         let option = { characterData: true, subtree: true };
 
         //시뮬 종료를 감지할 진행도 바
@@ -103,6 +104,7 @@ function simulate(once/*, isMulti = false*/) {
 
             //시뮬레이션 끝나면
             if (progress.ariaValueNow === "100") {
+                logger(`총 ${eachTimes.length}회`);
                 //감시자 제거
                 observer.disconnect();
 
