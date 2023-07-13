@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      2.0.3
+// @version      2.1.0
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -13,6 +13,8 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+2.1.0 중앙값 추가
+
 2.0.3 가끔 멈추는 버그 수정
 2.0.2 회복기를 활성화한 상태로 시뮬을 돌렸을 때, 특수기 시뮬 중 회복기가 원상복구 되도록 수정.
 2.0.1 유저가 선택한 스킬의 하위 스킬도 스킵
@@ -186,6 +188,27 @@ function convertToSec(minSec) {
     return (min * 60 + sec).toFixed(3) * 1;
 }
 
+//배열의 중앙값 반환
+function calculateMedian(array) {
+  // 배열을 오름차순으로 정렬
+  array.sort(function(a, b) {
+    return a - b;
+  });
+
+  var length = array.length;
+  var middleIndex = Math.floor(length / 2);
+
+  if (length % 2 === 0) {
+    // 배열의 길이가 짝수인 경우
+    var middleValue1 = array[middleIndex - 1];
+    var middleValue2 = array[middleIndex];
+    return (middleValue1 + middleValue2) / 2;
+  } else {
+    // 배열의 길이가 홀수인 경우
+    return array[middleIndex];
+  }
+}
+
 //마신차 계산
 function calcBashin(BASETIME, times) {
     //단일 숫자
@@ -205,6 +228,7 @@ function calcBashin(BASETIME, times) {
 
         //const flooredBasetime = Math.floor(BASETIME * 100) / 100;
         result['마신 배열'] = times['타임 배열'].map(time => ((BASETIME - time) * 10).toFixed(2) * 1);
+        result['중앙'] = calculateMedian(result['마신 배열']).toFixed(2) * 1;
         return result;
     }
 }
@@ -924,6 +948,7 @@ var main = async function (current, all) {
         //skillData['표준편차'] = bashins['표준편차'];
         if (!once) {
             skillData['최대'] = bashins['최대'];
+            skillData['중앙'] = bashins['중앙'];
             skillData['최소'] = bashins['최소'];
             addRatio(skillData, bashins);
             //logger(skillData);
