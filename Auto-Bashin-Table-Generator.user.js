@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      2.1.0
+// @version      2.1.1
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
+// @match        http://localhost:8080/
 // @icon         https://img1.daumcdn.net/thumb/C151x151/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fcafeattach%2F1ZK1D%2F80ed3bb76fa6ce0a4a0c7a9cc33d55430f797e35
 // @grant        none
 // @require      http://code.jquery.com/jquery-3.6.1.min.js
@@ -13,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+2.1.1 adwrapper 때문에 localhost에서 테이블의 nth child 순서가 달라져서 nth child 빼버림.
 2.1.0 중앙값 추가
 
 2.0.3 가끔 멈추는 버그 수정
@@ -101,7 +103,7 @@ function simulate(once/*, isMulti = false*/) {
         //감시자 동작 설정
         let observer = new MutationObserver(async (mutations) => {
             //매 시뮬마다 "마지막 시뮬레이션 결과 상세(2:31.93)" 의 2:31.93을 추출해서 eachTimes에 저장
-            let extractedText = extractTextBeside(document.querySelector("#app > div.main-frame > h3:nth-child(7)").innerText, '(', ')');
+            let extractedText = extractTextBeside(document.querySelector("#app > div.main-frame > h3").innerText, '(', ')');
             if (extractedText !== '-') { eachTimes.push(convertToSec(extractedText)); }
 
             //시뮬레이션 끝나면
@@ -110,8 +112,8 @@ function simulate(once/*, isMulti = false*/) {
                 //감시자 제거
                 observer.disconnect();
 
-                let average = convertToSec(document.querySelector("#app > div.main-frame > div:nth-child(5) > table:nth-child(2) > tr:nth-child(2) > td:nth-child(2)").innerText);
-                //let SD = document.querySelector("#app > div.main-frame > div:nth-child(5) > table:nth-child(2) > tr:nth-child(2) > td:nth-child(3)").innerText
+                let average = convertToSec(document.querySelector("#app > div.main-frame > div > table:nth-child(2) > tr:nth-child(2) > td:nth-child(2)").innerText);
+                //let SD = document.querySelector("#app > div.main-frame > div > table:nth-child(2) > tr:nth-child(2) > td:nth-child(3)").innerText
                 let fastest, slowest;
 
                 //전체 진행도 갱신
@@ -125,8 +127,8 @@ function simulate(once/*, isMulti = false*/) {
                 if (!once) {
                     let randomPosition_Results = [];
                     //n번 돌린 베스트, 워스트 랩타임을 포함
-                    randomPosition_Results[0] = convertToSec(document.querySelector("#app > div.main-frame > div:nth-child(5) > table:nth-child(2) > tr:nth-child(2) > td:nth-child(4)").innerText);
-                    randomPosition_Results[1] = convertToSec(document.querySelector("#app > div.main-frame > div:nth-child(5) > table:nth-child(2) > tr:nth-child(2) > td:nth-child(5)").innerText);
+                    randomPosition_Results[0] = convertToSec(document.querySelector("#app > div.main-frame > div > table:nth-child(2) > tr:nth-child(2) > td:nth-child(4)").innerText);
+                    randomPosition_Results[1] = convertToSec(document.querySelector("#app > div.main-frame > div > table:nth-child(2) > tr:nth-child(2) > td:nth-child(5)").innerText);
 
                     //스킬 발동 구간 드롭다운 메뉴를 클릭해서 최하위로 보낸뒤 주소 가져옴.
                     await document.querySelector("#app > div.main-frame > form > div:nth-child(28) > div:nth-child(5) > div > div").click();
