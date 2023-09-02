@@ -135,8 +135,8 @@
 110531,62,2,고유,속도,,,오의・한여름 버닝!!,,奥義・常夏バーニング！！,뱀부 메모리 (여름 바캉스),풍기문란,,,,,,,distance_type==1 &remain_distance<=201 &remain_distance>=199 &order_rate>=20 &order_rate<=50 &change_order_up_end_after>=1,,,,,0.45,,,5,,,단거리,,2024년 10월 17일
 910081,63,1,계승,복합,,Into High Gear!,Into High Gear!,Into High Gear!,Into High Gear!,보드카 (크리스마스),클드카,,,,,phase>=1 &slope==2 &order_rate>=50 &order_rate<=80 &track_id==10006,,slope==0 @slope==1,중반 이후 내리막 끝,즉발,속가 복합기로 간주,,0.15,0.05,,3,200,,,,2024년 3월 18일
 110081,63,2,고유,복합,,Into High Gear!,Into High Gear!,Into High Gear!,Into High Gear!,보드카 (크리스마스),클드카,,,,,phase>=1 &slope==2 &order_rate>=50 &order_rate<=80 &track_id==10006,,slope==0 @slope==1,중반 이후 내리막 끝,즉발,속가 복합기로 간주,,0.35,0.1,,5,,,,,2024년 3월 18일
-900231,64,1,계승,속도,,∴win Q.E.D.,∴win Q.E.D.,,∴win Q.E.D.,비와 하야히데,비와,,,,,,,is_finalcorner==1 &change_order_onetime<0 &order<=4,최종 코너,랜덤,,,0.15,,,3,200,,,,2022년 7월 7일
-100231,64,2,고유,속도,,∴win Q.E.D.,∴win Q.E.D.,,∴win Q.E.D.,비와 하야히데,비와,,,,,,,is_finalcorner==1 &change_order_onetime<0 &order<=4,최종 코너,랜덤,,,0.35,,,5,,,,,2022년 7월 7일
+900231,64,1,계승,속도,,∴win Q.E.D.,∴win Q.E.D.,∴win Q.E.D.,∴win Q.E.D.,비와 하야히데,비와,,,,,,,is_finalcorner==1 &change_order_onetime<0 &order<=4,최종 코너,랜덤,,,0.15,,,3,200,,,,2022년 7월 7일
+100231,64,2,고유,속도,,∴win Q.E.D.,∴win Q.E.D.,∴win Q.E.D.,∴win Q.E.D.,비와 하야히데,비와,,,,,,,is_finalcorner==1 &change_order_onetime<0 &order<=4,최종 코너,랜덤,,,0.35,,,5,,,,,2022년 7월 7일
 910231,65,1,계승,속도,,Presents from X,Presents from X,Presents from X,Presents from X,비와 하야히데 (크리스마스),클비와,,,,,,,order_rate_in40_continue==1 &phase==1 &distance_rate>=50 &order>=2 &order_rate<=40,후반,즉발,,,0.15,,,3,200,,,,2023년 3월 20일
 110231,65,2,고유,속도,,Presents from X,Presents from X,Presents from X,Presents from X,비와 하야히데 (크리스마스),클비와,,,,,,,order_rate_in40_continue==1 &phase==1 &distance_rate>=50 &order>=2 &order_rate<=40,후반,즉발,,,0.35,,,5,,,,,2023년 3월 20일
 900021,66,1,계승,속도,,선두의 경치는 양보할 수 없어…!,선두의 경치는 양보할 수 없어…!,선두의 경치는 양보할 수 없어…!,先頭の景色は譲らない…！,사일런스 스즈카,스즈카,,,,,,,distance_rate>=50 &order==1 &bashin_diff_behind>=1,후반,즉발,,,0.15,,,3,200,,,,2022년 6월 15일
@@ -173,8 +173,8 @@
 120011,82,2,고유,속도,,"위풍당당, 아름다운 꿈!","위풍당당, 아름다운 꿈!","위풍당당, 아름다운 꿈!",威風堂々、夢錦！,스페셜 위크 (총대장),총스페,,,,,track_id==10005,,phase>=2 &is_finalcorner==1 &corner!=0 &is_activate_any_skill==1,종반 최종 코너 스킬 1회,특수,0.45 속도기로 간주. 두근두근 클라이맥스로 시뮬,,0.45,,,5,,,,,2023년 11월 8일
 900701,83,1,계승,가속,,,세이리오스,,セイリオス,시리우스 심볼리,삼촌,,,,,,,remain_distance>=799 &remain_distance<=801 &order_rate>=30 &order_rate<=60 &course_distance==2400 &popularity<=3,,,,,,0.3,,2.4,200,,,,2024년 11월 8일
 100701,83,2,고유,가속,,,세이리오스,,セイリオス,시리우스 심볼리,삼촌,,,,,,,remain_distance>=799 &remain_distance<=801 &order_rate>=30 &order_rate<=60 &course_distance==2400 &popularity<=3,,,,,,0.5,,4,,,,,2024년 11월 8일
-900421,84,1,계승,속도,,『I'm possible』,『I'm possible』,,『I'm possible』,시킹 더 펄,시펄,,,,,,,remain_distance<=201 &remain_distance>=199 &distance_diff_top<=5 &order>=2,200m,즉발,0.25 속도기로 간주,,0.25,,,3,200,,,,2024년 1월 9일
-100421,84,2,고유,속도,,『I'm possible』,『I'm possible』,,『I'm possible』,시킹 더 펄,시펄,,,,,,,remain_distance<=201 &remain_distance>=199 &distance_diff_top<=5 &order>=2,200m,즉발,0.45 속도기로 간주,,0.45,,,5,,,,,2024년 1월 9일
+900421,84,1,계승,속도,,『I'm possible』,『I'm possible』,『I'm possible』,『I'm possible』,시킹 더 펄,시펄,,,,,,,remain_distance<=201 &remain_distance>=199 &distance_diff_top<=5 &order>=2,200m,즉발,0.25 속도기로 간주,,0.25,,,3,200,,,,2024년 1월 9일
+100421,84,2,고유,속도,,『I'm possible』,『I'm possible』,『I'm possible』,『I'm possible』,시킹 더 펄,시펄,,,,,,,remain_distance<=201 &remain_distance>=199 &distance_diff_top<=5 &order>=2,200m,즉발,0.45 속도기로 간주,,0.45,,,5,,,,,2024년 1월 9일
 900431,85,1,계승,복합,,Ding Dong Boo,Ding Dong Boo,Ding Dong Boo,Ding Dong Boo,신코 윈디,윈디,,,,,,,compete_fight_count>0 &ground_type==2,최종 직선,랜덤,속가 복합기로 간주. 시뮬에선 최종 직선 랜덤,,0.05,0.2,,3,200,,,더트,2024년 6월 3일
 100431,85,2,고유,복합,,Ding Dong Boo,Ding Dong Boo,Ding Dong Boo,Ding Dong Boo,신코 윈디,윈디,,,,,,,compete_fight_count>0 &ground_type==2,최종 직선,랜덤,속가 복합기로 간주. 시뮬에선 최종 직선 랜덤,,0.25,0.4,,5,,,,더트,2024년 6월 3일
 900171,86,1,계승,속도,,"그대, 황제의 신위를 보라","그대, 황제의 신위를 보라","그대, 황제의 신위를 보라",汝、皇帝の神威を見よ,심볼리 루돌프,루돌프,,,,,,,is_last_straight==1 &change_order_up_end_after>=3,최종 직선,즉발,,,0.25,,,3,200,,,,2022년 6월 15일
@@ -193,8 +193,8 @@
 100311,92,2,고유,속도,,충전 완료! 전속 전진!,충전 완료! 전속 전진!,차지 완료! 전속 전진!,チャージ完了！全速前進！,아이네스 후진,후진,,,,,remain_distance<=305 &remain_distance>=300 &slope==1,,remain_distance<=299 &remain_distance>=295 &order<=2 &slope==0 @remain_distance<=299 &remain_distance>=295 &order<=2 &slope==2,300m 오르막 끝,즉발,0.45 속도기로 간주,,0.45,,,5,,,,,2023년 8월 29일
 910311,93,1,계승,복합,,,프레시☆팔러,프레시☆팔러,フレッシュ☆パーラー,아이네스 후진 (발렌타인),초코 후진,,,,,,,phase_firsthalf_random==1 &order_rate<=30,중반의 전반,랜덤,,,0.05,,0.5,3.6,200,,,,2024년 5월 20일
 110311,93,2,고유,복합,,,프레시☆팔러,프레시☆팔러,フレッシュ☆パーラー,아이네스 후진 (발렌타인),초코 후진,,,,,,,phase_firsthalf_random==1 &order_rate<=30,중반의 전반,랜덤,,,0.25,,3.5,6,,,,,2024년 5월 20일
-900871,94,1,계승,복합,,Silent letter,Silent letter,,Silent letter,애스턴 마짱,마짱,,,,,,,remain_distance<=400 &order<=2 &overtake_target_time>=1,400m,즉발,시뮬에선 400m 즉발,,0.05,0.1,,3,200,,,,2024년 1월 30일
-100871,94,2,고유,복합,,Silent letter,Silent letter,,Silent letter,애스턴 마짱,마짱,,,,,,,remain_distance<=400 &order<=2 &overtake_target_time>=1,400m,즉발,시뮬에선 400m 즉발,,0.25,0.3,,5,,,,,2024년 1월 30일
+900871,94,1,계승,복합,,Silent letter,Silent letter,silent letter,Silent letter,애스턴 마짱,마짱,,,,,,,remain_distance<=400 &order<=2 &overtake_target_time>=1,400m,즉발,시뮬에선 400m 즉발,,0.05,0.1,,3,200,,,,2024년 1월 30일
+100871,94,2,고유,복합,,Silent letter,Silent letter,silent letter,Silent letter,애스턴 마짱,마짱,,,,,,,remain_distance<=400 &order<=2 &overtake_target_time>=1,400m,즉발,시뮬에선 400m 즉발,,0.25,0.3,,5,,,,,2024년 1월 30일
 900781,95,1,계승,가속,,빛나는 바람,빛나는 바람,빛나는 바람,風光る,야마닌 제퍼,캬루,,,,,distance_rate>=50 &order_rate_out20_continue==1,,is_finalcorner_laterhalf==1 &distance_diff_rate<=50 &order==2,최종 코너 후반,즉발,0.07 가속기로 간주,,,0.07,,4.8,200,,,,2024년 2월 7일
 100781,95,2,고유,가속,,빛나는 바람,빛나는 바람,빛나는 바람,風光る,야마닌 제퍼,캬루,,,,,distance_rate>=50 &order_rate_out20_continue==1,,is_finalcorner_laterhalf==1 &distance_diff_rate<=50 &order==2,최종 코너 후반,즉발,0.2 가속기로 간주,,,0.2,,8,,,,,2024년 2월 7일
 900721,96,1,계승,속도,,"열화요란, 무적의 춤","열화요란, 무적의 춤","열화요란, 무적의 춤",烈火繚乱、無敵之舞,야에노 무테키,무테키,,,,,is_finalcorner==1 &change_order_onetime<0,,remain_distance<=300 &order_rate<=40,300m,즉발,,,0.15,,,3,200,,,,2023년 8월 8일
