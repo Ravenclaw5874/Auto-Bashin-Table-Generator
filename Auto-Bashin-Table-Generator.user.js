@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      2.1.1
+// @version      2.2.0
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,8 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+2.2.0 전제 조건, 발동 조건 추가
+
 2.1.1 adwrapper 때문에 localhost에서 테이블의 nth child 순서가 달라져서 nth child 빼버림.
 2.1.0 중앙값 추가
 
@@ -237,7 +239,7 @@ function calcBashin(BASETIME, times) {
 
 //텍스트의 양옆 공백 제거 및 ○ -> ◯ 변환(큰원으로)
 function getProperSkillName(skillElement) {
-    return skillElement.innerText.trimStart().trimEnd().replace('○', '◯');
+    return skillElement.innerText.trimStart().trimEnd();//.replace('○', '◯');
 }
 
 //스킬 노드 배열 넣으면 이름 배열 반환
@@ -424,7 +426,8 @@ var main = async function (current, all) {
     resetGlobalVariables()
 
     //스킬 DB 불러오기
-    let skillDB_csv = await $.get("https://raw.githubusercontent.com/Ravenclaw5874/Auto-Bashin-Table-Generator/main/%EC%8A%A4%ED%82%ACDB%20-%201%EC%A3%BC%EB%85%84~.csv");
+    //let skillDB_csv = await $.get("https://raw.githubusercontent.com/Ravenclaw5874/Auto-Bashin-Table-Generator/main/%EC%8A%A4%ED%82%ACDB%20-%201%EC%A3%BC%EB%85%84~.csv");
+    let skillDB_csv = await $.get("https://raw.githubusercontent.com/Ravenclaw5874/Auto-Bashin-Table-Generator/main/%EC%8A%A4%ED%82%ACDB%20-%201.5%EC%A3%BC%EB%85%84%20%EC%A0%84.csv");
     const skillDB = $.csv.toObjects(skillDB_csv);
     //logger(skillDB);
 
