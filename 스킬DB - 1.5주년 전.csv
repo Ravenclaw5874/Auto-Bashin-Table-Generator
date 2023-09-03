@@ -65,8 +65,8 @@
 110111,23,2,고유,회복,,게인 힐・슈피리어,게인 힐・슈피리어,게인 힐・슈피리어,ゲインヒール・スペリアー,그래스 원더 (판타지),힐라스,,,,,,,,phase==1 &change_order_onetime>0 &order_rate>=40,,,,,,7.5,,,,,,2022년 10월 18일
 900161,24,1,계승,속도,,Shadow Break,Shadow Break,Shadow Break,Shadow Break,나리타 브라이언,나리브,,,,0.25 속도기로 간주,,phase==1 &blocked_side_continuetime>=2,,is_finalcorner==1 &order>=2 &order_rate<=75 &is_behind_in==1 &change_order_onetime<0,최종 코너,랜덤,,0.25,,,3,200,,,,2022년 9월 5일
 100161,24,2,고유,속도,,Shadow Break,Shadow Break,Shadow Break,Shadow Break,나리타 브라이언,나리브,,,,0.45 속도기로 간주,,phase==1 &blocked_side_continuetime>=2,,is_finalcorner==1 &order>=2 &order_rate<=75 &is_behind_in==1 &change_order_onetime<0,최종 코너,랜덤,,0.45,,,5,,,,,2022년 9월 5일
-910161,25,1,계승,속도,,,회색 임계점,회색 임계점,灰色の臨界点,나리타 브라이언 (Blaze),겜리브,,,,0.15 속도기로 간주,,,,phase>=2 &is_finalcorner_laterhalf==1 &order_rate<=40,종반 최종 코너 후반,즉발,,0.15,,,3,200,,,,2024년 4월 9일
-110161,25,2,고유,속도,,,회색 임계점,회색 임계점,灰色の臨界点,나리타 브라이언 (Blaze),겜리브,,,,0.55 속도기로 간주,,phase==1 &blocked_side_continuetime>=2,,distance_type==4 &phase>=2 &is_finalcorner_laterhalf==1 &order_rate<=40,종반 최종 코너 후반,즉발,,0.55,,,5,,,장거리,,2024년 4월 9일
+910161,25,1,계승,속도,,,회색 임계점,회색 임계점,灰色の臨界点,나리타 브라이언 (Blaze),겜리브,,,,0.15 속도기로 간주. 버그 : 시뮬에선 장거리에서만 발동,,,,phase>=2 &is_finalcorner_laterhalf==1 &order_rate<=40,종반 최종 코너 후반,즉발,,0.15,,,3,200,,,,2024년 4월 9일
+110161,25,2,고유,속도,,,회색 임계점,회색 임계점,灰色の臨界点,나리타 브라이언 (Blaze),겜리브,,,,0.55 속도기로 간주. 버그 : 시뮬에선 장거리에서만 발동,,phase==1 &blocked_side_continuetime>=2,,distance_type==4 &phase>=2 &is_finalcorner_laterhalf==1 &order_rate<=40,종반 최종 코너 후반,즉발,,0.55,,,5,,,장거리,,2024년 4월 9일
 900501,26,1,계승,속도,,Nemesis,Nemesis,Nemesis,Nemesis,나리타 타이신,타이신,,,,시뮬에선 최종 코너 랜덤,,,,is_finalcorner==1 &order_rate>=40 &order_rate<=75 &is_overtake==1,최종 코너,랜덤,,0.15,,,3,200,,,,2022년 8월 15일
 100501,26,2,고유,속도,,Nemesis,Nemesis,Nemesis,Nemesis,나리타 타이신,타이신,,,,시뮬에선 최종 코너 랜덤,,,,is_finalcorner==1 &order_rate>=40 &order_rate<=75 &is_overtake==1,최종 코너,랜덤,,0.35,,,5,,,,,2022년 8월 15일
 910501,27,1,계승,속도,,Hephaistos,Hephaistos,Hephaistos,Hephaistos,나리타 타이신 (스팀펑크),스팀펑크 타이신,,,,,,,,phase>=2 &is_finalcorner_laterhalf==1 &order_rate<=75 &order_rate>=40,최종 코너 후반,즉발,,0.15,,,3,200,,,,2023년 12월 18일
