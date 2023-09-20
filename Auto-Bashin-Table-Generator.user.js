@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      2.2.0
+// @version      2.2.1
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+2.2.1 join 구분자 ',' -> ', '
 2.2.0 전제 조건, 발동 조건 추가
 
 2.1.1 adwrapper 때문에 localhost에서 테이블의 nth child 순서가 달라져서 nth child 빼버림.
@@ -1302,12 +1303,12 @@ var main = async function (current, all) {
     let filename = `${userSelected['각질']} - ${userSelected['코스 장소']} ${userSelected['코스 종류 및 거리']} ${userSelected['코스 상태']}`;
 
     if (isUniqueSkillSelected) { filename += ` (고유 ${userSelected['고유기']})` }
-    if (userSelected['계승/일반기'].length > 0) { filename += ` (일반 ${userSelected['계승/일반기'].join(',')})` }
+    if (userSelected['계승/일반기'].length > 0) { filename += ` (일반 ${userSelected['계승/일반기'].join(', ')})` }
 
     let firstLine = `${userSelected['코스 장소']}\t${userSelected['마장']}\t${userSelected['거리']}\t${userSelected['거리 분류']}\t${userSelected['코스 상태']}\t${userSelected['각질']}\t${userSelected['스탯'].join('/')}\t${userSelected['거리 적성'].innerText}\t${userSelected['경기장 적성'].innerText}\t${userSelected['각질 적성']}\t${userSelected['컨디션']}\t${userSelected['고유기 레벨']}\t${userSimulateCount}`;
 
     firstLine += isUniqueSkillSelected ? `\t${userSelected['고유기']}` : '\t';
-    firstLine += userSelected['계승/일반기'].length > 0 ? `\t${userSelected['계승/일반기'].join(',')}` : '\t';
+    firstLine += userSelected['계승/일반기'].length > 0 ? `\t${userSelected['계승/일반기'].join(', ')}` : '\t';
     firstLine += '\n\n';
 
     let result = [...result_Final['적성'],
