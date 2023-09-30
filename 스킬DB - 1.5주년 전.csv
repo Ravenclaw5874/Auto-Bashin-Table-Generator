@@ -571,8 +571,8 @@
 100361,99,2,고유,속도,,trigger:BEAT,trigger:BEAT,trigger:BEAT,trigger:BEAT,에어 샤커,샤커,,,,,,is_finalcorner==1 &order_rate>=40 &order_rate<=75 &lane_type==0,,is_last_straight==1,최종 직선,즉발,,0.35,,,5,,,,,2023년 10월 30일
 202101,1039,2,레어/상위,속도,,고양감,고양감,고양감,高揚感,,,,,,,,,,distance_type==3 &phase_random==1 &order_rate>=50,중반,랜덤,,0.35,,,2.4,320,,중거리,,2023년 10월 30일
 201453,1056,3,레어/상위,속도,,월영일섬,월영일섬,월영일섬,月影一閃,,,,,,,,,,running_style==4 &straight_random==1,무작위 직선,랜덤,,0.35,,,3,420,추입,,,2023년 10월 30일
-920011,82,1,계승,속도,,"위풍당당, 아름다운 꿈!","위풍당당, 아름다운 꿈!","위풍당당, 아름다운 꿈!",威風堂々、夢錦！,스페셜 위크 (총대장),총스페,,,,0.25 속도기로 간주 (나카야마). 두근두근 클라이맥스로 시뮬,,track_id==10005,,phase>=2 &is_finalcorner==1 &corner!=0 &is_activate_any_skill==1,종반 최종 코너 스킬 1회,특수,,0.25,,,3,200,,,,2023년 11월 8일
-120011,82,2,고유,속도,,"위풍당당, 아름다운 꿈!","위풍당당, 아름다운 꿈!","위풍당당, 아름다운 꿈!",威風堂々、夢錦！,스페셜 위크 (총대장),총스페,,,,0.45 속도기로 간주 (나카야마). 두근두근 클라이맥스로 시뮬,,track_id==10005,,phase>=2 &is_finalcorner==1 &corner!=0 &is_activate_any_skill==1,종반 최종 코너 스킬 1회,특수,,0.45,,,5,,,,,2023년 11월 8일
+920011,82,1,계승,속도,,"위풍당당, 아름다운 꿈!","위풍당당, 아름다운 꿈!","위풍당당, 아름다운 꿈!",威風堂々、夢錦！,스페셜 위크 (총대장),총스페,,,,0.25 속도기로 간주 (나카야마). 두근두근 클라이맥스로 시뮬,,track_id==10005,,phase>=2 &is_finalcorner==1 &corner!=0 &is_activate_any_skill==1,종반 최종 코너 스킬 1회,특수,,0.25,,,3,200,,나카야마,,2023년 11월 8일
+120011,82,2,고유,속도,,"위풍당당, 아름다운 꿈!","위풍당당, 아름다운 꿈!","위풍당당, 아름다운 꿈!",威風堂々、夢錦！,스페셜 위크 (총대장),총스페,,,,0.45 속도기로 간주 (나카야마). 두근두근 클라이맥스로 시뮬,,track_id==10005,,phase>=2 &is_finalcorner==1 &corner!=0 &is_activate_any_skill==1,종반 최종 코너 스킬 1회,특수,,0.45,,,5,,,나카야마,,2023년 11월 8일
 201113,1027,3,레어/상위,속도,,광망원인,광망원인,광망원인,光芒円刃,,,,,,,,,,distance_type==3 &all_corner_random==1,무작위 코너,랜덤,,0.35,,,3,360,,중거리,,2023년 11월 8일
 910071,19,1,계승,속도,,Adventure of 564,Adventure of 564,Adventure of 564,Adventure of 564,골드 쉽 (여름),수루시,,,,,,,,distance_rate_after_random==50,후반,랜덤,,0.035,,,3,200,,,,2023년 11월 17일
 110071,19,2,고유,속도,,Adventure of 564,Adventure of 564,Adventure of 564,Adventure of 564,골드 쉽 (여름),수루시,,,,,,,,distance_rate_after_random==50,후반,랜덤,,0.15,,,5,,,,,2023년 11월 17일
@@ -670,8 +670,8 @@
 210081,1260,2,레어/상위,속도,,限界の先へ,한계 너머로,,限界の先へ,,,,,,,,,,is_lastspurt==1 &phase_random==3,,,,0.35,,,2.4,400,,,,2024년 3월 7일
 910091,34,1,계승,속도,,Queen's Lumination,Queen's Lumination,Queen's Lumination,Queen's Lumination,다이와 스칼렛 (크리스마스),클스카,,,,"0.15 속도기로 간주 (선두, 후방 1마신 이내)",,,,distance_rate>=50 &corner==0 &order==1 &bashin_diff_behind<=1,후반 직선,즉발,,0.15,,,3.6,200,,,,2024년 3월 18일
 110091,34,2,고유,속도,,Queen's Lumination,Queen's Lumination,Queen's Lumination,Queen's Lumination,다이와 스칼렛 (크리스마스),클스카,,,,"0.35 속도기로 간주 (선두, 후방 1마신 이내)",,,,distance_rate>=50 &corner==0 &order==1 &bashin_diff_behind<=1,후반 직선,즉발,,0.35,,,6,,,,,2024년 3월 18일
-910081,63,1,계승,복합,,Into High Gear!,Into High Gear!,Into High Gear!,Into High Gear!,보드카 (크리스마스),클드카,,,,속가 복합기로 간주 (도쿄),,phase>=1 &slope==2 &order_rate>=50 &order_rate<=80 &track_id==10006,,slope==0 @slope==1,중반 이후 내리막 끝,즉발,,0.15,0.05,,3,200,,,,2024년 3월 18일
-110081,63,2,고유,복합,,Into High Gear!,Into High Gear!,Into High Gear!,Into High Gear!,보드카 (크리스마스),클드카,,,,속가 복합기로 간주 (도쿄),,phase>=1 &slope==2 &order_rate>=50 &order_rate<=80 &track_id==10006,,slope==0 @slope==1,중반 이후 내리막 끝,즉발,,0.35,0.1,,5,,,,,2024년 3월 18일
+910081,63,1,계승,복합,,Into High Gear!,Into High Gear!,Into High Gear!,Into High Gear!,보드카 (크리스마스),클드카,,,,속가 복합기로 간주 (도쿄),,phase>=1 &slope==2 &order_rate>=50 &order_rate<=80 &track_id==10006,,slope==0 @slope==1,중반 이후 내리막 끝,즉발,,0.15,0.05,,3,200,,,도쿄,2024년 3월 18일
+110081,63,2,고유,복합,,Into High Gear!,Into High Gear!,Into High Gear!,Into High Gear!,보드카 (크리스마스),클드카,,,,속가 복합기로 간주 (도쿄),,phase>=1 &slope==2 &order_rate>=50 &order_rate<=80 &track_id==10006,,slope==0 @slope==1,중반 이후 내리막 끝,즉발,,0.35,0.1,,5,,,,도쿄,2024년 3월 18일
 202461,1073,2,레어/상위,속도,,,밟을 수 없는 그림자,밟을 수 없는 그림자,踏ませぬ影,,,,,,시뮬에선 최종 직선 즉발,,,,running_style==1 &is_last_straight==1 &order==1 &bashin_diff_behind<=1,최종 직선,즉발,,0.45,,,2.4,360,도주,,,2024년 3월 18일
 202472,1075,1,일반/하위,속도,,,달려들기,달려들기,食らいつき,,,,,,시뮬에선 후반 즉발,,,,running_style==2 &distance_rate>=50 &is_overtake==1 @running_style==3 &distance_rate>=50 &is_overtake==1,후반,즉발,,0.15,,,2.4,180,선행/선입,,,2024년 3월 18일
 202471,1075,2,레어/상위,속도,,,맹추격,맹추격,猛追,,,,,,시뮬에선 후반 즉발,,,,running_style==2 &distance_rate>=50 &is_overtake==1 @running_style==3 &distance_rate>=50 &is_overtake==1,후반,즉발,,0.35,,,2.4,360,선행/선입,,,2024년 3월 18일
