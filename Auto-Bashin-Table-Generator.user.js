@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      2.2.1
+// @version      2.2.2
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+2.2.2 내,외 대응.
 2.2.1 join 구분자 ',' -> ', '
 2.2.0 전제 조건, 발동 조건 추가
 
@@ -501,9 +502,11 @@ var main = async function (current, all) {
         else { return '장거리'; }
     }
 
-    //잔디 1200m 단거리
+    //잔디 1200m(I) 단거리
     userSelected['마장'] = userSelected['코스 종류 및 거리'].includes('잔디') ? '잔디' : '더트'; //잔디
     userSelected['거리'] = parseInt(userSelected['코스 종류 및 거리'].replace(userSelected['마장'], '')); //1200m
+    const matchInOut = userSelected['코스 종류 및 거리'].match(/\((\w)\)/);
+    userSelected['내외'] = matchInOut ? matchInOut[1] : ""; // I, O, ""
     userSelected['거리 분류'] = getDistanceCategory(userSelected['거리']) //단거리
 
 
@@ -1305,7 +1308,7 @@ var main = async function (current, all) {
     if (isUniqueSkillSelected) { filename += ` (고유 ${userSelected['고유기']})` }
     if (userSelected['계승/일반기'].length > 0) { filename += ` (일반 ${userSelected['계승/일반기'].join(', ')})` }
 
-    let firstLine = `${userSelected['코스 장소']}\t${userSelected['마장']}\t${userSelected['거리']}\t${userSelected['거리 분류']}\t${userSelected['코스 상태']}\t${userSelected['각질']}\t${userSelected['스탯'].join('/')}\t${userSelected['거리 적성'].innerText}\t${userSelected['경기장 적성'].innerText}\t${userSelected['각질 적성']}\t${userSelected['컨디션']}\t${userSelected['고유기 레벨']}\t${userSimulateCount}`;
+    let firstLine = `${userSelected['코스 장소']}\t${userSelected['마장']}\t${userSelected['거리']}\t${userSelected['거리 분류']}\t${userSelected['코스 상태']}\t${userSelected['각질']}\t${userSelected['스탯'].join('/')}\t${userSelected['거리 적성'].innerText}\t${userSelected['경기장 적성'].innerText}\t${userSelected['각질 적성']}\t${userSelected['컨디션']}\t${userSelected['고유기 레벨']}\t${userSimulateCount}\t${userSelected['내외']}`;
 
     firstLine += isUniqueSkillSelected ? `\t${userSelected['고유기']}` : '\t';
     firstLine += userSelected['계승/일반기'].length > 0 ? `\t${userSelected['계승/일반기'].join(', ')}` : '\t';
