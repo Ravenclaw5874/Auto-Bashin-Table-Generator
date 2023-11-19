@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      2.2.3
+// @version      2.2.4
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+2.2.4 스킬DB 분류 우선 방식 변경
 2.2.3 스킬DB 분류 우선.
 2.2.2 내,외 대응.
 2.2.1 join 구분자 ',' -> ', '
@@ -931,6 +932,8 @@ var main = async function (current, all) {
             logger(`DB에 없는 스킬 : >${skillName}<`)
             skillData = {};
             skillData['스킬명(한섭 시뮬)'] = skillName;
+            //스킬DB에 없는 스킬이면 시뮬 상의 분류를 사용.
+            skillData['분류'] = category;
         }
 
         //시뮬 기준으로 희귀도 지정
@@ -938,8 +941,6 @@ var main = async function (current, all) {
 
         //카테고리가 지정되어 있으면 (ex.계승/일반) 그걸 사용, 아니면 (ex.고유) SkillDB 데이터를 그대로 사용.
         //if (category !== '') skillData['분류'] = category;
-        //스킬DB에 없는 스킬이면 시뮬 상의 분류를 사용.
-        if (typeof(skillData['분류']) === 'undefined') skillData['분류'] = category;
 
         //스킬 데이터에 즉발이라 되어있으면 한번, 랜덤 혹은 불명이면 n번
         // 777, U=ma2 등의 경우는 즉발이므로 한번.
