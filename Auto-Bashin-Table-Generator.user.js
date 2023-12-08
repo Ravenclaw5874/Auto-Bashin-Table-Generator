@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      2.2.4
+// @version      2.2.5
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -14,6 +14,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+2.2.5 명경, 또생 특이사항 불필요한 '}' 제거
 2.2.4 스킬DB 분류 우선 방식 변경
 2.2.3 스킬DB 분류 우선.
 2.2.2 내,외 대응.
@@ -1272,7 +1273,7 @@ var main = async function (current, all) {
                 await toggleSkill(triggerElements['astar'], false); //astar OFF
 
                 let skillData = await getSpecialSkillData(triggerElements['astar'], skipped_Skill_Elements[i], undefined, true, '레어/상위');
-                skillData['특이사항'] = `합 : ${skillData['마신']} astar: ${astar_bashin}}`;
+                skillData['특이사항'] = `합 : ${skillData['마신']} astar: ${astar_bashin}`;
                 skillData['마신'] -= astar_bashin;
                 result_Final['특수'].push(skillData);
                 break;
@@ -1285,7 +1286,7 @@ var main = async function (current, all) {
                 await toggleSkill(triggerElements['astar'], false); //astar OFF
 
                 let skillData = await getSpecialSkillData(triggerElements['astar'], skipped_Skill_Elements[i], undefined, true, '일반/하위');
-                skillData['특이사항'] = `합 : ${skillData['마신']} astar: ${astar_bashin}}`;
+                skillData['특이사항'] = `합 : ${skillData['마신']} astar: ${astar_bashin}`;
                 skillData['마신'] -= astar_bashin;
                 result_Final['특수'].push(skillData);
                 break;
