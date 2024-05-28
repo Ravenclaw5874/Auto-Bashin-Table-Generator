@@ -169,7 +169,7 @@
 110411	82	2	고유	가속			CHERRY☆스크램블	CHERRY☆スクランブル	사쿠라 바쿠신 오 (운동회)								order_rate<=20 &remain_distance<=401 &remain_distance>=399		즉발			0.1		1												2024년 8월 16일				
 110451	92	2	고유	복합		빙글빙글 머미 트릭♡	빙글빙글 머미 트릭♡	ぐるぐるマミートリック♡	슈퍼 크릭 (할로윈)								is_last_straight==1 &order<=4 &bashin_diff_infront<=1		즉발		0.25	0.3		5												2023년 1월 18일				
 110461	95	2	고유	속도		α-star*	α-star*	α-star*	스마트 팔콘 (그랜드 라이브)								distance_rate>=40 &distance_rate<=50 &distance_diff_rate<=10 &ground_type==2		즉발		0.25		3.5	6												2023년 12월 13일				
-110481	151	2	고유	속도			GALmem.포에버♪	GALmem.ふぉーえば♪	토센 조던 (여름 바캉스)								distance_rate>=40 &distance_rate<=50 &order_rate>=40 &order_rate<=80 &motivation==5		즉발		0.3			6												2024년 10월 17일				
+110481	151	2	고유	속도			GALmem.포에버♪	GALmem．ふぉーえば♪	토센 조던 (여름 바캉스)								distance_rate>=40 &distance_rate<=50 &order_rate>=40 &order_rate<=80 &motivation==5		즉발		0.3			6												2024년 10월 17일				
 110501	29	2	고유	속도		Hephaistos	Hephaistos	Hephaistos	나리타 타이신 (스팀펑크)								phase>=2 &is_finalcorner_laterhalf==1 &order_rate<=75 &order_rate>=40		즉발		0.35			5												2023년 12월 18일				
 110511	36	2	고유	속도		Flowering Dreams	Flowering Dreams	Flowering Dreams	니시노 플라워 (웨딩)								order>=2 &order_rate<=70 &remain_distance<=201 &remain_distance>=199 &near_count>=3		즉발	0.15	0.35			5												2024년 9월 16일				
 110521	160	2	고유	속도		113전 114기	113전 114기	113転び114起き	하루 우라라 (새해)								is_finalcorner==1 &corner!=0 &distance_diff_top>=7		즉발		0.25			5												2023년 4월 21일				
@@ -753,13 +753,13 @@
 210062	2006	1	일반/하위	복합		기라성	기라성	綺羅星									distance_rate_after_random==50				0.05	0.1	0.5	1.2								200				2023년 6월 15일				
 210071	2007	2	레어/상위	복합		너와 함께 이기고 싶어	너와 함께 이기고 싶어	キミと勝ちたい									distance_rate_after_random==50 &order_rate<=65				0.35	0.2		1.2								400				2023년 12월 13일				
 210072	2007	1	일반/하위	복합		꿈꾸는 도중	꿈꾸는 도중	夢の途中									distance_rate_after_random==50 &order_rate<=65				0.15	0.07		1.2								200				2023년 12월 13일				
-210081	2008	2	레어/상위	속도		한계 저 너머로	한계 저 너머로	限界の先へ									is_lastspurt==1 &phase_random==3				0.35			2.4								400				2024년 3월 7일				
-210082	2008	1	일반/하위	속도		앞만 바라보며	앞만 바라보며	前だけ見据えて									is_lastspurt==1 &phase_random==3				0.15			2.4								200				2024년 3월 7일				
-210091	2009	1	일반/하위	속도			레이스의 진수・속	レースの真髄・速									phase_laterhalf_random==1				0.15			2								150				2024년 3월 7일				
-210101	2010	1	일반/하위	속도			레이스의 진수・체	レースの真髄・体									phase_random==3 &hp_per>=2 &is_lastspurt==1				0.25		-2	3								150				2024년 3월 7일				
-210111	2011	1	일반/하위	속도			레이스의 진수・역	レースの真髄・力									phase==3 &is_overtake==1 &is_lastspurt==1				0.15			4								150				2024년 3월 7일				
-210121	2012	1	일반/하위	가속			레이스의 진수・근	レースの真髄・根									compete_fight_count>0					0.2		1.2								150				2024년 3월 7일				
-210131	2013	1	일반/하위	속도			레이스의 진수・지	レースの真髄・賢									activate_count_later_half>=2				0.15			2								150				2024년 3월 7일				
+210081	2008	2	레어/상위	속도		한계 저 너머로	한계 저 너머로	限界の先へ									is_lastspurt==1 &phase_random==3		랜덤		0.35			2.4								400				2024년 3월 7일				
+210082	2008	1	일반/하위	속도		앞만 바라보며	앞만 바라보며	前だけ見据えて									is_lastspurt==1 &phase_random==3		랜덤		0.15			2.4								200				2024년 3월 7일				
+210091	2009	1	일반/하위	속도			레이스의 진수・속	レースの真髄・速									phase_laterhalf_random==1		랜덤		0.15			2								150				2024년 3월 7일				
+210101	2010	1	일반/하위	속도			레이스의 진수・체	レースの真髄・体									phase_random==3 &hp_per>=2 &is_lastspurt==1		랜덤		0.25		-2	3								150				2024년 3월 7일				
+210111	2011	1	일반/하위	속도			레이스의 진수・역	レースの真髄・力									phase==3 &is_overtake==1 &is_lastspurt==1		즉발		0.15			4								150				2024년 3월 7일				
+210121	2012	1	일반/하위	가속			레이스의 진수・근	レースの真髄・根									compete_fight_count>0		랜덤			0.2		1.2								150				2024년 3월 7일				
+210131	2013	1	일반/하위	속도			레이스의 진수・지	レースの真髄・賢									activate_count_later_half>=2		즉발		0.15			2								150				2024년 3월 7일				
 210141	2014	1	일반/하위	녹딱			레이스의 진수・심	レースの真髄・心									motivation>=4		즉발													150				2024년 3월 7일				
 210261	2026	2	레어/상위	속도			태양의 예지	太陽の叡智									phase==1 &blocked_side_continuetime>=2				0.35			1.8								400				2024년 6월 14일				
 210262	2026	1	일반/하위	속도			빛의 가호	陽の加護									phase==1 &blocked_side_continuetime>=2				0.15			1.8								200				2024년 6월 14일				
@@ -925,7 +925,7 @@
 910411	82	1	계승	가속			CHERRY☆스크램블	CHERRY☆スクランブル	사쿠라 바쿠신 오 (운동회)								order_rate<=20 &remain_distance<=401 &remain_distance>=399		즉발			0.05		0.6								200				2024년 8월 16일				
 910451	92	1	계승	복합		빙글빙글 머미 트릭♡	빙글빙글 머미 트릭♡	ぐるぐるマミートリック♡	슈퍼 크릭 (할로윈)								is_last_straight==1 &order<=4 &bashin_diff_infront<=1		즉발		0.05	0.1		3								200				2023년 1월 18일				
 910461	95	1	계승	속도		α-star*	α-star*	α-star*	스마트 팔콘 (그랜드 라이브)								distance_rate>=40 &distance_rate<=50 &distance_diff_rate<=10 &ground_type==2		즉발		0.05		0.5	3.6								200				2023년 12월 13일				
-910481	151	1	계승	속도			GALmem.포에버♪	GALmem.ふぉーえば♪	토센 조던 (여름 바캉스)								distance_rate>=40 &distance_rate<=50 &order_rate>=40 &order_rate<=80 &motivation==5		즉발		0.1			3.6								200				2024년 10월 17일				
+910481	151	1	계승	속도			GALmem.포에버♪	GALmem．ふぉーえば♪	토센 조던 (여름 바캉스)								distance_rate>=40 &distance_rate<=50 &order_rate>=40 &order_rate<=80 &motivation==5		즉발		0.1			3.6								200				2024년 10월 17일				
 910501	29	1	계승	속도		Hephaistos	Hephaistos	Hephaistos	나리타 타이신 (스팀펑크)								phase>=2 &is_finalcorner_laterhalf==1 &order_rate<=75 &order_rate>=40		즉발		0.15			3								200				2023년 12월 18일				
 910511	36	1	계승	속도		Flowering Dreams	Flowering Dreams	Flowering Dreams	니시노 플라워 (웨딩)								order>=2 &order_rate<=70 &remain_distance<=201 &remain_distance>=199 &near_count>=3		즉발	0.035	0.15			3								200				2024년 9월 16일				
 910521	160	1	계승	속도		113전 114기	113전 114기	113転び114起き	하루 우라라 (새해)								is_finalcorner==1 &corner!=0 &distance_diff_top>=7		즉발		0.05			3								200				2023년 4월 21일				
