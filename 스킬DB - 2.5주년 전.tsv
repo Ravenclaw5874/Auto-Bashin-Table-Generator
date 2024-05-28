@@ -1054,7 +1054,7 @@
 102002211	1127	9	진화	속도			레코드 러너	レコードランナー	세이운 스카이 (무도회)								running_style==1 &phase<=1 &change_order_onetime>0 &accumulatetime>=5 @running_style==1 &phase<=1 &blocked_side_continuetime>=2 &accumulatetime>=5				0.35		1.5	3												2023년 7월 18일	톱 러너			
 102101111	1059	9	진화	속도			뇌등운분	雷騰雲奔	타마모 크로스								running_style==3 &phase_random==1 &order_rate>=40				0.45			2.4												2023년 4월 12일	신속 과감			
 102101121	1059	9	진화	속도			잽싸게 시작해보까!	ちゃちゃっと始めんで！	타마모 크로스								running_style==3 &phase_random==1 &order_rate>=40				0.25		3.5	2.4												2023년 4월 12일	신속 과감			
-102101211	1161	9	진화	속도			꼬리 날아오르기	尻尾の有頂天	타마모 크로스								activate_count_middle>=3				0.45			3												2023년 4월 12일	꼬리 솟구쳐 오르기			
+102101211	1161	9	진화	속도			꼬리 날아오르기	尻尾の有頂天	타마모 크로스								activate_count_middle>=3				0.45			3												2023년 4월 12일	꼬리 솟구쳐 오르기	200472, 200482, 210022		
 102102111	1072	9	진화	속도			선도자에게 바치는 기도의 송	先達に献ぐ祈りの頌	타마모 크로스 (축제)								distance_type==3 &phase_random==1 &order_rate<=50				0.45			2.4												2024년 2월 16일	킬러 튠			
 102102211	1046	9	진화	속도			자, 내랑 해보는 기다!	さあ、ウチとやろうや！	타마모 크로스 (축제)								phase==1 &change_order_onetime<0				0.45			1.8												2024년 2월 16일	텐션 오르는데!			
 102201111	1058	9	진화	속도			로열스터	ロイヤルスター	파인 모션								running_style==2 &is_finalcorner_random==1 &order_rate<=50				0.35		1.5	1.8												2023년 4월 4일	스피드스터			
@@ -1306,7 +1306,7 @@
 110401111	1053	9	진화	가속			해냈다고!	してやったり！	카츠라기 에이스								running_style==1 &phase==0		즉발			0.5		1.2												2024년 10월 28일	선수 필승			
 110401211	1246	9	진화	속도			나홀로 도주 여행	逃げっ切りの1人旅	카츠라기 에이스						phase==1 &bashin_diff_behind>=3 &order==1		running_style==1 &is_last_straight==1 &order==1 &track_id==10006 &distance_type==3		즉발		0.55			2.4												2024년 10월 28일	밟을 수 없는 그림자			
 110501111	1170	9	진화	속도			은하 그 너머로, 당신과	銀河のその先へ、あなたと	네오 유니버스								distance_type==3 &is_lastspurt==1 &corner==0 &order_rate>=20 &order_rate<=60		즉발		0.45			3												2024년 8월 7일	결사의 각오			
-110501211	1260	9	진화	속도			별바다를 달려서	星の海を駆けて	네오 유니버스								distance_type==3 &activate_count_all>=13			0.35				4												2024년 8월 7일	루미네선스			
+110501211	1260	9	진화	속도			별바다를 달려서	星の海を駆けて	네오 유니버스								distance_type==3 &activate_count_all>=13			0.35				4												2024년 8월 7일	루미네선스	200351, 200352, 200381, 200382, 201141, 201142, 200471, 200472, 200481, 200482, 210021, 210022, 200132/200141		
 110601111	1142	9	진화	회복			초조해하지 말고, 기죽지 말고	焦らず、気負わず	히시 미라클								running_style==3 &phase_random==1 &order_rate>=40						7.5													2024년 8월 28일	릴랙스		TRUE	
 110601121	1142	9	진화	속도			할 수 있는 범위에서 힘내자~!	できる範囲でがんばろ～！	히시 미라클								running_style==3 &phase_random==1 &order_rate>=40				0.35		1.5	3												2024년 8월 28일	릴랙스			
 110601211	1264	9	진화	속도			좀 좋은 것, 모아서	ちょっといいこと、集めて	히시 미라클						phase>=2 &distance_diff_rate>=50		running_style==3 &phase_random==1 &order_rate>=40 &order_rate<=90				0.35			4												2024년 8월 28일	천릿길			
