@@ -415,7 +415,7 @@
 201002	1100	1	일반/하위	가속		작전 준비	작전 준비	仕掛け準備									distance_type==1 &phase_random==1					0.2		4								140				2022년 6월 15일				
 201011	1101	2	레어/상위			뇌쇄술	뇌쇄술	悩殺術									distance_type==1 &phase_random==0 &order_rate<=50 &accumulatetime>=5							3								340				2022년 8월 4일				
 201012	1101	1	일반/하위			후방 못박기	후방 못박기	後方釘付									distance_type==1 &phase_random==0 &order_rate<=50 &accumulatetime>=5							3								170				2022년 6월 15일				
-201021	1102	2	레어/상위			도망 금지령	도망 금지령	逃亡禁止令									distance_type==1 &phase_random==0 &order_rate>50 &accumulatetime>=5							1.2								340				10000년 12월 28일				
+201021	1102	2	레어/상위			도망 금지령	도망 금지령	逃亡禁止令									distance_type==1 &phase_random==0 &order_rate>50 &accumulatetime>=5							1.2								340				9999년 9월 9일				
 201022	1102	1	일반/하위			앞지르기 금지	앞지르기 금지	抜け駆け禁止									distance_type==1 &phase_random==0 &order_rate>50 &accumulatetime>=5							1.2								170				2022년 6월 15일				
 201031	1103	2	일반/하위	속도		마일 직선◎	마일 직선◎	マイル直線◎									distance_type==◯ &straight_random==1				0.25			3								210				2022년 6월 15일				
 201032	1103	1	일반/하위	속도		마일 직선○	마일 직선◯	マイル直線○									distance_type==◯ &straight_random==1				0.15			3								100				2022년 6월 15일				
@@ -428,7 +428,7 @@
 201062	1106	1	일반/하위	가속		액셀러레이션	액셀러레이션	アクセラレーション									distance_type==2 &distance_rate>=50 &change_order_onetime<0		랜덤			0.2		3								160				2022년 6월 15일				
 201071	1107	2	레어/상위	속도		여장부 기질	여장부 기질	姉御肌									distance_type==2 &is_overtake==1 &accumulatetime>=5				0.35			2.4								240				2022년 9월 16일				
 201072	1107	1	일반/하위	속도		오기	오기	負けん気									distance_type==2 &is_overtake==1 &accumulatetime>=5				0.15			2.4								120				2022년 6월 15일				
-201081	1108	2	레어/상위	속도		스피드 그리드	스피드 그리드	スピードグリード									distance_type==2 &phase_random==1 &order<=3				0.25			3								320				10000년 12월 28일				
+201081	1108	2	레어/상위	속도		스피드 그리드	스피드 그리드	スピードグリード									distance_type==2 &phase_random==1 &order<=3				0.25			3								320				9999년 9월 9일				
 201082	1108	1	일반/하위	속도		스피드 이터	스피드 이터	スピードイーター									distance_type==2 &phase_random==1 &order<=3				0.15			3								160				2022년 6월 15일				
 201091	1109	2	레어/상위			포진	포진	布陣									distance_type==2 &phase_random==0 &order_rate>50 &accumulatetime>=3							3								320				2023년 2월 16일				
 201092	1109	1	일반/하위			포석	포석	布石									distance_type==2 &phase_random==0 &order_rate>50 &accumulatetime>=3							3								160				2022년 6월 15일				
@@ -474,7 +474,7 @@
 201272	1127	1	일반/하위	속도		선두 프라이드	선두 프라이드	先頭プライド									running_style==1 &phase<=1 &change_order_onetime>0 &accumulatetime>=5 @running_style==1 &phase<=1 &blocked_side_continuetime>=2 &accumulatetime>=5				0.15			3								180				2022년 6월 15일				
 201281	1128	2	레어/상위	회복		말괄량이 우마무스메	말괄량이 우마무스메	じゃじゃウマ娘									running_style==1 &slope==1 &accumulatetime>=10						5.5									360				2022년 6월 15일			TRUE	
 201282	1128	1	일반/하위	회복		기세로 밀어붙이기	기세로 밀어붙이기	勢い任せ									running_style==1 &slope==1 &accumulatetime>=10						1.5									180				2022년 6월 15일			TRUE	
-201291	1129	2	레어/상위	가속		재연소	재연소	再燃焼									running_style==1 &phase_random==2					0.4	-2	3								360				10000년 12월 28일				
+201291	1129	2	레어/상위	가속		재연소	재연소	再燃焼									running_style==1 &phase_random==2					0.4	-2	3								360				9999년 9월 9일				
 201292	1129	1	일반/하위	가속		두 번째 화살	두 번째 화살	二の矢									running_style==1 &phase_random==2					0.2	-2	3								180				2022년 6월 15일				
 201302	1130	1	일반/하위			리스타트	리스타트	リスタート									running_style==1 &phase_random==0 &order>=2 &accumulatetime>=5							3								130				2022년 6월 15일				
 201311	1131	2	일반/하위	속도		선행 직선◎	선행 직선◎	先行直線◎									running_style==◯ &straight_random==1				0.25			3								270				2022년 6월 15일				
@@ -615,14 +615,14 @@
 202272	1227	1	일반/하위	속도		만회하기	만회하기	盛り返し									ground_type==2 &phase_random==1 &order_rate>=50				0.15			2.4								180				2024년 1월 18일				
 202281	1228	2	레어/상위	속도		전속전진!	전속전진!	全速前進！									ground_type==2 &phase_random==3 &order_rate<=50 &is_lastspurt==1				0.35			3								360				2024년 6월 3일				
 202282	1228	1	일반/하위	속도		쏜살같이	쏜살같이	まっしぐら									ground_type==2 &phase_random==3 &order_rate<=50 &is_lastspurt==1				0.15			3								180				2023년 12월 13일				
-202291	1229	2	레어/상위	속도		명경지수	명경지수	明鏡止水									ground_type==2 &order_rate>=50 &activate_count_heal>=1 &distance_rate<=42 &phase==1		즉발		0.35			1.8								300				10000년 12월 28일		200352		
+202291	1229	2	레어/상위	속도		명경지수	명경지수	明鏡止水									ground_type==2 &order_rate>=50 &activate_count_heal>=1 &distance_rate<=42 &phase==1		즉발		0.35			1.8								300				9999년 9월 9일		200352		
 202292	1229	1	일반/하위	속도		또렷한 생각	또렷한 생각	冴える思考									ground_type==2 &order_rate>=50 &activate_count_heal>=1 &distance_rate<=42 &phase==1		즉발		0.15			1.8								150				2023년 12월 8일		200352		
 202301	1230	2	레어/상위	속도		우아한 모래 샤워	우아한 모래 샤워	優雅な砂浴び									ground_type==2 &accumulatetime>=5 &infront_near_lane_time>=3		즉발		0.35			3								320				2024년 3월 7일				
 202302	1230	1	일반/하위	속도		모래 샤워○	모래 샤워◯	砂浴び○									ground_type==2 &accumulatetime>=5 &infront_near_lane_time>=3		즉발		0.15			3								160				2024년 1월 18일				
 202303	1230	0	일반/하위	속도		모래 샤워×	모래 샤워×	砂浴び×									ground_type==2 &accumulatetime>=5 &infront_near_lane_time>=3		즉발	-0.2				3								100				2024년 1월 18일				
 202311	1231	2	레어/상위	가속		센터를 노려라!	센터를 노려라!	目指せセンター！									ground_type==2 &phase_random==2 &order_rate<=50					0.4		3								360				2023년 12월 13일				
 202312	1231	1	일반/하위	가속		의욕은 충분	의욕은 충분	意気込み十分									ground_type==2 &phase_random==2 &order_rate<=50					0.2		3								180				2023년 12월 13일				
-202321	1232	2	레어/상위	가속		폭주 모드!	폭주 모드!	爆走モード！									ground_type==2 &phase_random==2 &order_rate>=50					0.4		3								360				10000년 12월 28일				
+202321	1232	2	레어/상위	가속		폭주 모드!	폭주 모드!	爆走モード！									ground_type==2 &phase_random==2 &order_rate>=50					0.4		3								360				9999년 9월 9일				
 202322	1232	1	일반/하위	가속		급부상	급부상	急浮上									ground_type==2 &phase_random==2 &order_rate>=50					0.2		3								180				2023년 1월 9일				
 202331	1233	2	레어/상위	녹딱		발군의 파고들기	발군의 파고들기	抜群の踏み込み									ground_type==2 &base_power>=1200		즉발													160				2023년 12월 8일				
 202332	1233	1	일반/하위	녹딱		능숙한 파고들기	능숙한 파고들기	踏み込み上手									ground_type==2 &base_power>=1200		즉발													70				2023년 12월 8일				
@@ -630,9 +630,9 @@
 202342	1234	2	일반/하위	녹딱		흙장난◎	흙장난◎	泥遊び◎									ground_type==2 &ground_condition==3 @ground_type==2 &ground_condition==4		즉발													200				2024년 1월 18일				
 202343	1234	1	일반/하위	녹딱		흙장난○	흙장난◯	泥遊び○									ground_type==2 &ground_condition==3 @ground_type==2 &ground_condition==4		즉발													90				2024년 1월 18일				
 202344	1234	0	일반/하위	녹딱		흙장난×	흙장난×	泥遊び×									ground_type==2 &ground_condition==3 @ground_type==2 &ground_condition==4		즉발													50				2024년 1월 18일				
-202351	1235	2	레어/상위			모래 위의 무희	모래 위의 무희	砂上の舞姫									ground_type==2 &accumulatetime>=10 &phase==0 &order<=1 &bashin_diff_behind<=1							3								240				10000년 12월 28일				
+202351	1235	2	레어/상위			모래 위의 무희	모래 위의 무희	砂上の舞姫									ground_type==2 &accumulatetime>=10 &phase==0 &order<=1 &bashin_diff_behind<=1							3								240				9999년 9월 9일				
 202352	1235	1	일반/하위			흙먼지	흙먼지	土煙									ground_type==2 &accumulatetime>=10 &phase==0 &order<=1 &bashin_diff_behind<=1							3								120				2023년 12월 13일				
-202361	1236	2	레어/상위			방심은 큰 적	방심은 큰 적	油断大敵									ground_type==2 &distance_rate>=50 &is_other_character_activate_advantage_skill==9							3								360				10000년 12월 28일				
+202361	1236	2	레어/상위			방심은 큰 적	방심은 큰 적	油断大敵									ground_type==2 &distance_rate>=50 &is_other_character_activate_advantage_skill==9							3								360				9999년 9월 9일				
 202362	1236	1	일반/하위			압박감	압박감	圧迫感									ground_type==2 &distance_rate>=50 &is_other_character_activate_advantage_skill==9							3								180				2024년 1월 18일				
 202371	1237	2	레어/상위	속도		언스토퍼블	언스토퍼블	アンストッパブル									phase_random==1 &running_style==2				0.35			2.4								360				2023년 12월 13일				
 202372	1237	1	일반/하위	속도		공세	공세	攻めの姿勢									phase_random==1 &running_style==2				0.15			2.4								180				2023년 12월 13일				
@@ -727,10 +727,10 @@
 202871	1287	2	레어/상위	가속			군림	君臨									distance_type==3 &running_style==4 &phase>=2 &is_finalcorner==1 &corner!=0 &order_rate>=40					0.4		0.9								360				2025년 6월 14일				
 202872	1287	1	일반/하위	가속			혼신의 발걸음	渾身の足取り									distance_type==3 &running_style==4 &phase>=2 &is_finalcorner==1 &corner!=0 &order_rate>=40					0.2		0.9								180				2025년 6월 14일				
 202882	1288	1	일반/하위	속도			끓어오르는 피	たぎる血潮									running_style==4 &is_last_straight==1 &order>=2 &distance_diff_top<=10				0.25			2.4								180				2025년 6월 14일				
-202892	1289	1	일반/하위	회복			움직이지 않는 마음	不動の心									running_style==4 &phase_laterhalf_random==0 &order_rate>=50						1.5									180				10000년 12월 28일			TRUE	
+202892	1289	1	일반/하위	회복			움직이지 않는 마음	不動の心									running_style==4 &phase_laterhalf_random==0 &order_rate>=50						1.5									180				9999년 9월 9일			TRUE	
 202901	1290	2	레어/상위	속도			비상하는 다리	飛翔脚									running_style==4 &phase_laterhalf_random==1 &order_rate>=40				0.35			2.4								360				2025년 8월 19일				
 202902	1290	1	일반/하위	속도			추력충분	推力十分									running_style==4 &phase_laterhalf_random==1 &order_rate>=40				0.15			2.4								180				2025년 8월 19일				
-202912	1291	1	일반/하위	속도			무너뜨리기	切り崩し									running_style==4 &order_rate>=50 &is_finalcorner_random==1				0.15			1.8								190				10000년 12월 28일				
+202912	1291	1	일반/하위	속도			무너뜨리기	切り崩し									running_style==4 &order_rate>=50 &is_finalcorner_random==1				0.15			1.8								190				9999년 9월 9일				
 202922	1292	1	일반/하위	속도			아쉬움 없음	惜しみなし									running_style==4 &phase_random==1				0.25		-2	2.4								160				2025년 8월 19일				
 202932	1293	1	일반/하위	속도			그림자밟기	影踏み									running_style==4 &distance_rate>=50 &is_overtake==1				0.15			2.4								180				2025년 6월 14일				
 202942	1294	1	일반/하위	속도			소름 끼치게	鬼気迫って									distance_type==3 &running_style==4 &phase_random==1 &order_rate>=50				0.15			1.8								160				2025년 7월 29일				
