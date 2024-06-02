@@ -1103,7 +1103,7 @@
 103202211	1237	9	진화	속도			빛나는 룩손	眩耀のルクシオン	아그네스 타키온 (여름)								phase_random==1 &running_style==2				0.35			2.4												2024년 11월 18일	언스토퍼블			
 103301111	1149	9	진화	속도			조용한 맹세	静かな誓い	어드마이어 베가								running_style==4 &infront_near_lane_time>=1 &accumulatetime>=10				0.15		5.5	3												2023년 6월 7일	냉정 침착			
 103301211	1063	9	진화	속도			자신을 태우는 혜성	己身焦がすほうき星	어드마이어 베가						phase>=2 &distance_diff_rate>=50		running_style==4 &phase_firsthalf_random==3 &is_lastspurt==1				0.45			3												2023년 6월 7일	질풍노도			
-103401111	1161	9	진화	속도			소방 사다리 오르기	火消の梯子登り	이나리 원								activate_count_middle>=3				0.45			3												2023년 9월 29일	꼬리 솟구쳐 오르기			
+103401111	1161	9	진화	속도			소방 사다리 오르기	火消の梯子登り	이나리 원								activate_count_middle>=3				0.45			3												2023년 9월 29일	꼬리 솟구쳐 오르기	200472, 200482, 210022		
 103401211	1200	9	진화	속도			숙련된 모래 먼지의 사신	熟練の砂塵使い	이나리 원								ground_type==2 &phase_random==1 &order_rate>=50				0.35		7.5	1.8												2023년 9월 29일	모래의 현인			
 103401221	1200	9	진화	속도			멋지고 호쾌한 달인의 기술	粋でいなせな達人技	이나리 원								distance_type==3 &phase_random==1 &order_rate>=50				0.45		3.5	1.8												2023년 9월 29일	모래의 현인			
 103402111	1075	9	진화	속도			부채춤	扇ノ舞	이나리 원 (축제)								distance_type==4 &is_finalcorner==1 &corner!=0 &lane_type==0		즉발		0.45			3												2024년 2월 16일	내적 체험			
@@ -1311,7 +1311,7 @@
 110601121	1142	9	진화	속도			할 수 있는 범위에서 힘내자~!	できる範囲でがんばろ～！	히시 미라클								running_style==3 &phase_random==1 &order_rate>=40				0.35		1.5	3												2024년 8월 28일	릴랙스			
 110601211	1264	9	진화	속도			좀 좋은 것, 모아서	ちょっといいこと、集めて	히시 미라클						phase>=2 &distance_diff_rate>=50		running_style==3 &phase_random==1 &order_rate>=40 &order_rate<=90				0.35			4												2024년 8월 28일	천릿길			
 110701111	1054	9	진화	속도		Breakaway Star	Breakaway Star	Breakaway Star	탭 댄스 시티								running_style==1 &phase_random==1 &order==1				0.45			3												2025년 3월 10일	탈출술			
-110701211	1161	9	진화	속도		Smooth Sailing!	Smooth Sailing!	Smooth Sailing!	탭 댄스 시티								activate_count_middle>=3 &order==1				0.45			3												2025년 3월 10일	꼬리 솟구쳐 오르기			
+110701211	1161	9	진화	속도		Smooth Sailing!	Smooth Sailing!	Smooth Sailing!	탭 댄스 시티								activate_count_middle>=3 &order==1				0.45			3												2025년 3월 10일	꼬리 솟구쳐 오르기	200472, 200482, 210022		
 110801111	1272	9	진화	속도			마천철현	磨穿鉄硯	두라멘테								phase_corner_random==1				0.35			4												2025년 6월 14일	네버 기브 업			
 110801211	1287	9	진화	복합			혁언	赫焉	두라멘테								distance_type==3 &track_id!=10005 &running_style==4 &phase>=2 &is_finalcorner==1 &corner!=0 &order_rate>=40 @distance_type==3 &track_id==10005 &running_style==4 &phase>=2 &corner!=0 &order_rate>=40					0.4		0.9		is_activate_other_skill_detail==1 &is_last_straight==1		0.15			3					2025년 6월 14일	군림			
 110901111	1250	9	진화	속도			미래를 열어라!	未来を拓け！	Rhein Kraft								distance_type==2 &phase_laterhalf_random==1 &order_rate<=50				0.45			2.4												2025년 7월 10일	마구마구			
