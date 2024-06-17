@@ -5,7 +5,7 @@
 
 [스크립트 설치](https://github.com/Ravenclaw5874/Auto-Bashin-Table-Generator/raw/main/Auto-Bashin-Table-Generator.user.js)
 
-설치 후 [한국 우마무스메 레이스 에뮬레이터](http://race-ko.wf-calc.net/#/champions-meeting) 사이트에서
+설치 후 [한국 우마무스메 레이스 에뮬레이터](https://ravenclaw5874.github.io/uma-emu/#/champions-meeting) 사이트에서
 
 ![버튼.png](./img/button.png)
 
