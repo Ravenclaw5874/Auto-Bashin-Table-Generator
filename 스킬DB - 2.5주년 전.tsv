@@ -18,7 +18,7 @@
 10611	7	3	고유	속도		Call me KING	Call me KING	Call me KING	킹 헤일로								temptation_count==0 &remain_distance<=201 &remain_distance>=199 &order>=4 &order_rate<=70				0.35			5												2022년 6월 15일				
 10621	14	3	고유	속도		레디, 땅!	레디, 땅!	レディー、どんっ！	마치카네 탄호이저								distance_rate>=50 &phase==1 &order>=3 &order_rate<=70				0.15		3.5	5												2023년 6월 15일				
 10631	20	3	고유	속도			열심히, 단련하여	打ち、鍛えて	이쿠노 딕터스								is_lastspurt==1 &phase==3 &temptation_count==0				0.15			6												2025년 6월 14일				
-10661	8	3	고유	속도			엔진 점화!	エンジン点火！	트윈 터보								distance_rate>=34 &distance_rate<=36 &order==1 &bashin_diff_behind>=1				0.05			13		phase==3 &is_activate_other_skill_detail==1	-0.05				500					2024년 6월 14일				
+10661	8	3	고유	속도		엔진 점화!	엔진 점화!	エンジン点火！	트윈 터보								distance_rate>=34 &distance_rate<=36 &order==1 &bashin_diff_behind>=1				0.05			13		phase==3 &is_activate_other_skill_detail==1	-0.05				500					2024년 6월 14일				
 100011	97	2	고유	복합		슈팅 스타	슈팅 스타	シューティングスター	스페셜 위크								phase>=2 &order>=1 &order_rate<=50 &change_order_onetime<0			0.35		0.1		5												2022년 6월 15일				
 100021	79	2	고유	속도		선두의 경치는 양보할 수 없어…!	선두의 경치는 양보할 수 없어…!	先頭の景色は譲らない…！	사일런스 스즈카								distance_rate>=50 &order==1 &bashin_diff_behind>=1		즉발		0.35			5												2022년 6월 15일				
 100031	152	2	고유	속도		궁극 테이오 스텝	궁극 테이오 스텝	究極テイオーステップ	토카이 테이오						phase>=2 &order<=3 &bashin_diff_infront<=1 &is_overtake==1		is_last_straight==1		즉발		0.45			5												2022년 6월 15일				
@@ -43,7 +43,7 @@
 100221	158	2	고유	속도		Fairy tale	Fairy tale	Fairy tale	파인 모션								distance_rate>=50 &order>=2 &order_rate<=40 &blocked_side_continuetime>=2		즉발		0.35			5												2023년 4월 4일				
 100231	76	2	고유	속도		∴win Q.E.D.	∴win Q.E.D.	∴win Q.E.D.	비와 하야히데								phase>=2 &is_finalcorner==1 &order<=4 &temptation_count==0		즉발		0.45			5												2022년 7월 7일				
 100241	13	2	고유	복합		번뜩임☆랜딩	번뜩임☆랜딩	ひらめき☆ランディング	마야노 탑건								is_finalcorner==1 &blocked_side_continuetime>=2 &order<=3		즉발		0.25	0.3		5												2022년 6월 15일				
-100251	52	2	고유	속도			당신을・뒤쫓아서	アナタヲ・オイカケテ	맨하탄 카페								distance_rate>=50 &order_rate>=40 &order_rate<=70		즉발		0.25			6												2023년 2월 8일				
+100251	52	2	고유	속도		당신을・뒤쫓아서	당신을・뒤쫓아서	アナタヲ・オイカケテ	맨하탄 카페								distance_rate>=50 &order_rate>=40 &order_rate<=70		즉발		0.25			6												2023년 2월 8일				
 100261	70	2	고유	속도		G00 1st.F∞;	G00 1st.F∞;	G00 1st.F∞;	미호노 부르봉								is_badstart==0 &order<=3 &is_last_straight==1 &order_rate_in20_continue==1		즉발		0.45			5												2022년 6월 28일				
 100271	3	2	고유	가속		레츠 아나볼릭!	레츠 아나볼릭!	レッツ・アナボリック！	메지로 라이언								phase>=2 &corner!=0 &order_rate>=65 &order_rate<=70		즉발			0.4		4												2022년 6월 15일				
 100281	167	2	고유	복합		I'M☆FULL☆SPEED!!	I'M☆FULL☆SPEED!!	I'M☆FULL☆SPEED!!	히시 아케보노								distance_rate>=45 &distance_rate<=60 &order>=3 &order_rate<=50 &hp_per<=70		즉발		0.25	0.3		5												2022년 12월 30일				
@@ -73,9 +73,9 @@
 100521	9	2	고유	회복		두근두근 클라이맥스	두근두근 클라이맥스	ワクワククライマックス	하루 우라라								is_finalcorner==1 &corner!=0 &order_rate>50 &near_count>=1						5.5													2022년 6월 15일			TRUE	
 100531	72	2	고유	가속		열혈!! 선도 어택	열혈!! 선도 어택	熱血！！風紀アタック	뱀부 메모리								phase>=2 &order_rate>=50 &is_finalcorner==1 &bashin_diff_infront<=1		즉발			0.1		2												2023년 11월 29일				
 100541	16	2	고유	속도			질풍폭주 페가수스 대시!	疾風爆走ペガサスダッシュ！	비코 페가수스						order_rate>=45 &distance_rate>=50 &change_order_onetime<0		remain_distance<=150 &order_rate<=50				0.45			4												2025년 6월 4일				
-100551	48	2	고유	속도			수많은 빛깔☆마블러스★세계	万彩☆マーベラス★世界	마블러스 선데이								distance_rate<=50 &distance_rate>=40 &order_rate<=80 &order_rate>=50 &near_count>=1 &visiblehorse>=4		즉발		0.4			5												2024년 10월 7일				
+100551	48	2	고유	속도		만색찬란☆마블러스★세계	수많은 빛깔☆마블러스★세계	万彩☆マーベラス★世界	마블러스 선데이								distance_rate<=50 &distance_rate>=40 &order_rate<=80 &order_rate>=50 &near_count>=1 &visiblehorse>=4		즉발		0.4			5												2024년 10월 7일				
 100561	2	2	고유	복합		옵니다 오고 있습니다 오게 할 겁니다!	옵니다 오고 있습니다 오게 할 겁니다!	来ます来てます来させます！	마치카네 후쿠키타루								phase>=2 &order>=3 &blocked_front==1				0.35	0.1		5												2022년 6월 15일				
-100571	69	2	고유	속도			서정, 여행길의 끝에	叙情、旅路の果てに	미스터 시비								distance_type==3 &phase_laterhalf_random==1 &order_rate>50 @distance_type==4 &phase_laterhalf_random==1 &order_rate>50				0.35			6												2024년 6월 14일				
+100571	69	2	고유	속도		서정, 여로의 끝에	서정, 여행길의 끝에	叙情、旅路の果てに	미스터 시비								distance_type==3 &phase_laterhalf_random==1 &order_rate>50 @distance_type==4 &phase_laterhalf_random==1 &order_rate>50				0.35			6												2024년 6월 14일				
 100581	54	2	고유	복합		I Never Goof Up!	I Never Goof Up!	I Never Goof Up!	메이쇼 도토								phase>=2 &change_order_onetime<0				0.25	0.3		5												2022년 11월 30일				
 100591	56	2	고유	가속		저편, 그 너머로…	저편, 그 너머로…	彼方、その先へ…	메지로 도베르								phase>=2 &corner!=0 &is_finalcorner==0 &temptation_count==0 &order_rate>=50 &order_rate<=70 @phase==1 &corner!=0 &is_finalcorner==1 &temptation_count==0 &order_rate>=50 &order_rate<=70		즉발			0.4		4												2023년 3월 10일				
 100601	1	2	고유	속도		반드시 그 너머로…!	반드시 그 너머로…!	きっとその先へ…！	나이스 네이처								phase>=2 &order==3 &bashin_diff_behind<=1				0.35			5												2022년 6월 15일				
@@ -84,21 +84,21 @@
 100631	20	2	고유	속도			백련성강	百錬成鋼	이쿠노 딕터스								is_lastspurt==1 &phase==3 &temptation_count==0				0.25			3												2025년 6월 14일				
 100641	67	2	고유	속도		크게 앞지르는 길	크게 앞지르는 길	ぶっちぎりロード	메지로 파머								distance_rate>=50 &order_rate_in20_continue==1		즉발		0.25		5.5	6												2023년 9월 8일				
 100651	40	2	고유	속도		텐션 올려 푸쳐핸썹!	텐션 올려 푸쳐핸썹!	アゲてアゲてぷちょへんざ！	다이타쿠 헬리오스								distance_type==1 &phase_laterhalf_random==1 &order_rate<=50 @distance_type==2 &phase_laterhalf_random==1 &order_rate<=50				0.25			6												2024년 5월 10일				
-100661	8	2	고유	속도			엔진 전개! 대분사!	エンジン全開！大噴射！	트윈 터보								distance_rate>=34 &distance_rate<=36 &order==1 &bashin_diff_behind>=1		즉발		0.15			13		phase==3 &is_activate_other_skill_detail==1	-0.05				500					2024년 6월 14일				
+100661	8	2	고유	속도		엔진 전개! 대분사!	엔진 전개! 대분사!	エンジン全開！大噴射！	트윈 터보								distance_rate>=34 &distance_rate<=36 &order==1 &bashin_diff_behind>=1		즉발		0.15			13		phase==3 &is_activate_other_skill_detail==1	-0.05				500					2024년 6월 14일				
 100671	85	2	고유	속도		어둠을 비추어라 영원한 빛	어둠을 비추어라 영원한 빛	晦冥を照らせ永遠の耀き	사토노 다이아몬드								is_last_straight_onetime==1 &order>=2 &order<=5 &distance_diff_top<=5		즉발		0.45			5												2023년 6월 26일				
 100681	140	2	고유	복합		승리의 함성 어기여차!	승리의 함성 어기여차!	勝ち鬨ワッショイ！	키타산 블랙								phase==2 &straight_front_type==2 &order<=2		즉발		0.25	0.3		5												2023년 6월 15일				
 100691	83	2	고유	속도		동경은 벚꽃을 넘는다!	동경은 벚꽃을 넘는다!	憧れは桜を越える！	사쿠라 치요노 오								remain_distance<=300 &order_rate<=40 &bashin_diff_infront<=1		즉발		0.35			5												2023년 5월 11일				
-100701	100	2	고유	가속			세이리오스	セイリオス	시리우스 심볼리								remain_distance>=799 &remain_distance<=801 &order_rate>=30 &order_rate<=60 &course_distance==2400 &popularity<=3		즉발			0.5		4												2024년 11월 8일				
+100701	100	2	고유	가속		세이리오스	세이리오스	セイリオス	시리우스 심볼리								remain_distance>=799 &remain_distance<=801 &order_rate>=30 &order_rate<=60 &course_distance==2400 &popularity<=3		즉발			0.5		4												2024년 11월 8일				
 100711	65	2	고유	속도		일생의 꿈, 찰나의 비상	일생의 꿈, 찰나의 비상	一期の夢、刹那の飛翔	메지로 아르당								is_last_straight==1 &bashin_diff_behind<=1		즉발		0.45		-1	4												2023년 5월 30일				
 100721	114	2	고유	속도		열화요란, 무적의 춤	열화요란, 무적의 춤	烈火繚乱、無敵之舞	야에노 무테키						is_finalcorner==1 &change_order_onetime<0		remain_distance<=300 &order_rate<=40		즉발		0.35			5												2023년 8월 8일				
 100741	63	2	고유	속도		아름다운 꽃소식을 알리는 바람	아름다운 꽃소식을 알리는 바람	麗しき花信風	메지로 브라이트								distance_rate>=50 &order_rate>=40 &order_rate<=80		즉발		0.15			5												2023년 7월 7일				
-100761	81	2	고유	속도			꽃피는, 세계	花開き、世界	사쿠라 로렐								distance_type==4 &distance_rate>=50 &distance_rate<=51 &order_rate>=30 &order_rate<=80		즉발		0.25		7.5	6												2024년 7월 29일				
+100761	81	2	고유	속도		꽃피는, 세계	꽃피는, 세계	花開き、世界	사쿠라 로렐								distance_type==4 &distance_rate>=50 &distance_rate<=51 &order_rate>=30 &order_rate<=80		즉발		0.25		7.5	6												2024년 7월 29일				
 100771	30	2	고유	속도		Road to Glory	Road to Glory	Road to Glory	나리타 탑 로드						distance_rate>=60 &phase==1 &order>=2 &order_rate<=40		remain_distance<=401 &remain_distance>=399 &distance_diff_top_float<=25 &distance_type==4		즉발		0.55			5												2024년 12월 12일				
 100781	113	2	고유	가속		빛나는 바람	빛나는 바람	風光る	야마닌 제퍼						distance_rate>=50 &order_rate_out20_continue==1		is_finalcorner_laterhalf==1 &distance_diff_rate<=50 &order==2		즉발			0.2		8												2024년 2월 7일				
 100801	155	2	고유	속도		Info: Acquired	Info: Acquired	Info: Acquired	Transcend						distance_rate>=50 &order_rate_in20_continue==1 &track_id>=10001 &track_id<=10010 &ground_type==2		is_other_character_activate_advantage_skill==31			0.25	0.15			5												2025년 7월 1일				
 100831	105	2	고유	속도		Mission: Triumph	Mission: Triumph	Mission: Triumph	심볼리 크리스 에스								distance_rate>=40 &corner==0 &slope==2 &order_rate>=40 &order_rate<=80		즉발		0.35			6												2024년 7월 8일				
-100841	144	2	고유	속도			벽력의 아우프헤벤	霹靂のアウフヘーベン	타니노 김렛						phase>=2 &order_rate>=50		is_last_straight==1 &track_id==10006 &distance_type==3		즉발	0.55				5												2024년 9월 6일				
-100851	38	2	고유	속도			최상이거라	至上であれ	다이이치 루비								distance_rate>=66 &distance_rate<=68 &order_rate>=60 &order_rate<=90 &temptation_count==0		즉발	0.25				5												2024년 6월 28일				
+100841	144	2	고유	속도		벽력의 아우프헤벤	벽력의 아우프헤벤	霹靂のアウフヘーベン	타니노 김렛						phase>=2 &order_rate>=50		is_last_straight==1 &track_id==10006 &distance_type==3		즉발	0.55				5												2024년 9월 6일				
+100851	38	2	고유	속도		최상이어라	최상이거라	至上であれ	다이이치 루비								distance_rate>=66 &distance_rate<=68 &order_rate>=60 &order_rate<=90 &temptation_count==0		즉발	0.25				5												2024년 6월 28일				
 100861	58	2	고유	속도			사랑과 녹아라 그저 녹아라	愛と熔けよただ熔けよ	메지로 라모누								remain_distance>=999 &remain_distance<=1001 &order_rate>=20 &order_rate<=50		즉발		0.35			5												2025년 2월 6일				
 100871	112	2	고유	복합		Silent letter	Silent letter	Silent letter	애스턴 마짱								remain_distance<=400 &order<=2 &overtake_target_time>=1		즉발		0.25	0.3		5												2024년 1월 30일				
 100881	88	2	고유	속도		Reversal Illusion	Reversal Illusion	Reversal Illusion	사토노 크라운						change_order_up_middle>=1 &is_finalcorner==1 &corner!=0 &order_rate<=70 &order_rate>=40		distance_type==3 &remain_distance<=400				0.45			5												2025년 3월 31일				
@@ -113,14 +113,14 @@
 100991	161	2	고유	가속		빛나라☆토마코마이	빛나라☆토마코마이	かがやけ☆とまこまい	홋코 타루마에						phase==1 &blocked_side_continuetime>=2 &corner!=0		is_lastspurt==1 &order_rate<=40 &order_rate>=30 &ground_type==2 &lastspurt==2		즉발			0.4		4												2024년 4월 30일				
 101001	125	2	고유	속도		Never Say Never	Never Say Never	Never Say Never	원더 어큐트								remain_distance>=299 &remain_distance<=301 &order_rate>=20 &order_rate<=40 &distance_diff_top<=5 &ground_type==2		즉발	0.25	0.25			5												2024년 3월 7일				
 101021	78	2	고유	속도			비바체・볼라레	ヴィヴァーチェ・ヴォラーレ	사운즈 오브 어스								distance_rate<=50 &order_rate>=40 &order_rate<=80 &infront_near_lane_time>=3 &accumulatetime>=10 @distance_rate<=50 &order_rate>=40 &order_rate<=80 &behind_near_lane_time>=3 &accumulatetime>=10						1.5			distance_rate<=60 &distance_rate>=45 &corner==0 &is_activate_other_skill_detail==1		0.45			4					2025년 8월 8일				
-101041	137	2	고유	속도			새벽의 깃발 『카츠라기 에이스』!	暁の御旗『葛城栄主』！	카츠라기 에이스								corner==3 &order==1 &track_id==10006 &distance_type==3		즉발		0.25		3.5	6												2024년 10월 28일				
-101051	34	2	고유	속도			아드・아스트라	アド・アストラ	네오 유니버스								distance_rate>=50 &distance_rate<=55 &order_rate>=40 &order_rate<=80 &distance_type==3 &activate_count_all>=7		즉발		0.45			5												2024년 8월 7일		200351, 200352, 200381, 200382, 201141, 201142, 200471		TRUE
-101061	164	2	고유	속도			Bang☆기적 같은 결과!	Bang☆ミラクるわせ！	히시 미라클								distance_type==4 &order_rate>=40 &order_rate<=70 &is_finalcorner_laterhalf==1 &popularity>=4		즉발		0.45			6												2024년 8월 28일				
+101041	137	2	고유	속도		새벽의 깃발 『카츠라기 에이스』!	새벽의 깃발 『카츠라기 에이스』!	暁の御旗『葛城栄主』！	카츠라기 에이스								corner==3 &order==1 &track_id==10006 &distance_type==3		즉발		0.25		3.5	6												2024년 10월 28일				
+101051	34	2	고유	속도		애드・아스트라	아드・아스트라	アド・アストラ	네오 유니버스								distance_rate>=50 &distance_rate<=55 &order_rate>=40 &order_rate<=80 &distance_type==3 &activate_count_all>=7		즉발		0.45			5												2024년 8월 7일		200351, 200352, 200381, 200382, 201141, 201142, 200471		TRUE
+101061	164	2	고유	속도		Bang☆전 미라클!	Bang☆기적 같은 결과!	Bang☆ミラクるわせ！	히시 미라클								distance_type==4 &order_rate>=40 &order_rate<=70 &is_finalcorner_laterhalf==1 &popularity>=4		즉발		0.45			6												2024년 8월 28일				
 101071	149	2	고유	속도		Billions of stars	Billions of stars	Billions of stars	탭 댄스 시티								phase>=2 &is_last_straight==1 &order==1				0.25			5												2025년 3월 10일				
 101081	42	2	고유	속도			나찰, 붉은 날개로 천상에 이르나니	羅刹、赤翼にて天上へ至らん	두라멘테								distance_rate>=50 &distance_rate<=51 &order_rate>=50				0.35			5		phase>=2 &is_activate_other_skill_detail==1 &is_finalcorner==1 &corner!=0 &is_overtake==1	0.15				3					2025년 6월 14일				
 101091	45	2	고유	속도			이어가다・이어지는×꿈・미래	繋ぐ・繋がる×夢・未来	Rhein Kraft								distance_type==1 &distance_rate<=50 &corner!=0 &order>=3 &order_rate<=70 @distance_type==2 &distance_rate<=50 &corner!=0 &order>=3 &order_rate<=70				0.25			6												2025년 7월 10일				
 110011	98	2	고유	회복		겁나게 귀엽네♪머린 다이브	겁나게 귀엽네♪ 머린 다이브	わやかわ♪マリンダイヴ	스페셜 위크 (여름)								phase==1 &order>=2 &order_rate<=70 &activate_count_middle>=2						5.5													2022년 11월 17일			TRUE	
-110021	80	2	고유	속도			수평선 그 너머에	水平線のその先へ	사일런스 스즈카 (여름)						phase==1 &bashin_diff_behind>=3 &order==1		distance_rate>=66 &distance_rate<=68 &corner==3 &order==1		즉발	0.45				5												2024년 11월 18일				
+110021	80	2	고유	속도		수평선 저 너머로	수평선 그 너머에	水平線のその先へ	사일런스 스즈카 (여름)						phase==1 &bashin_diff_behind>=3 &order==1		distance_rate>=66 &distance_rate<=68 &corner==3 &order==1		즉발	0.45				5												2024년 11월 18일				
 110031	153	2	고유	속도		절대는, 나야	절대는, 나야	絶対は、ボクだ	토카이 테이오 (애니 콜라보)						is_finalcorner==1 &is_overtake==1 &order<=5 &order_rate<=50 &overtake_target_no_order_up_time>=2		is_last_straight==1				0.45			5												2022년 7월 19일				
 110041	47	2	고유	속도		뭉클하게♪Chu	뭉클하게♪ Chu	グッときて♪Chu	마루젠스키 (여름)								distance_rate>=50 &activate_count_heal>=1 &order<=3				0.35			5												2022년 11월 17일			TRUE	
 110041	47	2	고유	속도		뭉클하게♪Chu(777)	뭉클하게♪Chu(777)	グッときて♪Chu	마루젠스키 (여름)										즉발		0.35			5												2022년 11월 17일		201571		
@@ -138,7 +138,7 @@
 110091	37	2	고유	속도		Queen's Lumination	Queen's Lumination	Queen's Lumination	다이와 스칼렛 (크리스마스)								distance_rate>=50 &corner==0 &order==1 &bashin_diff_behind<=1		즉발		0.35			6												2024년 3월 18일				
 110101	148	2	고유	속도		Joyful Voyage!	Joyful Voyage!	Joyful Voyage!	타이키 셔틀 (캠핑)								distance_diff_top<=5 &order>=2 &order_rate<=40 &remain_distance<=201 &remain_distance>=199		즉발	0.15	0.35			5												2023년 10월 19일				
 110111	25	2	고유	회복		게인 힐・슈피리어	게인 힐・슈피리어	ゲインヒール・スペリアー	그래스 원더 (판타지)								phase==1 &change_order_onetime>0 &order_rate>=40						7.5													2022년 10월 18일			TRUE	
-110121	166	2	고유	복합			곱빼기! 퍼스트 바이트!	大盛り！ファーストバイト！	히시 아마존 (웨딩)						change_order_up_middle>=3		distance_rate>=60 &phase==1 &slope==2 &order_rate>=50		즉발		0.35	0.1		4												2024년 9월 16일				
+110121	166	2	고유	복합		곱빼기! 퍼스트 바이트!	곱빼기! 퍼스트 바이트!	大盛り！ファーストバイト！	히시 아마존 (웨딩)						change_order_up_middle>=3		distance_rate>=60 &phase==1 &slope==2 &order_rate>=50		즉발		0.35	0.1		4												2024년 9월 16일				
 110131	61	2	고유	속도		최강의 이름을 걸고	최강의 이름을 걸고	最強の名を懸けて	메지로 맥퀸 (애니 콜라보)								phase>=2 &is_finalcorner==1 &order<=4 &overtake_target_time>=1				0.35			6												2022년 7월 19일				
 110141	122	2	고유	가속		콘도르 맹격파	콘도르 맹격파	コンドル猛撃波	엘 콘도르 파사 (판타지)								is_finalcorner==1 &corner!=0 &is_overtake==1 &order>=4 &order_rate<=75					0.4		4												2022년 10월 18일				
 110151	157	2	고유	속도		복을 베푸는 바르카롤	복을 베푸는 바르카롤	恵福バルカローレ	티엠 오페라 오 (새해)								remain_distance<=401 &remain_distance>=399 &order_rate<=40 &activate_count_all>=7		즉발		0.45			5												2023년 4월 21일				
@@ -153,12 +153,12 @@
 110241.1	49	2	고유	속도		플라워리☆머누버(전방)	플라워리☆머누버(전방)	フラワリー☆マニューバ	마야노 탑건 (웨딩)								is_finalcorner==1 &order_rate<=40 &change_order_onetime<0				0.35			5												2022년 9월 16일				
 110241.2	49	2	고유	가속		플라워리☆머누버(후방)	플라워리☆머누버(후방)	フラワリー☆マニューバ	마야노 탑건 (웨딩)								is_finalcorner==1 &order_rate>=50 &order_rate<=80 &change_order_onetime<0					0.4		4												2022년 9월 16일				
 110251	53	2	고유	속도			진심어린 대접이냥	心からのおもてにゃし	맨하탄 카페 (발렌타인)						distance_rate>=50 &order_rate_out40_continue==1		distance_type==4 &phase>=2 &is_finalcorner==1			0.35				5												2025년 5월 21일				
-110261	71	2	고유	속도			오퍼레이션・Cacao	オペレーション・Cacao	미호노 부르봉 (발렌타인)								order<=4 &phase==1 &corner!=0 &bashin_diff_behind<=3		즉발		0.35		1.5	5												2023년 5월 19일				
+110261	71	2	고유	속도		오퍼레이션・Cacao	오퍼레이션・Cacao	オペレーション・Cacao	미호노 부르봉 (발렌타인)								order<=4 &phase==1 &corner!=0 &bashin_diff_behind<=3		즉발		0.35		1.5	5												2023년 5월 19일				
 110271	59	2	고유	복합		당신에게 바치는 프리 푸어링	당신에게 바치는 프리 푸어링	あなたに捧げるフリーポア	메지로 라이언 (발렌타인)								distance_rate>=60 &slope==2 &phase==1 &order>=2 &distance_diff_top<=10 &distance_type==3		즉발		0.35	0.1		4												2024년 5월 20일				
 110291	129	2	고유	속도			많이 드셔 주세유!	いっぱいおあげんしぇ！	유키노 비진 (발렌타인)								distance_rate>=45 &distance_rate<=55 &order_rate>=20 &order_rate<=50 &is_overtake==1 &distance_type==2				0.45			4												2025년 5월 21일				
 110301	44	2	고유	속도		Drain for rose	Drain for rose	Drain for rose	라이스 샤워 (할로윈)								phase==1 &order>=2 &order_rate<=50		즉발		0.25		5.5	5												2023년 1월 18일				
 110311	111	2	고유	속도		프레시☆팔러	프레시☆팔러	フレッシュ☆パーラー	아이네스 후진 (발렌타인)								phase_firsthalf_random==1 &order_rate<=30				0.25		3.5	6												2024년 5월 20일				
-110321	109	2	고유	복합			여름 하늘 헐레이션	夏空ハレーション	아그네스 타키온 (여름)								distance_rate>=50 &corner!=0 &order_rate>=20 &order_rate<=50 &track_id==10005		즉발		0.45	0.05		4												2024년 11월 18일				
+110321	109	2	고유	복합		여름 하늘 헐레이션	여름 하늘 헐레이션	夏空ハレーション	아그네스 타키온 (여름)								distance_rate>=50 &corner!=0 &order_rate>=20 &order_rate<=50 &track_id==10005		즉발		0.45	0.05		4												2024년 11월 18일				
 110341	131	2	고유	속도		등불	등불	灯穂	이나리 원 (축제)						phase>=2 &corner!=0 &order_rate>=60 &is_overtake==1		is_last_straight_onetime==1		즉발		0.35			5												2024년 2월 16일				
 110351	126	2	고유	속도		꿈 너머로, 전해져라!	꿈 너머로, 전해져라!	夢の先へ、届け！	위닝 티켓 (스팀펑크)								is_lastspurt==1 &is_last_straight==1 &order_rate>=40		즉발		0.25			6												2023년 12월 18일				
 110361	119	2	고유	속도		...found you.	...found you.	...found you.	에어 샤커 (할로윈)						phase==1 &change_order_onetime>0 &order_rate>=50 &order_rate<=80		phase>=2 &is_finalcorner_laterhalf==1 &is_overtake==1 @phase>=2 &is_finalcorner==1 &corner==0 &is_overtake==1		즉발		0.45			5												2025년 1월 17일				
@@ -166,25 +166,25 @@
 110381	134	2	고유	복합		One True Color	One True Color	One True Color	카렌짱 (웨딩)								remain_distance<=350 &order_rate<=40 &order_rate>=20 &bashin_diff_behind<=1		즉발		0.25	0.3		5												2023년 9월 18일				
 110391	136	2	고유	속도			쾌활하고 굳센 힘	快なる剛力	카와카미 프린세스 (축제)						phase>=1 &slope==1 &order_rate>=40 &order_rate<=80		slope==0 @slope==2				0.35			5												2025년 2월 17일				
 110401	24	2	고유	복합		GET DOWN	GET DOWN	GET DOWN	골드 시티 (축제)								is_finalcorner==1 &corner!=0 &order_rate>=30 &order_rate<=70 &blocked_side_continuetime>=2		즉발		0.25	0.3		5												2023년 2월 16일				
-110411	82	2	고유	가속			CHERRY☆스크램블	CHERRY☆スクランブル	사쿠라 바쿠신 오 (운동회)								order_rate<=20 &remain_distance<=401 &remain_distance>=399		즉발			0.1		1												2024년 8월 16일				
+110411	82	2	고유	가속		CHERRY☆스크램블	CHERRY☆스크램블	CHERRY☆スクランブル	사쿠라 바쿠신 오 (운동회)								order_rate<=20 &remain_distance<=401 &remain_distance>=399		즉발			0.1		1												2024년 8월 16일				
 110451	92	2	고유	복합		빙글빙글 머미 트릭♡	빙글빙글 머미 트릭♡	ぐるぐるマミートリック♡	슈퍼 크릭 (할로윈)								is_last_straight==1 &order<=4 &bashin_diff_infront<=1		즉발		0.25	0.3		5												2023년 1월 18일				
 110461	95	2	고유	속도		α-star*	α-star*	α-star*	스마트 팔콘 (그랜드 라이브)								distance_rate>=40 &distance_rate<=50 &distance_diff_rate<=10 &ground_type==2		즉발		0.25		3.5	6												2023년 12월 13일				
-110481	151	2	고유	속도			GALmem.포에버♪	GALmem．ふぉーえば♪	토센 조던 (여름 바캉스)								distance_rate>=40 &distance_rate<=50 &order_rate>=40 &order_rate<=80 &motivation==5		즉발		0.3			6												2024년 10월 17일				
+110481	151	2	고유	속도		GALmem.포에버♪	GALmem.포에버♪	GALmem．ふぉーえば♪	토센 조던 (여름 바캉스)								distance_rate>=40 &distance_rate<=50 &order_rate>=40 &order_rate<=80 &motivation==5		즉발		0.3			6												2024년 10월 17일				
 110501	29	2	고유	속도		Hephaistos	Hephaistos	Hephaistos	나리타 타이신 (스팀펑크)								phase>=2 &is_finalcorner_laterhalf==1 &order_rate<=75 &order_rate>=40		즉발		0.35			5												2023년 12월 18일				
 110511	36	2	고유	속도		Flowering Dreams	Flowering Dreams	Flowering Dreams	니시노 플라워 (웨딩)								order>=2 &order_rate<=70 &remain_distance<=201 &remain_distance>=199 &near_count>=3		즉발	0.15	0.35			5												2024년 9월 16일				
 110521	160	2	고유	속도		113전 114기	113전 114기	113転び114起き	하루 우라라 (새해)								is_finalcorner==1 &corner!=0 &distance_diff_top>=7		즉발		0.25			5												2023년 4월 21일				
-110531	73	2	고유	속도			오의・한여름 버닝!!	奥義・常夏バーニング！！	뱀부 메모리 (여름 바캉스)								distance_type==1 &remain_distance<=201 &remain_distance>=199 &order_rate>=20 &order_rate<=50 &change_order_up_end_after>=1		즉발		0.45			5												2024년 10월 17일				
+110531	73	2	고유	속도		오의・늘 여름 버닝!!	오의・한여름 버닝!!	奥義・常夏バーニング！！	뱀부 메모리 (여름 바캉스)								distance_type==1 &remain_distance<=201 &remain_distance>=199 &order_rate>=20 &order_rate<=50 &change_order_up_end_after>=1		즉발		0.45			5												2024년 10월 17일				
 110561	51	2	고유	속도		벼가 곧 무르익노라	벼가 곧 무르익노라	禾スナハチ登ル	마치카네 후쿠키타루 (풀아머)								distance_rate>=50 &order_rate>=40 &overtake_target_time>=2				0.35			5												2022년 12월 19일				
 110581	55	2	고유	속도		Spooky-Scary-Happy	Spooky-Scary-Happy	Spooky-Scary-Happy	메이쇼 도토 (할로윈)								is_last_straight_onetime==1 &order_rate<=40		즉발		0.35			5												2024년 1월 18일				
 110591	57	2	고유	속도		두근거림이 부르는 곳으로	두근거림이 부르는 곳으로	ときめきが呼ぶほうへ	메지로 도베르 (캠핑)								distance_rate>=60 &slope==2 &phase==1 &order_rate>=40 &order_rate<=80 &remain_distance>=500		즉발		0.35			5												2023년 10월 19일				
 110601	31	2	고유	속도		Go☆Go☆for it!	Go☆Go☆for it!	Go☆Go☆for it!	나이스 네이처 (치어리더)						is_finalcorner==1 &change_order_onetime<0		is_last_straight==1 &order_rate>=40 &order_rate<=70 &popularity>=4		즉발		0.35			6												2023년 8월 17일				
 110611	143	2	고유	가속		울려 퍼져라! 트레센 응원단!	울려 퍼져라! 트레센 응원단!	轟！トレセン応援団！！	킹 헤일로 (치어리더)						distance_rate>=50 &order_rate_out70_continue==1 &temptation_count==0		is_last_straight==1		즉발			0.4		4												2023년 8월 17일				
-110621	50	2	고유	복합			뒹구르르!? 파워 드라이브	ごろりん！？パワードライブ	마치카네 탄호이저 (운동회)								distance_rate>=50 &corner!=0 &order_rate>=40 &order_rate<=80 &distance_type==3		즉발		0.25	0.1		2												2024년 8월 16일				
+110621	50	2	고유	복합		데구루루!? 파워 드라이브	뒹구르르!? 파워 드라이브	ごろりん！？パワードライブ	마치카네 탄호이저 (운동회)								distance_rate>=50 &corner!=0 &order_rate>=40 &order_rate<=80 &distance_type==3		즉발		0.25	0.1		2												2024년 8월 16일				
 110641	68	2	고유	복합		jingle all the way	jingle all the way	jingle all the way	메지로 파머 (크리스마스)								distance_rate>=40 &corner==0 &order==1 &track_id==10005 &is_used_skill_id==202051				0.25	0.1		7												2025년 3월 20일				
 110651	41	2	고유	속도			즐기라고, 매시업!	ノッてけ、マッシュアップ！	다이타쿠 헬리오스 (무도회)								distance_type==2 &blocked_side_continuetime>=2 &order_rate<=50 &phase==0 &accumulatetime>=5				0.45		-3	5												2025년 7월 18일				
 110671	86	2	고유	속도		검은 구름을 흩뜨리는, 황금의 첫 화살	검은 구름을 흩뜨리는, 황금의 첫 화살	玄雲散らす、黄金甲矢	사토노 다이아몬드 (새해)								distance_rate>=40 &distance_rate<=50 &order_rate>=40 &order_rate<=80		즉발		0.35		3.5	5												2024년 4월 18일				
 110681	141	2	고유	복합		훌륭한 진수성찬!	훌륭한 진수성찬!	あっぱれ大盤振る舞い！	키타산 블랙 (새해)								phase>=2 &corner!=0 &remain_distance>=600 &order<=3		즉발	0.35		0.1		4												2024년 4월 18일				
-110691	84	2	고유	가속			피어라 피어라! 나!	咲け咲け！私！	사쿠라 치요노 오 (무도회)						phase==1 &blocked_side_continuetime>=2		remain_distance<=651 &remain_distance>=649 &order_rate<=40 &order_rate>=30		즉발			0.4		5												2024년 7월 17일				
+110691	84	2	고유	가속		피어라 피어라! 나!	피어라 피어라! 나!	咲け咲け！私！	사쿠라 치요노 오 (무도회)						phase==1 &blocked_side_continuetime>=2		remain_distance<=651 &remain_distance>=649 &order_rate<=40 &order_rate>=30		즉발			0.4		5												2024년 7월 17일				
 110711	66	2	고유	속도		Danser le présent	Danser le présent	Danser le présent	메지로 아르당 (무도회)								phase>=2 &is_last_straight==1 &order_rate>=20 &order_rate<=40 &bashin_diff_behind<=1		즉발	0.15	0.35		-3	5												2024년 7월 17일				
 110721	115	2	고유	속도			강용과단, 열화의 칼	剛勇果断、烈火之刀	야에노 무테키 (Warfare)						distance_rate>=40 &distance_rate<=50 &blocked_side_continuetime>=2		distance_rate_after_random==50 &lane_type==0				0.45			5												2025년 8월 19일				
 110741	64	2	고유	속도		Illuminate you	Illuminate you	Illuminate you	메지로 브라이트 (크리스마스)								phase==1 &order_rate>=40 &order_rate<=80			-0.15			7.5	1.2		is_activate_other_skill_detail==1 &base_stamina>=1200 &phase>=2	0.15				8					2025년 3월 20일				
@@ -258,7 +258,7 @@
 200181	1018	2	일반/하위	녹딱		여름 우마무스메◎	여름 우마무스메◎	夏ウマ娘◎									season==◯		즉발													200				2022년 6월 15일				
 200182	1018	1	일반/하위	녹딱		여름 우마무스메○	여름 우마무스메◯	夏ウマ娘○									season==◯		즉발													90				2022년 6월 15일				
 200183	1018	0	일반/하위	녹딱		여름 우마무스메×	여름 우마무스메×	夏ウマ娘×									season==◯		즉발													50				2022년 6월 15일				
-200184	1018	3	레어/상위	녹딱			상쾌한 여름 바람	青嵐									season==◯		즉발													330				2024년 10월 17일				
+200184	1018	3	레어/상위	녹딱		상쾌한 여름 바람	상쾌한 여름 바람	青嵐									season==◯		즉발													330				2024년 10월 17일				
 200191	1019	2	일반/하위	녹딱		가을 우마무스메◎	가을 우마무스메◎	秋ウマ娘◎									season==◯		즉발													200				2022년 6월 15일				
 200192	1019	1	일반/하위	녹딱		가을 우마무스메○	가을 우마무스메◯	秋ウマ娘○									season==◯		즉발													90				2022년 6월 15일				
 200193	1019	0	일반/하위	녹딱		가을 우마무스메×	가을 우마무스메×	秋ウマ娘×									season==◯		즉발													50				2022년 6월 15일				
@@ -421,7 +421,7 @@
 201032	1103	1	일반/하위	속도		마일 직선○	마일 직선◯	マイル直線○									distance_type==◯ &straight_random==1				0.15			3								100				2022년 6월 15일				
 201041	1104	2	일반/하위	속도		마일 코너◎	마일 코너◎	マイルコーナー◎									distance_type==◯ &all_corner_random==1				0.25			3								210				2022년 6월 15일				
 201042	1104	1	일반/하위	속도		마일 코너○	마일 코너◯	マイルコーナー○									distance_type==◯ &all_corner_random==1				0.15			3								100				2022년 6월 15일				
-201043	1104	3	레어/상위	속도			호풍원인	豪風円刃									distance_type==◯ &all_corner_random==1				0.35			3								360				2024년 9월 16일				
+201043	1104	3	레어/상위	속도		호풍원인	호풍원인	豪風円刃									distance_type==◯ &all_corner_random==1				0.35			3								360				2024년 9월 16일				
 201051	1105	2	레어/상위	속도		기어 체인지	기어 체인지	ギアチェンジ									distance_type==2 &phase_random==1 &order_rate<=50				0.35			2.4								320				2022년 6월 15일				
 201052	1105	1	일반/하위	속도		기어 시프트	기어 시프트	ギアシフト									distance_type==2 &phase_random==1 &order_rate<=50				0.15			2.4								160				2022년 6월 15일				
 201061	1106	2	레어/상위	가속		액셀 전개!	액셀 전개!	アクセル全開！									distance_type==2 &distance_rate>=50 &change_order_onetime<0		랜덤			0.4		3								320				2022년 6월 15일				
@@ -538,7 +538,7 @@
 201591	1159	1	일반/하위	속도		우마무스메 애호가	우마무스메 애호가	ウマ好み									near_count>=3 &accumulatetime>=5		즉발		0.15			3								160				2022년 6월 15일				
 201592	1159	2	레어/상위	속도		우마무스메 마니아	우마무스메 마니아	ウママニア									near_count>=3 &accumulatetime>=5		즉발		0.35			3								320				2023년 1월 9일				
 201601	1160	1	일반/하위	가속		터다지기	터다지기	地固め					스태미나 패시브 3개로 시뮬				activate_count_start>=3		즉발			0.2		3								100				2022년 6월 15일		200132/200142, 200131/200141, 200032/200042/200052/200062/200072/200082/200092/200102/200112/200122/200952/202202/202212/202222/202732		
-201602	1160	2	레어/상위	가속			만반의 준비	盤石の構え									activate_count_start>=3		즉발			0.4		3								280				2024년 8월 16일		200132/200142, 200131/200141, 200032/200042/200052/200062/200072/200082/200092/200102/200112/200122/200952/202202/202212/202222/202732		
+201602	1160	2	레어/상위	가속		만반의 준비	만반의 준비	盤石の構え									activate_count_start>=3		즉발			0.4		3								280				2024년 8월 16일		200132/200142, 200131/200141, 200032/200042/200052/200062/200072/200082/200092/200102/200112/200122/200952/202202/202212/202222/202732		
 201611	1161	1	일반/하위	속도		꼬리 올리기	꼬리 올리기	尻尾上がり									activate_count_middle>=3				0.15			3								100				2022년 6월 15일		200472, 200482, 210022		
 201612	1161	2	레어/상위	속도		꼬리 솟구쳐 오르기	꼬리 솟구쳐 오르기	尻尾の滝登り									activate_count_middle>=3				0.35			3								280				2023년 4월 12일		200472, 200482, 210022		
 201621	1162	1	일반/하위	회복		쥐어짜기	쥐어짜기	ふり絞り									activate_count_end_after>=3						1.5									100				2022년 6월 15일			TRUE	
@@ -662,39 +662,39 @@
 202492	1249	1	일반/하위	가속		순발력	순발력	切れ味							distance_rate>=66 &order_rate_out50_continue==1 &temptation_count==0		running_style==4 &phase_firsthalf_random==2					0.2		1.2								180				2024년 4월 18일				
 202501	1250	2	레어/상위	속도		마구마구	마구마구	遮二無二									distance_type==2 &phase_laterhalf_random==1 &order_rate<=50				0.35			2.4								360				2024년 5월 10일				
 202502	1250	1	일반/하위	속도		무모함	무모함	向こう見ず									distance_type==2 &phase_laterhalf_random==1 &order_rate<=50				0.15			2.4								180				2022년 6월 15일				
-202521	1252	2	레어/상위	속도			천의무봉	天衣無縫									distance_type==3 &corner_random==3 &order_rate>=50 @distance_type==4 &corner_random==3 &order_rate>=50			0.35				3								360				2024년 6월 14일				
-202522	1252	1	일반/하위	속도			상식 파괴	型破り									distance_type==3 &corner_random==3 &order_rate>=50 @distance_type==4 &corner_random==3 &order_rate>=50			0.15				3								180				2024년 6월 14일				
-202531	1253	2	레어/상위	속도			우위 형성	優位形成									distance_type==2 &phase_random==1 @distance_type==3 &phase_random==1				0.35			2.4								360				2024년 6월 14일				
-202532	1253	1	일반/하위	속도			단아한 발걸음	しとやかな足取り									distance_type==2 &phase_random==1 @distance_type==3 &phase_random==1				0.15			2.4								180				2024년 6월 14일				
-202541	1254	2	레어/상위	속도			위풍당당	威風堂々									running_style==3 &order_rate>=40 &is_finalcorner_random==1				0.35			1.8								380				2024년 6월 28일				
-202542	1254	1	일반/하위	속도			프레셔	プレッシャー									running_style==3 &order_rate>=40 &is_finalcorner_random==1				0.15			1.8								190				2024년 6월 28일				
-202551	1255	2	레어/상위	속도			신속	神速									distance_rate_after_random==50			0.35			1.5	3								400				2024년 7월 8일				
-202552	1255	1	일반/하위	속도			쾌속	快速									distance_rate_after_random==50			0.15			0.35	3								200				2024년 7월 8일				
-202561	1256	2	레어/상위	속도			일발필중	一発必中									distance_type==4 &phase_laterhalf_random==1 &order_rate>=50				0.35			2.4								320				2024년 7월 8일				
-202562	1256	1	일반/하위	속도			록온	ロックオン									distance_type==4 &phase_laterhalf_random==1 &order_rate>=50				0.15			2.4								160				2024년 7월 8일				
-202581	1258	2	레어/상위	속도			민첩함의 너머로	脱兎の先へ									distance_type==4 &phase_random==1				0.25		5.5	2.4								400				2024년 7월 17일				
-202582	1258	1	일반/하위	속도			한눈 팔지 말고	脇目も振らず									distance_type==4 &phase_random==1				0.05		1.5	2.4								200				2024년 7월 17일				
-202591	1259	2	레어/상위	속도			일기가성	一気呵成									distance_type==4 &running_style==3 &phase_firsthalf_random==2 &lastspurt==2			0.35				3								320				2024년 7월 29일				
-202592	1259	1	일반/하위	속도			서두르기	大急ぎ									distance_type==4 &running_style==3 &phase_firsthalf_random==2 &lastspurt==2			0.15				3								160				2024년 7월 29일				
-202601	1260	2	레어/상위	속도			루미네선스	ルミネセンス									distance_type==3 &activate_count_all>=13			0.35				2.4								320				2024년 8월 7일		200351, 200352, 200381, 200382, 201141, 201142, 200471, 200472, 200481, 200482, 210021, 210022, 200132/200141		TRUE
-202602	1260	1	일반/하위	속도			이그니션	イグニッション									distance_type==3 &activate_count_all>=13			0.15				2.4								160				2024년 8월 7일		200351, 200352, 200381, 200382, 201141, 201142, 200471, 200472, 200481, 200482, 210021, 210022, 200132/200141		
-202612	1261	1	일반/하위	속도			넘치는 정열	溢れる情熱									running_style==3 &phase_laterhalf_random==0 &order_rate>=40				0.15			2.4								180				2024년 8월 16일				
-202621	1262	2	레어/상위	속도			돌격혼	突撃魂									running_style==3 &phase_laterhalf_random==1 &order_rate>=40				0.35			2.4								360				2024년 11월 18일				
-202622	1262	1	일반/하위	속도			진출 개시	進出開始									running_style==3 &phase_laterhalf_random==1 &order_rate>=40				0.15			2.4								180				2024년 8월 16일				
-202641	1264	2	레어/상위	속도			천릿길	千里の道									running_style==3 &phase_random==1 &order_rate>=40 &order_rate<=90				0.25			4								360				2024년 8월 28일				
-202642	1264	1	일반/하위	속도			한 걸음부터	一歩から									running_style==3 &phase_random==1 &order_rate>=40 &order_rate<=90				0.05			4								180				2024년 8월 28일				
-202651	1265	2	레어/상위	녹딱			운증용변	雲蒸竜変									base_speed>=1000 &base_power>=1000 &distance_type==2 @base_speed>=1000 &base_power>=1000 &distance_type==3		즉발													360				2024년 9월 6일				
-202652	1265	1	일반/하위	녹딱			근자감	自信家									base_speed>=1000 &base_power>=1000 &distance_type==2 @base_speed>=1000 &base_power>=1000 &distance_type==3		즉발													180				2024년 9월 6일				
-202661	1266	2	레어/상위	속도			솟구치는 고동	昂る鼓動									distance_type==3 &phase_firsthalf_random==2 &order_rate>=30 &order_rate<=80 @distance_type==4 &phase_firsthalf_random==2 &order_rate>=30 &order_rate<=80			0.35				3								360				2024년 9월 6일				
-202662	1266	1	일반/하위	속도			복받쳐 오르는 열기	込み上げる熱									distance_type==3 &phase_firsthalf_random==2 &order_rate>=30 &order_rate<=80 @distance_type==4 &phase_firsthalf_random==2 &order_rate>=30 &order_rate<=80			0.15				3								180				2024년 9월 6일				
-202671	1267	2	레어/상위	가속			하이 볼티지	ハイボルテージ									distance_type==2 &phase_firsthalf_random==2 &order_rate<=50					0.4		1.8								320				2024년 10월 17일				
-202672	1267	1	일반/하위	가속			설레는 마음	心弾んで									distance_type==2 &phase_firsthalf_random==2 &order_rate<=50					0.2		1.8								160				2024년 10월 17일				
-202681	1268	2	레어/상위	속도			띄워☆보자↑분위기	ブチ☆アゲ↑バイブス									distance_type==4 &phase_random==1				0.35		3.5	2.4								400				2024년 10월 17일				
-202682	1268	1	일반/하위	속도			분위기 상승	バイブス上昇									distance_type==4 &phase_random==1				0.15		0.5	2.4								200				2024년 10월 17일				
-202691	1269	2	레어/상위	가속			누구보다 앞으로!	誰より前へ！									distance_type==3 &phase==0		즉발			0.4		1.5								240				2024년 11월 18일				
-202692	1269	1	일반/하위	가속			제일 먼저	一番乗り									distance_type==3 &phase==0		즉발			0.2		1.5								120				2024년 11월 18일				
-202701	1270	2	레어/상위	녹딱			싱귤래러티	シンギュラリティ									running_style==2 &distance_type==3 &base_speed>=1200 &base_wiz>=1200		즉발													240				2024년 11월 18일				
-202702	1270	1	일반/하위	녹딱			탐구심	探求心									running_style==2 &distance_type==3 &base_speed>=1200 &base_wiz>=1200		즉발													120				2024년 11월 18일				
+202521	1252	2	레어/상위	속도		천의무봉	천의무봉	天衣無縫									distance_type==3 &corner_random==3 &order_rate>=50 @distance_type==4 &corner_random==3 &order_rate>=50			0.35				3								360				2024년 6월 14일				
+202522	1252	1	일반/하위	속도		상식 파괴	상식 파괴	型破り									distance_type==3 &corner_random==3 &order_rate>=50 @distance_type==4 &corner_random==3 &order_rate>=50			0.15				3								180				2024년 6월 14일				
+202531	1253	2	레어/상위	속도		우위형성	우위 형성	優位形成									distance_type==2 &phase_random==1 @distance_type==3 &phase_random==1				0.35			2.4								360				2024년 6월 14일				
+202532	1253	1	일반/하위	속도		단아한 발걸음	단아한 발걸음	しとやかな足取り									distance_type==2 &phase_random==1 @distance_type==3 &phase_random==1				0.15			2.4								180				2024년 6월 14일				
+202541	1254	2	레어/상위	속도		위풍당당	위풍당당	威風堂々									running_style==3 &order_rate>=40 &is_finalcorner_random==1				0.35			1.8								380				2024년 6월 28일				
+202542	1254	1	일반/하위	속도		중압감	프레셔	プレッシャー									running_style==3 &order_rate>=40 &is_finalcorner_random==1				0.15			1.8								190				2024년 6월 28일				
+202551	1255	2	레어/상위	속도		신속	신속	神速									distance_rate_after_random==50			0.35			1.5	3								400				2024년 7월 8일				
+202552	1255	1	일반/하위	속도		쾌속	쾌속	快速									distance_rate_after_random==50			0.15			0.35	3								200				2024년 7월 8일				
+202561	1256	2	레어/상위	속도		일발필중	일발필중	一発必中									distance_type==4 &phase_laterhalf_random==1 &order_rate>=50				0.35			2.4								320				2024년 7월 8일				
+202562	1256	1	일반/하위	속도		록 온	록온	ロックオン									distance_type==4 &phase_laterhalf_random==1 &order_rate>=50				0.15			2.4								160				2024년 7월 8일				
+202581	1258	2	레어/상위	속도		민첩함의 너머로	민첩함의 너머로	脱兎の先へ									distance_type==4 &phase_random==1				0.25		5.5	2.4								400				2024년 7월 17일				
+202582	1258	1	일반/하위	속도		한눈팔지 않고	한눈 팔지 말고	脇目も振らず									distance_type==4 &phase_random==1				0.05		1.5	2.4								200				2024년 7월 17일				
+202591	1259	2	레어/상위	속도		일기가성	일기가성	一気呵成									distance_type==4 &running_style==3 &phase_firsthalf_random==2 &lastspurt==2			0.35				3								320				2024년 7월 29일				
+202592	1259	1	일반/하위	속도		서두르기	서두르기	大急ぎ									distance_type==4 &running_style==3 &phase_firsthalf_random==2 &lastspurt==2			0.15				3								160				2024년 7월 29일				
+202601	1260	2	레어/상위	속도		루미네선스	루미네선스	ルミネセンス									distance_type==3 &activate_count_all>=13			0.35				2.4								320				2024년 8월 7일		200351, 200352, 200381, 200382, 201141, 201142, 200471, 200472, 200481, 200482, 210021, 210022, 200132/200141		TRUE
+202602	1260	1	일반/하위	속도		이그니션	이그니션	イグニッション									distance_type==3 &activate_count_all>=13			0.15				2.4								160				2024년 8월 7일		200351, 200352, 200381, 200382, 201141, 201142, 200471, 200472, 200481, 200482, 210021, 210022, 200132/200141		
+202612	1261	1	일반/하위	속도		넘치는 정열	넘치는 정열	溢れる情熱									running_style==3 &phase_laterhalf_random==0 &order_rate>=40				0.15			2.4								180				2024년 8월 16일				
+202621	1262	2	레어/상위	속도		돌격 정신	돌격혼	突撃魂									running_style==3 &phase_laterhalf_random==1 &order_rate>=40				0.35			2.4								360				2024년 11월 18일				
+202622	1262	1	일반/하위	속도		진출 개시	진출 개시	進出開始									running_style==3 &phase_laterhalf_random==1 &order_rate>=40				0.15			2.4								180				2024년 8월 16일				
+202641	1264	2	레어/상위	속도		천릿길	천릿길	千里の道									running_style==3 &phase_random==1 &order_rate>=40 &order_rate<=90				0.25			4								360				2024년 8월 28일				
+202642	1264	1	일반/하위	속도		한 걸음부터	한 걸음부터	一歩から									running_style==3 &phase_random==1 &order_rate>=40 &order_rate<=90				0.05			4								180				2024년 8월 28일				
+202651	1265	2	레어/상위	녹딱		운증용변	운증용변	雲蒸竜変									base_speed>=1000 &base_power>=1000 &distance_type==2 @base_speed>=1000 &base_power>=1000 &distance_type==3		즉발													360				2024년 9월 6일				
+202652	1265	1	일반/하위	녹딱		자신감	근자감	自信家									base_speed>=1000 &base_power>=1000 &distance_type==2 @base_speed>=1000 &base_power>=1000 &distance_type==3		즉발													180				2024년 9월 6일				
+202661	1266	2	레어/상위	속도		솟구치는 고동	솟구치는 고동	昂る鼓動									distance_type==3 &phase_firsthalf_random==2 &order_rate>=30 &order_rate<=80 @distance_type==4 &phase_firsthalf_random==2 &order_rate>=30 &order_rate<=80			0.35				3								360				2024년 9월 6일				
+202662	1266	1	일반/하위	속도		치밀어 오르는 열	복받쳐 오르는 열기	込み上げる熱									distance_type==3 &phase_firsthalf_random==2 &order_rate>=30 &order_rate<=80 @distance_type==4 &phase_firsthalf_random==2 &order_rate>=30 &order_rate<=80			0.15				3								180				2024년 9월 6일				
+202671	1267	2	레어/상위	가속		하이 볼티지	하이 볼티지	ハイボルテージ									distance_type==2 &phase_firsthalf_random==2 &order_rate<=50					0.4		1.8								320				2024년 10월 17일				
+202672	1267	1	일반/하위	가속		들뜬 마음	설레는 마음	心弾んで									distance_type==2 &phase_firsthalf_random==2 &order_rate<=50					0.2		1.8								160				2024년 10월 17일				
+202681	1268	2	레어/상위	속도		띄워☆보자↑텐션	띄워☆보자↑분위기	ブチ☆アゲ↑バイブス									distance_type==4 &phase_random==1				0.35		3.5	2.4								400				2024년 10월 17일				
+202682	1268	1	일반/하위	속도		텐션 상승	분위기 상승	バイブス上昇									distance_type==4 &phase_random==1				0.15		0.5	2.4								200				2024년 10월 17일				
+202691	1269	2	레어/상위	가속		누구보다 앞으로!	누구보다 앞으로!	誰より前へ！									distance_type==3 &phase==0		즉발			0.4		1.5								240				2024년 11월 18일				
+202692	1269	1	일반/하위	가속		제일 먼저	제일 먼저	一番乗り									distance_type==3 &phase==0		즉발			0.2		1.5								120				2024년 11월 18일				
+202701	1270	2	레어/상위	녹딱		싱귤래러티	싱귤래러티	シンギュラリティ									running_style==2 &distance_type==3 &base_speed>=1200 &base_wiz>=1200		즉발													240				2024년 11월 18일				
+202702	1270	1	일반/하위	녹딱		탐구심	탐구심	探求心									running_style==2 &distance_type==3 &base_speed>=1200 &base_wiz>=1200		즉발													120				2024년 11월 18일				
 202711	1271	2	레어/상위	가속			결정적 한 수	王手									running_style==2 &phase>=2 &is_finalcorner==1 &corner!=0 &remain_distance>=600 &order_rate<=70 @running_style==3 &phase>=2 &is_finalcorner==1 &corner!=0 &remain_distance>=600 &order_rate<=70		즉발			0.4		0.9								360				2024년 12월 12일				
 202712	1271	1	일반/하위	가속			회심의 한 걸음	会心の一歩									running_style==2 &phase>=2 &is_finalcorner==1 &corner!=0 &remain_distance>=600 &order_rate<=70 @running_style==3 &phase>=2 &is_finalcorner==1 &corner!=0 &remain_distance>=600 &order_rate<=70		즉발			0.2		0.9								180				2024년 12월 12일				
 202721	1272	2	레어/상위	속도			네버 기브 업	ネバーギブアップ									phase_corner_random==1				0.25			4								360				2024년 12월 12일				
@@ -739,28 +739,28 @@
 202961	1296	2	레어/상위	속도			열정	熱情									distance_type==2 &phase_laterhalf_random==1 &order_rate>=40				0.35			2.4								360				2025년 7월 18일				
 202962	1296	1	일반/하위	속도			들끓는 마음	滾る想い									distance_type==2 &phase_laterhalf_random==1 &order_rate>=40				0.15			2.4								180				2025년 7월 18일				
 202972	1297	1	일반/하위	가속			좋은 기회를 붙잡고서	好機を捉えて									running_style==4 &distance_type==4 &phase_firstquarter_random==2 &order_rate>=40					0.2		1.2								160				2025년 8월 19일				
-210011	2001	2	레어/상위	속도			아오하루 연소・속	アオハル燃焼・速									phase_random==1				0.35			1.8								400				2022년 12월 19일				
-210012	2001	1	일반/하위	속도			아오하루 점화・속	アオハル点火・速									phase_random==1				0.15			1.8								200				2022년 12월 19일				
-210021	2002	2	레어/상위	회복			아오하루 연소・체	アオハル燃焼・体									phase_random==1						5.5									400				2022년 12월 19일			TRUE	
-210022	2002	1	일반/하위	회복			아오하루 점화・체	アオハル点火・体									phase_random==1						1.5									200				2022년 12월 19일			TRUE	
-210031	2003	2	레어/상위	가속			아오하루 연소・역	アオハル燃焼・力									phase_random==2					0.4		1.2								400				2022년 12월 19일				
-210032	2003	1	일반/하위	가속			아오하루 점화・역	アオハル点火・力									phase_random==2					0.2		1.2								200				2022년 12월 19일				
-210041	2004	2	레어/상위	복합			아오하루 연소・근	アオハル燃焼・根									phase_random==2				0.25	0.3		1.8								400				2022년 12월 19일				
-210042	2004	1	일반/하위	복합			아오하루 점화・근	アオハル点火・根									phase_random==2				0.05	0.1		1.8								200				2022년 12월 19일				
-210051	2005	2	레어/상위				아오하루 연소・지	アオハル燃焼・賢									phase_random==0							4								400				2022년 12월 19일				
-210052	2005	1	일반/하위				아오하루 점화・지	アオハル点火・賢									phase_random==0							4								200				2022년 12월 19일				
+210011	2001	2	레어/상위	속도		아오하루 연소・속	아오하루 연소・속	アオハル燃焼・速									phase_random==1				0.35			1.8								400				2022년 12월 19일				
+210012	2001	1	일반/하위	속도		아오하루 점화・속	아오하루 점화・속	アオハル点火・速									phase_random==1				0.15			1.8								200				2022년 12월 19일				
+210021	2002	2	레어/상위	회복		아오하루 연소・체	아오하루 연소・체	アオハル燃焼・体									phase_random==1						5.5									400				2022년 12월 19일			TRUE	
+210022	2002	1	일반/하위	회복		아오하루 점화・체	아오하루 점화・체	アオハル点火・体									phase_random==1						1.5									200				2022년 12월 19일			TRUE	
+210031	2003	2	레어/상위	가속		아오하루 연소・역	아오하루 연소・역	アオハル燃焼・力									phase_random==2					0.4		1.2								400				2022년 12월 19일				
+210032	2003	1	일반/하위	가속		아오하루 점화・역	아오하루 점화・역	アオハル点火・力									phase_random==2					0.2		1.2								200				2022년 12월 19일				
+210041	2004	2	레어/상위	복합		아오하루 연소・근	아오하루 연소・근	アオハル燃焼・根									phase_random==2				0.25	0.3		1.8								400				2022년 12월 19일				
+210042	2004	1	일반/하위	복합		아오하루 점화・근	아오하루 점화・근	アオハル点火・根									phase_random==2				0.05	0.1		1.8								200				2022년 12월 19일				
+210051	2005	2	레어/상위			아오하루 연소・지	아오하루 연소・지	アオハル燃焼・賢									phase_random==0							4								400				2022년 12월 19일				
+210052	2005	1	일반/하위			아오하루 점화・지	아오하루 점화・지	アオハル点火・賢									phase_random==0							4								200				2022년 12월 19일				
 210061	2006	2	레어/상위	복합		샛별	샛별	一番星									distance_rate_after_random==50				0.25	0.3	3.5	1.2								400				2023년 6월 15일				
 210062	2006	1	일반/하위	복합		기라성	기라성	綺羅星									distance_rate_after_random==50				0.05	0.1	0.5	1.2								200				2023년 6월 15일				
 210071	2007	2	레어/상위	복합		너와 함께 이기고 싶어	너와 함께 이기고 싶어	キミと勝ちたい									distance_rate_after_random==50 &order_rate<=65				0.35	0.2		1.2								400				2023년 12월 13일				
 210072	2007	1	일반/하위	복합		꿈꾸는 도중	꿈꾸는 도중	夢の途中									distance_rate_after_random==50 &order_rate<=65				0.15	0.07		1.2								200				2023년 12월 13일				
 210081	2008	2	레어/상위	속도		한계 저 너머로	한계 저 너머로	限界の先へ									is_lastspurt==1 &phase_random==3		랜덤		0.35			2.4								400				2024년 3월 7일				
 210082	2008	1	일반/하위	속도		앞만 바라보며	앞만 바라보며	前だけ見据えて									is_lastspurt==1 &phase_random==3		랜덤		0.15			2.4								200				2024년 3월 7일				
-210091	2009	1	일반/하위	속도			레이스의 진수・속	レースの真髄・速									phase_laterhalf_random==1		랜덤		0.15			2								150				2024년 3월 7일				
-210101	2010	1	일반/하위	속도			레이스의 진수・체	レースの真髄・体									phase_random==3 &hp_per>=2 &is_lastspurt==1		랜덤		0.25		-2	3								150				2024년 3월 7일				
-210111	2011	1	일반/하위	속도			레이스의 진수・역	レースの真髄・力									phase==3 &is_overtake==1 &is_lastspurt==1		즉발		0.15			4								150				2024년 3월 7일				
-210121	2012	1	일반/하위	가속			레이스의 진수・근	レースの真髄・根									compete_fight_count>0		랜덤			0.2		1.2								150				2024년 3월 7일				
-210131	2013	1	일반/하위	속도			레이스의 진수・지	レースの真髄・賢									activate_count_later_half>=2		즉발		0.15			2								150				2024년 3월 7일				
-210141	2014	1	일반/하위	녹딱			레이스의 진수・심	レースの真髄・心									motivation>=4		즉발													150				2024년 3월 7일				
+210091	2009	1	일반/하위	속도		레이스의 진수・속	레이스의 진수・속	レースの真髄・速									phase_laterhalf_random==1		랜덤		0.15			2								150				2024년 3월 7일				
+210101	2010	1	일반/하위	속도		레이스의 진수・체	레이스의 진수・체	レースの真髄・体									phase_random==3 &hp_per>=2 &is_lastspurt==1		랜덤		0.25		-2	3								150				2024년 3월 7일				
+210111	2011	1	일반/하위	속도		레이스의 진수・역	레이스의 진수・역	レースの真髄・力									phase==3 &is_overtake==1 &is_lastspurt==1		즉발		0.15			4								150				2024년 3월 7일				
+210121	2012	1	일반/하위	가속		레이스의 진수・근	레이스의 진수・근	レースの真髄・根									compete_fight_count>0		랜덤			0.2		1.2								150				2024년 3월 7일				
+210131	2013	1	일반/하위	속도		레이스의 진수・지	레이스의 진수・지	レースの真髄・賢									activate_count_later_half>=2		즉발		0.15			2								150				2024년 3월 7일				
+210141	2014	1	일반/하위	녹딱		레이스의 진수・심	레이스의 진수・심	レースの真髄・心									motivation>=4		즉발													150				2024년 3월 7일				
 210261	2026	2	레어/상위	속도		태양의 예지	태양의 예지	太陽の叡智									phase==1 &blocked_side_continuetime>=2				0.35			1.8								400				2024년 6월 14일				
 210262	2026	1	일반/하위	속도		햇살의 가호	빛의 가호	陽の加護									phase==1 &blocked_side_continuetime>=2				0.15			1.8								200				2024년 6월 14일				
 210271	2027	2	레어/상위	가속		대해의 예지	대해의 예지	大海の叡智									phase_firsthalf_random==0					0.4		1.5								400				2024년 6월 14일				
@@ -803,7 +803,7 @@
 900221	158	1	계승	속도		Fairy tale	Fairy tale	Fairy tale	파인 모션								distance_rate>=50 &order>=2 &order_rate<=40 &blocked_side_continuetime>=2		즉발		0.15			3								200				2023년 4월 4일				
 900231	76	1	계승	속도		∴win Q.E.D.	∴win Q.E.D.	∴win Q.E.D.	비와 하야히데								phase>=2 &is_finalcorner==1 &order<=4 &temptation_count==0		즉발		0.25			3								200				2022년 7월 7일				
 900241	13	1	계승	복합		번뜩임☆랜딩	번뜩임☆랜딩	ひらめき☆ランディング	마야노 탑건								is_finalcorner==1 &blocked_side_continuetime>=2 &order<=3		즉발		0.05	0.1		3								200				2022년 6월 15일				
-900251	52	1	계승	속도			당신을・뒤쫓아서	アナタヲ・オイカケテ	맨하탄 카페								distance_rate>=50 &order_rate>=40 &order_rate<=70		즉발		0.05			3.6								200				2023년 2월 8일				
+900251	52	1	계승	속도		당신을・뒤쫓아서	당신을・뒤쫓아서	アナタヲ・オイカケテ	맨하탄 카페								distance_rate>=50 &order_rate>=40 &order_rate<=70		즉발		0.05			3.6								200				2023년 2월 8일				
 900261	70	1	계승	속도		G00 1st.F∞;	G00 1st.F∞;	G00 1st.F∞;	미호노 부르봉								is_badstart==0 &order<=3 &is_last_straight==1 &order_rate_in20_continue==1		즉발		0.25			3								200				2022년 6월 28일				
 900271	3	1	계승	가속		레츠 아나볼릭!	레츠 아나볼릭!	レッツ・アナボリック！	메지로 라이언								phase>=2 &corner!=0 &order_rate>=65 &order_rate<=70		즉발			0.2		2.4								200				2022년 6월 15일				
 900281	167	1	계승	복합		I'M☆FULL☆SPEED!!	I'M☆FULL☆SPEED!!	I'M☆FULL☆SPEED!!	히시 아케보노								distance_rate>=45 &distance_rate<=60 &order>=3 &order_rate<=50 &hp_per<=70		즉발		0.05	0.1		3								200				2022년 12월 30일				
@@ -833,9 +833,9 @@
 900521	9	1	계승	회복		두근두근 클라이맥스	두근두근 클라이맥스	ワクワククライマックス	하루 우라라								is_finalcorner==1 &corner!=0 &order_rate>50 &near_count>=1						1.5									200				2022년 6월 15일			TRUE	
 900531	72	1	계승	가속		열혈!! 선도 어택	열혈!! 선도 어택	熱血！！風紀アタック	뱀부 메모리								phase>=2 &order_rate>=50 &is_finalcorner==1 &bashin_diff_infront<=1		즉발			0.05		1.2								200				2023년 11월 29일				
 900541	16	1	계승	속도			질풍폭주 페가수스 대시!	疾風爆走ペガサスダッシュ！	비코 페가수스						order_rate>=45 &distance_rate>=50 &change_order_onetime<0		remain_distance<=150 &order_rate<=50				0.25			2.4								200				2025년 6월 4일				
-900551	48	1	계승	속도			수많은 빛깔☆마블러스★세계	万彩☆マーベラス★世界	마블러스 선데이								distance_rate<=50 &distance_rate>=40 &order_rate<=80 &order_rate>=50 &near_count>=1 &visiblehorse>=4		즉발		0.2			3								200				2024년 10월 7일				
+900551	48	1	계승	속도		만색찬란☆마블러스★세계	수많은 빛깔☆마블러스★세계	万彩☆マーベラス★世界	마블러스 선데이								distance_rate<=50 &distance_rate>=40 &order_rate<=80 &order_rate>=50 &near_count>=1 &visiblehorse>=4		즉발		0.2			3								200				2024년 10월 7일				
 900561	2	1	계승	복합		옵니다 오고 있습니다 오게 할 겁니다!	옵니다 오고 있습니다 오게 할 겁니다!	来ます来てます来させます！	마치카네 후쿠키타루								phase>=2 &order>=3 &blocked_front==1				0.15	0.05		3								200				2022년 6월 15일				
-900571	69	1	계승	속도			서정, 여행길의 끝에	叙情、旅路の果てに	미스터 시비								distance_type==3 &phase_laterhalf_random==1 &order_rate>50 @distance_type==4 &phase_laterhalf_random==1 &order_rate>50				0.15			3.6								200				2024년 6월 14일				
+900571	69	1	계승	속도		서정, 여로의 끝에	서정, 여행길의 끝에	叙情、旅路の果てに	미스터 시비								distance_type==3 &phase_laterhalf_random==1 &order_rate>50 @distance_type==4 &phase_laterhalf_random==1 &order_rate>50				0.15			3.6								200				2024년 6월 14일				
 900581	54	1	계승	복합		I Never Goof Up!	I Never Goof Up!	I Never Goof Up!	메이쇼 도토								phase>=2 &change_order_onetime<0				0.05	0.1		3								200				2022년 11월 30일				
 900591	56	1	계승	가속		저편, 그 너머로…	저편, 그 너머로…	彼方、その先へ…	메지로 도베르								phase>=2 &corner!=0 &is_finalcorner==0 &temptation_count==0 &order_rate>=50 &order_rate<=70 @phase==1 &corner!=0 &is_finalcorner==1 &temptation_count==0 &order_rate>=50 &order_rate<=70		즉발			0.2		2.4								200				2023년 3월 10일				
 900601	1	1	계승	속도		반드시 그 너머로…!	반드시 그 너머로…!	きっとその先へ…！	나이스 네이처								phase>=2 &order==3 &bashin_diff_behind<=1				0.15			3								200				2022년 6월 15일				
@@ -844,21 +844,21 @@
 900631	20	1	계승	속도			백련성강	百錬成鋼	이쿠노 딕터스								is_lastspurt==1 &phase==3 &temptation_count==0				0.05			3.6								200				2025년 6월 14일				
 900641	67	1	계승	속도		크게 앞지르는 길	크게 앞지르는 길	ぶっちぎりロード	메지로 파머								distance_rate>=50 &order_rate_in20_continue==1		즉발		0.05		1.5	3.6								200				2023년 9월 8일				
 900651	40	1	계승	속도		텐션 올려 푸쳐핸썹!	텐션 올려 푸쳐핸썹!	アゲてアゲてぷちょへんざ！	다이타쿠 헬리오스								distance_type==1 &phase_laterhalf_random==1 &order_rate<=50 @distance_type==2 &phase_laterhalf_random==1 &order_rate<=50				0.05			3.6								200				2024년 5월 10일				
-900661	8	1	계승	속도			엔진 전개! 대분사!	エンジン全開！大噴射！	트윈 터보								distance_rate>=34 &distance_rate<=36 &order==1 &bashin_diff_behind>=1		즉발		0.035			10.4		phase==3 &is_activate_other_skill_detail==1	-0.05				500	200				2024년 6월 14일				
+900661	8	1	계승	속도		엔진 전개! 대분사!	엔진 전개! 대분사!	エンジン全開！大噴射！	트윈 터보								distance_rate>=34 &distance_rate<=36 &order==1 &bashin_diff_behind>=1		즉발		0.035			10.4		phase==3 &is_activate_other_skill_detail==1	-0.05				500	200				2024년 6월 14일				
 900671	85	1	계승	속도		어둠을 비추어라 영원한 빛	어둠을 비추어라 영원한 빛	晦冥を照らせ永遠の耀き	사토노 다이아몬드								is_last_straight_onetime==1 &order>=2 &order<=5 &distance_diff_top<=5		즉발		0.25			3								200				2023년 6월 26일				
 900681	140	1	계승	복합		승리의 함성 어기여차!	승리의 함성 어기여차!	勝ち鬨ワッショイ！	키타산 블랙								phase==2 &straight_front_type==2 &order<=2		즉발		0.05	0.1		3								200				2023년 6월 15일				
 900691	83	1	계승	속도		동경은 벚꽃을 넘는다!	동경은 벚꽃을 넘는다!	憧れは桜を越える！	사쿠라 치요노 오								remain_distance<=300 &order_rate<=40 &bashin_diff_infront<=1		즉발		0.15			3								200				2023년 5월 11일				
-900701	100	1	계승	가속			세이리오스	セイリオス	시리우스 심볼리								remain_distance>=799 &remain_distance<=801 &order_rate>=30 &order_rate<=60 &course_distance==2400 &popularity<=3		즉발			0.3		2.4								200				2024년 11월 8일				
+900701	100	1	계승	가속		세이리오스	세이리오스	セイリオス	시리우스 심볼리								remain_distance>=799 &remain_distance<=801 &order_rate>=30 &order_rate<=60 &course_distance==2400 &popularity<=3		즉발			0.3		2.4								200				2024년 11월 8일				
 900711	65	1	계승	속도		일생의 꿈, 찰나의 비상	일생의 꿈, 찰나의 비상	一期の夢、刹那の飛翔	메지로 아르당								is_last_straight==1 &bashin_diff_behind<=1		즉발		0.25		-1	2.4								200				2023년 5월 30일				
 900721	114	1	계승	속도		열화요란, 무적의 춤	열화요란, 무적의 춤	烈火繚乱、無敵之舞	야에노 무테키						is_finalcorner==1 &change_order_onetime<0		remain_distance<=300 &order_rate<=40		즉발		0.15			3								200				2023년 8월 8일				
 900741	63	1	계승	속도		아름다운 꽃소식을 알리는 바람	아름다운 꽃소식을 알리는 바람	麗しき花信風	메지로 브라이트								distance_rate>=50 &order_rate>=40 &order_rate<=80		즉발		0.035			3								200				2023년 7월 7일				
-900761	81	1	계승	속도			꽃피는, 세계	花開き、世界	사쿠라 로렐								distance_type==4 &distance_rate>=50 &distance_rate<=51 &order_rate>=30 &order_rate<=80		즉발		0.05		3.5	3.6								200				2024년 7월 29일				
+900761	81	1	계승	속도		꽃피는, 세계	꽃피는, 세계	花開き、世界	사쿠라 로렐								distance_type==4 &distance_rate>=50 &distance_rate<=51 &order_rate>=30 &order_rate<=80		즉발		0.05		3.5	3.6								200				2024년 7월 29일				
 900771	30	1	계승	속도		Road to Glory	Road to Glory	Road to Glory	나리타 탑 로드						distance_rate>=60 &phase==1 &order>=2 &order_rate<=40		remain_distance<=401 &remain_distance>=399		즉발		0.25			3								200				2024년 12월 12일				
 900781	113	1	계승	가속		빛나는 바람	빛나는 바람	風光る	야마닌 제퍼						distance_rate>=50 &order_rate_out20_continue==1		is_finalcorner_laterhalf==1 &distance_diff_rate<=50 &order==2		즉발			0.07		4.8								200				2024년 2월 7일				
 900801	155	1	계승	속도		Info: Acquired	Info: Acquired	Info: Acquired	Transcend						distance_rate>=50 &order_rate_in20_continue==1		is_other_character_activate_advantage_skill==31			0.05				3								200				2025년 7월 1일				
 900831	105	1	계승	속도		Mission: Triumph	Mission: Triumph	Mission: Triumph	심볼리 크리스 에스								distance_rate>=40 &corner==0 &slope==2 &order_rate>=40 &order_rate<=80		즉발		0.15			3.6								200				2024년 7월 8일				
-900841	144	1	계승	속도			벽력의 아우프헤벤	霹靂のアウフヘーベン	타니노 김렛						phase>=2 &order_rate>=50		is_last_straight==1		즉발	0.15				3								200				2024년 9월 6일				
-900851	38	1	계승	속도			최상이거라	至上であれ	다이이치 루비								distance_rate>=66 &distance_rate<=68 &order_rate>=60 &order_rate<=90 &temptation_count==0		즉발	0.05				3								200				2024년 6월 28일				
+900841	144	1	계승	속도		벽력의 아우프헤벤	벽력의 아우프헤벤	霹靂のアウフヘーベン	타니노 김렛						phase>=2 &order_rate>=50		is_last_straight==1		즉발	0.15				3								200				2024년 9월 6일				
+900851	38	1	계승	속도		최상이어라	최상이거라	至上であれ	다이이치 루비								distance_rate>=66 &distance_rate<=68 &order_rate>=60 &order_rate<=90 &temptation_count==0		즉발	0.05				3								200				2024년 6월 28일				
 900861	58	1	계승	속도			사랑과 녹아라 그저 녹아라	愛と熔けよただ熔けよ	메지로 라모누								remain_distance>=999 &remain_distance<=1001 &order_rate>=20 &order_rate<=50		즉발		0.15			3								200				2025년 2월 6일				
 900871	112	1	계승	복합		Silent letter	Silent letter	Silent letter	애스턴 마짱								remain_distance<=400 &order<=2 &overtake_target_time>=1		즉발		0.05	0.1		3								200				2024년 1월 30일				
 900881	88	1	계승	속도		Reversal Illusion	Reversal Illusion	Reversal Illusion	사토노 크라운						change_order_up_middle>=1 &is_finalcorner==1 &corner!=0 &order_rate<=70 &order_rate>=40		distance_type==3 &remain_distance<=400				0.25			3								200				2025년 3월 31일				
@@ -869,14 +869,14 @@
 900991	161	1	계승	가속		빛나라☆토마코마이	빛나라☆토마코마이	かがやけ☆とまこまい	홋코 타루마에						phase==1 &blocked_side_continuetime>=2 &corner!=0		is_lastspurt==1 &order_rate<=40 &order_rate>=30 &ground_type==2		즉발			0.07		2.4								200				2024년 4월 30일				
 901001	125	1	계승	속도		Never Say Never	Never Say Never	Never Say Never	원더 어큐트								remain_distance>=299 &remain_distance<=301 &order_rate>=20 &order_rate<=40 &distance_diff_top<=5 &ground_type==2		즉발	0.05	0.05			3								200				2024년 3월 7일				
 901021	78	1	계승	속도			비바체・볼라레	ヴィヴァーチェ・ヴォラーレ	사운즈 오브 어스								distance_rate<=50 &order_rate>=40 &order_rate<=80 &infront_near_lane_time>=3 &accumulatetime>=10 @distance_rate<=50 &order_rate>=40 &order_rate<=80 &behind_near_lane_time>=3 &accumulatetime>=10						0.35			distance_rate<=60 &distance_rate>=45 &corner==0 &is_activate_other_skill_detail==1		0.25			2.4	200				2025년 8월 8일				
-901041	137	1	계승	속도			새벽의 깃발 『카츠라기 에이스』!	暁の御旗『葛城栄主』！	카츠라기 에이스								corner==3 &order==1 &track_id==10006 &distance_type==3		즉발		0.05		0.5	3.6								200				2024년 10월 28일				
-901051	34	1	계승	속도			아드・아스트라	アド・アストラ	네오 유니버스								distance_rate>=50 &distance_rate<=55 &order_rate>=40 &order_rate<=80 &distance_type==3 &activate_count_all>=7		즉발		0.25			3								200				2024년 8월 7일		200351, 200352, 200381, 200382, 201141, 201142, 200471		TRUE
-901061	164	1	계승	속도			Bang☆기적 같은 결과!	Bang☆ミラクるわせ！	히시 미라클								distance_type==4 &order_rate>=40 &order_rate<=70 &is_finalcorner_laterhalf==1 &popularity>=4		즉발		0.25			3.6								200				2024년 8월 28일				
+901041	137	1	계승	속도		새벽의 깃발 『카츠라기 에이스』!	새벽의 깃발 『카츠라기 에이스』!	暁の御旗『葛城栄主』！	카츠라기 에이스								corner==3 &order==1 &track_id==10006 &distance_type==3		즉발		0.05		0.5	3.6								200				2024년 10월 28일				
+901051	34	1	계승	속도		애드・아스트라	아드・아스트라	アド・アストラ	네오 유니버스								distance_rate>=50 &distance_rate<=55 &order_rate>=40 &order_rate<=80 &distance_type==3 &activate_count_all>=7		즉발		0.25			3								200				2024년 8월 7일		200351, 200352, 200381, 200382, 201141, 201142, 200471		TRUE
+901061	164	1	계승	속도		Bang☆전 미라클!	Bang☆기적 같은 결과!	Bang☆ミラクるわせ！	히시 미라클								distance_type==4 &order_rate>=40 &order_rate<=70 &is_finalcorner_laterhalf==1 &popularity>=4		즉발		0.25			3.6								200				2024년 8월 28일				
 901071	149	1	계승	속도		Billions of stars	Billions of stars	Billions of stars	탭 댄스 시티								phase>=2 &is_last_straight==1 &order==1				0.05			3								200				2025년 3월 10일				
 901081	42	1	계승	속도			나찰, 붉은 날개로 천상에 이르나니	羅刹、赤翼にて天上へ至らん	두라멘테								distance_rate>=50 &distance_rate<=51 &order_rate>=50				0.15			3		phase>=2 &is_activate_other_skill_detail==1 &is_finalcorner==1 &corner!=0 &is_overtake==1	0.035				1.8	200				2025년 6월 14일				
 901091	45	1	계승	속도			이어가다・이어지는×꿈・미래	繋ぐ・繋がる×夢・未来	Rhein Kraft								distance_type==1 &distance_rate<=50 &corner!=0 &order>=3 &order_rate<=70 @distance_type==2 &distance_rate<=50 &corner!=0 &order>=3 &order_rate<=70				0.05			3.6								200				2025년 7월 10일				
 910011	98	1	계승	회복		겁나게 귀엽네♪머린 다이브	겁나게 귀엽네♪ 머린 다이브	わやかわ♪マリンダイヴ	스페셜 위크 (여름)								phase==1 &order>=2 &order_rate<=70 &activate_count_middle>=2						1.5									200				2022년 11월 17일			TRUE	
-910021	80	1	계승	속도			수평선 그 너머에	水平線のその先へ	사일런스 스즈카 (여름)						phase==1 &bashin_diff_behind>=3 &order==1		distance_rate>=66 &distance_rate<=68 &corner==3 &order==1		즉발	0.25				3								200				2024년 11월 18일				
+910021	80	1	계승	속도		수평선 저 너머로	수평선 그 너머에	水平線のその先へ	사일런스 스즈카 (여름)						phase==1 &bashin_diff_behind>=3 &order==1		distance_rate>=66 &distance_rate<=68 &corner==3 &order==1		즉발	0.25				3								200				2024년 11월 18일				
 910031	153	1	계승	속도		절대는, 나야	절대는, 나야	絶対は、ボクだ	토카이 테이오 (애니 콜라보)						is_finalcorner==1 &is_overtake==1 &order<=5 &order_rate<=50 &overtake_target_no_order_up_time>=2		is_last_straight==1				0.25			3								200				2022년 7월 19일				
 910041	47	1	계승	속도		뭉클하게♪Chu	뭉클하게♪ Chu	グッときて♪Chu	마루젠스키 (여름)								distance_rate>=50 &activate_count_heal>=1 &order<=3		즉발		0.15			3								200				2022년 11월 17일			TRUE	
 910041	47	1	계승	속도		뭉클하게♪Chu(777)	뭉클하게♪Chu(777)	グッときて♪Chu	마루젠스키 (여름)										즉발		0.15			3								200				2022년 11월 17일		201571		
@@ -894,7 +894,7 @@
 910091	37	1	계승	속도		Queen's Lumination	Queen's Lumination	Queen's Lumination	다이와 스칼렛 (크리스마스)								distance_rate>=50 &corner==0 &order==1 &bashin_diff_behind<=1		즉발		0.15			3.6								200				2024년 3월 18일				
 910101	148	1	계승	속도		Joyful Voyage!	Joyful Voyage!	Joyful Voyage!	타이키 셔틀 (캠핑)								distance_diff_top<=5 &order>=2 &order_rate<=40 &remain_distance<=201 &remain_distance>=199		즉발	0.035	0.15			3								200				2023년 10월 19일				
 910111	25	1	계승	회복		게인 힐・슈피리어	게인 힐・슈피리어	ゲインヒール・スペリアー	그래스 원더 (판타지)								phase==1 &change_order_onetime>0 &order_rate>=40						3.5									200				2022년 10월 18일			TRUE	
-910121	166	1	계승	복합			곱빼기! 퍼스트 바이트!	大盛り！ファーストバイト！	히시 아마존 (웨딩)						change_order_up_middle>=3		distance_rate>=60 &phase==1 &slope==2 &order_rate>=50		즉발		0.15	0.05		2.4								200				2024년 9월 16일				
+910121	166	1	계승	복합		곱빼기! 퍼스트 바이트!	곱빼기! 퍼스트 바이트!	大盛り！ファーストバイト！	히시 아마존 (웨딩)						change_order_up_middle>=3		distance_rate>=60 &phase==1 &slope==2 &order_rate>=50		즉발		0.15	0.05		2.4								200				2024년 9월 16일				
 910131	61	1	계승	속도		최강의 이름을 걸고	최강의 이름을 걸고	最強の名を懸けて	메지로 맥퀸 (애니 콜라보)								phase>=2 &is_finalcorner==1 &order<=4 &overtake_target_time>=1				0.15			3.6								200				2022년 7월 19일				
 910141	122	1	계승	가속		콘도르 맹격파	콘도르 맹격파	コンドル猛撃波	엘 콘도르 파사 (판타지)								is_finalcorner==1 &corner!=0 &is_overtake==1 &order>=4 &order_rate<=75					0.2		2.4								200				2022년 10월 18일				
 910151	157	1	계승	속도		복을 베푸는 바르카롤	복을 베푸는 바르카롤	恵福バルカローレ	티엠 오페라 오 (새해)								remain_distance<=401 &remain_distance>=399 &order_rate<=40 &activate_count_all>=7		즉발		0.25			3								200				2023년 4월 21일				
@@ -909,12 +909,12 @@
 910241.1	49	1	계승	속도		플라워리☆머누버(전방)	플라워리☆머누버(전방)	フラワリー☆マニューバ	마야노 탑건 (웨딩)								is_finalcorner==1 &order_rate<=40 &change_order_onetime<0				0.15			3								200				2022년 9월 16일				
 910241.2	49	1	계승	가속		플라워리☆머누버(후방)	플라워리☆머누버(후방)	フラワリー☆マニューバ	마야노 탑건 (웨딩)								is_finalcorner==1 &order_rate>=50 &order_rate<=80 &change_order_onetime<0					0.2		2.4								200				2022년 9월 16일				
 910251	53	1	계승	속도			진심어린 대접이냥	心からのおもてにゃし	맨하탄 카페 (발렌타인)						distance_rate>=50 &order_rate_out40_continue==1		distance_type==4 &phase>=2 &is_finalcorner==1			0.15				3								200				2025년 5월 21일				
-910261	71	1	계승	속도			오퍼레이션・Cacao	オペレーション・Cacao	미호노 부르봉 (발렌타인)								order<=4 &phase==1 &corner!=0 &bashin_diff_behind<=3		즉발		0.15		0.35	3								200				2023년 5월 19일				
+910261	71	1	계승	속도		오퍼레이션・Cacao	오퍼레이션・Cacao	オペレーション・Cacao	미호노 부르봉 (발렌타인)								order<=4 &phase==1 &corner!=0 &bashin_diff_behind<=3		즉발		0.15		0.35	3								200				2023년 5월 19일				
 910271	59	1	계승	복합		당신에게 바치는 프리 푸어링	당신에게 바치는 프리 푸어링	あなたに捧げるフリーポア	메지로 라이언 (발렌타인)								distance_rate>=60 &slope==2 &phase==1 &order>=2 &distance_diff_top<=10 &distance_type==3		즉발		0.15	0.05		2.4								200				2024년 5월 20일				
 910291	129	1	계승	속도			많이 드셔 주세유!	いっぱいおあげんしぇ！	유키노 비진 (발렌타인)								distance_rate>=45 &distance_rate<=55 &order_rate>=20 &order_rate<=50 &is_overtake==1 &distance_type==2				0.25			2.4								200				2025년 5월 21일				
 910301	44	1	계승	속도		Drain for rose	Drain for rose	Drain for rose	라이스 샤워 (할로윈)								phase==1 &order>=2 &order_rate<=50		즉발		0.05		1.5	3								200				2023년 1월 18일				
 910311	111	1	계승	속도		프레시☆팔러	프레시☆팔러	フレッシュ☆パーラー	아이네스 후진 (발렌타인)								phase_firsthalf_random==1 &order_rate<=30				0.05		0.5	3.6								200				2024년 5월 20일				
-910321	109	1	계승	복합			여름 하늘 헐레이션	夏空ハレーション	아그네스 타키온 (여름)								distance_rate>=50 &corner!=0 &order_rate>=20 &order_rate<=50 &track_id==10005		즉발		0.25	0.025		2.4								200				2024년 11월 18일				
+910321	109	1	계승	복합		여름 하늘 헐레이션	여름 하늘 헐레이션	夏空ハレーション	아그네스 타키온 (여름)								distance_rate>=50 &corner!=0 &order_rate>=20 &order_rate<=50 &track_id==10005		즉발		0.25	0.025		2.4								200				2024년 11월 18일				
 910341	131	1	계승	속도		등불	등불	灯穂	이나리 원 (축제)						phase>=2 &corner!=0 &order_rate>=60 &is_overtake==1		is_last_straight_onetime==1		즉발		0.15			3								200				2024년 2월 16일				
 910351	126	1	계승	속도		꿈 너머로, 전해져라!	꿈 너머로, 전해져라!	夢の先へ、届け！	위닝 티켓 (스팀펑크)								is_lastspurt==1 &is_last_straight==1 &order_rate>=40		즉발		0.05			3.6								200				2023년 12월 18일				
 910361	119	1	계승	속도		...found you.	...found you.	...found you.	에어 샤커 (할로윈)						phase==1 &change_order_onetime>0 &order_rate>=50 &order_rate<=80		phase>=2 &is_finalcorner_laterhalf==1 &is_overtake==1 @phase>=2 &is_finalcorner==1 &corner==0 &is_overtake==1		즉발		0.25			3								200				2025년 1월 17일				
@@ -922,25 +922,25 @@
 910381	134	1	계승	복합		One True Color	One True Color	One True Color	카렌짱 (웨딩)								remain_distance<=350 &order_rate<=40 &order_rate>=20 &bashin_diff_behind<=1		즉발		0.05	0.1		3								200				2023년 9월 18일				
 910391	136	1	계승	속도			쾌활하고 굳센 힘	快なる剛力	카와카미 프린세스 (축제)						phase>=1 &slope==1 &order_rate>=40 &order_rate<=80		slope==0 @slope==2				0.15			3								200				2025년 2월 17일				
 910401	24	1	계승	복합		GET DOWN	GET DOWN	GET DOWN	골드 시티 (축제)								is_finalcorner==1 &corner!=0 &order_rate>=30 &order_rate<=70 &blocked_side_continuetime>=2		즉발		0.05	0.1		3								200				2023년 2월 16일				
-910411	82	1	계승	가속			CHERRY☆스크램블	CHERRY☆スクランブル	사쿠라 바쿠신 오 (운동회)								order_rate<=20 &remain_distance<=401 &remain_distance>=399		즉발			0.05		0.6								200				2024년 8월 16일				
+910411	82	1	계승	가속		CHERRY☆스크램블	CHERRY☆스크램블	CHERRY☆スクランブル	사쿠라 바쿠신 오 (운동회)								order_rate<=20 &remain_distance<=401 &remain_distance>=399		즉발			0.05		0.6								200				2024년 8월 16일				
 910451	92	1	계승	복합		빙글빙글 머미 트릭♡	빙글빙글 머미 트릭♡	ぐるぐるマミートリック♡	슈퍼 크릭 (할로윈)								is_last_straight==1 &order<=4 &bashin_diff_infront<=1		즉발		0.05	0.1		3								200				2023년 1월 18일				
 910461	95	1	계승	속도		α-star*	α-star*	α-star*	스마트 팔콘 (그랜드 라이브)								distance_rate>=40 &distance_rate<=50 &distance_diff_rate<=10 &ground_type==2		즉발		0.05		0.5	3.6								200				2023년 12월 13일				
-910481	151	1	계승	속도			GALmem.포에버♪	GALmem．ふぉーえば♪	토센 조던 (여름 바캉스)								distance_rate>=40 &distance_rate<=50 &order_rate>=40 &order_rate<=80 &motivation==5		즉발		0.1			3.6								200				2024년 10월 17일				
+910481	151	1	계승	속도		GALmem.포에버♪	GALmem.포에버♪	GALmem．ふぉーえば♪	토센 조던 (여름 바캉스)								distance_rate>=40 &distance_rate<=50 &order_rate>=40 &order_rate<=80 &motivation==5		즉발		0.1			3.6								200				2024년 10월 17일				
 910501	29	1	계승	속도		Hephaistos	Hephaistos	Hephaistos	나리타 타이신 (스팀펑크)								phase>=2 &is_finalcorner_laterhalf==1 &order_rate<=75 &order_rate>=40		즉발		0.15			3								200				2023년 12월 18일				
 910511	36	1	계승	속도		Flowering Dreams	Flowering Dreams	Flowering Dreams	니시노 플라워 (웨딩)								order>=2 &order_rate<=70 &remain_distance<=201 &remain_distance>=199 &near_count>=3		즉발	0.035	0.15			3								200				2024년 9월 16일				
 910521	160	1	계승	속도		113전 114기	113전 114기	113転び114起き	하루 우라라 (새해)								is_finalcorner==1 &corner!=0 &distance_diff_top>=7		즉발		0.05			3								200				2023년 4월 21일				
-910531	73	1	계승	속도			오의・한여름 버닝!!	奥義・常夏バーニング！！	뱀부 메모리 (여름 바캉스)								distance_type==1 &remain_distance<=201 &remain_distance>=199 &order_rate>=20 &order_rate<=50 &change_order_up_end_after>=1		즉발		0.25			3								200				2024년 10월 17일				
+910531	73	1	계승	속도		오의・늘 여름 버닝!!	오의・한여름 버닝!!	奥義・常夏バーニング！！	뱀부 메모리 (여름 바캉스)								distance_type==1 &remain_distance<=201 &remain_distance>=199 &order_rate>=20 &order_rate<=50 &change_order_up_end_after>=1		즉발		0.25			3								200				2024년 10월 17일				
 910561	51	1	계승	속도		벼가 곧 무르익노라	벼가 곧 무르익노라	禾スナハチ登ル	마치카네 후쿠키타루 (풀아머)								distance_rate>=50 &order_rate>=40 &overtake_target_time>=2				0.15			3								200				2022년 12월 19일				
 910581	55	1	계승	속도		Spooky-Scary-Happy	Spooky-Scary-Happy	Spooky-Scary-Happy	메이쇼 도토 (할로윈)								is_last_straight_onetime==1 &order_rate<=40		즉발		0.15			3								200				2024년 1월 18일				
 910591	57	1	계승	속도		두근거림이 부르는 곳으로	두근거림이 부르는 곳으로	ときめきが呼ぶほうへ	메지로 도베르 (캠핑)								distance_rate>=60 &slope==2 &phase==1 &order_rate>=40 &order_rate<=80 &remain_distance>=500		즉발		0.15			3								200				2023년 10월 19일				
 910601	31	1	계승	속도		Go☆Go☆for it!	Go☆Go☆for it!	Go☆Go☆for it!	나이스 네이처 (치어리더)						is_finalcorner==1 &change_order_onetime<0		is_last_straight==1 &order_rate>=40 &order_rate<=70 &popularity>=4		즉발		0.15			3.6								200				2023년 8월 17일				
 910611	143	1	계승	가속		울려 퍼져라! 트레센 응원단!	울려 퍼져라! 트레센 응원단!	轟！トレセン応援団！！	킹 헤일로 (치어리더)						distance_rate>=50 &order_rate_out70_continue==1 &temptation_count==0		is_last_straight==1		즉발			0.2		2.4								200				2023년 8월 17일				
-910621	50	1	계승	복합			뒹구르르!? 파워 드라이브	ごろりん！？パワードライブ	마치카네 탄호이저 (운동회)								distance_rate>=50 &corner!=0 &order_rate>=40 &order_rate<=80 &distance_type==3		즉발		0.05	0.05		1.2								200				2024년 8월 16일				
+910621	50	1	계승	복합		데구루루!? 파워 드라이브	뒹구르르!? 파워 드라이브	ごろりん！？パワードライブ	마치카네 탄호이저 (운동회)								distance_rate>=50 &corner!=0 &order_rate>=40 &order_rate<=80 &distance_type==3		즉발		0.05	0.05		1.2								200				2024년 8월 16일				
 910641	68	1	계승	속도		jingle all the way	jingle all the way	jingle all the way	메지로 파머 (크리스마스)								distance_rate>=40 &corner==0 &order==1				0.05			4.2								200				2025년 3월 20일				
 910651	41	1	계승	속도			즐기라고, 매시업!	ノッてけ、マッシュアップ！	다이타쿠 헬리오스 (무도회)								distance_type==2 &blocked_side_continuetime>=2 &order_rate<=50 &phase==0 &accumulatetime>=5				0.25		-3	3								200				2025년 7월 18일				
 910671	86	1	계승	속도		검은 구름을 흩뜨리는, 황금의 첫 화살	검은 구름을 흩뜨리는, 황금의 첫 화살	玄雲散らす、黄金甲矢	사토노 다이아몬드 (새해)								distance_rate>=40 &distance_rate<=50 &order_rate>=40 &order_rate<=80		즉발		0.15		0.5	3								200				2024년 4월 18일				
 910681	141	1	계승	복합		훌륭한 진수성찬!	훌륭한 진수성찬!	あっぱれ大盤振る舞い！	키타산 블랙 (새해)								phase>=2 &corner!=0 &remain_distance>=600 &order<=3		즉발	0.15		0.05		2.4								200				2024년 4월 18일				
-910691	84	1	계승	가속			피어라 피어라! 나!	咲け咲け！私！	사쿠라 치요노 오 (무도회)						phase==1 &blocked_side_continuetime>=2		remain_distance<=651 &remain_distance>=649 &order_rate<=40 &order_rate>=30		즉발			0.2		3								200				2024년 7월 17일				
+910691	84	1	계승	가속		피어라 피어라! 나!	피어라 피어라! 나!	咲け咲け！私！	사쿠라 치요노 오 (무도회)						phase==1 &blocked_side_continuetime>=2		remain_distance<=651 &remain_distance>=649 &order_rate<=40 &order_rate>=30		즉발			0.2		3								200				2024년 7월 17일				
 910711	66	1	계승	속도		Danser le présent	Danser le présent	Danser le présent	메지로 아르당 (무도회)								phase>=2 &is_last_straight==1 &order_rate>=20 &order_rate<=40 &bashin_diff_behind<=1		즉발	0.035	0.15		-3	3								200				2024년 7월 17일				
 910721	115	1	계승	속도			강용과단, 열화의 칼	剛勇果断、烈火之刀	야에노 무테키 (Warfare)						distance_rate>=40 &distance_rate<=50 &blocked_side_continuetime>=2		distance_rate_after_random==50				0.15			3								200				2025년 8월 19일				
 910741	64	1	계승	속도		Illuminate you	Illuminate you	Illuminate you	메지로 브라이트 (크리스마스)								phase==1 &order_rate>=40 &order_rate<=80			-0.15			3.5	1.2		is_activate_other_skill_detail==1 &base_stamina>=1200 &phase>=2	0.035				4.8	200				2025년 3월 20일				
@@ -955,338 +955,338 @@
 920601	32	1	계승	속도			쫀득쫀득・항상 맑음	もちっと・ハレハレ	나이스 네이처 (새해)								phase>=2 &is_finalcorner==1 &order_rate>=40 &distance_type==3			0.25				2.4								200				2025년 4월 29일				
 920671	87	1	계승	속도			퐁트・드・디아망	ポンテ・デ・ディアマン	사토노 다이아몬드 (프로젝트 L'Arc)								phase_laterhalf_random==1 &order_rate>=40 &order_rate<=80 &distance_type==3				0.15			3								200				2024년 12월 30일				
 920681	142	1	계승	속도			모두의 나에게!	ミンナノアタシへ！	키타산 블랙 (애니 콜라보)								phase<=1 &change_order_onetime>0 &accumulatetime>=5 &order_rate<=50 @phase<=1 &blocked_side_continuetime>=2 &accumulatetime>=5 &order_rate<=50				0.15			1.8								200				2025년 4월 17일				
-100101111	1135	9	진화	속도			배고픈 대장	はらぺこ大将	스페셜 위크								running_style==2 &phase_random==1				0.15		5.5	3												2022년 6월 15일	먹보			
-100101211	1051	9	진화	속도			꿈을 이뤄주는 뒷심	夢叶える末脚	스페셜 위크								is_lastspurt==1 &phase_firsthalf_random==3				0.45			2.4												2022년 6월 15일	전심전력			
-100102111	1059	9	진화	속도			한여름의 결심	真夏の思い切り	스페셜 위크 (여름)								running_style==3 &phase_random==1 &order_rate>=40				0.35			4												2022년 11월 17일	신속 과감			
-100102211	1046	9	진화	속도			한여름의 총대장	真夏の総大将	스페셜 위크 (여름)								phase==1 &change_order_onetime<0				0.35			4												2022년 11월 17일	텐션 오르는데!			
-100103111	1121	9	진화	복합			노도의 출진	怒涛の出陣	스페셜 위크 (총대장)								distance_type==4 &phase==2 &change_order_onetime<0				0.35	0.1	1.5	3												2023년 11월 8일	노도의 추격			
-100103211	1206	9	진화	속도			일본 최고의 근성	日之本一のド根性	스페셜 위크 (총대장)								distance_type==4 &is_finalcorner_random==1				0.45			3												2023년 11월 8일	일본 최고의 우마무스메			
-100201111	1043	9	진화	가속			최대 집중	最大集中	사일런스 스즈카								always==1		즉발			0.2		3												2022년 6월 15일	컨센트레이션			
-100201211	1055	9	진화	복합			이차원의 도망자	異次元の逃亡者	사일런스 스즈카								running_style==1 &is_finalcorner_random==1 &order==1			0.15		0.4		3												2022년 6월 15일	도망자			
-100202111	1054	9	진화	속도			푸른색 이스케이프	瑠璃色エスケイプ	사일런스 스즈카 (여름)								running_style==1 &phase_random==1 &order_rate<=50				0.45			3												2024년 11월 18일	탈출술			
-100202211	1269	9	진화	가속			푸른 하늘을 달려나가는 라파가	蒼天を駆けるラーファガ	사일런스 스즈카 (여름)								distance_type==3 &phase==0		즉발			0.5		1.5												2024년 11월 18일	누구보다 앞으로!			
-100301111	1133	9	진화	복합			천재적 기교	天才的技巧	토카이 테이오								running_style==2 &is_move_lane==1 @running_style==2 &is_move_lane==2		즉발		0.25	0.3		3												2022년 6월 15일	기교파			
-100301211	1113	9	진화	복합			제왕 스텝	帝王ステップ	토카이 테이오								distance_type==3 &phase_random==1				0.25	0.3		4												2022년 6월 15일	라이트닝 스텝			
-100302111	1057	9	진화	속도			레이스의 천재	レースの天才	토카이 테이오 (애니 콜라보)								running_style==2 &phase_random==1 &order_rate<=50				0.15		5.5	3												2022년 7월 19일	레이스 플래너			
-100302211	1114	9	진화	속도			지평선 너머까지	地平の彼方まで	토카이 테이오 (애니 콜라보)								distance_type==3 &is_move_lane==1 &accumulatetime>=10 @distance_type==3 &is_move_lane==2 &accumulatetime>=10		즉발		0.15		5.5	3												2022년 7월 19일	신들린 스텝			
+100101111	1135	9	진화	속도		배고픈 대장	배고픈 대장	はらぺこ大将	스페셜 위크								running_style==2 &phase_random==1				0.15		5.5	3												2022년 6월 15일	먹보			
+100101211	1051	9	진화	속도		꿈을 이뤄 주는 뒷심	꿈을 이뤄주는 뒷심	夢叶える末脚	스페셜 위크								is_lastspurt==1 &phase_firsthalf_random==3				0.45			2.4												2022년 6월 15일	전심전력			
+100102111	1059	9	진화	속도		한여름의 자유	한여름의 결심	真夏の思い切り	스페셜 위크 (여름)								running_style==3 &phase_random==1 &order_rate>=40				0.35			4												2022년 11월 17일	신속 과감			
+100102211	1046	9	진화	속도		한여름의 총대장	한여름의 총대장	真夏の総大将	스페셜 위크 (여름)								phase==1 &change_order_onetime<0				0.35			4												2022년 11월 17일	텐션 오르는데!			
+100103111	1121	9	진화	복합		노도의 출진	노도의 출진	怒涛の出陣	스페셜 위크 (총대장)								distance_type==4 &phase==2 &change_order_onetime<0				0.35	0.1	1.5	3												2023년 11월 8일	노도의 추격			
+100103211	1206	9	진화	속도		일본 최고의 근성	일본 최고의 근성	日之本一のド根性	스페셜 위크 (총대장)								distance_type==4 &is_finalcorner_random==1				0.45			3												2023년 11월 8일	일본 최고의 우마무스메			
+100201111	1043	9	진화	가속		최대 집중	최대 집중	最大集中	사일런스 스즈카								always==1		즉발			0.2		3												2022년 6월 15일	컨센트레이션			
+100201211	1055	9	진화	복합		이차원의 도망자	이차원의 도망자	異次元の逃亡者	사일런스 스즈카								running_style==1 &is_finalcorner_random==1 &order==1			0.15		0.4		3												2022년 6월 15일	도망자			
+100202111	1054	9	진화	속도		푸른색 이스케이프	푸른색 이스케이프	瑠璃色エスケイプ	사일런스 스즈카 (여름)								running_style==1 &phase_random==1 &order_rate<=50				0.45			3												2024년 11월 18일	탈출술			
+100202211	1269	9	진화	가속		푸른 하늘을 달리는 라파가	푸른 하늘을 달려나가는 라파가	蒼天を駆けるラーファガ	사일런스 스즈카 (여름)								distance_type==3 &phase==0		즉발			0.5		1.5												2024년 11월 18일	누구보다 앞으로!			
+100301111	1133	9	진화	복합		천재적 기교	천재적 기교	天才的技巧	토카이 테이오								running_style==2 &is_move_lane==1 @running_style==2 &is_move_lane==2		즉발		0.25	0.3		3												2022년 6월 15일	기교파			
+100301211	1113	9	진화	복합		제왕 스텝	제왕 스텝	帝王ステップ	토카이 테이오								distance_type==3 &phase_random==1				0.25	0.3		4												2022년 6월 15일	라이트닝 스텝			
+100302111	1057	9	진화	속도		레이스의 천재	레이스의 천재	レースの天才	토카이 테이오 (애니 콜라보)								running_style==2 &phase_random==1 &order_rate<=50				0.15		5.5	3												2022년 7월 19일	레이스 플래너			
+100302211	1114	9	진화	속도		지평선 저편까지	지평선 너머까지	地平の彼方まで	토카이 테이오 (애니 콜라보)								distance_type==3 &is_move_lane==1 &accumulatetime>=10 @distance_type==3 &is_move_lane==2 &accumulatetime>=10		즉발		0.15		5.5	3												2022년 7월 19일	신들린 스텝			
 100303111	1190	9	진화	가속			천부적인 움직임	天賦の身ごなし	토카이 테이오 (축제)								running_style==2 &course_distance>=2400 &course_distance<=2500 &phase_firstquarter_random==2 &order_rate<=50 &base_stamina>=1000					0.5		1.8												2025년 2월 17일	치열한 승부			
 100303211	1056	9	진화	속도			반락유희	盤楽遊嬉	토카이 테이오 (축제)								running_style==2 &order_rate<=50 &phase_laterhalf_random==1				0.25		3.5	3												2025년 2월 17일	여유만만			
-100401111	1105	9	진화	속도			날아가는 거야!	かっ飛ばすわよ！	마루젠스키								distance_type==2 &phase_random==1 &order_rate<=50				0.45			2.4												2022년 6월 15일	기어 체인지			
-100401211	1106	9	진화	속도			홍련의 오버 레브	紅蓮のオーバーレブ	마루젠스키								distance_type==2 &distance_rate>=50 &order==1		즉발		0.45			3												2022년 6월 15일	액셀 전개!			
-100402111	1128	9	진화	회복			심쿵☆말괄량이 우마무스메!	ドキッ☆じゃじゃウマ娘！	마루젠스키 (여름)								running_style==1 &slope==1 &accumulatetime>=10		즉발				7.5													2022년 11월 17일	말괄량이 우마무스메		TRUE	
-100402211	1068	9	진화	속도			단상의 지배자	お立ち台の支配者	마루젠스키 (여름)								distance_type==2 &phase_laterhalf_random==0 &order_rate<=50				0.45			3												2022년 11월 17일	마일의 지배자			
-100501111	1107	9	진화	속도			빛나는 톱스타	輝くトップスタァ	후지 키세키								distance_type==2 &is_overtake==1 &accumulatetime>=5				0.45			2.4												2022년 10월 31일	여장부 기질			
-100501211	1057	9	진화	속도			엔터테이너	エンターテイナー	후지 키세키								running_style==2 &phase_random==1 &order_rate<=50				0.15		5.5	3												2022년 10월 31일	레이스 플래너			
-100502111	1077	9	진화	속도			압권의 트릭	圧巻のトリック	후지 키세키 (무도회)								phase==1 &order_rate<=50 &temptation_opponent_count_behind>=1				0.35			3												2023년 7월 18일	넋이 나가는 트릭			
+100401111	1105	9	진화	속도		날아 보자구!	날아가는 거야!	かっ飛ばすわよ！	마루젠스키								distance_type==2 &phase_random==1 &order_rate<=50				0.45			2.4												2022년 6월 15일	기어 체인지			
+100401211	1106	9	진화	속도		홍련의 오버 레브	홍련의 오버 레브	紅蓮のオーバーレブ	마루젠스키								distance_type==2 &distance_rate>=50 &order==1		즉발		0.45			3												2022년 6월 15일	액셀 전개!			
+100402111	1128	9	진화	회복		심쿵☆말괄량이 우마무스메!	심쿵☆말괄량이 우마무스메!	ドキッ☆じゃじゃウマ娘！	마루젠스키 (여름)								running_style==1 &slope==1 &accumulatetime>=10		즉발				7.5													2022년 11월 17일	말괄량이 우마무스메		TRUE	
+100402211	1068	9	진화	속도		단상의 지배자	단상의 지배자	お立ち台の支配者	마루젠스키 (여름)								distance_type==2 &phase_laterhalf_random==0 &order_rate<=50				0.45			3												2022년 11월 17일	마일의 지배자			
+100501111	1107	9	진화	속도		빛나는 톱스타	빛나는 톱스타	輝くトップスタァ	후지 키세키								distance_type==2 &is_overtake==1 &accumulatetime>=5				0.45			2.4												2022년 10월 31일	여장부 기질			
+100501211	1057	9	진화	속도		엔터테이너	엔터테이너	エンターテイナー	후지 키세키								running_style==2 &phase_random==1 &order_rate<=50				0.15		5.5	3												2022년 10월 31일	레이스 플래너			
+100502111	1077	9	진화	속도		압권의 트릭	압권의 트릭	圧巻のトリック	후지 키세키 (무도회)								phase==1 &order_rate<=50 &temptation_opponent_count_behind>=1				0.35			3												2023년 7월 18일	넋이 나가는 트릭			
 100502121	1077	9	진화	속도			넋이 나가는 코너링	見惚れるコーナリング	후지 키세키 (무도회)								is_finalcorner_random==1				0.45			2.4												2023년 7월 18일	넋이 나가는 트릭			
-100502211	1058	9	진화	속도			반짝임의 톱스타	煌めきのトップスタァ	후지 키세키 (무도회)								running_style==2 &is_finalcorner_random==1 &order_rate<=50				0.45			1.8												2023년 7월 18일	스피드스터			
-100601111	1135	9	진화	회복			가사마쓰의 먹보	笠松の食いしん坊	오구리 캡								running_style==2 &phase_random==1						7.5													2022년 6월 15일	먹보		TRUE	
+100502211	1058	9	진화	속도		반짝이는 톱스타	반짝임의 톱스타	煌めきのトップスタァ	후지 키세키 (무도회)								running_style==2 &is_finalcorner_random==1 &order_rate<=50				0.45			1.8												2023년 7월 18일	스피드스터			
+100601111	1135	9	진화	회복		가사마쓰의 먹보	가사마쓰의 먹보	笠松の食いしん坊	오구리 캡								running_style==2 &phase_random==1						7.5													2022년 6월 15일	먹보		TRUE	
 100601121	1135	9	진화	속도			굶주린 괴물	飢えた怪物	오구리 캡								running_style==2 &phase_random==1				0.35		1.5	3												2022년 6월 15일	먹보			
-100601211	1034	9	진화	가속			괴물적 코너링	怪物的コーナリング	오구리 캡								all_corner_random==1					0.4	1.5	3												2022년 6월 15일	곡선의 소믈리에			
-100602111	1135	9	진화	회복			폭식 보양	ドカ食い養生	오구리 캡 (크리스마스)								running_style==2 &phase_random==1						7.5													2023년 3월 20일	먹보		TRUE	
-100602211	1075	9	진화	속도			크리스마스의 기적 체험	クリスマスの奇跡体験	오구리 캡 (크리스마스)								distance_type==4 &is_finalcorner==1 &corner!=0 &lane_type==0		즉발		0.35		1.5	3												2023년 3월 20일	내적 체험			
-100701111	1147	9	진화	회복			564 아이즈로 시야 선명!	564アイズで視界クッキリ！	골드 쉽								running_style==4 &is_move_lane==1 @running_style==4 &is_move_lane==2						1.5	3												2022년 6월 15일	시야 양호! 이상 없음!		TRUE	
-100701211	1148	9	진화	속도			익스트림 하교술	エクストリーム下校術	골드 쉽								running_style==4 &slope==2 &accumulatetime>=10		즉발		0.15		5.5	3												2022년 6월 15일	하교 후의 스페셜리스트			
-100702111	1075	9	진화	속도			신비 체험! 골쉽 워프	神秘体験！ゴルシワープ	골드 쉽 (여름)								distance_type==4 &is_finalcorner==1 &corner!=0 &lane_type==0		즉발		0.35			4												2023년 11월 17일	내적 체험			
-100702211	1210	9	진화	속도			오징어 튀김, 어떤가요!?	イカ揚げ、いかがですか！？	골드 쉽 (여름)								distance_type==3 &phase_random==1 &order_rate>=50				0.35			4												2023년 11월 17일	고양감			
+100601211	1034	9	진화	가속		괴물의 코너링	괴물적 코너링	怪物的コーナリング	오구리 캡								all_corner_random==1					0.4	1.5	3												2022년 6월 15일	곡선의 소믈리에			
+100602111	1135	9	진화	회복		폭식 보양	폭식 보양	ドカ食い養生	오구리 캡 (크리스마스)								running_style==2 &phase_random==1						7.5													2023년 3월 20일	먹보		TRUE	
+100602211	1075	9	진화	속도		크리스마스의 기적 체험	크리스마스의 기적 체험	クリスマスの奇跡体験	오구리 캡 (크리스마스)								distance_type==4 &is_finalcorner==1 &corner!=0 &lane_type==0		즉발		0.35		1.5	3												2023년 3월 20일	내적 체험			
+100701111	1147	9	진화	회복		564 아이즈, 시야 선명!	564 아이즈로 시야 선명!	564アイズで視界クッキリ！	골드 쉽								running_style==4 &is_move_lane==1 @running_style==4 &is_move_lane==2						1.5	3												2022년 6월 15일	시야 양호! 이상 없음!		TRUE	
+100701211	1148	9	진화	속도		익스트림 하교술	익스트림 하교술	エクストリーム下校術	골드 쉽								running_style==4 &slope==2 &accumulatetime>=10		즉발		0.15		5.5	3												2022년 6월 15일	하교 후의 스페셜리스트			
+100702111	1075	9	진화	속도		신비 체험! 골쉽 워프	신비 체험! 골쉽 워프	神秘体験！ゴルシワープ	골드 쉽 (여름)								distance_type==4 &is_finalcorner==1 &corner!=0 &lane_type==0		즉발		0.35			4												2023년 11월 17일	내적 체험			
+100702211	1210	9	진화	속도		오징어 튀김, 어떠세요!?	오징어 튀김, 어떤가요!?	イカ揚げ、いかがですか！？	골드 쉽 (여름)								distance_type==3 &phase_random==1 &order_rate>=50				0.35			4												2023년 11월 17일	고양감			
 100702221	1210	9	진화	속도			높아지는걸!!	高まってきたぜぇ！！	골드 쉽 (여름)								distance_type==4 &phase_random==1 &order_rate>=50				0.45			2.4												2023년 11월 17일	고양감			
 100703111	1064	9	진화	복합			몰려드는 쥬뗌므	押し寄せるジュテーム	골드 쉽 (프로젝트 L'Arc)								running_style==4 &is_lastspurt==1 &corner==0		즉발			0.4		0.9		is_activate_other_skill_detail==1 &is_last_straight==1		0.15			3					2024년 12월 19일	육박하는 그림자			
 100703211	1016	9	진화	녹딱			거친 해안을 좋아하는 황금 배	荒磯好みの黄金船	골드 쉽 (프로젝트 L'Arc)								ground_condition==2 ＠ground_condition==3 ＠ground_condition==4		즉발																	2024년 12월 19일	진창길의 귀신			
-100801111	1038	9	진화	속도			스키틀 브레이크	スキットルブレイク	보드카								phase==1 &corner==0		즉발		0.15		5.5	3												2022년 6월 15일	호전일식			
-100801211	1070	9	진화	가속			뛰어난 다리	抜群の豪脚	보드카								distance_type==2 &phase_random==2 &order_rate>50					0.5		3												2022년 6월 15일	강인한 다리			
-100802111	1049	9	진화	가속			마구 앞질러 주지!	ぶっ差してやるぜ！	보드카 (크리스마스)								infront_near_lane_time>=1 &is_lastspurt==1 &hp_per>=1		즉발			0.4	1.5	3												2024년 3월 18일	논스톱 걸			
-100802211	1245	9	진화	속도			최속의 톱기어	最速のトップギア	보드카 (크리스마스)								running_style==3 &is_last_straight==1 &order>=2 &distance_diff_top<=10		즉발		0.55			2.4												2024년 3월 18일	톱기어			
-100901111	1072	9	진화	속도			퍼펙트 튠	パーフェクトチューン	다이와 스칼렛								distance_type==3 &phase_random==1 &order_rate<=50				0.35		1.5	2.4												2022년 6월 15일	킬러 튠			
-100901211	1057	9	진화	속도			내가 이길 거니까!	アタシが勝つんだから！	다이와 스칼렛								running_style==2 &phase_random==1 &order_rate<=50				0.15		5.5	3												2022년 6월 15일	레이스 플래너			
-100902111	1128	9	진화	회복			말괄량이 여왕	おてんば女王	다이와 스칼렛 (크리스마스)								running_style==1 &slope==1 &accumulatetime>=10		즉발				7.5													2024년 3월 18일	말괄량이 우마무스메		TRUE	
-100902211	1246	9	진화	속도			열리는 꿈의 문	開かれる夢の扉	다이와 스칼렛 (크리스마스)								running_style==1 &is_last_straight==1 &order==1 &bashin_diff_behind<=1		즉발		0.55			2.4												2024년 3월 18일	밟을 수 없는 그림자			
-101001111	1105	9	진화	속도			조준 사격입니DA!	狙い撃ちデス！	타이키 셔틀								distance_type==2 &phase_random==1 &order_rate<=50				0.45			2.4												2022년 6월 15일	기어 체인지			
+100801111	1038	9	진화	속도		스키틀 브레이크	스키틀 브레이크	スキットルブレイク	보드카								phase==1 &corner==0		즉발		0.15		5.5	3												2022년 6월 15일	호전일식			
+100801211	1070	9	진화	가속		뛰어난 다리	뛰어난 다리	抜群の豪脚	보드카								distance_type==2 &phase_random==2 &order_rate>50					0.5		3												2022년 6월 15일	강인한 다리			
+100802111	1049	9	진화	가속		앞질러 주겠어!	마구 앞질러 주지!	ぶっ差してやるぜ！	보드카 (크리스마스)								infront_near_lane_time>=1 &is_lastspurt==1 &hp_per>=1		즉발			0.4	1.5	3												2024년 3월 18일	논스톱 걸			
+100802211	1245	9	진화	속도		최속의 톱기어	최속의 톱기어	最速のトップギア	보드카 (크리스마스)								running_style==3 &is_last_straight==1 &order>=2 &distance_diff_top<=10		즉발		0.55			2.4												2024년 3월 18일	톱기어			
+100901111	1072	9	진화	속도		퍼펙트 튠	퍼펙트 튠	パーフェクトチューン	다이와 스칼렛								distance_type==3 &phase_random==1 &order_rate<=50				0.35		1.5	2.4												2022년 6월 15일	킬러 튠			
+100901211	1057	9	진화	속도		내가 이길 거야	내가 이길 거니까!	アタシが勝つんだから！	다이와 스칼렛								running_style==2 &phase_random==1 &order_rate<=50				0.15		5.5	3												2022년 6월 15일	레이스 플래너			
+100902111	1128	9	진화	회복		말괄량이 여왕	말괄량이 여왕	おてんば女王	다이와 스칼렛 (크리스마스)								running_style==1 &slope==1 &accumulatetime>=10		즉발				7.5													2024년 3월 18일	말괄량이 우마무스메		TRUE	
+100902211	1246	9	진화	속도		열리는 꿈의 문	열리는 꿈의 문	開かれる夢の扉	다이와 스칼렛 (크리스마스)								running_style==1 &is_last_straight==1 &order==1 &bashin_diff_behind<=1		즉발		0.55			2.4												2024년 3월 18일	밟을 수 없는 그림자			
+101001111	1105	9	진화	속도		조준 사격입니다!	조준 사격입니DA!	狙い撃ちデス！	타이키 셔틀								distance_type==2 &phase_random==1 &order_rate<=50				0.45			2.4												2022년 6월 15일	기어 체인지			
 101001211	1068	9	진화	속도		Frontier Spirit	Frontier Spirit	Frontier Spirit	타이키 셔틀								distance_type==2 &phase_laterhalf_random==0 &accumulatetime>=5 &order_rate<=50				0.45			3												2022년 6월 15일	마일의 지배자			
-101002111	1068	9	진화	속도			어드벤처의 선구자	アドベンチャーの先導者	타이키 셔틀 (캠핑)								distance_type==2 &phase_laterhalf_random==0 &accumulatetime>=5 &order_rate<=50				0.45			3												2023년 10월 19일	마일의 지배자			
-101002211	1190	9	진화	가속			진검승부입니DA!	真剣勝負デス！	타이키 셔틀 (캠핑)								running_style==2 &phase_firsthalf_random==2 &order_rate<=50					0.4		1.8												2023년 10월 19일	치열한 승부			
-101101111	1115	9	진화	속도			야마토 나데시코	大和撫子	그래스 원더								distance_type==3 &phase_random==2				0.45			3												2022년 6월 15일	독점력			
-101101211	1060	9	진화	가속			불퇴전의 의지	不退転の意思	그래스 원더								running_style==3 &phase_firsthalf_random==2 &order_rate>=40					0.4		1.8												2022년 6월 15일	능숙한 환승			
-101102111	1074	9	진화	속도			큐어리 힐	キュアリーヒール	그래스 원더 (판타지)								distance_type==4 &phase_random==1				0.15		5.5	3												2022년 10월 18일	쿨다운			
-101102211	1142	9	진화	속도			용기의 마법	勇気の魔法	그래스 원더 (판타지)								running_style==3 &phase_random==1 &order_rate>=40				0.15		5.5	3												2022년 10월 18일	릴랙스			
-101201111	1073	9	진화	복합			승리를 향한 포효	勝利への咆哮	히시 아마존								distance_type==3 &is_finalcorner==1 &corner!=0 &is_overtake==1		즉발		0.45	0.1		3												2022년 10월 10일	승리를 향한 집념			
+101002111	1068	9	진화	속도		Adventure의 선도자	어드벤처의 선구자	アドベンチャーの先導者	타이키 셔틀 (캠핑)								distance_type==2 &phase_laterhalf_random==0 &accumulatetime>=5 &order_rate<=50				0.45			3												2023년 10월 19일	마일의 지배자			
+101002211	1190	9	진화	가속		진검승부입니다!	진검승부입니DA!	真剣勝負デス！	타이키 셔틀 (캠핑)								running_style==2 &phase_firsthalf_random==2 &order_rate<=50					0.4		1.8												2023년 10월 19일	치열한 승부			
+101101111	1115	9	진화	속도		요조숙녀	야마토 나데시코	大和撫子	그래스 원더								distance_type==3 &phase_random==2				0.45			3												2022년 6월 15일	독점력			
+101101211	1060	9	진화	가속		불퇴전의 의지	불퇴전의 의지	不退転の意思	그래스 원더								running_style==3 &phase_firsthalf_random==2 &order_rate>=40					0.4		1.8												2022년 6월 15일	능숙한 환승			
+101102111	1074	9	진화	속도		큐어리 힐	큐어리 힐	キュアリーヒール	그래스 원더 (판타지)								distance_type==4 &phase_random==1				0.15		5.5	3												2022년 10월 18일	쿨다운			
+101102211	1142	9	진화	속도		용기의 마법	용기의 마법	勇気の魔法	그래스 원더 (판타지)								running_style==3 &phase_random==1 &order_rate>=40				0.15		5.5	3												2022년 10월 18일	릴랙스			
+101201111	1073	9	진화	복합		승리를 향한 포효	승리를 향한 포효	勝利への咆哮	히시 아마존								distance_type==3 &is_finalcorner==1 &corner!=0 &is_overtake==1		즉발		0.45	0.1		3												2022년 10월 10일	승리를 향한 집념			
 101201121	1073	9	진화	속도			맞짱에 거는 집념	タイマンにかける執念	히시 아마존						is_finalcorner==1 &change_order_onetime<0		remain_distance<=201 &remain_distance>=199 &distance_type==3		즉발		0.45			3												2022년 10월 10일	승리를 향한 집념			
-101201211	1063	9	진화	속도			노도의 포로로카	怒濤のポロロッカ	히시 아마존						phase>=2 &distance_diff_rate>=50		running_style==4 &phase_firsthalf_random==3 &is_lastspurt==1				0.45			3												2022년 10월 10일	질풍노도			
-101202111	1202	9	진화	속도			열렬한 인게이지!	熱烈エンゲージ！	히시 아마존 (웨딩)								running_style==4 &phase_random==1 &order_rate>=50				0.35			4												2024년 9월 16일	강공책			
-101202211	1249	9	진화	가속			투혼입도!	闘魂入刀！	히시 아마존 (웨딩)						distance_rate>=66 &temptation_count==0		running_style==4 &distance_type==3 &phase_firsthalf_random==2					0.4		4												2024년 9월 16일	뛰어난 순발력			
-101301111	1119	9	진화	속도			메지로의 마음가짐	メジロの心得	메지로 맥퀸								distance_type==4 &phase_random==1 &order_rate<=50				0.45			3												2022년 6월 15일	선봉의 마음가짐			
-101301211	1056	9	진화	속도			명배우의 여유	名優の余裕	메지로 맥퀸								running_style==2 &phase_laterhalf_random==0 &order_rate<=50				0.15		5.5	3												2022년 6월 15일	여유만만			
-101302111	1074	9	진화	속도			액티브 레스트	アクティブレスト	메지로 맥퀸 (애니 콜라보)								distance_type==4 &phase_random==1				0.15		5.5	3												2022년 7월 19일	쿨다운			
-101302211	1036	9	진화	속도			하늘 끝까지	空の果てまで	메지로 맥퀸 (애니 콜라보)								straight_random==1				0.45			3												2022년 7월 19일	한줄기 질풍			
-101303111	1201	9	진화	속도			여름의 명배우	夏の名優	메지로 맥퀸 (여름)								distance_type==4 &phase_laterhalf_random==1 &order_rate<=50				0.35			4												2023년 11월 17일	노력의 결정체			
-101303211	1219	9	진화	회복			일의전심 리프레시!	一意専心にリフレッシュ！	메지로 맥퀸 (여름)								is_badstart==0 &running_style==2 &distance_type==4 &phase_firsthalf_random==1						9.5													2023년 11월 17일	일의전심		TRUE	
-101401111	1112	9	진화	속도			매의 눈	鷹ノ目	엘 콘도르 파사								distance_type==3 &phase_random==0				0.15			3												2022년 6월 15일	천리안			
-101401211	1056	9	진화	속도			여유로운 퍼포먼스	余裕のパフォーマンス	엘 콘도르 파사								running_style==2 &phase_laterhalf_random==0 &order_rate<=50				0.15		5.5	3												2022년 6월 15일	여유만만			
-101402111	1070	9	진화	가속			호용무쌍	豪勇無双	엘 콘도르 파사 (판타지)								distance_type==2 &phase_random==2 &order_rate>50					0.5		3												2022년 10월 18일	강인한 다리			
+101201211	1063	9	진화	속도		노도의 포로로카	노도의 포로로카	怒濤のポロロッカ	히시 아마존						phase>=2 &distance_diff_rate>=50		running_style==4 &phase_firsthalf_random==3 &is_lastspurt==1				0.45			3												2022년 10월 10일	질풍노도			
+101202111	1202	9	진화	속도		열렬한 인게이지!	열렬한 인게이지!	熱烈エンゲージ！	히시 아마존 (웨딩)								running_style==4 &phase_random==1 &order_rate>=50				0.35			4												2024년 9월 16일	강공책			
+101202211	1249	9	진화	가속		투혼입도!	투혼입도!	闘魂入刀！	히시 아마존 (웨딩)						distance_rate>=66 &temptation_count==0		running_style==4 &distance_type==3 &phase_firsthalf_random==2					0.4		4												2024년 9월 16일	뛰어난 순발력			
+101301111	1119	9	진화	속도		메지로의 마음가짐	메지로의 마음가짐	メジロの心得	메지로 맥퀸								distance_type==4 &phase_random==1 &order_rate<=50				0.45			3												2022년 6월 15일	선봉의 마음가짐			
+101301211	1056	9	진화	속도		명배우의 여유	명배우의 여유	名優の余裕	메지로 맥퀸								running_style==2 &phase_laterhalf_random==0 &order_rate<=50				0.15		5.5	3												2022년 6월 15일	여유만만			
+101302111	1074	9	진화	속도		액티브 레스트	액티브 레스트	アクティブレスト	메지로 맥퀸 (애니 콜라보)								distance_type==4 &phase_random==1				0.15		5.5	3												2022년 7월 19일	쿨다운			
+101302211	1036	9	진화	속도		하늘 끝까지	하늘 끝까지	空の果てまで	메지로 맥퀸 (애니 콜라보)								straight_random==1				0.45			3												2022년 7월 19일	한줄기 질풍			
+101303111	1201	9	진화	속도		여름의 명배우	여름의 명배우	夏の名優	메지로 맥퀸 (여름)								distance_type==4 &phase_laterhalf_random==1 &order_rate<=50				0.35			4												2023년 11월 17일	노력의 결정체			
+101303211	1219	9	진화	회복		일의전심으로 리프레시!	일의전심 리프레시!	一意専心にリフレッシュ！	메지로 맥퀸 (여름)								is_badstart==0 &running_style==2 &distance_type==4 &phase_firsthalf_random==1						9.5													2023년 11월 17일	일의전심		TRUE	
+101401111	1112	9	진화	속도		매의 눈	매의 눈	鷹ノ目	엘 콘도르 파사								distance_type==3 &phase_random==0				0.15			3												2022년 6월 15일	천리안			
+101401211	1056	9	진화	속도		여유로운 퍼포먼스	여유로운 퍼포먼스	余裕のパフォーマンス	엘 콘도르 파사								running_style==2 &phase_laterhalf_random==0 &order_rate<=50				0.15		5.5	3												2022년 6월 15일	여유만만			
+101402111	1070	9	진화	가속		호용무쌍	호용무쌍	豪勇無双	엘 콘도르 파사 (판타지)								distance_type==2 &phase_random==2 &order_rate>50					0.5		3												2022년 10월 18일	강인한 다리			
 101402121	1070	9	진화	속도			콘도르 도약술	コンドル跳躍術	엘 콘도르 파사 (판타지)								distance_type==2 &phase_random==2			0.35				4												2022년 10월 18일	강인한 다리			
-101402211	1061	9	진화	속도			승천하는 콘도르	昇りコンドル	엘 콘도르 파사 (판타지)								running_style==3 &is_finalcorner==1 &corner!=0 &is_behind_in==1 &change_order_onetime<0				0.35			4												2022년 10월 18일	승천하는 용			
-101501111	1058	9	진화	속도			강림! 세기말 패왕!	降臨！世紀末覇王！	티엠 오페라 오								running_style==2 &is_finalcorner_random==1 &order_rate<=50				0.35			4												2022년 6월 21일	스피드스터			
-101501211	1072	9	진화	속도			가극왕의 행진	歌劇王の行進	티엠 오페라 오								distance_type==3 &phase_random==1 &order_rate<=50				0.45			2.4												2022년 6월 21일	킬러 튠			
-101502111	1035	9	진화	회복			왈츠의 마에스트로	円舞曲のマエストロ	티엠 오페라 오 (새해)								corner_random==1 ＠corner_random==2 ＠corner_random==3 ＠corner_random==4						7.5													2023년 4월 21일	원호의 마에스트로		TRUE	
+101402211	1061	9	진화	속도		승천하는 콘도르	승천하는 콘도르	昇りコンドル	엘 콘도르 파사 (판타지)								running_style==3 &is_finalcorner==1 &corner!=0 &is_behind_in==1 &change_order_onetime<0				0.35			4												2022년 10월 18일	승천하는 용			
+101501111	1058	9	진화	속도		강림! 세기말 패왕!	강림! 세기말 패왕!	降臨！世紀末覇王！	티엠 오페라 오								running_style==2 &is_finalcorner_random==1 &order_rate<=50				0.35			4												2022년 6월 21일	스피드스터			
+101501211	1072	9	진화	속도		가극왕의 행진	가극왕의 행진	歌劇王の行進	티엠 오페라 오								distance_type==3 &phase_random==1 &order_rate<=50				0.45			2.4												2022년 6월 21일	킬러 튠			
+101502111	1035	9	진화	회복		왈츠의 마에스트로	왈츠의 마에스트로	円舞曲のマエストロ	티엠 오페라 오 (새해)								corner_random==1 ＠corner_random==2 ＠corner_random==3 ＠corner_random==4						7.5													2023년 4월 21일	원호의 마에스트로		TRUE	
 101502121	1035	9	진화	속도			코너에 내려앉은 가극왕	コーナーに舞い降りし歌劇王	티엠 오페라 오 (새해)								distance_type==4 &phase==1 &corner!=0				0.35		1.5	3												2023년 4월 21일	원호의 마에스트로			
-101502211	1201	9	진화	속도			나는 늦지 않게 찾아온다!	ボクは遅れずにやってくる！	티엠 오페라 오 (새해)								distance_type==4 &phase_laterhalf_random==1 &order_rate<=50				0.45			2.4												2023년 4월 21일	노력의 결정체			
-101601111	1036	9	진화	속도			일도양단	一刀両断	나리타 브라이언								straight_random==1				0.45			3												2022년 9월 5일	한줄기 질풍			
-101601211	1051	9	진화	속도			굶주린 늑대의 송곳니	餓狼牙	나리타 브라이언								is_lastspurt==1 &phase_firsthalf_random==3				0.45			2.4												2022년 9월 5일	전심전력			
+101502211	1201	9	진화	속도		나는 늦지 않게 찾아온다!	나는 늦지 않게 찾아온다!	ボクは遅れずにやってくる！	티엠 오페라 오 (새해)								distance_type==4 &phase_laterhalf_random==1 &order_rate<=50				0.45			2.4												2023년 4월 21일	노력의 결정체			
+101601111	1036	9	진화	속도		일도양단	일도양단	一刀両断	나리타 브라이언								straight_random==1				0.45			3												2022년 9월 5일	한줄기 질풍			
+101601211	1051	9	진화	속도		아랑의 송곳니	굶주린 늑대의 송곳니	餓狼牙	나리타 브라이언								is_lastspurt==1 &phase_firsthalf_random==3				0.45			2.4												2022년 9월 5일	전심전력			
 101602111	1247	9	진화	속도		BLAZING WOLF	BLAZING WOLF	BLAZING WOLF	나리타 브라이언 (Blaze)								running_style==2 &distance_rate>=50 &is_overtake==1 @running_style==3 &distance_rate>=50 &is_overtake==1		즉발		0.35			4												2024년 4월 9일	맹추격			
-101602211	1248	9	진화	가속			갈망하는 괴물	渇望する怪物	나리타 브라이언 (Blaze)						distance_diff_top<=10 &distance_rate>=60 &phase==1		distance_type==4 &running_style==2 &phase==2		즉발			0.5		1.2												2024년 4월 9일	괴물			
-101701111	1115	9	진화	속도			황제의 눈빛	皇帝の眼差し	심볼리 루돌프								distance_type==3 &phase_random==2			0.45				3												2022년 6월 15일	독점력			
-101701211	1033	9	진화	속도			개수일촉	鎧袖一触	심볼리 루돌프								all_corner_random==1				0.35			4												2022년 6월 15일	호선의 프로페서			
-101702111	1056	9	진화	회복			신색자약	神色自若	심볼리 루돌프 (축제)								running_style==2 &phase_laterhalf_random==0 &order_rate<=50						7.5													2023년 2월 16일	여유만만		TRUE	
-101702211	1019	9	진화	녹딱			풍상고결	風霜高潔	심볼리 루돌프 (축제)								season==3		즉발																	2023년 2월 16일	초가을 강풍			
-101801111	1137	9	진화	속도			여제의 권모	女帝の権謀	에어 그루브								running_style==2 &phase_random==2 &order_rate<=50				0.35			4												2022년 6월 15일	현혹의 교란			
-101801211	1050	9	진화	속도			수월경화	水月鏡花	에어 그루브								phase_random==2			0.15				3												2022년 6월 15일	레인의 마술사			
-101802111	1107	9	진화	속도			여제의 긍지	女帝の矜持	에어 그루브 (웨딩)								distance_type==2 &is_overtake==1 &accumulatetime>=5				0.35			4												2022년 9월 16일	여장부 기질			
-101802211	1034	9	진화	복합			상현의 소믈리에	上弦のソムリエール	에어 그루브 (웨딩)								all_corner_random==1			0.15		0.4		3												2022년 9월 16일	곡선의 소믈리에			
-101901111	1159	9	진화	속도			한계 우마무스메 마니아	限界ウママニア	아그네스 디지털								near_count>=3 &accumulatetime>=5		즉발		0.35		1.5	3												2023년 1월 9일	우마무스메 마니아			
-101901211	1168	9	진화	가속			맨 앞줄은 양보하지 않아!	最前列は譲れない！	아그네스 디지털								ground_type==2 &phase_random==2					0.3		4												2023년 1월 9일	목표는 맨 앞줄!			
+101602211	1248	9	진화	가속		갈망하는 괴물	갈망하는 괴물	渇望する怪物	나리타 브라이언 (Blaze)						distance_diff_top<=10 &distance_rate>=60 &phase==1		distance_type==4 &running_style==2 &phase==2		즉발			0.5		1.2												2024년 4월 9일	괴물			
+101701111	1115	9	진화	속도		황제의 시선	황제의 눈빛	皇帝の眼差し	심볼리 루돌프								distance_type==3 &phase_random==2			0.45				3												2022년 6월 15일	독점력			
+101701211	1033	9	진화	속도		개수일촉	개수일촉	鎧袖一触	심볼리 루돌프								all_corner_random==1				0.35			4												2022년 6월 15일	호선의 프로페서			
+101702111	1056	9	진화	회복		신색자약	신색자약	神色自若	심볼리 루돌프 (축제)								running_style==2 &phase_laterhalf_random==0 &order_rate<=50						7.5													2023년 2월 16일	여유만만		TRUE	
+101702211	1019	9	진화	녹딱		풍상고결	풍상고결	風霜高潔	심볼리 루돌프 (축제)								season==3		즉발																	2023년 2월 16일	초가을 강풍			
+101801111	1137	9	진화	속도		여제의 권모	여제의 권모	女帝の権謀	에어 그루브								running_style==2 &phase_random==2 &order_rate<=50				0.35			4												2022년 6월 15일	현혹의 교란			
+101801211	1050	9	진화	속도		수월경화	수월경화	水月鏡花	에어 그루브								phase_random==2			0.15				3												2022년 6월 15일	레인의 마술사			
+101802111	1107	9	진화	속도		여제의 긍지	여제의 긍지	女帝の矜持	에어 그루브 (웨딩)								distance_type==2 &is_overtake==1 &accumulatetime>=5				0.35			4												2022년 9월 16일	여장부 기질			
+101802211	1034	9	진화	복합		상현의 소믈리에	상현의 소믈리에	上弦のソムリエール	에어 그루브 (웨딩)								all_corner_random==1			0.15		0.4		3												2022년 9월 16일	곡선의 소믈리에			
+101901111	1159	9	진화	속도		한계 우마무스메 마니아	한계 우마무스메 마니아	限界ウママニア	아그네스 디지털								near_count>=3 &accumulatetime>=5		즉발		0.35		1.5	3												2023년 1월 9일	우마무스메 마니아			
+101901211	1168	9	진화	가속		맨 앞줄은 양보하지 않아!	맨 앞줄은 양보하지 않아!	最前列は譲れない！	아그네스 디지털								ground_type==2 &phase_random==2					0.3		4												2023년 1월 9일	목표는 맨 앞줄!			
 101901221	1168	9	진화	속도			목표는 제일 앞자리로 가는 길!	狙うは最前ドセンへの道！	아그네스 디지털								ground_type==1 &phase_random==2 &distance_type==3			0.3				4												2023년 1월 9일	목표는 맨 앞줄!			
-101902111	1046	9	진화	속도			초특급 입고!	超特急入稿！	아그네스 디지털 (할로윈)								phase==1 &change_order_onetime<0				0.35		1.5	1.8												2024년 1월 18일	텐션 오르는데!			
-101902211	1227	9	진화	속도			존귀함을 찾아 부화~~알!	尊みを求めてふっかーーつ！	아그네스 디지털 (할로윈)								ground_type==2 &phase_random==1 &order_rate>=50				0.35		1.5	2.4												2024년 1월 18일	권토중래			
-102001111	1119	9	진화	속도			패스트 리트리브	ファストリトリーブ	세이운 스카이								distance_type==4 &phase_random==1 &bashin_diff_behind>=1 &order==1				0.35			4												2022년 9월 29일	선봉의 마음가짐			
+101902111	1046	9	진화	속도		초특급 입고!	초특급 입고!	超特急入稿！	아그네스 디지털 (할로윈)								phase==1 &change_order_onetime<0				0.35		1.5	1.8												2024년 1월 18일	텐션 오르는데!			
+101902211	1227	9	진화	속도		존귀함을 찾아 부화~~알!	존귀함을 찾아 부화~~알!	尊みを求めてふっかーーつ！	아그네스 디지털 (할로윈)								ground_type==2 &phase_random==1 &order_rate>=50				0.35		1.5	2.4												2024년 1월 18일	권토중래			
+102001111	1119	9	진화	속도		패스트 리트리브	패스트 리트리브	ファストリトリーブ	세이운 스카이								distance_type==4 &phase_random==1 &bashin_diff_behind>=1 &order==1				0.35			4												2022년 9월 29일	선봉의 마음가짐			
 102001121	1119	9	진화	회복			월척을 노리는 마음가짐	大物狙いの心得	세이운 스카이								distance_type==3 &phase_random==1						7.5													2022년 9월 29일	선봉의 마음가짐		TRUE	
-102001211	1054	9	진화	속도			탈출 대작전	脱出大作戦	세이운 스카이								running_style==1 &phase_random==1 &order_rate<=50				0.35			4												2022년 9월 29일	탈출술			
-102002111	1054	9	진화	속도			도망쳐~♪	逃げろ～♪	세이운 스카이 (무도회)								running_style==1 &phase_random==1 &order_rate<=50				0.35		1.5	3												2023년 7월 18일	탈출술			
+102001211	1054	9	진화	속도		탈출 대작전	탈출 대작전	脱出大作戦	세이운 스카이								running_style==1 &phase_random==1 &order_rate<=50				0.35			4												2022년 9월 29일	탈출술			
+102002111	1054	9	진화	속도		도망쳐~♪	도망쳐~♪	逃げろ～♪	세이운 스카이 (무도회)								running_style==1 &phase_random==1 &order_rate<=50				0.35		1.5	3												2023년 7월 18일	탈출술			
 102002121	1054	9	진화	속도			서프라이즈 대성공~☆	サプライズ大成功～☆	세이운 스카이 (무도회)								running_style==1 &phase_random==1 &order_rate<=50				0.45			3												2023년 7월 18일	탈출술			
-102002211	1127	9	진화	속도			레코드 러너	レコードランナー	세이운 스카이 (무도회)								running_style==1 &phase<=1 &change_order_onetime>0 &accumulatetime>=5 @running_style==1 &phase<=1 &blocked_side_continuetime>=2 &accumulatetime>=5				0.35		1.5	3												2023년 7월 18일	톱 러너			
-102101111	1059	9	진화	속도			뇌등운분	雷騰雲奔	타마모 크로스								running_style==3 &phase_random==1 &order_rate>=40				0.45			2.4												2023년 4월 12일	신속 과감			
+102002211	1127	9	진화	속도		레코드 러너	레코드 러너	レコードランナー	세이운 스카이 (무도회)								running_style==1 &phase<=1 &change_order_onetime>0 &accumulatetime>=5 @running_style==1 &phase<=1 &blocked_side_continuetime>=2 &accumulatetime>=5				0.35		1.5	3												2023년 7월 18일	톱 러너			
+102101111	1059	9	진화	속도		뇌등운분	뇌등운분	雷騰雲奔	타마모 크로스								running_style==3 &phase_random==1 &order_rate>=40				0.45			2.4												2023년 4월 12일	신속 과감			
 102101121	1059	9	진화	속도			잽싸게 시작해보까!	ちゃちゃっと始めんで！	타마모 크로스								running_style==3 &phase_random==1 &order_rate>=40				0.25		3.5	2.4												2023년 4월 12일	신속 과감			
-102101211	1161	9	진화	속도			꼬리 날아오르기	尻尾の有頂天	타마모 크로스								activate_count_middle>=3				0.45			3												2023년 4월 12일	꼬리 솟구쳐 오르기	200472, 200482, 210022		
-102102111	1072	9	진화	속도			선도자에게 바치는 기도의 송	先達に献ぐ祈りの頌	타마모 크로스 (축제)								distance_type==3 &phase_random==1 &order_rate<=50				0.45			2.4												2024년 2월 16일	킬러 튠			
-102102211	1046	9	진화	속도			자, 내랑 해보는 기다!	さあ、ウチとやろうや！	타마모 크로스 (축제)								phase==1 &change_order_onetime<0				0.45			1.8												2024년 2월 16일	텐션 오르는데!			
-102201111	1058	9	진화	속도			로열스터	ロイヤルスター	파인 모션								running_style==2 &is_finalcorner_random==1 &order_rate<=50				0.35		1.5	1.8												2023년 4월 4일	스피드스터			
-102201211	1134	9	진화	가속			천공 떨구기	天空落とし	파인 모션								running_style==2 &down_slope_random==1					0.4		3												2023년 4월 4일	결의의 직활강			
-102202111	1105	9	진화	속도			추억을 힘으로 바꾸어	思い出を力に変えて	파인 모션 (웨딩)								distance_type==2 &phase_random==1 &order_rate<=50				0.45			2.4												2023년 9월 18일	기어 체인지			
-102202211	1190	9	진화	가속			모리안의 창	モリガンの矛戟	파인 모션 (웨딩)								running_style==2 &phase_firsthalf_random==2 &order_rate<=50					0.4		1.8												2023년 9월 18일	치열한 승부			
+102101211	1161	9	진화	속도		꼬리 날아오르기	꼬리 날아오르기	尻尾の有頂天	타마모 크로스								activate_count_middle>=3				0.45			3												2023년 4월 12일	꼬리 솟구쳐 오르기	200472, 200482, 210022		
+102102111	1072	9	진화	속도		선도자들에게 바치는 기도의 찬사	선도자에게 바치는 기도의 송	先達に献ぐ祈りの頌	타마모 크로스 (축제)								distance_type==3 &phase_random==1 &order_rate<=50				0.45			2.4												2024년 2월 16일	킬러 튠			
+102102211	1046	9	진화	속도		자, 내랑 붙어 보는 기다!	자, 내랑 해보는 기다!	さあ、ウチとやろうや！	타마모 크로스 (축제)								phase==1 &change_order_onetime<0				0.45			1.8												2024년 2월 16일	텐션 오르는데!			
+102201111	1058	9	진화	속도		로열스터	로열스터	ロイヤルスター	파인 모션								running_style==2 &is_finalcorner_random==1 &order_rate<=50				0.35		1.5	1.8												2023년 4월 4일	스피드스터			
+102201211	1134	9	진화	가속		천공 떨구기	천공 떨구기	天空落とし	파인 모션								running_style==2 &down_slope_random==1					0.4		3												2023년 4월 4일	결의의 직활강			
+102202111	1105	9	진화	속도		추억을 힘으로 바꾸어	추억을 힘으로 바꾸어	思い出を力に変えて	파인 모션 (웨딩)								distance_type==2 &phase_random==1 &order_rate<=50				0.45			2.4												2023년 9월 18일	기어 체인지			
+102202211	1190	9	진화	가속		모리안의 창	모리안의 창	モリガンの矛戟	파인 모션 (웨딩)								running_style==2 &phase_firsthalf_random==2 &order_rate<=50					0.4		1.8												2023년 9월 18일	치열한 승부			
 102202221	1190	9	진화	복합			이상을 향한 각오	理想へ向かう覚悟	파인 모션 (웨딩)								running_style==2 &phase_firsthalf_random==2 &order_rate<=50					0.4		1.8		is_activate_other_skill_detail==1 &remain_distance<=300		0.15			3					2023년 9월 18일	치열한 승부			
-102301111	1056	9	진화	회복			예상대로, 여유 충분	想定通り、余裕十分	비와 하야히데								running_style==2 &phase_laterhalf_random==0 &order_rate<=50						7.5													2022년 7월 7일	여유만만		TRUE	
-102301211	1074	9	진화	회복			계획적 쿨다운	計画的クールダウン	비와 하야히데								distance_type==4 &phase_random==1						7.5													2022년 7월 7일	쿨다운		TRUE	
-102302111	1120	9	진화	회복			VIP다운 뒷모습	VIPな後ろ姿	비와 하야히데 (크리스마스)								distance_type==4 &is_overtake==1 &accumulatetime>=5						7.5													2023년 3월 20일	VIP 프리패스		TRUE	
-102302211	1051	9	진화	속도			전력 산타클로스	全力サンタクロース	비와 하야히데 (크리스마스)								is_lastspurt==1 &phase_firsthalf_random==3				0.45			2.4												2023년 3월 20일	전심전력			
+102301111	1056	9	진화	회복		예상대로, 여유 충분	예상대로, 여유 충분	想定通り、余裕十分	비와 하야히데								running_style==2 &phase_laterhalf_random==0 &order_rate<=50						7.5													2022년 7월 7일	여유만만		TRUE	
+102301211	1074	9	진화	회복		계획적 쿨다운	계획적 쿨다운	計画的クールダウン	비와 하야히데								distance_type==4 &phase_random==1						7.5													2022년 7월 7일	쿨다운		TRUE	
+102302111	1120	9	진화	회복		VIP다운 뒷모습	VIP다운 뒷모습	VIPな後ろ姿	비와 하야히데 (크리스마스)								distance_type==4 &is_overtake==1 &accumulatetime>=5						7.5													2023년 3월 20일	VIP 프리패스		TRUE	
+102302211	1051	9	진화	속도		전력 산타클로스	전력 산타클로스	全力サンタクロース	비와 하야히데 (크리스마스)								is_lastspurt==1 &phase_firsthalf_random==3				0.45			2.4												2023년 3월 20일	전심전력			
 102401111	1038	9	진화	회복		You copy?	You copy?	You copy?	마야노 탑건								phase==1 &corner==0		즉발				7.5													2022년 6월 15일	호전일식		TRUE	
 102401211	1049	9	진화	가속		I copy!	I copy!	I copy!	마야노 탑건								infront_near_lane_time>=1 &is_lastspurt==1 &hp_per>=1		즉발			0.4	1.5	3												2022년 6월 15일	논스톱 걸			
-102402111	1116	9	진화	속도			순백의 속삭임	純白のささやき	마야노 탑건 (웨딩)								distance_type==3 &phase==1 &blocked_front_continuetime>=1				0.15			3												2022년 9월 16일	매혹적인 속삭임			
-102402211	1035	9	진화	회복			배럴 롤	バレルロール	마야노 탑건 (웨딩)								corner_random==1 ＠corner_random==2 ＠corner_random==3 ＠corner_random==4						7.5													2022년 9월 16일	원호의 마에스트로		TRUE	
-102501111	1142	9	진화	속도			커피 브레이크	コーヒーブレイク	맨하탄 카페								running_style==3 &phase_random==1 &order_rate>=40				0.15		5.5	3												2023년 2월 8일	릴랙스			
-102501211	1122	9	진화	속도			두고 가지 마	オイテイカナイデ	맨하탄 카페								distance_type==4 &phase_random==1 &order>=5				0.15		3.5	3												2023년 2월 8일	스태미나 그리드			
+102402111	1116	9	진화	속도		순백의 속삭임	순백의 속삭임	純白のささやき	마야노 탑건 (웨딩)								distance_type==3 &phase==1 &blocked_front_continuetime>=1				0.15			3												2022년 9월 16일	매혹적인 속삭임			
+102402211	1035	9	진화	회복		배럴 롤	배럴 롤	バレルロール	마야노 탑건 (웨딩)								corner_random==1 ＠corner_random==2 ＠corner_random==3 ＠corner_random==4						7.5													2022년 9월 16일	원호의 마에스트로		TRUE	
+102501111	1142	9	진화	속도		커피 브레이크	커피 브레이크	コーヒーブレイク	맨하탄 카페								running_style==3 &phase_random==1 &order_rate>=40				0.15		5.5	3												2023년 2월 8일	릴랙스			
+102501211	1122	9	진화	속도		두고 가지 마	두고 가지 마	オイテイカナイデ	맨하탄 카페								distance_type==4 &phase_random==1 &order>=5				0.15		3.5	3												2023년 2월 8일	스태미나 그리드			
 102502111	1064	9	진화	복합			다가오는 초저녁	迫りくる宵闇	맨하탄 카페 (발렌타인)								running_style==4 &is_lastspurt==1 &corner==0		즉발			0.4		0.9		is_activate_other_skill_detail==1 &is_last_straight==1		0.15			3					2025년 5월 21일	육박하는 그림자			
 102502211	1285	9	진화	속도			현해 영역	玄界領域	맨하탄 카페 (발렌타인)								distance_type==4 &running_style==4 &phase_firsthalf_random==2 &lastspurt==2			0.45				3												2025년 5월 21일	일망타진			
-102601111	1053	9	진화	가속			클럭 업	クロックアップ	미호노 부르봉								running_style==1 &phase==0		즉발			0.5		1.2												2022년 6월 28일	선수 필승			
-102601211	1071	9	진화	속도			곤란함을 극복하는 자	困難を乗り越える者	미호노 부르봉								distance_type==3 &phase_random==1 &order<=3				0.15		5.5	3												2022년 6월 28일	개척자			
-102602111	1054	9	진화	속도			완벽한 에러 대처술	完璧なエラー対処術	미호노 부르봉 (발렌타인)								running_style==1 &phase_random==1 &order_rate<=50				0.35		1.5	3												2023년 5월 19일	탈출술			
-102602211	1043	9	진화	녹딱			퍼펙트 부트	パーフェクトブート	미호노 부르봉 (발렌타인)								always==1		즉발																	2023년 5월 19일	컨센트레이션			
-102701111	1072	9	진화	속도			머슬 앤섬	マッスルアンセム	메지로 라이언								distance_type==3 &phase_random==1 &order_rate<=50				0.45			2.4												2022년 6월 15일	킬러 튠			
-102701211	1061	9	진화	속도			라이징 벌크업	ライジングバルクアップ	메지로 라이언								running_style==3 &is_finalcorner==1 &corner!=0 &is_behind_in==1 &change_order_onetime<0				0.45			3												2022년 6월 15일	승천하는 용			
-102702111	1134	9	진화	가속			꿈을 이루는 결의를 드리죠	夢叶える決意を授けましょう	메지로 라이언 (발렌타인)								running_style==2 &down_slope_random==1					0.4		3												2024년 5월 20일	결의의 직활강			
-102702211	1217	9	진화	속도			지고의 승리를 드세요	至高の勝利を召し上がれ	메지로 라이언 (발렌타인)								down_slope_random==1				0.45			2.4												2024년 5월 20일	지고의 다운힐러			
-102801111	1100	9	진화	복합			사전 준비 완료!	下ごしらえ万全！	히시 아케보노								distance_type==1 &phase_random==1				0.15	0.3		4												2022년 12월 30일	준비 완료!			
-102801211	1135	9	진화	속도			보노한 대식가	ボーノな健啖家	히시 아케보노								running_style==2 &phase_random==1				0.15		5.5	3												2022년 12월 30일	먹보			
-102901111	1049	9	진화	가속			동경의 시티 걸	憧れのシチーガール	유키노 비진								infront_near_lane_time>=1 &is_lastspurt==1 &hp_per>=1		즉발			0.4		4												2024년 1월 1일	논스톱 걸			
-102901211	1134	9	진화	가속			설국이 가르쳐 준 직활강	雪国仕込みの直滑降	유키노 비진								running_style==2 &down_slope_random==1					0.3		4												2024년 1월 1일	결의의 직활강			
+102601111	1053	9	진화	가속		클럭 업	클럭 업	クロックアップ	미호노 부르봉								running_style==1 &phase==0		즉발			0.5		1.2												2022년 6월 28일	선수 필승			
+102601211	1071	9	진화	속도		고난을 이겨낸 자	곤란함을 극복하는 자	困難を乗り越える者	미호노 부르봉								distance_type==3 &phase_random==1 &order<=3				0.15		5.5	3												2022년 6월 28일	개척자			
+102602111	1054	9	진화	속도		완벽한 에러 대처술	완벽한 에러 대처술	完璧なエラー対処術	미호노 부르봉 (발렌타인)								running_style==1 &phase_random==1 &order_rate<=50				0.35		1.5	3												2023년 5월 19일	탈출술			
+102602211	1043	9	진화	녹딱		퍼펙트 부트	퍼펙트 부트	パーフェクトブート	미호노 부르봉 (발렌타인)								always==1		즉발																	2023년 5월 19일	컨센트레이션			
+102701111	1072	9	진화	속도		머슬 앤섬	머슬 앤섬	マッスルアンセム	메지로 라이언								distance_type==3 &phase_random==1 &order_rate<=50				0.45			2.4												2022년 6월 15일	킬러 튠			
+102701211	1061	9	진화	속도		라이징 벌크업	라이징 벌크업	ライジングバルクアップ	메지로 라이언								running_style==3 &is_finalcorner==1 &corner!=0 &is_behind_in==1 &change_order_onetime<0				0.45			3												2022년 6월 15일	승천하는 용			
+102702111	1134	9	진화	가속		꿈을 이루는 결의를 드리죠	꿈을 이루는 결의를 드리죠	夢叶える決意を授けましょう	메지로 라이언 (발렌타인)								running_style==2 &down_slope_random==1					0.4		3												2024년 5월 20일	결의의 직활강			
+102702211	1217	9	진화	속도		지고의 승리를 맛보시길	지고의 승리를 드세요	至高の勝利を召し上がれ	메지로 라이언 (발렌타인)								down_slope_random==1				0.45			2.4												2024년 5월 20일	지고의 다운힐러			
+102801111	1100	9	진화	복합		사전 준비 완료!	사전 준비 완료!	下ごしらえ万全！	히시 아케보노								distance_type==1 &phase_random==1				0.15	0.3		4												2022년 12월 30일	준비 완료!			
+102801211	1135	9	진화	속도		보노한 대식가	보노한 대식가	ボーノな健啖家	히시 아케보노								running_style==2 &phase_random==1				0.15		5.5	3												2022년 12월 30일	먹보			
+102901111	1049	9	진화	가속		동경하는 시티 걸	동경의 시티 걸	憧れのシチーガール	유키노 비진								infront_near_lane_time>=1 &is_lastspurt==1 &hp_per>=1		즉발			0.4		4												2024년 1월 1일	논스톱 걸			
+102901211	1134	9	진화	가속		설국에서 익힌 직활강	설국이 가르쳐 준 직활강	雪国仕込みの直滑降	유키노 비진								running_style==2 &down_slope_random==1					0.3		4												2024년 1월 1일	결의의 직활강			
 102901221	1134	9	진화	복합			결의의 근성무스메	決意の根性娘	유키노 비진								running_style==2 &down_slope_random==1					0.3		3		is_activate_other_skill_detail==1 &remain_distance<=300		0.15			3					2024년 1월 1일	결의의 직활강			
 102902111	1237	9	진화	속도			좀 더 힘내봐유!	もうひとけっぱり！	유키노 비진 (발렌타인)								phase_random==1 &running_style==2				0.45			2.4												2025년 5월 21일	언스토퍼블			
 102902211	1034	9	진화	복합			곡선에 내리는 눈	曲線に舞う深雪	유키노 비진 (발렌타인)								all_corner_random==1				0.15	0.4		3												2025년 5월 21일	곡선의 소믈리에			
-103001111	1134	9	진화	복합			결의의 히어로	決意のヒーロー	라이스 샤워								running_style==2 &down_slope_random==1			0.15		0.3		3												2022년 6월 15일	결의의 직활강			
-103001211	1074	9	진화	속도			검은 자객	黒の刺客	라이스 샤워								distance_type==4 &phase_random==1				0.15		5.5	3												2022년 6월 15일	쿨다운			
-103002111	1056	9	진화	속도			힘내자… 오ー!	がんばるぞー…おー！	라이스 샤워 (할로윈)								running_style==2 &phase_laterhalf_random==0 &order_rate<=50				0.15		5.5	3												2023년 1월 18일	여유만만			
-103002211	1077	9	진화	속도			트릭 & 트릿	トリック&トリート	라이스 샤워 (할로윈)								phase==1 &order_rate<=50 &temptation_opponent_count_behind>=1				0.35			3												2023년 1월 18일	넋이 나가는 트릭			
-103101111	1128	9	진화	속도			말괄량이 우마무스메 언니	じゃじゃウマお姉ちゃん	아이네스 후진								running_style==1 &slope==1 &accumulatetime>=10		즉발		0.15		5.5	3												2023년 8월 29일	말괄량이 우마무스메			
-103101211	1213	9	진화	속도			사나운 풍신	荒ぶる風神	아이네스 후진								distance_type==3 &phase_random==1 &order<=3				0.35			4												2023년 8월 29일	사나운 회오리바람			
-103102111	1043	9	진화	녹딱			주문은 확실하게!	オーダーはバッチリ！	아이네스 후진 (발렌타인)								always==1		즉발																	2024년 5월 20일	컨센트레이션			
-103102211	1125	9	진화	복합			화려한 서빙	華麗なサーブ	아이네스 후진 (발렌타인)								running_style==1 &all_corner_random==1				0.35	0.2		3												2024년 5월 20일	진풍원인			
-103201111	1115	9	진화	속도			가능성의 걸음	可能性の徒	아그네스 타키온								distance_type==3 &phase_random==2				0.45			3												2022년 6월 15일	독점력			
-103201211	1057	9	진화	속도			효율적 휴식법	効率的休息法	아그네스 타키온								running_style==2 &phase_random==1 &order_rate<=50				0.15		5.5	3												2022년 6월 15일	레이스 플래너			
-103202111	1270	9	진화	녹딱			라플라스의 악마	ラプラスの悪魔	아그네스 타키온 (여름)								running_style==2 &distance_type==3 &base_speed>=1200 &base_wiz>=1200		즉발																	2024년 11월 18일	싱귤래러티			
-103202211	1237	9	진화	속도			빛나는 룩손	眩耀のルクシオン	아그네스 타키온 (여름)								phase_random==1 &running_style==2				0.35			2.4												2024년 11월 18일	언스토퍼블			
-103301111	1149	9	진화	속도			조용한 맹세	静かな誓い	어드마이어 베가								running_style==4 &infront_near_lane_time>=1 &accumulatetime>=10				0.15		5.5	3												2023년 6월 7일	냉정 침착			
-103301211	1063	9	진화	속도			자신을 태우는 혜성	己身焦がすほうき星	어드마이어 베가						phase>=2 &distance_diff_rate>=50		running_style==4 &phase_firsthalf_random==3 &is_lastspurt==1				0.45			3												2023년 6월 7일	질풍노도			
-103401111	1161	9	진화	속도			소방 사다리 오르기	火消の梯子登り	이나리 원								activate_count_middle>=3				0.45			3												2023년 9월 29일	꼬리 솟구쳐 오르기	200472, 200482, 210022		
-103401211	1200	9	진화	속도			숙련된 모래 먼지의 사신	熟練の砂塵使い	이나리 원								ground_type==2 &phase_random==1 &order_rate>=50				0.35		7.5	1.8												2023년 9월 29일	모래의 현인			
+103001111	1134	9	진화	복합		결의의 히어로	결의의 히어로	決意のヒーロー	라이스 샤워								running_style==2 &down_slope_random==1			0.15		0.3		3												2022년 6월 15일	결의의 직활강			
+103001211	1074	9	진화	속도		검은 자객	검은 자객	黒の刺客	라이스 샤워								distance_type==4 &phase_random==1				0.15		5.5	3												2022년 6월 15일	쿨다운			
+103002111	1056	9	진화	속도		힘내자~ …오~!	힘내자… 오ー!	がんばるぞー…おー！	라이스 샤워 (할로윈)								running_style==2 &phase_laterhalf_random==0 &order_rate<=50				0.15		5.5	3												2023년 1월 18일	여유만만			
+103002211	1077	9	진화	속도		트릭 & 트릿	트릭 & 트릿	トリック&トリート	라이스 샤워 (할로윈)								phase==1 &order_rate<=50 &temptation_opponent_count_behind>=1				0.35			3												2023년 1월 18일	넋이 나가는 트릭			
+103101111	1128	9	진화	속도		말괄량이 우마무스메 언니	말괄량이 우마무스메 언니	じゃじゃウマお姉ちゃん	아이네스 후진								running_style==1 &slope==1 &accumulatetime>=10		즉발		0.15		5.5	3												2023년 8월 29일	말괄량이 우마무스메			
+103101211	1213	9	진화	속도		사나운 풍신	사나운 풍신	荒ぶる風神	아이네스 후진								distance_type==3 &phase_random==1 &order<=3				0.35			4												2023년 8월 29일	사나운 회오리바람			
+103102111	1043	9	진화	녹딱		주문은 확실하게!	주문은 확실하게!	オーダーはバッチリ！	아이네스 후진 (발렌타인)								always==1		즉발																	2024년 5월 20일	컨센트레이션			
+103102211	1125	9	진화	복합		화려한 서빙	화려한 서빙	華麗なサーブ	아이네스 후진 (발렌타인)								running_style==1 &all_corner_random==1				0.35	0.2		3												2024년 5월 20일	진풍원인			
+103201111	1115	9	진화	속도		가능성의 걸음	가능성의 걸음	可能性の徒	아그네스 타키온								distance_type==3 &phase_random==2				0.45			3												2022년 6월 15일	독점력			
+103201211	1057	9	진화	속도		효율적 휴식법	효율적 휴식법	効率的休息法	아그네스 타키온								running_style==2 &phase_random==1 &order_rate<=50				0.15		5.5	3												2022년 6월 15일	레이스 플래너			
+103202111	1270	9	진화	녹딱		라플라스의 악마	라플라스의 악마	ラプラスの悪魔	아그네스 타키온 (여름)								running_style==2 &distance_type==3 &base_speed>=1200 &base_wiz>=1200		즉발																	2024년 11월 18일	싱귤래러티			
+103202211	1237	9	진화	속도		찬란한 룩손	빛나는 룩손	眩耀のルクシオン	아그네스 타키온 (여름)								phase_random==1 &running_style==2				0.35			2.4												2024년 11월 18일	언스토퍼블			
+103301111	1149	9	진화	속도		조용한 맹세	조용한 맹세	静かな誓い	어드마이어 베가								running_style==4 &infront_near_lane_time>=1 &accumulatetime>=10				0.15		5.5	3												2023년 6월 7일	냉정 침착			
+103301211	1063	9	진화	속도		자신을 태우는 혜성	자신을 태우는 혜성	己身焦がすほうき星	어드마이어 베가						phase>=2 &distance_diff_rate>=50		running_style==4 &phase_firsthalf_random==3 &is_lastspurt==1				0.45			3												2023년 6월 7일	질풍노도			
+103401111	1161	9	진화	속도		소방 사다리 오르기	소방 사다리 오르기	火消の梯子登り	이나리 원								activate_count_middle>=3				0.45			3												2023년 9월 29일	꼬리 솟구쳐 오르기	200472, 200482, 210022		
+103401211	1200	9	진화	속도		모래먼지의 전문가	숙련된 모래 먼지의 사신	熟練の砂塵使い	이나리 원								ground_type==2 &phase_random==1 &order_rate>=50				0.35		7.5	1.8												2023년 9월 29일	모래의 현인			
 103401221	1200	9	진화	속도			멋지고 호쾌한 달인의 기술	粋でいなせな達人技	이나리 원								distance_type==3 &phase_random==1 &order_rate>=50				0.45		3.5	1.8												2023년 9월 29일	모래의 현인			
-103402111	1075	9	진화	속도			부채춤	扇ノ舞	이나리 원 (축제)								distance_type==4 &is_finalcorner==1 &corner!=0 &lane_type==0		즉발		0.45			3												2024년 2월 16일	내적 체험			
-103402211	1064	9	진화	가속			돋보이는 몸짓	大見得切り	이나리 원 (축제)								running_style==4 &is_lastspurt==1 &corner==0		즉발			0.4		0.9												2024년 2월 16일	육박하는 그림자			
-103501111	1140	9	진화	복합			끊임없는 노력	たゆまぬ努力	위닝 티켓								running_style==3 &is_overtake==1 &accumulatetime>=5				0.15	0.3		4												2022년 6월 15일	노력가			
-103501211	1059	9	진화	속도			위닝 로드	ウイニングロード	위닝 티켓								running_style==3 &phase_random==1 &order_rate>=40				0.35		1.5	2.4												2022년 6월 15일	신속 과감			
-103502111	1141	9	진화	속도			천만 마력!!!	千万バリキ！！！	위닝 티켓 (스팀펑크)								running_style==3 &up_slope_random==1				0.35			4												2023년 12월 18일	백만 마력			
-103502211	1170	9	진화	속도			분명 날 수 있어!	きっと飛べる！	위닝 티켓 (스팀펑크)								distance_type==3 &is_lastspurt==1 &corner==0 &order_rate>=20 &order_rate<=60		즉발		0.35			4												2023년 12월 18일	결사의 각오			
+103402111	1075	9	진화	속도		부채춤	부채춤	扇ノ舞	이나리 원 (축제)								distance_type==4 &is_finalcorner==1 &corner!=0 &lane_type==0		즉발		0.45			3												2024년 2월 16일	내적 체험			
+103402211	1064	9	진화	가속		돋보이는 춤사위	돋보이는 몸짓	大見得切り	이나리 원 (축제)								running_style==4 &is_lastspurt==1 &corner==0		즉발			0.4		0.9												2024년 2월 16일	육박하는 그림자			
+103501111	1140	9	진화	복합		꾸준한 노력	끊임없는 노력	たゆまぬ努力	위닝 티켓								running_style==3 &is_overtake==1 &accumulatetime>=5				0.15	0.3		4												2022년 6월 15일	노력가			
+103501211	1059	9	진화	속도		위닝 로드	위닝 로드	ウイニングロード	위닝 티켓								running_style==3 &phase_random==1 &order_rate>=40				0.35		1.5	2.4												2022년 6월 15일	신속 과감			
+103502111	1141	9	진화	속도		천만 마력!!!	천만 마력!!!	千万バリキ！！！	위닝 티켓 (스팀펑크)								running_style==3 &up_slope_random==1				0.35			4												2023년 12월 18일	백만 마력			
+103502211	1170	9	진화	속도		분명 날 수 있어!	분명 날 수 있어!	きっと飛べる！	위닝 티켓 (스팀펑크)								distance_type==3 &is_lastspurt==1 &corner==0 &order_rate>=20 &order_rate<=60		즉발		0.35			4												2023년 12월 18일	결사의 각오			
 103503111	1210	9	진화	속도			전・력・두근・두근!!	全・力・ワク・ワク！！	위닝 티켓 (U.A.F.)								distance_type==3 &phase_laterhalf_random==1 &order>=4 &track_id==10006 &course_distance==2400				0.45			2.4												2025년 7월 29일	고양감			
 103503211	1264	9	진화	속도		Dreamer's Path	Dreamer's Path	Dreamer's Path	위닝 티켓 (U.A.F.)								running_style==3 &phase_random==1 &order_rate>=40 &order_rate<=90				0.35			4												2025년 7월 29일	천릿길			
-103601111	1210	9	진화	속도			업리프팅	アップリフティング	에어 샤커								distance_type==3 &phase_random==1 &order_rate>=50				0.35		1.5	2.4												2023년 10월 30일	고양감			
+103601111	1210	9	진화	속도		업리프팅	업리프팅	アップリフティング	에어 샤커								distance_type==3 &phase_random==1 &order_rate>=50				0.35		1.5	2.4												2023년 10월 30일	고양감			
 103601211	1145	9	진화	속도		Lose Myself	Lose Myself	Lose Myself	에어 샤커								running_style==4 &straight_random==1			0.15	0.35			3												2023년 10월 30일	월영일섬			
 103602111	1122	9	진화	회복		Gluttony's Grip	Gluttony's Grip	Gluttony's Grip	에어 샤커 (할로윈)								distance_type==4 &phase_random==1						5.5													2025년 1월 17일	스태미나 그리드		TRUE	
 103602211	1075	9	진화	속도			형벌	刑苦	에어 샤커 (할로윈)								distance_type==4 &is_finalcorner==1 &corner!=0 &lane_type==0		즉발		0.35			4												2025년 1월 17일	내적 체험			
-103701111	1050	9	진화	속도			섬광의 마기아	閃光のマギア	에이신 플래시								phase_random==2			0.25				3												2022년 12월 9일	레인의 마술사			
-103701211	1051	9	진화	속도			긍지를 걸고	誇りを懸けて	에이신 플래시								is_lastspurt==1 &phase_firsthalf_random==3				0.45			2.4												2022년 12월 9일	전심전력			
-103702111	1115	9	진화	속도			승리의 레시피	勝利のレシピ	에이신 플래시 (발렌타인)								distance_type==3 &phase_random==2			0.35				4												2023년 5월 19일	독점력			
+103701111	1050	9	진화	속도		섬광의 마기아	섬광의 마기아	閃光のマギア	에이신 플래시								phase_random==2			0.25				3												2022년 12월 9일	레인의 마술사			
+103701211	1051	9	진화	속도		긍지를 걸고	긍지를 걸고	誇りを懸けて	에이신 플래시								is_lastspurt==1 &phase_firsthalf_random==3				0.45			2.4												2022년 12월 9일	전심전력			
+103702111	1115	9	진화	속도		승리의 레시피	승리의 레시피	勝利のレシピ	에이신 플래시 (발렌타인)								distance_type==3 &phase_random==2			0.35				4												2023년 5월 19일	독점력			
 103702121	1115	9	진화	회복			재료 준비는 완벽	仕込みは完璧	에이신 플래시 (발렌타인)								distance_type==3 &phase_random==1						7.5													2023년 5월 19일	독점력		TRUE	
-103702211	1110	9	진화	속도			검은 섬광	黒い閃光	에이신 플래시 (발렌타인)								distance_type==3 &straight_random==1				0.45			3												2023년 5월 19일	광망일섬			
-103801111	1137	9	진화	속도			#귀여운_교란♪	#カワイイかく乱♪	카렌짱								running_style==2 &phase_random==2 &order_rate<=50			0.15				3												2022년 8월 4일	현혹의 교란			
-103801211	1101	9	진화	속도			#푹_빠지게_돼버려♪	#夢中になっちゃえ♪	카렌짱								distance_type==1 &phase_random==0 &order_rate<=50 &accumulatetime>=5				0.15			3												2022년 8월 4일	뇌쇄술			
-103802111	1101	9	진화	속도			#카렌으로_물들어_볼래?	#カレンに染まってみる？	카렌짱 (웨딩)								distance_type==1 &phase_random==0 &order_rate<=50 &accumulatetime>=5				0.15			3												2023년 9월 18일	뇌쇄술			
+103702211	1110	9	진화	속도		검은 섬광	검은 섬광	黒い閃光	에이신 플래시 (발렌타인)								distance_type==3 &straight_random==1				0.45			3												2023년 5월 19일	광망일섬			
+103801111	1137	9	진화	속도		#귀여운_교란♪	#귀여운_교란♪	#カワイイかく乱♪	카렌짱								running_style==2 &phase_random==2 &order_rate<=50			0.15				3												2022년 8월 4일	현혹의 교란			
+103801211	1101	9	진화	속도		#반해라♪	#푹_빠지게_돼버려♪	#夢中になっちゃえ♪	카렌짱								distance_type==1 &phase_random==0 &order_rate<=50 &accumulatetime>=5				0.15			3												2022년 8월 4일	뇌쇄술			
+103802111	1101	9	진화	속도		#카렌으로_물들어_볼래?	#카렌으로_물들어_볼래?	#カレンに染まってみる？	카렌짱 (웨딩)								distance_type==1 &phase_random==0 &order_rate<=50 &accumulatetime>=5				0.15			3												2023년 9월 18일	뇌쇄술			
 103802121	1101	9	진화	속도			마음을 빼앗기는 섬광	心奪われる閃光	카렌짱 (웨딩)								distance_type==1 &phase_laterhalf_random==0 &order_rate<=50 &accumulatetime>=5				0.35			4												2023년 9월 18일	뇌쇄술			
-103802211	1065	9	진화	가속			#뷰티_스프린트	#ビューティースプリント	카렌짱 (웨딩)								distance_type==1 &phase_random==2					0.4		3												2023년 9월 18일	스프린트 터보			
-103901111	1049	9	진화	가속			논스톱 프린세스	ノンストッププリンセス	카와카미 프린세스								infront_near_lane_time>=1 &is_lastspurt==1 &hp_per>=1		즉발			0.5		3												2023년 1월 30일	논스톱 걸			
-103901211	1061	9	진화	복합			날뛰는 용	暴れ龍	카와카미 프린세스								running_style==3 &is_finalcorner==1 &corner!=0 &is_behind_in==1 &change_order_onetime<0				0.35	0.2		3												2023년 1월 30일	승천하는 용			
+103802211	1065	9	진화	가속		#뷰티_스프린트	#뷰티_스프린트	#ビューティースプリント	카렌짱 (웨딩)								distance_type==1 &phase_random==2					0.4		3												2023년 9월 18일	스프린트 터보			
+103901111	1049	9	진화	가속		논스톱 프린세스	논스톱 프린세스	ノンストッププリンセス	카와카미 프린세스								infront_near_lane_time>=1 &is_lastspurt==1 &hp_per>=1		즉발			0.5		3												2023년 1월 30일	논스톱 걸			
+103901211	1061	9	진화	복합		날뛰는 용	날뛰는 용	暴れ龍	카와카미 프린세스								running_style==3 &is_finalcorner==1 &corner!=0 &is_behind_in==1 &change_order_onetime<0				0.35	0.2		3												2023년 1월 30일	승천하는 용			
 103902111	1245	9	진화	속도			톱・오브・더・공주!	トップ・オブ・ザ・姫！	카와카미 프린세스 (축제)								running_style==3 &is_last_straight==1 &order>=2 &distance_diff_top<=10		즉발		0.55			2.4												2025년 2월 17일	톱기어			
 103902211	1217	9	진화	복합			폭주 맹희☆급전직하!!	爆走猛姫☆急転直下！！	카와카미 프린세스 (축제)								distance_type==2 &down_slope_random==1 @distance_type==3 &down_slope_random==1				0.35	0.2		2.4												2025년 2월 17일	지고의 다운힐러			
-104001111	1069	9	진화	속도			선견지명	先見の明	골드 시티								distance_type==2 &phase_laterhalf_random==0 &order_rate>50				0.25		5.5	3												2022년 11월 8일	혜안			
-104001211	1060	9	진화	가속			런웨이의 주역	ランウェイの主役	골드 시티								running_style==3 &phase_firsthalf_random==2 &order_rate>=40					0.4		1.8												2022년 11월 8일	능숙한 환승			
-104002111	1109	9	진화	회복			선명한 포진	鮮やかな布陣	골드 시티 (축제)								distance_type==2 &phase_random==0 &order_rate>50 &accumulatetime>=3						1.5	3												2023년 2월 16일	포진		TRUE	
-104002211	1169	9	진화	속도			호시탐탐	虎視眈々	골드 시티 (축제)								running_style==3 &phase_laterhalf_random==0 &order_rate>=40				0.15		5.5	3												2023년 2월 16일	잠복 태세			
-104101111	1065	9	진화	복합			돌진적 스프린트!	バクシン的スプリント！	사쿠라 바쿠신 오								distance_type==1 &phase_random==2				0.15	0.4		3												2022년 6월 15일	스프린트 터보			
-104101211	1098	9	진화	속도			돌진적 리드!	バクシン的リード！	사쿠라 바쿠신 오								distance_type==1 &phase==1 &bashin_diff_behind>=3 &order==1		즉발		0.45			3												2022년 6월 15일	압도적 리드			
-104102111	1204	9	진화	속도			저돌맹진! 돌진 로드!	猪突猛進！バクシンロード！	사쿠라 바쿠신 오 (운동회)								distance_type==1 &phase_laterhalf_random==1 &order_rate<=50				0.45			2.4												2024년 8월 16일	의기충천			
-104102211	1096	9	진화	속도			맥진! 폭진! 돌진~!	驀進！爆進！バクシーン！	사쿠라 바쿠신 오 (운동회)								distance_type==1 &straight_random==1			0.35				4												2024년 8월 16일	자전일섬			
-104201111	1096	9	진화	속도			세계를 꿰뚫는 최고의 반짝임	世界を貫く至高の輝き	시킹 더 펄								distance_type==1&straight_random==1 @distance_type==2&straight_random==1			0.15	0.35			3												2024년 1월 9일	자전일섬			
-104201211	1107	9	진화	속도			펄류 댄스 배틀	パール流ダンスバトル	시킹 더 펄								distance_type==2 &is_overtake==1 &accumulatetime>=5 @distance_type==1 &is_overtake==1 &accumulatetime>=5				0.35			4												2024년 1월 9일	여장부 기질			
-104301111	1228	9	진화	속도			전속전진인 것이다!	全速前進なのだ！	신코 윈디								ground_type==2 &phase_random==3 &order_rate<=50 &is_lastspurt==1				0.45			3												2024년 6월 3일	전속전진!			
-104301211	1234	9	진화	녹딱			짓궂은 장난의 마이스터	いたずらマイスター	신코 윈디								ground_type==2 &ground_condition==3 @ground_type==2 &ground_condition==4		즉발																	2024년 6월 3일	흙투성이 마이스터			
+104001111	1069	9	진화	속도		선견지명	선견지명	先見の明	골드 시티								distance_type==2 &phase_laterhalf_random==0 &order_rate>50				0.25		5.5	3												2022년 11월 8일	혜안			
+104001211	1060	9	진화	가속		런웨이의 주역	런웨이의 주역	ランウェイの主役	골드 시티								running_style==3 &phase_firsthalf_random==2 &order_rate>=40					0.4		1.8												2022년 11월 8일	능숙한 환승			
+104002111	1109	9	진화	회복		깔끔한 포진	선명한 포진	鮮やかな布陣	골드 시티 (축제)								distance_type==2 &phase_random==0 &order_rate>50 &accumulatetime>=3						1.5	3												2023년 2월 16일	포진		TRUE	
+104002211	1169	9	진화	속도		호시탐탐	호시탐탐	虎視眈々	골드 시티 (축제)								running_style==3 &phase_laterhalf_random==0 &order_rate>=40				0.15		5.5	3												2023년 2월 16일	잠복 태세			
+104101111	1065	9	진화	복합		돌진적 스프린트!	돌진적 스프린트!	バクシン的スプリント！	사쿠라 바쿠신 오								distance_type==1 &phase_random==2				0.15	0.4		3												2022년 6월 15일	스프린트 터보			
+104101211	1098	9	진화	속도		돌진적 리드!	돌진적 리드!	バクシン的リード！	사쿠라 바쿠신 오								distance_type==1 &phase==1 &bashin_diff_behind>=3 &order==1		즉발		0.45			3												2022년 6월 15일	압도적 리드			
+104102111	1204	9	진화	속도		저돌맹진! 돌진 로드!	저돌맹진! 돌진 로드!	猪突猛進！バクシンロード！	사쿠라 바쿠신 오 (운동회)								distance_type==1 &phase_laterhalf_random==1 &order_rate<=50				0.45			2.4												2024년 8월 16일	의기충천			
+104102211	1096	9	진화	속도		돌진! 폭진! 바쿠신!	맥진! 폭진! 돌진~!	驀進！爆進！バクシーン！	사쿠라 바쿠신 오 (운동회)								distance_type==1 &straight_random==1			0.35				4												2024년 8월 16일	자전일섬			
+104201111	1096	9	진화	속도		세계를 꿰뚫는 지고의 반짝임	세계를 꿰뚫는 최고의 반짝임	世界を貫く至高の輝き	시킹 더 펄								distance_type==1&straight_random==1 @distance_type==2&straight_random==1			0.15	0.35			3												2024년 1월 9일	자전일섬			
+104201211	1107	9	진화	속도		펄류 댄스 배틀	펄류 댄스 배틀	パール流ダンスバトル	시킹 더 펄								distance_type==2 &is_overtake==1 &accumulatetime>=5 @distance_type==1 &is_overtake==1 &accumulatetime>=5				0.35			4												2024년 1월 9일	여장부 기질			
+104301111	1228	9	진화	속도		전속전진인 것이다!	전속전진인 것이다!	全速前進なのだ！	신코 윈디								ground_type==2 &phase_random==3 &order_rate<=50 &is_lastspurt==1				0.45			3												2024년 6월 3일	전속전진!			
+104301211	1234	9	진화	녹딱		장난 마이스터	짓궂은 장난의 마이스터	いたずらマイスター	신코 윈디								ground_type==2 &ground_condition==3 @ground_type==2 &ground_condition==4		즉발																	2024년 6월 3일	흙투성이 마이스터			
 104301221	1234	9	진화	녹딱			흙투성이 마왕님	泥んこ魔王様	신코 윈디								ground_type==2 &ground_condition>=3		즉발																	2024년 6월 3일	흙투성이 마이스터			
-104401111	1148	9	진화	속도			방과 후 마법 소녀	放課後魔法少女	스윕 토쇼								running_style==4 &slope==2 &accumulatetime>=10		즉발		0.15		5.5	3												2023년 10월 9일	하교 후의 스페셜리스트			
-104401211	1151	9	진화	속도			참 매직	チャームマジック	스윕 토쇼								running_style==4 &phase_random==2 &order>=2			0.15				3												2023년 10월 9일	뜨거운 시선			
+104401111	1148	9	진화	속도		방과 후 마법 소녀	방과 후 마법 소녀	放課後魔法少女	스윕 토쇼								running_style==4 &slope==2 &accumulatetime>=10		즉발		0.15		5.5	3												2023년 10월 9일	하교 후의 스페셜리스트			
+104401211	1151	9	진화	속도		참 매직	참 매직	チャームマジック	스윕 토쇼								running_style==4 &phase_random==2 &order>=2			0.15				3												2023년 10월 9일	뜨거운 시선			
 104401221	1151	9	진화	속도			샐비어☆스프렌덴스	サルビア☆スプレンデンス	스윕 토쇼								running_style==4 &phase_random==2			0.35				4												2023년 10월 9일	뜨거운 시선			
-104501111	1137	9	진화	속도			달콤~한 현혹	あま～い幻惑	슈퍼 크릭								running_style==2 &phase_random==2 &order_rate<=50				0.35			4												2022년 6월 15일	현혹의 교란			
-104501211	1035	9	진화	회복			치유의 마에스트로	癒しのマエストロ	슈퍼 크릭								corner_random==1 ＠corner_random==2 ＠corner_random==3 ＠corner_random==4						7.5													2022년 6월 15일	원호의 마에스트로		TRUE	
-104502111	1033	9	진화	속도			보살핌의 프로페셔널	お世話のプロフェッショナル	슈퍼 크릭 (할로윈)								all_corner_random==1				0.35		1.5	2.4												2023년 1월 18일	호선의 프로페서			
-104502211	1116	9	진화	회복			매혹의 머미 위스퍼	魅惑のマミーウィスパー	슈퍼 크릭 (할로윈)								distance_type==3 &phase==1 &blocked_front_continuetime>=1						1.5													2023년 1월 18일	매혹적인 속삭임		TRUE	
+104501111	1137	9	진화	속도		달콤~한 현혹	달콤~한 현혹	あま～い幻惑	슈퍼 크릭								running_style==2 &phase_random==2 &order_rate<=50				0.35			4												2022년 6월 15일	현혹의 교란			
+104501211	1035	9	진화	회복		치유의 마에스트로	치유의 마에스트로	癒しのマエストロ	슈퍼 크릭								corner_random==1 ＠corner_random==2 ＠corner_random==3 ＠corner_random==4						7.5													2022년 6월 15일	원호의 마에스트로		TRUE	
+104502111	1033	9	진화	속도		보살핌 프로페셔널	보살핌의 프로페셔널	お世話のプロフェッショナル	슈퍼 크릭 (할로윈)								all_corner_random==1				0.35		1.5	2.4												2023년 1월 18일	호선의 프로페서			
+104502211	1116	9	진화	회복		매혹의 머미 위스퍼	매혹의 머미 위스퍼	魅惑のマミーウィスパー	슈퍼 크릭 (할로윈)								distance_type==3 &phase==1 &blocked_front_continuetime>=1						1.5													2023년 1월 18일	매혹적인 속삭임		TRUE	
 104503111	1237	9	진화	속도			유수유주	流水流走	슈퍼 크릭 (Warfare)								phase_random==1 &running_style==2				0.45			2.4												2025년 8월 19일	언스토퍼블			
 104503211	1248	9	진화	가속			신선 나비 변신술	神仙蝶変の術	슈퍼 크릭 (Warfare)						distance_diff_top<=15 &distance_rate>=60 &phase==1		distance_type==4 &running_style==2 &phase==2		즉발			0.4		1.2												2025년 8월 19일	괴물			
-104601111	1045	9	진화				크게 주목 받는 우마돌 등장★	大注目のウマドル参上★	스마트 팔콘								phase_random==0							4												2022년 8월 25일	주목 받는 댄서			
+104601111	1045	9	진화			마구 주목받는 우마돌 등장★	크게 주목 받는 우마돌 등장★	大注目のウマドル参上★	스마트 팔콘								phase_random==0							4												2022년 8월 25일	주목 받는 댄서			
 104601121	1045	9	진화	속도			눈을 돌리면 안 돼☆	目を逸らしちゃダメだよ☆	스마트 팔콘								phase_random==2			0.25				4												2022년 8월 25일	주목 받는 댄서			
-104601211	1167	9	진화	속도			우마돌 파워 급상승↑↑	ウマドルパワー急上昇↑↑	스마트 팔콘								ground_type==2 &phase==1 &blocked_side_continuetime>=2				0.35		1.5	2.4												2022년 8월 25일	차트 급상승!			
-104602111	1167	9	진화	속도			꿈을 향해 급상승!	夢に向かって急上昇！	스마트 팔콘 (그랜드 라이브)								ground_type==2 &phase==1 &blocked_side_continuetime>=2				0.35		1.5	2.4												2023년 12월 13일	차트 급상승!			
-104602211	1231	9	진화	가속			절대적 센터!	絶対的センター！	스마트 팔콘 (그랜드 라이브)								ground_type==2 &phase_random==2 &order_rate<=50					0.5		3												2023년 12월 13일	센터를 노려라!			
-104701111	1057	9	진화	회복			영웅으로의 이정표	英雄への道標	젠노 롭 로이								running_style==2 &phase_random==1 &order_rate<=50						7.5													2024년 4월 1일	레이스 플래너		TRUE	
+104601211	1167	9	진화	속도		우마돌 파워 급상승↑↑	우마돌 파워 급상승↑↑	ウマドルパワー急上昇↑↑	스마트 팔콘								ground_type==2 &phase==1 &blocked_side_continuetime>=2				0.35		1.5	2.4												2022년 8월 25일	차트 급상승!			
+104602111	1167	9	진화	속도		꿈을 향해 급상승!	꿈을 향해 급상승!	夢に向かって急上昇！	스마트 팔콘 (그랜드 라이브)								ground_type==2 &phase==1 &blocked_side_continuetime>=2				0.35		1.5	2.4												2023년 12월 13일	차트 급상승!			
+104602211	1231	9	진화	가속		절대적 센터!	절대적 센터!	絶対的センター！	스마트 팔콘 (그랜드 라이브)								ground_type==2 &phase_random==2 &order_rate<=50					0.5		3												2023년 12월 13일	센터를 노려라!			
+104701111	1057	9	진화	회복		영웅으로 향하는 이정표	영웅으로의 이정표	英雄への道標	젠노 롭 로이								running_style==2 &phase_random==1 &order_rate<=50						7.5													2024년 4월 1일	레이스 플래너		TRUE	
 104701121	1057	9	진화	속도			이야기를 자아내는 자	物語を紡ぐ者	젠노 롭 로이								running_style==2 &phase_random==1 &order_rate<=50				0.35		1.5	3												2024년 4월 1일	레이스 플래너			
-104701211	1111	9	진화	속도			빛나는 검	光輝く剣	젠노 롭 로이								distance_type==3 &all_corner_random==1 @distance_type==4 &all_corner_random==1				0.45			3												2024년 4월 1일	광망원인			
-104801111	1060	9	진화	가속			분위기 타 보자!	ノってこ！	토센 조던								running_style==3 &phase_firsthalf_random==2 @running_style==2 &phase_firsthalf_random==2					0.4	1.5	1.8												2023년 2월 27일	능숙한 환승			
-104801211	1057	9	진화	속도			트렌드 플래너	トレンドプランナー	토센 조던								running_style==2 &phase_random==1 @running_style==3 &phase_random==1				0.15		5.5	3												2023년 2월 27일	레이스 플래너			
-104802111	1208	9	진화	복합			원 찬스 계속임!	ワンチャンまくったる！	토센 조던 (여름 바캉스)								distance_type==3 &is_finalcorner_random==1 &order_rate>=40 &track_id==10006				0.25	0.4		1.8												2024년 10월 17일	기사회생			
-104802211	1212	9	진화	복합			내가 킹왕짱!	あたししか勝たん！	토센 조던 (여름 바캉스)								running_style==3 &distance_type==3 &is_finalcorner_random==1 &order_rate>=30 &order_rate<=80 &track_id==10006				0.35	0.2		2.4												2024년 10월 17일	대담무쌍			
-104901111	1203	9	진화	속도			건곤일척의 대도박	乾坤一擲の大博打	나카야마 페스타								distance_rate_after_random==50				0.55		60% 확률로 0 / 30% 확률로 -2 / 10% 확률로 -4	1.8												2024년 2월 28일	도박사			
-104901211	1244	9	진화	녹딱			노름판의 갬블러	鉄火のギャンブラー	나카야마 페스타								popularity>=4 &random_lot==60		랜덤																	2024년 2월 28일	승부사			
-105001111	1062	9	진화	속도			귀기삼연	鬼気森然	나리타 타이신								running_style==4 &phase_random==1 &distance_diff_rate>=75				0.15		5.5	3												2022년 8월 15일	잠자는 사자			
-105001211	1064	9	진화	가속			휘몰아치는 마음	駆り立てる想い	나리타 타이신								running_style==4 &is_lastspurt==1 &corner==0		즉발			0.4		0.9												2022년 8월 15일	육박하는 그림자			
-105002111	1238	9	진화	속도			똑똑히 보여주지!	見せつけてやる！	나리타 타이신 (스팀펑크)								phase_random==1 &running_style==4 &order_rate>=75				0.35			4												2023년 12월 18일	브레이크 스루			
-105002211	1208	9	진화	가속			기사회생의 출력	起死回生の出力	나리타 타이신 (스팀펑크)								distance_type==3 &phase_firsthalf_random==2 &order_rate>=40					0.4		4												2023년 12월 18일	기사회생			
-105101111	1036	9	진화	속도			풍화질주	風花疾走	니시노 플라워								straight_random==1				0.35		1.5	3												2023년 7월 31일	한줄기 질풍			
+104701211	1111	9	진화	속도		빛나는 검	빛나는 검	光輝く剣	젠노 롭 로이								distance_type==3 &all_corner_random==1 @distance_type==4 &all_corner_random==1				0.45			3												2024년 4월 1일	광망원인			
+104801111	1060	9	진화	가속		분위기 타자!	분위기 타 보자!	ノってこ！	토센 조던								running_style==3 &phase_firsthalf_random==2 @running_style==2 &phase_firsthalf_random==2					0.4	1.5	1.8												2023년 2월 27일	능숙한 환승			
+104801211	1057	9	진화	속도		트렌드 플래너	트렌드 플래너	トレンドプランナー	토센 조던								running_style==2 &phase_random==1 @running_style==3 &phase_random==1				0.15		5.5	3												2023년 2월 27일	레이스 플래너			
+104802111	1208	9	진화	복합		무한 찬스!	원 찬스 계속임!	ワンチャンまくったる！	토센 조던 (여름 바캉스)								distance_type==3 &is_finalcorner_random==1 &order_rate>=40 &track_id==10006				0.25	0.4		1.8												2024년 10월 17일	기사회생			
+104802211	1212	9	진화	복합		내가 최고임!	내가 킹왕짱!	あたししか勝たん！	토센 조던 (여름 바캉스)								running_style==3 &distance_type==3 &is_finalcorner_random==1 &order_rate>=30 &order_rate<=80 &track_id==10006				0.35	0.2		2.4												2024년 10월 17일	대담무쌍			
+104901111	1203	9	진화	속도		건곤일척의 대도박	건곤일척의 대도박	乾坤一擲の大博打	나카야마 페스타								distance_rate_after_random==50				0.55		60% 확률로 0 / 30% 확률로 -2 / 10% 확률로 -4	1.8												2024년 2월 28일	도박사			
+104901211	1244	9	진화	녹딱		노름판의 갬블러	노름판의 갬블러	鉄火のギャンブラー	나카야마 페스타								popularity>=4 &random_lot==60		랜덤																	2024년 2월 28일	승부사			
+105001111	1062	9	진화	속도		귀기삼연	귀기삼연	鬼気森然	나리타 타이신								running_style==4 &phase_random==1 &distance_diff_rate>=75				0.15		5.5	3												2022년 8월 15일	잠자는 사자			
+105001211	1064	9	진화	가속		휘몰아치는 마음	휘몰아치는 마음	駆り立てる想い	나리타 타이신								running_style==4 &is_lastspurt==1 &corner==0		즉발			0.4		0.9												2022년 8월 15일	육박하는 그림자			
+105002111	1238	9	진화	속도		똑똑히 보여주겠어!	똑똑히 보여주지!	見せつけてやる！	나리타 타이신 (스팀펑크)								phase_random==1 &running_style==4 &order_rate>=75				0.35			4												2023년 12월 18일	브레이크 스루			
+105002211	1208	9	진화	가속		기사회생의 출력	기사회생의 출력	起死回生の出力	나리타 타이신 (스팀펑크)								distance_type==3 &phase_firsthalf_random==2 &order_rate>=40					0.4		4												2023년 12월 18일	기사회생			
+105101111	1036	9	진화	속도		풍화질주	풍화질주	風花疾走	니시노 플라워								straight_random==1				0.35		1.5	3												2023년 7월 31일	한줄기 질풍			
 105101121	1036	9	진화	속도			한 송이 용기	一輪の勇気	니시노 플라워								straight_random==1				0.45			3												2023년 7월 31일	한줄기 질풍			
-105101211	1134	9	진화	가속			큰 꽃송이의 결의	大輪の決意	니시노 플라워								running_style==2 &down_slope_random==1					0.4		3												2023년 7월 31일	결의의 직활강			
-105102111	1104	9	진화	속도			축복의 플라워 걸	祝福のフラワーガール	니시노 플라워 (웨딩)								distance_type==2 &all_corner_random==1				0.3															2024년 9월 16일	호풍원인			
-105102211	1217	9	진화	복합			베일을 흔드는 봄 질풍	ヴェール揺らす春疾風	니시노 플라워 (웨딩)								distance_type==1 &down_slope_random==1 @distance_type==2 &down_slope_random==1				0.35	0.2		2.4												2024년 9월 16일	지고의 다운힐러			
-105201111	1044	9	진화	회복			아직이야!	まだまだだよ！	하루 우라라								phase<=1 &accumulatetime>=5 &blocked_front_continuetime>=1						7.5	2												2022년 6월 15일	강철 같은 의지		TRUE	
-105201211	1047	9	진화	속도			지지 않을 거니까!	まけないからね！	하루 우라라								phase==1 &change_order_onetime>0				0.15		5.5	3												2022년 6월 15일	꺾이지 않는 마음			
-105202111	1045	9	진화	속도			지켜봐줘 지켜봐줘!	見てて見てて！	하루 우라라 (새해)								phase_random==0				0.15			3												2023년 4월 21일	주목 받는 댄서			
-105202211	1140	9	진화	복합			힘내고 있는 걸!	がんばるもん！	하루 우라라 (새해)								running_style==3 &is_overtake==1 &accumulatetime>=5				0.15	0.3		4												2023년 4월 21일	노력가			
-105301111	1061	9	진화	복합			풍기의 등용문	風紀の登龍門	뱀부 메모리								running_style==3 &is_finalcorner==1 &corner!=0 &is_behind_in==1 &change_order_onetime<0				0.35	0.2		3												2023년 11월 29일	승천하는 용			
-105301211	1211	9	진화	복합			가죠! 기합 충분함다!	押忍ッ！気合十分っス！	뱀부 메모리								distance_type==2 &is_finalcorner_random==1 &order_rate>=50				0.35	0.2		1.8												2023년 11월 29일	파죽지세			
-105302111	1060	9	진화	복합			열혈 진화 라이딩!	熱血進化ライディング！	뱀부 메모리 (여름 바캉스)								running_style==3 &phase_firsthalf_random==2 &order_rate>=40					0.4		1.8		is_activate_other_skill_detail==1 &remain_distance<=201 &remain_distance>=199		0.15			3					2024년 10월 17일	능숙한 환승			
-105302211	1065	9	진화	복합			필살! 엄청난 속도의 스프린트!	必殺！爆速スプリント！	뱀부 메모리 (여름 바캉스)								distance_type==1 &phase_random==2					0.4		3		is_activate_other_skill_detail==1 &remain_distance<=201 &remain_distance>=199		0.15			3					2024년 10월 17일	스프린트 터보			
+105101211	1134	9	진화	가속		큰 꽃송이의 결의	큰 꽃송이의 결의	大輪の決意	니시노 플라워								running_style==2 &down_slope_random==1					0.4		3												2023년 7월 31일	결의의 직활강			
+105102111	1104	9	진화	속도		축복의 플라워 걸	축복의 플라워 걸	祝福のフラワーガール	니시노 플라워 (웨딩)								distance_type==2 &all_corner_random==1				0.3															2024년 9월 16일	호풍원인			
+105102211	1217	9	진화	복합		베일을 흔드는 봄의 질풍	베일을 흔드는 봄 질풍	ヴェール揺らす春疾風	니시노 플라워 (웨딩)								distance_type==1 &down_slope_random==1 @distance_type==2 &down_slope_random==1				0.35	0.2		2.4												2024년 9월 16일	지고의 다운힐러			
+105201111	1044	9	진화	회복		아직이야!	아직이야!	まだまだだよ！	하루 우라라								phase<=1 &accumulatetime>=5 &blocked_front_continuetime>=1						7.5	2												2022년 6월 15일	강철 같은 의지		TRUE	
+105201211	1047	9	진화	속도		지지 않을 거야!	지지 않을 거니까!	まけないからね！	하루 우라라								phase==1 &change_order_onetime>0				0.15		5.5	3												2022년 6월 15일	꺾이지 않는 마음			
+105202111	1045	9	진화	속도		꼭 지켜봐 줘!	지켜봐줘 지켜봐줘!	見てて見てて！	하루 우라라 (새해)								phase_random==0				0.15			3												2023년 4월 21일	주목 받는 댄서			
+105202211	1140	9	진화	복합		열심히 할 거야!	힘내고 있는 걸!	がんばるもん！	하루 우라라 (새해)								running_style==3 &is_overtake==1 &accumulatetime>=5				0.15	0.3		4												2023년 4월 21일	노력가			
+105301111	1061	9	진화	복합		질서의 등용문	풍기의 등용문	風紀の登龍門	뱀부 메모리								running_style==3 &is_finalcorner==1 &corner!=0 &is_behind_in==1 &change_order_onetime<0				0.35	0.2		3												2023년 11월 29일	승천하는 용			
+105301211	1211	9	진화	복합		가죠! 기합은 충분함다!	가죠! 기합 충분함다!	押忍ッ！気合十分っス！	뱀부 메모리								distance_type==2 &is_finalcorner_random==1 &order_rate>=50				0.35	0.2		1.8												2023년 11월 29일	파죽지세			
+105302111	1060	9	진화	복합		열혈 진화 라이딩!	열혈 진화 라이딩!	熱血進化ライディング！	뱀부 메모리 (여름 바캉스)								running_style==3 &phase_firsthalf_random==2 &order_rate>=40					0.4		1.8		is_activate_other_skill_detail==1 &remain_distance<=201 &remain_distance>=199		0.15			3					2024년 10월 17일	능숙한 환승			
+105302211	1065	9	진화	복합		필살! 폭속 스프린트!	필살! 엄청난 속도의 스프린트!	必殺！爆速スプリント！	뱀부 메모리 (여름 바캉스)								distance_type==1 &phase_random==2					0.4		3		is_activate_other_skill_detail==1 &remain_distance<=201 &remain_distance>=199		0.15			3					2024년 10월 17일	스프린트 터보			
 105401111	1059	9	진화	속도			급행! 히어로 등장!	急行！ヒーロー参上！	비코 페가수스								running_style==3 &phase_random==1 &order_rate>=40				0.45			2.4												2025년 6월 4일	신속 과감			
 105401211	1067	9	진화	복합			필살・천둥 번개 킥!	必殺・雷電キーック！	비코 페가수스								distance_type==1 &phase_random==2 &order_rate>50				0.35	0.2		3												2025년 6월 4일	번갯불의 번뜩임			
-105501111	1210	9	진화	속도			두근두근☆마블러스 존	ワクワク☆マーベラスゾーン	마블러스 선데이								distance_type==3 &phase_random==1 &order_rate>=50				0.45			2.4												2024년 10월 7일	고양감			
-105501211	1049	9	진화	복합			진행! 세계 마블러스 계획☆	進め！世界マーベラス計画☆	마블러스 선데이								infront_near_lane_time>=1 &is_lastspurt==1 &hp_per>=1 &remain_distance>=600		즉발	0.15		0.4		3												2024년 10월 7일	논스톱 걸			
-105601111	1123	9	진화	속도			길조입니다!	吉兆です！	마치카네 후쿠키타루								distance_type==4 &phase_random==2				0.35			4												2022년 6월 15일	요술사			
-105601211	1156	9	진화	녹딱			칠복즉생	七福即生	마치카네 후쿠키타루								post_number==7		랜덤																	2022년 6월 15일	슈퍼 럭키 세븐			
-105602111	1121	9	진화	복합			노도의 초행운 파워!	怒涛の超幸運パワー！	마치카네 후쿠키타루 (풀아머)								distance_type==4 &phase==2 &change_order_onetime<0				0.35	0.1		4												2022년 12월 19일	노도의 추격			
-105602211	1075	9	진화	속도			한가득 개운 체험!	ばっちり開運体験！	마치카네 후쿠키타루 (풀아머)								distance_type==4 &is_finalcorner==1 &corner!=0 &lane_type==0		즉발		0.35			4												2022년 12월 19일	내적 체험			
-105701111	1252	9	진화	속도			하늘을 나는 발걸음	天翔る足取り	미스터 시비								distance_type==3 &corner_random==3 &order_rate>=50 @distance_type==4 &corner_random==3 &order_rate>=50			0.45				3												2024년 6월 14일	천의무봉			
-105701211	1064	9	진화	가속			치솟는 대지	弾む大地	미스터 시비								running_style==4 &is_lastspurt==1 &corner==0		즉발			0.4		0.9												2024년 6월 14일	육박하는 그림자			
-105801111	1058	9	진화	속도			노도의 스피드	怒涛のスピード	메이쇼 도토								running_style==2 &is_finalcorner_random==1 &order_rate<=50				0.35			4												2022년 11월 30일	스피드스터			
-105801211	1047	9	진화	속도			포기하지 않아, 예요오~!	諦めない、ですぅ～！	메이쇼 도토								phase==1 &change_order_onetime>0				0.15		5.5	3												2022년 11월 30일	꺾이지 않는 마음			
-105802111	1190	9	진화	가속			라이벌이 있으니까!	ライバルがいるから！	메이쇼 도토 (할로윈)								running_style==2 &phase_firsthalf_random==2 &order_rate<=50					0.4	1.5	1.8												2024년 1월 18일	치열한 승부			
+105501111	1210	9	진화	속도		두근두근☆마블러스 존	두근두근☆마블러스 존	ワクワク☆マーベラスゾーン	마블러스 선데이								distance_type==3 &phase_random==1 &order_rate>=50				0.45			2.4												2024년 10월 7일	고양감			
+105501211	1049	9	진화	복합		추진! 세계 마블러스 계획☆	진행! 세계 마블러스 계획☆	進め！世界マーベラス計画☆	마블러스 선데이								infront_near_lane_time>=1 &is_lastspurt==1 &hp_per>=1 &remain_distance>=600		즉발	0.15		0.4		3												2024년 10월 7일	논스톱 걸			
+105601111	1123	9	진화	속도		길조입니다!	길조입니다!	吉兆です！	마치카네 후쿠키타루								distance_type==4 &phase_random==2				0.35			4												2022년 6월 15일	요술사			
+105601211	1156	9	진화	녹딱		칠복즉생	칠복즉생	七福即生	마치카네 후쿠키타루								post_number==7		랜덤																	2022년 6월 15일	슈퍼 럭키 세븐			
+105602111	1121	9	진화	복합		노도의 초행운 파워!	노도의 초행운 파워!	怒涛の超幸運パワー！	마치카네 후쿠키타루 (풀아머)								distance_type==4 &phase==2 &change_order_onetime<0				0.35	0.1		4												2022년 12월 19일	노도의 추격			
+105602211	1075	9	진화	속도		완벽한 운수대통 체험!	한가득 개운 체험!	ばっちり開運体験！	마치카네 후쿠키타루 (풀아머)								distance_type==4 &is_finalcorner==1 &corner!=0 &lane_type==0		즉발		0.35			4												2022년 12월 19일	내적 체험			
+105701111	1252	9	진화	속도		하늘을 나는 발걸음	하늘을 나는 발걸음	天翔る足取り	미스터 시비								distance_type==3 &corner_random==3 &order_rate>=50 @distance_type==4 &corner_random==3 &order_rate>=50			0.45				3												2024년 6월 14일	천의무봉			
+105701211	1064	9	진화	가속		솟아오르는 대지	치솟는 대지	弾む大地	미스터 시비								running_style==4 &is_lastspurt==1 &corner==0		즉발			0.4		0.9												2024년 6월 14일	육박하는 그림자			
+105801111	1058	9	진화	속도		노도의 스피드	노도의 스피드	怒涛のスピード	메이쇼 도토								running_style==2 &is_finalcorner_random==1 &order_rate<=50				0.35			4												2022년 11월 30일	스피드스터			
+105801211	1047	9	진화	속도		포기, 안 해요오~!	포기하지 않아, 예요오~!	諦めない、ですぅ～！	메이쇼 도토								phase==1 &change_order_onetime>0				0.15		5.5	3												2022년 11월 30일	꺾이지 않는 마음			
+105802111	1190	9	진화	가속		라이벌이 있으니까!	라이벌이 있으니까!	ライバルがいるから！	메이쇼 도토 (할로윈)								running_style==2 &phase_firsthalf_random==2 &order_rate<=50					0.4	1.5	1.8												2024년 1월 18일	치열한 승부			
 105802121	1190	9	진화	복합			마음에 불붙는 투지	心に灯す闘志	메이쇼 도토 (할로윈)								running_style==2 &phase_firsthalf_random==2 &order_rate<=50					0.4		1.8		is_activate_other_skill_detail==1 &is_last_straight==1		0.15			3					2024년 1월 18일	치열한 승부			
-105802211	1035	9	진화	속도			영혼의 인도자	魂の導き手	메이쇼 도토 (할로윈)								corner_random==1 ＠corner_random==2 ＠corner_random==3 ＠corner_random==4				0.15		5.5	3												2024년 1월 18일	원호의 마에스트로			
-105901111	1144	9	진화	속도			쿨한 시선	クールな視線	메지로 도베르								running_style==3 &phase_random==2 &order_rate>50			0.15				3												2023년 3월 10일	사방팔방 째려보기			
-105901211	1006	9	진화	녹딱			요도의 여왕	淀の女王	메지로 도베르								track_id==10008		즉발																	2023년 3월 10일	요도가 점지한 아이			
-105902111	1212	9	진화	복합			더 모험해보고 싶어!	もっと冒険してみたい！	메지로 도베르 (캠핑)								running_style==3 &distance_rate_after_random==50 &order_rate>=30 &order_rate<=80				0.35	0.1		4												2023년 10월 19일	대담무쌍			
+105802211	1035	9	진화	속도		영혼의 인도자	영혼의 인도자	魂の導き手	메이쇼 도토 (할로윈)								corner_random==1 ＠corner_random==2 ＠corner_random==3 ＠corner_random==4				0.15		5.5	3												2024년 1월 18일	원호의 마에스트로			
+105901111	1144	9	진화	속도		쿨한 시선	쿨한 시선	クールな視線	메지로 도베르								running_style==3 &phase_random==2 &order_rate>50			0.15				3												2023년 3월 10일	사방팔방 째려보기			
+105901211	1006	9	진화	녹딱		요도의 여왕	요도의 여왕	淀の女王	메지로 도베르								track_id==10008		즉발																	2023년 3월 10일	요도가 점지한 아이			
+105902111	1212	9	진화	복합		더 모험해 보고 싶어!	더 모험해보고 싶어!	もっと冒険してみたい！	메지로 도베르 (캠핑)								running_style==3 &distance_rate_after_random==50 &order_rate>=30 &order_rate<=80				0.35	0.1		4												2023년 10월 19일	대담무쌍			
 105902121	1212	9	진화	속도			자신을 갖고 내디뎌서	自信持って踏み出して	메지로 도베르 (캠핑)								running_style==3 &distance_rate_after_random==50			0.45				2.4												2023년 10월 19일	대담무쌍			
-105902211	1208	9	진화	가속			기사회생의 한 걸음	起死回生の一歩	메지로 도베르 (캠핑)								distance_type==3 &phase_firsthalf_random==2 &order_rate>=40					0.4		4												2023년 10월 19일	기사회생			
-106001111	1116	9	진화	가속			매혹적인 시니컬 걸	魅惑のシニカルガール	나이스 네이처								distance_type==3 &phase>=2 &blocked_front_continuetime>=1					0.4		4												2022년 6월 15일	매혹적인 속삭임			
-106001211	1144	9	진화	속도			노려라! 주인공!	目指せ！主人公！	나이스 네이처								running_style==3 &phase_random==2				0.35			4												2022년 6월 15일	사방팔방 째려보기			
-106002111	1115	9	진화	속도			열심히 할 수밖에 없네	頑張るしかないよね	나이스 네이처 (치어리더)								distance_type==3 &phase_random==2				0.35			4												2023년 8월 17일	독점력			
-106002211	1049	9	진화	가속			논스톱 응원	ノンストップエール	나이스 네이처 (치어리더)								infront_near_lane_time>=1 &is_lastspurt==1 &hp_per>=1		즉발			0.4	1.5	3												2023년 8월 17일	논스톱 걸			
+105902211	1208	9	진화	가속		기사회생의 한 걸음	기사회생의 한 걸음	起死回生の一歩	메지로 도베르 (캠핑)								distance_type==3 &phase_firsthalf_random==2 &order_rate>=40					0.4		4												2023년 10월 19일	기사회생			
+106001111	1116	9	진화	가속		매혹적인 시니컬 걸	매혹적인 시니컬 걸	魅惑のシニカルガール	나이스 네이처								distance_type==3 &phase>=2 &blocked_front_continuetime>=1					0.4		4												2022년 6월 15일	매혹적인 속삭임			
+106001211	1144	9	진화	속도		노려라! 주인공!	노려라! 주인공!	目指せ！主人公！	나이스 네이처								running_style==3 &phase_random==2				0.35			4												2022년 6월 15일	사방팔방 째려보기			
+106002111	1115	9	진화	속도		열심히 해야만 하겠지	열심히 할 수밖에 없네	頑張るしかないよね	나이스 네이처 (치어리더)								distance_type==3 &phase_random==2				0.35			4												2023년 8월 17일	독점력			
+106002211	1049	9	진화	가속		논스톱 옐	논스톱 응원	ノンストップエール	나이스 네이처 (치어리더)								infront_near_lane_time>=1 &is_lastspurt==1 &hp_per>=1		즉발			0.4	1.5	3												2023년 8월 17일	논스톱 걸			
 106003111	1165	9	진화	속도			좋은 맛, 나지?	いい味、出てるでしょ？	나이스 네이처 (새해)								infront_near_lane_time>=3 &accumulatetime>=10				0.45			3												2025년 4월 29일	좋은 데에 들어왔어!			
 106003211	1060	9	진화	가속			능숙한 대청소	大掃除上手	나이스 네이처 (새해)								distance_type==3 &running_style==3 &phase_firsthalf_random==2 &order_rate>=40					0.4		4												2025년 4월 29일	능숙한 환승			
-106101111	1067	9	진화	복합			번갯불 같은 베어가르기	電撃の撫で切り	킹 헤일로								distance_type==1 &phase_random==2 &order_rate>50				0.35	0.1		4												2022년 6월 15일	번갯불의 번뜩임			
-106101211	1143	9	진화	속도			왕의 대국관	王の大局観	킹 헤일로								running_style==3 &phase_random==1				0.15			3												2022년 6월 15일	대국관			
-106102111	1061	9	진화	속도			용의 구름을 얻은 듯이	竜の雲を得る如し	킹 헤일로 (치어리더)								running_style==3 &is_finalcorner==1 &corner!=0 &is_behind_in==1 &change_order_onetime<0				0.35			4												2023년 8월 17일	승천하는 용			
-106102211	1017	9	진화	녹딱			봄바람이 불고, 벚꽃이 흩날리다	春風吹きて、桜舞う	킹 헤일로 (치어리더)								season==1 @season==5		즉발																	2023년 8월 17일	첫 봄바람			
-106201111	1048	9	진화	속도			고잉 마이 웨이	ゴーイングマイウェイ	마치카네 탄호이저								phase==1 &is_surrounded==1				0.15		5.5	3												2023년 6월 15일	마이동풍			
-106201211	1121	9	진화	복합			에이! 에이! 뭉!	えい！えい！むん！	마치카네 탄호이저								distance_type==4 &phase==2 &change_order_onetime<0				0.35	0.1	1.5	3												2023년 6월 15일	노도의 추격			
-106202111	1169	9	진화	회복			포지티브 스마일	ポジティブスマイル	마치카네 탄호이저 (운동회)								running_style==3 &phase_firsthalf_random==1						7.5													2024년 8월 16일	잠복 태세		TRUE	
-106202211	1208	9	진화	가속			막판 대역전극	大どんでんがえし	마치카네 탄호이저 (운동회)								distance_type==3 &phase_firsthalf_random==2 &order_rate>=40					0.4		4												2024년 8월 16일	기사회생			
+106101111	1067	9	진화	복합		번갯불 대첩	번갯불 같은 베어가르기	電撃の撫で切り	킹 헤일로								distance_type==1 &phase_random==2 &order_rate>50				0.35	0.1		4												2022년 6월 15일	번갯불의 번뜩임			
+106101211	1143	9	진화	속도		왕의 대국관	왕의 대국관	王の大局観	킹 헤일로								running_style==3 &phase_random==1				0.15			3												2022년 6월 15일	대국관			
+106102111	1061	9	진화	속도		용이 여의주를 얻은듯이	용의 구름을 얻은 듯이	竜の雲を得る如し	킹 헤일로 (치어리더)								running_style==3 &is_finalcorner==1 &corner!=0 &is_behind_in==1 &change_order_onetime<0				0.35			4												2023년 8월 17일	승천하는 용			
+106102211	1017	9	진화	녹딱		봄바람 불어, 벚꽃 흩날린다	봄바람이 불고, 벚꽃이 흩날리다	春風吹きて、桜舞う	킹 헤일로 (치어리더)								season==1 @season==5		즉발																	2023년 8월 17일	첫 봄바람			
+106201111	1048	9	진화	속도		고잉 마이 웨이	고잉 마이 웨이	ゴーイングマイウェイ	마치카네 탄호이저								phase==1 &is_surrounded==1				0.15		5.5	3												2023년 6월 15일	마이동풍			
+106201211	1121	9	진화	복합		에이! 에이! 뭉!	에이! 에이! 뭉!	えい！えい！むん！	마치카네 탄호이저								distance_type==4 &phase==2 &change_order_onetime<0				0.35	0.1	1.5	3												2023년 6월 15일	노도의 추격			
+106202111	1169	9	진화	회복		포지티브 스마일	포지티브 스마일	ポジティブスマイル	마치카네 탄호이저 (운동회)								running_style==3 &phase_firsthalf_random==1						7.5													2024년 8월 16일	잠복 태세		TRUE	
+106202211	1208	9	진화	가속		대역전극	막판 대역전극	大どんでんがえし	마치카네 탄호이저 (운동회)								distance_type==3 &phase_firsthalf_random==2 &order_rate>=40					0.4		4												2024년 8월 16일	기사회생			
 106301111	1057	9	진화	회복			철저 관리 플랜	徹底管理プラン	이쿠노 딕터스								running_style==2 &distance_rate>=50 &distance_rate<=51 @running_style==3 &distance_rate>=50 &distance_rate<=51						7.5													2025년 6월 14일	레이스 플래너		TRUE	
 106301211	1215	9	진화	속도			쇠불꽃	鉄火花	이쿠노 딕터스								running_style==2 &distance_rate>=50 &distance_rate<=51 @running_style==3 &distance_rate>=50 &distance_rate<=51				0.55		-2	2.4												2025년 6월 14일	용왕매진			
-106401111	1166	9	진화	속도			쩔지?	パないっしょ？	메지로 파머								behind_near_lane_time>=3 &accumulatetime>=10				0.35			4												2023년 9월 8일	먼저 갑니다!			
-106401211	1119	9	진화	속도			갓도주의 마음가짐	神逃げの心得	메지로 파머								distance_type==4 &phase_random==1 &bashin_diff_behind>=1 &order==1				0.35			4												2023년 9월 8일	선봉의 마음가짐			
+106401111	1166	9	진화	속도		장난 아니지?	쩔지?	パないっしょ？	메지로 파머								behind_near_lane_time>=3 &accumulatetime>=10				0.35			4												2023년 9월 8일	먼저 갑니다!			
+106401211	1119	9	진화	속도		갓도주의 마음가짐	갓도주의 마음가짐	神逃げの心得	메지로 파머								distance_type==4 &phase_random==1 &bashin_diff_behind>=1 &order==1				0.35			4												2023년 9월 8일	선봉의 마음가짐			
 106401221	1119	9	진화	속도			텐션 올리는 스타일	テンアゲスタイル	메지로 파머								distance_type==4 &phase==1 &blocked_side_continuetime>=2				0.45			3												2023년 9월 8일	선봉의 마음가짐			
 106402111	1117	9	진화	속도			북풍일축	北風一蹴	메지로 파머 (크리스마스)								distance_type==4 &straight_random==1				0.35			4												2025년 3월 20일	열풍일섬			
 106402211	1268	9	진화	속도			메리☆크리스마스↑파티	メリ☆クリ↑パーリー	메지로 파머 (크리스마스)								distance_type==4 &phase_random==1 &track_id==10005 &motivation==5 &is_used_skill_id==202051				0.45		5.5	2.4												2025년 3월 20일	띄워☆보자↑분위기			
-106501111	1105	9	진화	속도			진심 불타오르잖아!	マジ爆上げっしょ！	다이타쿠 헬리오스								distance_type==2 &phase_random==1 &order_rate<=50				0.35			4												2024년 5월 10일	기어 체인지			
-106501211	1250	9	진화	속도			암튼 해버려~!	とりまやったれ～！	다이타쿠 헬리오스								distance_type==2 &phase_laterhalf_random==1 &order_rate<=50				0.35			4												2024년 5월 10일	마구마구			
+106501111	1105	9	진화	속도		진심 텐션 폭발하는데!	진심 불타오르잖아!	マジ爆上げっしょ！	다이타쿠 헬리오스								distance_type==2 &phase_random==1 &order_rate<=50				0.35			4												2024년 5월 10일	기어 체인지			
+106501211	1250	9	진화	속도		아묻따 해버려~!	암튼 해버려~!	とりまやったれ～！	다이타쿠 헬리오스								distance_type==2 &phase_laterhalf_random==1 &order_rate<=50				0.35			4												2024년 5월 10일	마구마구			
 106502111	1053	9	진화	가속			트렌드 앞서가기☆	トレンド先取り☆	다이타쿠 헬리오스 (무도회)								running_style==1 &phase==0		즉발			0.5		1.2												2025년 7월 18일	선수 필승			
 106502211	1068	9	진화	속도			마일신, 깜작☆탄생	マイル神、爆☆誕	다이타쿠 헬리오스 (무도회)								distance_type==2 &phase_laterhalf_random==0 &order_rate<=50				0.45			3												2025년 7월 18일	마일의 지배자			
-106601111	1239	9	진화	속도			출력 1000만%!!	出力1000万%！！	트윈 터보								phase_firsthalf_random==1 &running_style==1				0.55		-4	2.7												2024년 6월 14일	출력 1000%!			
-106601211	1053	9	진화	가속			터보를 따라와!	ターボについてこーい！	트윈 터보								running_style==1 &phase==0		즉발			0.5		1.2												2024년 6월 14일	선수 필승			
-106701111	1169	9	진화	속도			금강불괴	金剛不壊	사토노 다이아몬드								running_style==3 &phase_laterhalf_random==0 &order_rate>=40				0.15		5.5	3												2023년 6월 26일	잠복 태세			
+106601111	1239	9	진화	속도		출력 1000만%!!	출력 1000만%!!	出力1000万%！！	트윈 터보								phase_firsthalf_random==1 &running_style==1				0.55		-4	2.7												2024년 6월 14일	출력 1000%!			
+106601211	1053	9	진화	가속		터보를 따르라~!	터보를 따라와!	ターボについてこーい！	트윈 터보								running_style==1 &phase==0		즉발			0.5		1.2												2024년 6월 14일	선수 필승			
+106701111	1169	9	진화	속도		금강불괴	금강불괴	金剛不壊	사토노 다이아몬드								running_style==3 &phase_laterhalf_random==0 &order_rate>=40				0.15		5.5	3												2023년 6월 26일	잠복 태세			
 106701121	1169	9	진화	속도			감출 수 없는 반짝임	隠せぬ輝き	사토노 다이아몬드								running_style==3 &phase_laterhalf_random==0 &order_rate>=40				0.35		1.5	3												2023년 6월 26일	잠복 태세			
-106701211	1001	9	진화	녹딱			시계(우) 방향의 윤무곡	右回りの輪舞曲	사토노 다이아몬드								rotation==1		즉발																	2023년 6월 26일	시계 방향의 귀신			
-106702111	1242	9	진화	가속			무아의 경지	無我の境地	사토노 다이아몬드 (새해)								distance_type==4 &running_style==3 &is_lastspurt==1 &order_rate>=40		즉발			0.4	-0.5	1.5												2024년 4월 18일	무아몽중			
-106702211	1122	9	진화	속도			밝아지지 않는 밤은 없어!	明けぬ夜はない！	사토노 다이아몬드 (새해)								distance_type==4 &phase_random==1 &order>=5				0.15		3.5	3												2024년 4월 18일	스태미나 그리드			
+106701211	1001	9	진화	녹딱		시계(우) 방향의 윤무곡	시계(우) 방향의 윤무곡	右回りの輪舞曲	사토노 다이아몬드								rotation==1		즉발																	2023년 6월 26일	시계 방향의 귀신			
+106702111	1242	9	진화	가속		무아의 경지	무아의 경지	無我の境地	사토노 다이아몬드 (새해)								distance_type==4 &running_style==3 &is_lastspurt==1 &order_rate>=40		즉발			0.4	-0.5	1.5												2024년 4월 18일	무아몽중			
+106702211	1122	9	진화	속도		밝지 않는 밤은 없어!	밝아지지 않는 밤은 없어!	明けぬ夜はない！	사토노 다이아몬드 (새해)								distance_type==4 &phase_random==1 &order>=5				0.15		3.5	3												2024년 4월 18일	스태미나 그리드			
 106703111	1208	9	진화	가속			초록빛 혁명	蒼色革命	사토노 다이아몬드 (프로젝트 L'Arc)								distance_type==3 &phase_firsthalf_random==2 &order_rate>=40					0.4		4												2024년 12월 30일	기사회생			
 106703211	1111	9	진화	속도			당스・드・레페	ダンス・デ・レぺ	사토노 다이아몬드 (프로젝트 L'Arc)								track_id==10201 &distance_type==3 &all_corner_random==1 &motivation==5				0.45			4												2024년 12월 30일	광망원인			
-106801111	1053	9	진화	가속			축제다, 어기여차!	祭りだワッショイ！	키타산 블랙								running_style==1 &phase==0		즉발			0.5		1.2												2023년 6월 15일	선수 필승			
-106801211	1117	9	진화	속도			폭풍일섬!	爆風一閃！	키타산 블랙								distance_type==4 &straight_random==1				0.45			3												2023년 6월 15일	열풍일섬			
-106802111	1054	9	진화	속도			미래로 날아가봐요!	未来へ飛び立ちましょう！	키타산 블랙 (새해)								running_style==1 &phase_random==1 &order_rate<=50				0.35			4												2024년 4월 18일	탈출술			
-106802211	1053	9	진화	가속			필승의 서두!	必勝の前口上！	키타산 블랙 (새해)								running_style==1 &phase==0		즉발			0.5		1.2												2024년 4월 18일	선수 필승			
+106801111	1053	9	진화	가속		축제다 어기영차!	축제다, 어기여차!	祭りだワッショイ！	키타산 블랙								running_style==1 &phase==0		즉발			0.5		1.2												2023년 6월 15일	선수 필승			
+106801211	1117	9	진화	속도		폭풍일섬!	폭풍일섬!	爆風一閃！	키타산 블랙								distance_type==4 &straight_random==1				0.45			3												2023년 6월 15일	열풍일섬			
+106802111	1054	9	진화	속도		미래로 날아가요!	미래로 날아가봐요!	未来へ飛び立ちましょう！	키타산 블랙 (새해)								running_style==1 &phase_random==1 &order_rate<=50				0.35			4												2024년 4월 18일	탈출술			
+106802211	1053	9	진화	가속		필승의 서두!	필승의 서두!	必勝の前口上！	키타산 블랙 (새해)								running_style==1 &phase==0		즉발			0.5		1.2												2024년 4월 18일	선수 필승			
 106803111	1281	9	진화	속도			훌륭해! 와룡용왕	あっぱれ！臥竜勇往	키타산 블랙 (애니 콜라보)								distance_type==4 &running_style==1 &phase_firsthalf_random==2 &lastspurt==2			0.35				3		is_activate_other_skill_detail==1 &is_last_straight==1	0.15				3					2025년 4월 17일	화룡점정			
 106803211	1282	9	진화	복합			만리를 뛰어넘어 영차!	万里飛び越えソイヤッ！	키타산 블랙 (애니 콜라보)								distance_type==4 &running_style==1 &is_lastspurt==1 &corner==0 &order<=3					0.4		0.9		is_activate_other_skill_detail==1 &is_last_straight==1	0.15				3					2025년 4월 17일	만리일공			
-106901111	1058	9	진화	속도			꽃놀이 풍년!	お花見当たり年！	사쿠라 치요노 오								running_style==2 &is_finalcorner_random==1 &order_rate<=50				0.35			4												2023년 5월 11일	스피드스터			
-106901211	1017	9	진화	녹딱			오늘은 아홉 겹으로 만개했어요	けふ九重に満開です	사쿠라 치요노 오								season==1 @season==5		즉발																	2023년 5월 11일	첫 봄바람			
-106902111	1036	9	진화	속도			앵화난만 일직선	桜花爛漫一直線	사쿠라 치요노 오 (무도회)								straight_random==1				0.45			3												2024년 7월 17일	한줄기 질풍			
-106902211	1209	9	진화	속도			지고 싶지 않아!	負けたくない！	사쿠라 치요노 오 (무도회)								distance_type==3 &phase==1 &order_rate<=80 &order_rate>=30 &blocked_side_continuetime>=2				0.35		5.5	2.4												2024년 7월 17일	기염만장			
-107001111	1170	9	진화	속도			흔들리지 않는 우선국	揺るがぬアスター	시리우스 심볼리								distance_type==3 &is_lastspurt==1 &corner==0 &order_rate>=20 &order_rate<=60		즉발		0.45			3												2024년 11월 8일	결사의 각오			
-107001211	1072	9	진화	속도			일등성의 아라베스크	一等星のアラベスク	시리우스 심볼리								distance_type==3 &phase_random==1 &order_rate<=50				0.45			2.4												2024년 11월 8일	킬러 튠			
-107101111	1057	9	진화	속도			영원의 반짝임	永遠の輝き	메지로 아르당								running_style==2 &phase_random==1 &order_rate<=50				0.15		5.5	3												2023년 5월 30일	레이스 플래너			
-107101211	1170	9	진화	속도			찰나로의 각오	刹那への覚悟	메지로 아르당								distance_type==3 &is_lastspurt==1 &corner==0 &order_rate>=20 &order_rate<=60		즉발		0.45			3												2023년 5월 30일	결사의 각오			
-107102111	1047	9	진화	속도			아름다운 인광	美しき燐光	메지로 아르당 (무도회)								running_style==2 &phase_laterhalf_random==1				0.15		5.5	3												2024년 7월 17일	꺾이지 않는 마음			
-107102211	1110	9	진화	속도			희미하고 덧없는 저녁놀	淡く儚い残照	메지로 아르당 (무도회)								running_style==2 &distance_type==3 &corner==0 &is_lastspurt==1				0.55		-2	3												2024년 7월 17일	광망일섬			
-107201111	1046	9	진화	속도			솟구치는 불꽃	昂る焔	야에노 무테키								phase==1 &change_order_onetime<0				0.35			4												2023년 8월 8일	텐션 오르는데!			
-107201211	1073	9	진화	복합			팔중의 경쟁심	八重の向こう意気	야에노 무테키								distance_type==3 &is_finalcorner==1 &overtake_target_time>=2		즉발		0.45	0.1		3												2023년 8월 8일	승리를 향한 집념			
+106901111	1058	9	진화	속도		꽃놀이 풍년!	꽃놀이 풍년!	お花見当たり年！	사쿠라 치요노 오								running_style==2 &is_finalcorner_random==1 &order_rate<=50				0.35			4												2023년 5월 11일	스피드스터			
+106901211	1017	9	진화	녹딱		오늘은 아홉 겹으로 만개합니다	오늘은 아홉 겹으로 만개했어요	けふ九重に満開です	사쿠라 치요노 오								season==1 @season==5		즉발																	2023년 5월 11일	첫 봄바람			
+106902111	1036	9	진화	속도		앵화난만 일직선	앵화난만 일직선	桜花爛漫一直線	사쿠라 치요노 오 (무도회)								straight_random==1				0.45			3												2024년 7월 17일	한줄기 질풍			
+106902211	1209	9	진화	속도		지고 싶지 않아!	지고 싶지 않아!	負けたくない！	사쿠라 치요노 오 (무도회)								distance_type==3 &phase==1 &order_rate<=80 &order_rate>=30 &blocked_side_continuetime>=2				0.35		5.5	2.4												2024년 7월 17일	기염만장			
+107001111	1170	9	진화	속도		흔들림 없는 애스터	흔들리지 않는 우선국	揺るがぬアスター	시리우스 심볼리								distance_type==3 &is_lastspurt==1 &corner==0 &order_rate>=20 &order_rate<=60		즉발		0.45			3												2024년 11월 8일	결사의 각오			
+107001211	1072	9	진화	속도		일등성의 아라베스크	일등성의 아라베스크	一等星のアラベスク	시리우스 심볼리								distance_type==3 &phase_random==1 &order_rate<=50				0.45			2.4												2024년 11월 8일	킬러 튠			
+107101111	1057	9	진화	속도		영원한 반짝임	영원의 반짝임	永遠の輝き	메지로 아르당								running_style==2 &phase_random==1 &order_rate<=50				0.15		5.5	3												2023년 5월 30일	레이스 플래너			
+107101211	1170	9	진화	속도		찰나로의 각오	찰나로의 각오	刹那への覚悟	메지로 아르당								distance_type==3 &is_lastspurt==1 &corner==0 &order_rate>=20 &order_rate<=60		즉발		0.45			3												2023년 5월 30일	결사의 각오			
+107102111	1047	9	진화	속도		아름다운 인광	아름다운 인광	美しき燐光	메지로 아르당 (무도회)								running_style==2 &phase_laterhalf_random==1				0.15		5.5	3												2024년 7월 17일	꺾이지 않는 마음			
+107102211	1110	9	진화	속도		희미하고 덧없는 저녁놀	희미하고 덧없는 저녁놀	淡く儚い残照	메지로 아르당 (무도회)								running_style==2 &distance_type==3 &corner==0 &is_lastspurt==1				0.55		-2	3												2024년 7월 17일	광망일섬			
+107201111	1046	9	진화	속도		솟구치는 불꽃	솟구치는 불꽃	昂る焔	야에노 무테키								phase==1 &change_order_onetime<0				0.35			4												2023년 8월 8일	텐션 오르는데!			
+107201211	1073	9	진화	복합		여덟 겹의 경쟁심	팔중의 경쟁심	八重の向こう意気	야에노 무테키								distance_type==3 &is_finalcorner==1 &overtake_target_time>=2		즉발		0.45	0.1		3												2023년 8월 8일	승리를 향한 집념			
 107201221	1073	9	진화	속도			승리에 애태우는 격정	勝利に焦がれる激情	야에노 무테키								phase>=2 &is_finalcorner==1 &is_overtake==1 &distance_type==3		즉발	0.35				4												2023년 8월 8일	승리를 향한 집념			
 107202111	1271	9	진화	복합			장수의 빠른 칼날	将の疾刃	야에노 무테키 (Warfare)								running_style==2 &phase>=2 &is_finalcorner==1 &corner!=0 &remain_distance>=600 &order_rate<=70 @running_style==3 &phase>=2 &is_finalcorner==1 &corner!=0 &remain_distance>=600 &order_rate<=70		즉발			0.4		0.9		is_activate_other_skill_detail==1 &is_lastspurt==1 &phase_firsthalf_random==3		0.15			3					2025년 8월 19일	결정적 한 수			
 107202211	1247	9	진화	속도			무쌍의 추격	無双の追撃	야에노 무테키 (Warfare)								running_style==2 &distance_rate>=50 &is_overtake==1 &lane_type==0 @running_style==3 &distance_rate>=50 &is_overtake==1 &lane_type==0		즉발	0.45				2.4												2025년 8월 19일	맹추격			
-107401111	1047	9	진화	회복			꺾이지 않는 아가씨	不屈のお嬢様	메지로 브라이트								phase==1 &change_order_onetime>0						7.5													2023년 7월 7일	꺾이지 않는 마음		TRUE	
-107401211	1207	9	진화	속도			움직이지 않음을 요테이산과 같이	動かざること羊蹄山の若し	메지로 브라이트								distance_type==4 &phase_firsthalf_random==1 &order_rate>=40 &order_rate<=80			-0.15			9.5	1.2												2023년 7월 7일	태연자약			
+107401111	1047	9	진화	회복		불굴의 아가씨	꺾이지 않는 아가씨	不屈のお嬢様	메지로 브라이트								phase==1 &change_order_onetime>0						7.5													2023년 7월 7일	꺾이지 않는 마음		TRUE	
+107401211	1207	9	진화	속도		움직이지 않음을 요테이산과 같이	움직이지 않음을 요테이산과 같이	動かざること羊蹄山の若し	메지로 브라이트								distance_type==4 &phase_firsthalf_random==1 &order_rate>=40 &order_rate<=80			-0.15			9.5	1.2												2023년 7월 7일	태연자약			
 107402111	1264	9	진화	속도			크리스마스 이브의 하늘길	聖夜の天路	메지로 브라이트 (크리스마스)								running_style==3 &phase_random==1 &base_stamina>=1200				0.25			5												2025년 3월 20일	천릿길			
 107402211	1121	9	진화	속도			눈꽃의 추격	雪華の追い上げ	메지로 브라이트 (크리스마스)								distance_type==4 &phase==2 &change_order_onetime<0 &base_stamina>=1200			0.35				5												2025년 3월 20일	노도의 추격			
-107601111	1215	9	진화	속도			벚꽃 전선 진행 중!	桜前線進行中！	사쿠라 로렐								running_style==3 &phase_random==1				0.45			2.4												2024년 7월 29일	용왕매진			
-107601211	1259	9	진화	속도			한 송이 피워봐요!	一花咲かせましょう！	사쿠라 로렐								distance_type==4 &running_style==3 &phase_firsthalf_random==2 &lastspurt==2			0.45				3												2024년 7월 29일	일기가성			
+107601111	1215	9	진화	속도		벚꽃 전선 진행 중!	벚꽃 전선 진행 중!	桜前線進行中！	사쿠라 로렐								running_style==3 &phase_random==1				0.45			2.4												2024년 7월 29일	용왕매진			
+107601211	1259	9	진화	속도		한 송이를 피워내요!	한 송이 피워봐요!	一花咲かせましょう！	사쿠라 로렐								distance_type==4 &running_style==3 &phase_firsthalf_random==2 &lastspurt==2			0.45				3												2024년 7월 29일	일기가성			
 107701111	1015	9	진화	녹딱			잔디의 주인공	ターフの主人公	나리타 탑 로드								ground_condition==1 &ground_type==1		즉발																	2024년 12월 12일	양호한 경기장의 귀신			
 107701211	1201	9	진화	복합			정도	正道	나리타 탑 로드								distance_type==4 &phase_laterhalf_random==1 &order_rate<=50				0.35			2.4		is_activate_other_skill_detail==1 &is_lastspurt==1			0.2		0.9					2024년 12월 12일	노력의 결정체			
-107801111	1105	9	진화	속도			윈드시어	ウインドシアー	야마닌 제퍼								distance_type==2 &phase_random==1 &order_rate<=50				0.35			4												2024년 2월 7일	기어 체인지			
-107801211	1241	9	진화	속도			신을 보내는 바람	神渡し	야마닌 제퍼								running_style==2 &order>=2 &distance_diff_top<=5 &distance_rate>=60 &phase==1				0.35			4												2024년 2월 7일	풍운의 뜻			
+107801111	1105	9	진화	속도		급변풍	윈드시어	ウインドシアー	야마닌 제퍼								distance_type==2 &phase_random==1 &order_rate<=50				0.35			4												2024년 2월 7일	기어 체인지			
+107801211	1241	9	진화	속도		하늬바람	신을 보내는 바람	神渡し	야마닌 제퍼								running_style==2 &order>=2 &distance_diff_top<=5 &distance_rate>=60 &phase==1				0.35			4												2024년 2월 7일	풍운의 뜻			
 107801221	1241	9	진화	속도			하늘에 부는 바람	天つ風	야마닌 제퍼								running_style==2 &order>=3 &distance_rate>=50				0.35			4												2024년 2월 7일	풍운의 뜻			
 108001111	1160	9	진화	가속			정보 강자	情報強者	Transcend								distance_type==2 &activate_count_start>=3 @distance_type==3 &activate_count_start>=3		즉발			0.5		3												2025년 7월 1일	만반의 준비			
 108001211	1295	9	진화	속도			『미지』를 찾아서	『未知』を求めて	Transcend								ground_type==2 &phase_laterhalf_random==0 &order_rate<=50				0.45			3												2025년 7월 1일	모래의 개척자			
-108301111	1242	9	진화	가속			질실강건	質実剛健	심볼리 크리스 에스								distance_type==4 &running_style==3 &is_lastspurt==1 &order_rate>=40 &track_id==10005		즉발			0.4	1.5	1.5												2024년 7월 8일	무아몽중			
-108301211	1256	9	진화	속도			혁명을 불러오는 위용	革命をもたらす威容	심볼리 크리스 에스								distance_type==3 &phase_laterhalf_random==1 &order_rate>=50 @distance_type==4 &phase_laterhalf_random==1 &order_rate>=50				0.35		1.5	2.4												2024년 7월 8일	일발필중			
+108301111	1242	9	진화	가속		질실강건	질실강건	質実剛健	심볼리 크리스 에스								distance_type==4 &running_style==3 &is_lastspurt==1 &order_rate>=40 &track_id==10005		즉발			0.4	1.5	1.5												2024년 7월 8일	무아몽중			
+108301211	1256	9	진화	속도		혁명을 부르는 위용	혁명을 불러오는 위용	革命をもたらす威容	심볼리 크리스 에스								distance_type==3 &phase_laterhalf_random==1 &order_rate>=50 @distance_type==4 &phase_laterhalf_random==1 &order_rate>=50				0.35		1.5	2.4												2024년 7월 8일	일발필중			
 108302111	1209	9	진화	속도		Burn Down	Burn Down	Burn Down	심볼리 크리스 에스 (할로윈)								distance_type==3 &phase==1 &order_rate<=80 &order_rate>=30 &blocked_side_continuetime>=2				0.15 (팀 멤버 전체)															2025년 1월 17일	기염만장			
 108302211	1060	9	진화	가속		Service: Transit	Service: Transit	Service: Transit	심볼리 크리스 에스 (할로윈)								distance_type==3 &running_style==3 &phase_firsthalf_random==2 &order_rate>=40					0.4		4												2025년 1월 17일	능숙한 환승			
-108401111	1063	9	진화	속도			폭풍을 부르는 파괴신	嵐を呼ぶ破壊神	타니노 김렛						phase>=2 &distance_diff_rate>=50		running_style==4 &phase_firsthalf_random==3 &is_lastspurt==1				0.45			3												2024년 9월 6일	질풍노도			
-108401211	1265	9	진화	녹딱			도취되어라, 세계여	酔い痴れよ、世界	타니노 김렛								base_speed>=1000 &base_power>=1000 &distance_type==2 @base_speed>=1000 &base_power>=1000 &distance_type==3		즉발																	2024년 9월 6일	운증용변			
-108501111	1254	9	진화	속도			화려하거라	華麗であれ	다이이치 루비								running_style==3 &order_rate>=40 &is_finalcorner_random==1				0.45			1.8												2024년 6월 28일	위풍당당			
-108501211	1240	9	진화	가속			항상 최고의 반짝임을	常に最たる輝きを	다이이치 루비								distance_type==1 &phase>=2 &order_rate>=50 &is_overtake==1 @distance_type==2 &phase>=2 &order_rate>=50 &is_overtake==1		즉발			0.4		2												2024년 6월 28일	전광석화			
+108401111	1063	9	진화	속도		폭풍을 부르는 파괴신	폭풍을 부르는 파괴신	嵐を呼ぶ破壊神	타니노 김렛						phase>=2 &distance_diff_rate>=50		running_style==4 &phase_firsthalf_random==3 &is_lastspurt==1				0.45			3												2024년 9월 6일	질풍노도			
+108401211	1265	9	진화	녹딱		도취하라, 세계여	도취되어라, 세계여	酔い痴れよ、世界	타니노 김렛								base_speed>=1000 &base_power>=1000 &distance_type==2 @base_speed>=1000 &base_power>=1000 &distance_type==3		즉발																	2024년 9월 6일	운증용변			
+108501111	1254	9	진화	속도		화려하여라	화려하거라	華麗であれ	다이이치 루비								running_style==3 &order_rate>=40 &is_finalcorner_random==1				0.45			1.8												2024년 6월 28일	위풍당당			
+108501211	1240	9	진화	가속		언제나 가장 빛나는 반짝임을	항상 최고의 반짝임을	常に最たる輝きを	다이이치 루비								distance_type==1 &phase>=2 &order_rate>=50 &is_overtake==1 @distance_type==2 &phase>=2 &order_rate>=50 &is_overtake==1		즉발			0.4		2												2024년 6월 28일	전광석화			
 108502111	1240	9	진화	가속			벽력섬전	霹靂閃電	다이이치 루비 (무도회)								running_style==3 &distance_type==2 &phase>=2 &is_overtake==1 &distance_rate<=75 @running_style==3 &distance_type==2 &phase_firsthalf_random==2		즉발			0.4		2												2025년 7월 18일	전광석화			
 108502211	1296	9	진화	속도			재가 될 때까지	灰と化すまで	다이이치 루비 (무도회)								distance_type==2 &phase_laterhalf_random==1 &order_rate>=40				0.35			4												2025년 7월 18일	열정			
 108601111	1274	9	진화	속도			순애	純愛	메지로 라모누								distance_type==2 &corner_random==3 &order_rate<=50 @distance_type==3 &corner_random==3 &order_rate<=50			0.45				3												2025년 2월 6일	완전무결			
 108601211	1253	9	진화	속도			높은 봉우리의 웃음	高嶺の艶笑	메지로 라모누								distance_type==2 &phase_random==1 @distance_type==3 &phase_random==1			0.35				4												2025년 2월 6일	우위 형성			
-108701111	1053	9	진화	가속			필승의 피치 업	必勝のピッチアップ	애스턴 마짱								running_style==1 &phase==0		즉발			0.4		4												2024년 1월 30일	선수 필승			
-108701211	1204	9	진화	복합			기억에 새기는 발걸음	記憶に刻む足取り	애스턴 마짱								distance_type==1 &phase_laterhalf_random==1 &order_rate<=50				0.35	0.2		2.4												2024년 1월 30일	의기충천			
+108701111	1053	9	진화	가속		필승의 피치 업	필승의 피치 업	必勝のピッチアップ	애스턴 마짱								running_style==1 &phase==0		즉발			0.4		4												2024년 1월 30일	선수 필승			
+108701211	1204	9	진화	복합		기억에 새기는 발걸음	기억에 새기는 발걸음	記憶に刻む足取り	애스턴 마짱								distance_type==1 &phase_laterhalf_random==1 &order_rate<=50				0.35	0.2		2.4												2024년 1월 30일	의기충천			
 108801111	1059	9	진화	속도			앰비셔스 카드	アンビシャスカード	사토노 크라운								running_style==3 &phase_random==1 &order_rate>=40				0.45			2.4												2025년 3월 31일	신속 과감			
 108801211	1208	9	진화	가속			밀리언 카드	ミリオンカード	사토노 크라운								distance_type==3 &course_distance>=2200 &course_distance<=2400 &phase_firstquarter_random==2 &order_rate>=40					0.5	-2	1.8												2025년 3월 31일	기사회생			
 108901111	1243	9	진화	복합			위대한 답파	偉大なる踏破	슈발 그랑								distance_type==3 &running_style==2 &phase_laterhalf_random==1 &order_rate<=50 &course_distance!=2400				0.25	0.3		3												2025년 4월 9일	쾌진격			
@@ -1295,21 +1295,21 @@
 109101211	1212	9	진화	복합			하이 소사이어티・멘탈리티!	ハイソ・メンタリティ！	비블로스								running_style==3 &distance_rate_after_random==50 &order_rate>=30 &order_rate<=80				0.35	0.1		4												2025년 5월 9일	대담무쌍			
 109301111	1058	9	진화	속도		K.Speed	K.Speed	K.Speed	케이에스 미라클								distance_type==1 &running_style==2 &is_finalcorner_random==1 &order_rate<=50			0.15	0.35			1.8												2025년 1월 8일	스피드스터			
 109301211	1190	9	진화	복합			생명의 불꽃	命の火花	케이에스 미라클								running_style==2 &phase_firsthalf_random==2 &order_rate<=50					0.4		1.8		is_activate_other_skill_detail==1 &remain_distance<=201 &remain_distance>=199		0.15			3					2025년 1월 8일	치열한 승부			
-109801111	1226	9	진화	속도			코파하게 운수 대통!	コパッと開運！	코파노 리키								ground_type==2 &phase_laterhalf_random==1 &order_rate<=50				0.45			2.4												2023년 12월 8일	승리할 기회			
-109801211	1233	9	진화	녹딱			용맥의 파도	龍脈の波濤	코파노 리키								ground_type==2 &base_power>=1200		즉발																	2023년 12월 8일	발군의 파고들기			
-109901111	1056	9	진화	속도			토마코마이 미식으로 입호강!	苫小牧グルメで舌鼓！	홋코 타루마에								running_style==2 &phase_laterhalf_random==0 &order_rate<=50				0.15		5.5	3												2024년 4월 30일	여유만만			
-109901211	1167	9	진화	속도			관광 대사에 걸맞는 활약!	観光大使の面目躍如！	홋코 타루마에								ground_type==2 &phase==1 &blocked_side_continuetime>=2				0.45			2.4												2024년 4월 30일	차트 급상승!			
-110001111	1107	9	진화	속도			투혼 주입	闘魂注入	원더 어큐트								distance_type==2 &is_overtake==1 &accumulatetime>=5				0.35			4												2024년 3월 7일	여장부 기질			
-110001211	1230	9	진화	속도			여신의 모래 샤워	女神の砂浴び	원더 어큐트								ground_type==2 &accumulatetime>=5 &infront_near_lane_time>=3		즉발		0.35			4												2024년 3월 7일	우아한 모래 샤워			
+109801111	1226	9	진화	속도		코파하게 운수대통!	코파하게 운수 대통!	コパッと開運！	코파노 리키								ground_type==2 &phase_laterhalf_random==1 &order_rate<=50				0.45			2.4												2023년 12월 8일	승리할 기회			
+109801211	1233	9	진화	녹딱		용맥의 파도	용맥의 파도	龍脈の波濤	코파노 리키								ground_type==2 &base_power>=1200		즉발																	2023년 12월 8일	발군의 파고들기			
+109901111	1056	9	진화	속도		토마코마이 맛집에서 입호강!	토마코마이 미식으로 입호강!	苫小牧グルメで舌鼓！	홋코 타루마에								running_style==2 &phase_laterhalf_random==0 &order_rate<=50				0.15		5.5	3												2024년 4월 30일	여유만만			
+109901211	1167	9	진화	속도		관광 대사다운 활약!	관광 대사에 걸맞는 활약!	観光大使の面目躍如！	홋코 타루마에								ground_type==2 &phase==1 &blocked_side_continuetime>=2				0.45			2.4												2024년 4월 30일	차트 급상승!			
+110001111	1107	9	진화	속도		투혼 주입	투혼 주입	闘魂注入	원더 어큐트								distance_type==2 &is_overtake==1 &accumulatetime>=5				0.35			4												2024년 3월 7일	여장부 기질			
+110001211	1230	9	진화	속도		여신의 모래 샤워	여신의 모래 샤워	女神の砂浴び	원더 어큐트								ground_type==2 &accumulatetime>=5 &infront_near_lane_time>=3		즉발		0.35			4												2024년 3월 7일	우아한 모래 샤워			
 110201111	1038	9	진화	속도			시주러	カエスーラ	사운즈 오브 어스								phase==1 &corner==0		즉발		0.15		5.5	3												2025년 8월 8일	호전일식			
 110201211	1254	9	진화	속도			트라이엄프	トライアンフ	사운즈 오브 어스								running_style==3 &phase_laterhalf_random==1 &order_rate>=40				0.45			1.8												2025년 8월 8일	위풍당당			
-110401111	1053	9	진화	가속			해냈다고!	してやったり！	카츠라기 에이스								running_style==1 &phase==0		즉발			0.5		1.2												2024년 10월 28일	선수 필승			
-110401211	1246	9	진화	속도			나홀로 도주 여행	逃げっ切りの1人旅	카츠라기 에이스						phase==1 &bashin_diff_behind>=3 &order==1		running_style==1 &is_last_straight==1 &order==1 &track_id==10006 &distance_type==3		즉발		0.55			2.4												2024년 10월 28일	밟을 수 없는 그림자			
-110501111	1170	9	진화	속도			은하 그 너머로, 당신과	銀河のその先へ、あなたと	네오 유니버스								distance_type==3 &is_lastspurt==1 &corner==0 &order_rate>=20 &order_rate<=60		즉발		0.45			3												2024년 8월 7일	결사의 각오			
-110501211	1260	9	진화	속도			별바다를 달려서	星の海を駆けて	네오 유니버스								distance_type==3 &activate_count_all>=13			0.35				4												2024년 8월 7일	루미네선스	200351, 200352, 200381, 200382, 201141, 201142, 200471, 200472, 200481, 200482, 210021, 210022, 200132/200141		
-110601111	1142	9	진화	회복			초조해하지 말고, 기죽지 말고	焦らず、気負わず	히시 미라클								running_style==3 &phase_random==1 &order_rate>=40						7.5													2024년 8월 28일	릴랙스		TRUE	
+110401111	1053	9	진화	가속		해냈다!	해냈다고!	してやったり！	카츠라기 에이스								running_style==1 &phase==0		즉발			0.5		1.2												2024년 10월 28일	선수 필승			
+110401211	1246	9	진화	속도		나홀로 도주 여행	나홀로 도주 여행	逃げっ切りの1人旅	카츠라기 에이스						phase==1 &bashin_diff_behind>=3 &order==1		running_style==1 &is_last_straight==1 &order==1 &track_id==10006 &distance_type==3		즉발		0.55			2.4												2024년 10월 28일	밟을 수 없는 그림자			
+110501111	1170	9	진화	속도		은하의 너머로, 당신과	은하 그 너머로, 당신과	銀河のその先へ、あなたと	네오 유니버스								distance_type==3 &is_lastspurt==1 &corner==0 &order_rate>=20 &order_rate<=60		즉발		0.45			3												2024년 8월 7일	결사의 각오			
+110501211	1260	9	진화	속도		별 바다를 달려서	별바다를 달려서	星の海を駆けて	네오 유니버스								distance_type==3 &activate_count_all>=13			0.35				4												2024년 8월 7일	루미네선스	200351, 200352, 200381, 200382, 201141, 201142, 200471, 200472, 200481, 200482, 210021, 210022, 200132/200141		
+110601111	1142	9	진화	회복		조급해하지 말고, 기죽지 말고	초조해하지 말고, 기죽지 말고	焦らず、気負わず	히시 미라클								running_style==3 &phase_random==1 &order_rate>=40						7.5													2024년 8월 28일	릴랙스		TRUE	
 110601121	1142	9	진화	속도			할 수 있는 범위에서 힘내자~!	できる範囲でがんばろ～！	히시 미라클								running_style==3 &phase_random==1 &order_rate>=40				0.35		1.5	3												2024년 8월 28일	릴랙스			
-110601211	1264	9	진화	속도			좀 좋은 것, 모아서	ちょっといいこと、集めて	히시 미라클						phase>=2 &distance_diff_rate>=50		running_style==3 &phase_random==1 &order_rate>=40 &order_rate<=90				0.35			4												2024년 8월 28일	천릿길			
+110601211	1264	9	진화	속도		조금 좋은 걸 모아서	좀 좋은 것, 모아서	ちょっといいこと、集めて	히시 미라클						phase>=2 &distance_diff_rate>=50		running_style==3 &phase_random==1 &order_rate>=40 &order_rate<=90				0.35			4												2024년 8월 28일	천릿길			
 110701111	1054	9	진화	속도		Breakaway Star	Breakaway Star	Breakaway Star	탭 댄스 시티								running_style==1 &phase_random==1 &order==1				0.45			3												2025년 3월 10일	탈출술			
 110701211	1161	9	진화	속도		Smooth Sailing!	Smooth Sailing!	Smooth Sailing!	탭 댄스 시티								activate_count_middle>=3 &order==1				0.45			3												2025년 3월 10일	꼬리 솟구쳐 오르기	200472, 200482, 210022		
 110801111	1272	9	진화	속도			마천철현	磨穿鉄硯	두라멘테								phase_corner_random==1				0.35			4												2025년 6월 14일	네버 기브 업			
