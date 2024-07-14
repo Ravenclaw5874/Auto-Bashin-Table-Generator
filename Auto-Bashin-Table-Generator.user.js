@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         우마무스메 자동 마신표 제작기
 // @namespace    http://tampermonkey.net/
-// @version      3.0.0
+// @version      3.0.1
 // @description  우마무스메 레이스 에뮬레이터로 마신표를 자동으로 만드는 스크립트입니다.
 // @author       Ravenclaw5874
 // @match        http://race-ko.wf-calc.net/
@@ -16,6 +16,7 @@
 // ==/UserScript==
 
 /*----업데이트 로그------
+3.0.1 Bang 전 미라클 버그 수정
 3.0.0 2주년 대응. 진행도는 진화스킬 때문에 까다로워서 나중에.
 
 2.2.5 명경, 또생 특이사항 불필요한 '}' 제거
@@ -568,7 +569,7 @@ function getSkillIdByElement(element) {
         else {
             //고유기면서 스킬명(나무)나 스킬명(일섭)에서 이름이 일치하는 스킬 반환
             const skillName = getProperSkillName(element);
-            const skillData = skillDB.find(v => (v['희귀'] === '고유') && (v['스킬명(나무)'] === skillName || v['스킬명(일섭)'] === skillName));
+            const skillData = skillDB.find(v => (v['희귀'] === '고유') && (v['스킬명(한섭)'] === skillName || v['스킬명(나무)'] === skillName || v['스킬명(일섭)'] === skillName));
             if(skillData) {
                 return skillData['스킬 id'];
             }
